@@ -26,10 +26,10 @@ s.license = { :type => "MIT", :file => "LICENSE" }
 s.author = { "Emre Kuru" => "emre@poilabs.com" }
 
 # 5 - Replace this URL with your own GitHub page's URL (from the address bar)
-s.homepage = "https://bitbucket.org/poiteam/ios-pasabahce-navigation-dist"
+s.homepage = "https://bitbucket.org/poiteam/ios-vd-navigation-pod"
 
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "git@bitbucket.org:poiteam/ios-vd-navigation-pod.git",
+s.source = { :git => "https://emre-kuru@bitbucket.org/poiteam/ios-vd-navigation-pod.git",
              :tag => "#{s.version}" }
 
 s.pod_target_xcconfig = {
