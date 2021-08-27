@@ -11,13 +11,13 @@ Pod::Spec.new do |s|
 
 # 1
 s.platform = :ios
-s.ios.deployment_target = '9.0'
+s.ios.deployment_target = '11.0'
 s.name = "PoilabsVdNavigation"
 s.summary = "Poilabs Indoor Navigation Framework"
 #s.requires_arc = true
 
 #2
-s.version = "1.0.1"
+s.version = "1.0.2"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -40,4 +40,6 @@ s.pod_target_xcconfig = {
 
 s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.framework', 'PoilabsVdNavigationCore.framework'
 s.resources = 'PoilabsVdNavigationBundle.bundle'
+s.dependency 'Alamofire', '~> 4.9.1'
+s.dependency 'PESGraph'
 end
