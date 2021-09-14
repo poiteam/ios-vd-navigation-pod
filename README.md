@@ -1,5 +1,7 @@
 ![Poilabs](https://www.poilabs.com/public/img/poi-labs-logo.png)
 # PoilabsVdNavigation
+[![Version](https://img.shields.io/cocoapods/v/PoilabsNavigation.svg?style=flat)](https://cocoapods.org/pods/PoilabsVdNavigation)
+[![Platform](https://img.shields.io/cocoapods/p/PoilabsNavigation.svg?style=flat)](https://cocoapods.org/pods/PoilabsVdNavigation)
 
 Poilabs görme engelli navigasyon sdk
 
