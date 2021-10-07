@@ -38,7 +38,7 @@ s.pod_target_xcconfig = {
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 
-s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavigationCore.xcframework'
+s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.framework', 'PoilabsVdNavigationCore.framework'
 s.resources = 'PoilabsVdNavigationBundle.bundle'
 s.dependency 'Alamofire', '~> 4.9.1'
 s.dependency 'PESGraph'
