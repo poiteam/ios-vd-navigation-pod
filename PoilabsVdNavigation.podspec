@@ -17,7 +17,7 @@ s.summary = "Poilabs Indoor Navigation Framework"
 #s.requires_arc = true
 
 #2
-s.version = "3.0.9"
+s.version = "3.0.10"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -38,8 +38,7 @@ s.pod_target_xcconfig = {
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 
-s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.framework', 'PoilabsVdNavigationCore.framework'
+s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavigationCore.xcframework'
 s.resources = 'PoilabsVdNavigationBundle.bundle'
 s.dependency 'Alamofire', '~> 4.9.1'
-s.dependency 'PESGraph'
 end
