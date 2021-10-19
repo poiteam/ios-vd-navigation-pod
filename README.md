@@ -1,58 +1,56 @@
-![Poilabs](https://www.poilabs.com/public/img/poi-labs-logo.png)
 # PoilabsVdNavigation
 [![Version](https://img.shields.io/cocoapods/v/PoilabsVdNavigation.svg?style=flat)](https://cocoapods.org/pods/PoilabsVdNavigation)
 [![Platform](https://img.shields.io/cocoapods/p/PoilabsVdNavigation.svg?style=flat)](https://cocoapods.org/pods/PoilabsVdNavigation)
 
-Poilabs görme engelli navigasyon sdk
+## INSTALLATION
 
-## Yükleme
+### CocoaPods
 
-### CocoaPods ile
+To integrate PoilabsNavigation into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ``` curl
 pod 'PoilabsVdNavigation'
 ```
+	
+### Manually
 
-###  Framework ile
+* Add **PoilabsVdNavigationCore.xcframework** and **PoilabsVdNavigationUI.xcframework** files to your "Frameworks, Libaries, and Embedded Content" in your Project’s General Tab.
 
-Proje Dosyalarında düzenlenmesi gereken değerler aşağıda gösterilmiştir:
+* Add **PoilabsVdNavigationBundle.bundle** file to your Copy bundle Resources in Build Phases tab.
 
-	.framework dosyalarını General Sayfasında Embedded Binaries Başlığı altına ekleyiniz.
 
-	.bundle dosyasını da Build Phases Sayfasında Copy bundle Resources Başlığı altına ekleyiniz.
-## Öngereklilikler
+## PRE-REQUIREMENTS
 
-### info.plist
+To Integrate this framework you should add some features to your project info.plist file.
 
-Sdk'in çalışabilmesi için kullanıcıdan gerekli izinlerin alınması gerekmektedir. Bu izinler için info.plist'e aşağıdaki parametreler eklenmelidir.
++Privacy - Location Usage Description
 
-+Privacy - Location Usage Description: ‘Sizin açıklamanız’
++Privacy - Location When In Use Usage Description
 
-+Privacy - Location When In Use Usage Description: ‘Sizin açıklamanız’
++Privacy - Location Always Usage Description
 
-+Privacy - Location Always Usage Description: ‘Sizin açıklamanız’
++Privacy - Location Always and When In Use Usage Description
 
-+Privacy - Location Always and When In Use Usage Description: ‘Sizin açıklamanız’
++Privacy - Bluetooth Peripheral Usage Description
 
-+Privacy - Bluetooth Peripheral Usage Description: ‘Sizin açıklamanız’
++Privacy - Bluetooth Always Usage Description
 
-+Privacy - Bluetooth Always Usage Description: ‘Sizin açıklamanız’
+## USAGE
 
-## Kullanım
-
-PoilabsVdNavigationUI import edilmeli
+You shuold import **PoilabsVdNavigationUI**
 
 ``` Swift
 import PoilabsVdNavigationUI
 ```
 
-PoilabsVdNavigationUI init handler'ında viewcontroller dönmektedir. Bu viewcontroller'ı başlatarak sdk'i ayağa kaldırabilirsiniz.
+PoilabsVdNanigationUI initializer has UIViewController handler. When process is completed, it returns a viewcontroller. You should show it to start framework.
+
 
 ``` Swift
 let lang = Locale.current.languageCode ?? "tr"
-let appId = "yourApplicationId"
-let secret = "yourApplicationSecret"
-let uniqueIdentifier = "uniqueIdentifier"
+let appId = APPLICATION_ID
+let secret = APPLICATION_SECRET_KEY
+let uniqueIdentifier = UNIQUE_IDENTIFIER
 
 PoilabsVdNavigationUI(withApplicationID: appId, 
 					withApplicationSecret: secret, 
@@ -61,17 +59,16 @@ PoilabsVdNavigationUI(withApplicationID: appId,
             //show controller
         }
 ```
-
-Eğer config sorgusunu farklı bir url üzerinden soracaksanız, sdk'i init ederken url'i verebilirsiniz.
+If you want to do requests on another url, you can specify it on init.
 
 
 
 ``` Swift
 let configUrl = "yoururl"
 let lang = Locale.current.languageCode ?? "tr"
-let appId = "yourApplicationId"
-let secret = "yourApplicationSecret"
-let uniqueIdentifier = "uniqueIdentifier"
+let appId = APPLICATION_ID
+let secret = APPLICATION_SECRET_KEY
+let uniqueIdentifier = UNIQUE_IDENTIFIER
 
 PoilabsVdNavigationUI(configUrl: configUrl, 
 					withApplicationID: appId, 
