@@ -50,7 +50,7 @@ PoilabsVdNanigationUI initializer has UIViewController handler. When process is 
 let lang = Locale.current.languageCode ?? "tr"
 let appId = APPLICATION_ID
 let secret = APPLICATION_SECRET_KEY
-let uniqueIdentifier = UNIQUE_IDENTIFIER
+let uniqueIdentifier = UNIQUE_ID
 
 PoilabsVdNavigationUI(withApplicationID: appId, 
 					withApplicationSecret: secret, 
