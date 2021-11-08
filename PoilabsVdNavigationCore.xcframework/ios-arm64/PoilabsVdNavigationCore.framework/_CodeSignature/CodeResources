@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/PoilabsVdNavigationCore-Swift.h</key>
 		<data>
-		0ToCrZ0fAa1n/EiyZxQ0rjyy1cE=
+		jZhnflO5zDezFP97crMTEK58ZO4=
 		</data>
 		<key>Headers/PoilabsVdNavigationCore.h</key>
 		<data>
@@ -38,31 +38,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		eDjH9BfP/oLOC2M8JlYHofQDIAo=
+		CPC5PIyhG5uWdo3E+mbX3o61SDA=
 		</data>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		biD/odm2iFmw9AUlMcRcX0AKBF4=
+		WolO1alXstQhgOX/CK3fhWsB8Wg=
 		</data>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Uk4pO9tUc6rK111nUYyqdWLJ/bs=
+		nATOxU/U+pWEoZ5KqyfEpgUOmAw=
 		</data>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		1AjLy9qatVmZ/x+DlanbK6U6xJ4=
+		4HBRQqZdAfpL49/xuV5iELQ8fLs=
 		</data>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		biD/odm2iFmw9AUlMcRcX0AKBF4=
+		WolO1alXstQhgOX/CK3fhWsB8Wg=
 		</data>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		Uk4pO9tUc6rK111nUYyqdWLJ/bs=
+		nATOxU/U+pWEoZ5KqyfEpgUOmAw=
 		</data>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		1AjLy9qatVmZ/x+DlanbK6U6xJ4=
+		4HBRQqZdAfpL49/xuV5iELQ8fLs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -117,7 +117,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VFcLldCJMetL6mmmdJmbqobCsUpdEz3Avxtlz7LrrDE=
+			G0i5igf/K9fLqzyaV2ZBdc9cvSxowu86qOq3AXBaVEw=
 			</data>
 		</dict>
 		<key>Headers/PoilabsVdNavigationCore.h</key>
@@ -131,42 +131,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5yYasmAlDe11hvZNjaoutwumDGdo42A+8TZXEe53o7I=
+			3A8i1aZF5YRA4KwwAeLgoFzhdvw4bHrApZkWtHjVPno=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iG8nHhvj3kzCMqNYKQzExa4TajGkUztwPqVkgDgEaFY=
+			jq2bYnqfPBQFJ4CI4/dbyZW2YWQ6aNjrzIKyrUuKycA=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YCJjrE8sidvoaVrgcue6YnxM5fMkpcRu/mCEU/iKrPI=
+			E8Bc3SMPiQAGioU28Py7DDbvxXqD8EVMYXRMHLyRTMg=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5yYasmAlDe11hvZNjaoutwumDGdo42A+8TZXEe53o7I=
+			3A8i1aZF5YRA4KwwAeLgoFzhdvw4bHrApZkWtHjVPno=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iG8nHhvj3kzCMqNYKQzExa4TajGkUztwPqVkgDgEaFY=
+			jq2bYnqfPBQFJ4CI4/dbyZW2YWQ6aNjrzIKyrUuKycA=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationCore.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YCJjrE8sidvoaVrgcue6YnxM5fMkpcRu/mCEU/iKrPI=
+			E8Bc3SMPiQAGioU28Py7DDbvxXqD8EVMYXRMHLyRTMg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
