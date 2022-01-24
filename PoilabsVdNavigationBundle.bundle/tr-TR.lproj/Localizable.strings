@@ -68,3 +68,29 @@
 //MARK: General
 "pleaseWait" = "Lütfen Bekleyin...";
 
+//MARK: User Guide
+"welcome" = "Hoş geldin!";
+"welcomeDesc" = "Seni aramızda gördüğümüz için mutluyuz!\n\nGezinmek bazen çok zor olabiliyor. Bu yüzden bu uygulamayı yarattık.\n\nUygulama hakkında bilgi edinmeye başlayalım!";
+
+"howItWorks" = "Nasıl çalışır?";
+"howItWorksDesc" = "Konumunu bulmak için bluetooth sensörlerini kullanıyoruz. Bu sensörleri kullanabilmemiz için konum ve bluetooth izinlerini vermen gerekiyor. Bluetooth ve konum servislerinin açık olduğundan ve aktif bir internet bağlantın olduğundan emin ol.\n\nEn iyi deneyim için telefonunu önünde ve yere paralel tutman gerekiyor.";
+
+"venues" = "Mekanlar";
+"venuesDesc" = "Mekânın türünü seçebilirsin.\n\nMekânın türünü seçtikten sonra erişilebilir mekanlar sana en yakın olandan başlanarak listelenecektir. Ayrıca bunları arama çubuğunu kullanarak da arayabilirsin.";
+
+"poiList" = "POI Listesi";
+"poiListDesc" = "Bir mekân içindeki tüm ulaşılabilir yerleri görebilirsin.\n\nÖrneğin AVM ise mağazalara, hizmetlere ve daha fazlasına ulaşırsın. Bir nokta seçerek o noktayla ilgili daha fazla bilgiye sahip olabilirsin.\n\nAyrıca kategorilere göre listeyi filtreleyebilirsin.";
+
+"discoverMode" = "Keşfet Modu";
+"discoverModeDesc" = "Etrafındakileri anlamana yardımcı olur.\n\nYanından geçerken yakındaki yerleri ve konumlarını öğrenebilirsin.\n\nEğer bir ek içerik varsa, altta bir düğme görünecektir.";
+
+"navigation" = "Navigasyon";
+"navigationDesc" = "Bir nokta seçip navigasyonu seçtiğinde, navigasyonun başlayacaktır.\n\nÖnce konumun sonra rota hesaplanır.\n\nGüzergâh hakkında kısa bir bilgi alacaksın. Daha sonra navigasyonu başlatmak için sağ tarafa bakman gerekiyor.";
+
+"navigationSteps" = "Navigasyon Adımları";
+"navigationStepsDesc" = "Doğru yöne gitmiyorsan lütfen nazikçe arkanı dön. Yön doğru olduğunda “Yürümeye Başla” mesajı görünecektir.\n\nNavigasyon başladıktan sonra sürekli güncellemeler alacaksın. Telefonunu sallayarak rotayı yeniden hesaplayabilirsiniz.\n\nBazen rotada olsan bile rotada değilsin diyebilir. Lütfen birkaç dakika yürümeye devam et. Rotada değilsin demeye devam ederse telefonunu sallayarak yeni bir rota alabilirsiniz.";
+
+"youAreAllSet" = "Hepiniz Hazırsınız!";
+"youAreAllSetDesc" = "İlk defa kullandığında kafa karıştırıcı olabilir. Ancak yeni bir şey öğrenmenin en iyi yolu sadece pratik yapmaktır.\n\nHazır mısın?";
+"start" = "Başla";
+"next" = "Sıradaki";

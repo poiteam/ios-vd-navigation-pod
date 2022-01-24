@@ -78,6 +78,7 @@ public class PoiVDNavigationManager : PoilabsVdNavigationCore.NavigationManagerD
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
   public func getMenuItems() -> [PoilabsVdNavigationCore.ItemBase]
+  public func startLocationTracking()
   @objc deinit
 }
 public class ItemBase {
@@ -178,7 +179,8 @@ public protocol RouteManagerDelegate {
 }
 public class RouteManager {
   public var delegate: PoilabsVdNavigationCore.RouteManagerDelegate?
-  public init(destinationPoi: PoilabsVdNavigationCore.FilteredPoi, delegate: PoilabsVdNavigationCore.RouteManagerDelegate)
+  public init(destinationPoi: PoilabsVdNavigationCore.FilteredPoi)
+  public func navigate()
   public func reInitRoute()
   @objc deinit
 }

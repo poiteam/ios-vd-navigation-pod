@@ -69,3 +69,30 @@
 //MARK: General
 "pleaseWait" = "Please Wait...";
 
+//MARK: User Guide
+"welcome" = "Welcome!";
+"welcomeDesc" = "We are happy to have you onboard!\n\nGetting around can be very challenging sometimes. This is why we built this application.\n\nLet’s start to learn about the app!";
+
+"howItWorks" = "How it works?";
+"howItWorksDesc" = "We are using bluetooth sensors to find your location. In order to make it happen you need to give location and bluetooth permissions. Make sure your bluetooth and location services are on and you have an active internet connection.\n\nFor best experience you need to hold your phone in front of you and parallel to ground.";
+
+"venues" = "Venues";
+"venuesDesc" = "You can select the type of the venue.\n\nAfter selecting the accessible venues will be listed starting from the nearest one. You can also search them using the search bar.";
+
+"poiList" = "Poi List";
+"poiListDesc" = "See all the available locations inside a venue.\n\nFor example, if it is a mall, you will reach stores, facilities and more. If you select a point, you can have more information.\n\nYou can also filter the list depending on the categories.";
+
+"discoverMode" = "Discover Mode";
+"discoverModeDesc" = "It helps you to understand what is around you.\n\nWhen you walk by you will learn near by pois and their position.\n\nIf there is additional content, a button will appear at the bottom.";
+
+"navigation" = "Navigation";
+"navigationDesc" = "When you select a point and select navigate, your navigation will start.\n\nFirst your location then the route is calculated.\n\nYou will get a brief info about the route. In order to start the navigation, you need to face to the
+right side.";
+
+"navigationSteps" = "Navigation Steps";
+"navigationStepsDesc" = "Please gently turn around if you are not headed the right direction. When the direction is right “Start Walking” message will appear.\n\nAfter the navigation is started you will get continuous updates. You can re-calculate the route by shaking your phone.\n\nSometimes even if you are in the route it may say you are not in the route. Please continue for a few minutes. If it continues to say you are not in the route, you can get a new route by shaking your phone.";
+
+"youAreAllSet" = "You are All Set!";
+"youAreAllSetDesc" = "It may be confusing when you first use it. But the best way to learn a new thing is simply by practice.\n\nAre you ready?";
+"start" = "Start";
+"next" = "Next";
