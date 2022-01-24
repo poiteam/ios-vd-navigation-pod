@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		AFFIJUh74MZVZdmLw2ZhtdUdAj4=
+		J321eqCIf5eWsvJr7lHtFpMe1oY=
 		</data>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		AFFIJUh74MZVZdmLw2ZhtdUdAj4=
+		J321eqCIf5eWsvJr7lHtFpMe1oY=
 		</data>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		2OBD1Du+YcIHtnLSnoHD3s9X2S4=
+		iaRkwsq/Pfy+aMBg9oraHFYClpA=
 		</data>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		2OBD1Du+YcIHtnLSnoHD3s9X2S4=
+		iaRkwsq/Pfy+aMBg9oraHFYClpA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -73,14 +73,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dgixuWQ6SX5lIb9efS8ofJSLaemgK3KZqGx7TUBnxd4=
+			fUd/Pa+jYOJIEukETlX4fsMg9xUdFrCR2wL63Q4zCEg=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dgixuWQ6SX5lIb9efS8ofJSLaemgK3KZqGx7TUBnxd4=
+			fUd/Pa+jYOJIEukETlX4fsMg9xUdFrCR2wL63Q4zCEg=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -101,7 +101,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7fvSvsbIFNL9Vfssij7ZtBP8G6QheosiE16bPZndKeg=
+			7av8eViQJzT1HLyIEsYP0H+HGhMBOOJCrIiRWKYGpEk=
 			</data>
 		</dict>
 		<key>Modules/PoilabsVdNavigationUI.swiftmodule/x86_64.swiftdoc</key>
@@ -122,7 +122,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7fvSvsbIFNL9Vfssij7ZtBP8G6QheosiE16bPZndKeg=
+			7av8eViQJzT1HLyIEsYP0H+HGhMBOOJCrIiRWKYGpEk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
