@@ -20,7 +20,7 @@
 "routeCalculating" = "Rota hesaplanıyor.";
 "noRoute" = "Rota bulunamadı, farklı bir nokta ile tekrar deneyin.";
 "startWalking" = "Şimdi yürümeye başlayabilirsin.";
-"turnAround" = "Başlamak için etrafınızda dönün.";
+"turnAround" = "Doğru yönün belirlenmesi için etrafınızda yavaşça dönün.";
 "outOfRoute" = "Rotada olduğunuzdan emin olunuz. Telefonu sallayarak yeniden rota alabilirsin.";
 "afterElevator" = "Gitmek istediğin kata geldin. Asansörden çıkınca telefonu sallayarak yönlendirme alabilirsin.";
 
@@ -94,3 +94,21 @@
 "youAreAllSetDesc" = "İlk defa kullandığında kafa karıştırıcı olabilir. Ancak yeni bir şey öğrenmenin en iyi yolu sadece pratik yapmaktır.\n\nHazır mısın?";
 "start" = "Başla";
 "next" = "Sıradaki";
+
+
+"venues" = "Mekanlar";
+"searchPlaceHolder" = "Nereye gitmek istiyorsun?";
+"noVenueFound" = "Mekan bulunamadı";
+"showOnMap" = "Haritada göster";
+"addFav" = "Favorilere ekle";
+"showFavorites" = "Sadece favoriye eklenmiş mekanları göster";
+"openFilterView" = "Filtre ekleme sayfasını aç";
+"closeFilterView" = "Filtre ekleme sayfasını kapat";
+
+"select" = "Seç";
+"unselect" = "Seçimi kaldır";
+"favorites" = "Favoriler";
+"distance" = "Mesafe";
+"noLimit" = "Sınırsız";
+"category" = "Kategori";
+"apply" = "Uygula";
