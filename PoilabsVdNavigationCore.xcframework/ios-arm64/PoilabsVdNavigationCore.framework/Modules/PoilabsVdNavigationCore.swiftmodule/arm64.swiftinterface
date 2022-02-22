@@ -1,10 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
 import Alamofire
 import CoreBluetooth
 import CoreLocation
 import Foundation
+import PoilabsPositioning
 @_exported import PoilabsVdNavigationCore
 import Swift
 import UIKit
@@ -139,6 +140,9 @@ public class Place {
   public var lon: Swift.Double?
   public var childs: [Place]?
   public var description: Swift.String?
+  public var distance: Swift.Double?
+  public var isFavorite: Swift.Bool
+  public var type: Swift.String
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Place]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
@@ -190,13 +194,13 @@ extension RouteManager : NavigationManagerDelegate {
 public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
 }
-@objc public class PlaceListManager : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers public class PlaceListManager : ObjectiveC.NSObject {
   public var delegate: PlaceListManagerDelegate?
-  public init(target: Swift.String)
+  @objc override dynamic public init()
   public func getPlaceList() -> [Place]
-  public func getPlaceFilteredList() -> [FilteredPlace]?
-  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [FilteredPlace]?
-  public func filterMallListForChild(withParent parentTitle: Swift.String, placeList: [Place]) -> [FilteredPlace]
+  public func getPlaceFilteredList() -> [Place]?
+  public func getCategories() -> [Swift.String]
+  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [Place]?
   @objc deinit
 }
 extension PlaceListManager : CoreLocation.CLLocationManagerDelegate {

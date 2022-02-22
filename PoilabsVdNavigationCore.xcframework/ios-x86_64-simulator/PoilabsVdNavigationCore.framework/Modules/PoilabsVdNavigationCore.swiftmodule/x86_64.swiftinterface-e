@@ -1,39 +1,40 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PoilabsVdNavigationCore
 import Alamofire
 import CoreBluetooth
 import CoreLocation
 import Foundation
+import PoilabsPositioning
 @_exported import PoilabsVdNavigationCore
 import Swift
 import UIKit
 import _Concurrency
 public class Segment {
   public var finishPoiId: Swift.String?
-  public var finishNode: PESGraphNode?
+  public var finishNode: PoilabsVdNavigationCore.PESGraphNode?
   public var startPoiId: Swift.String?
-  public var startNode: PESGraphNode?
+  public var startNode: PoilabsVdNavigationCore.PESGraphNode?
   public var weight: Swift.Double?
   public var isAvailableForDisabledPerson: Swift.Bool
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray, withStartId startID: Swift.String) -> [Segment]
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray, withStartId startID: Swift.String) -> [PoilabsVdNavigationCore.Segment]
   required public init?(dictionary: Foundation.NSDictionary, startID: Swift.String)
   @objc deinit
 }
 public class Poi {
   public var isActive: Swift.Bool?
-  public var filters: Filters?
-  public var properties: DataProperties?
-  public var map: Map?
-  public var location: Location?
+  public var filters: PoilabsVdNavigationCore.Filters?
+  public var properties: PoilabsVdNavigationCore.DataProperties?
+  public var map: PoilabsVdNavigationCore.Map?
+  public var location: PoilabsVdNavigationCore.Location?
   public var type: Swift.String?
   public var secret: Swift.String?
   public var createdAt: Swift.Int?
   public var id: Swift.String?
   public var updatedAt: Swift.Int?
   public var isDeleted: Swift.Bool?
-  public var navigation: NavigationProperties?
-  public var node: PESGraphNode?
+  public var navigation: PoilabsVdNavigationCore.NavigationProperties?
+  public var node: PoilabsVdNavigationCore.PESGraphNode?
   public var localizedTitle: Swift.String? {
     get
   }
@@ -49,21 +50,21 @@ public class Poi {
   public var floorLevel: Swift.Int? {
     get
   }
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Poi]
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Poi]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
 public class NavigationProperties {
   public var isVisibleOnList: Swift.Bool
   public var isVisibleOnMap: Swift.Bool
-  public var segments: [Segment]?
+  public var segments: [PoilabsVdNavigationCore.Segment]?
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
 public class Location {
-  public var geometry: Geometry?
-  public var properties: LocationProperties?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Location]
+  public var geometry: PoilabsVdNavigationCore.Geometry?
+  public var properties: PoilabsVdNavigationCore.LocationProperties?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Location]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -71,13 +72,13 @@ public protocol PoiVDNavigationManagerDelegate {
   func PoiVDNavigationManager(didChangeAuthorization status: Swift.Bool)
   func PoiVDNavigationManager(centralManagerDidUpdateState status: Swift.Bool)
 }
-public class PoiVDNavigationManager : NavigationManagerDelegate {
+public class PoiVDNavigationManager : PoilabsVdNavigationCore.NavigationManagerDelegate {
   public func navigationManager(didChangeAuthorization status: Swift.Bool)
   public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
-  public var delegate: PoiVDNavigationManagerDelegate?
+  public var delegate: PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
-  public func getMenuItems() -> [ItemBase]
+  public func getMenuItems() -> [PoilabsVdNavigationCore.ItemBase]
   public func startLocationTracking()
   @objc deinit
 }
@@ -86,15 +87,15 @@ public class ItemBase {
   public var nameTr: Swift.String?
   public var nameEn: Swift.String?
   public var name: [Swift.String : Swift.String]
-  public var elements: [Place]
+  public var elements: [PoilabsVdNavigationCore.Place]
   required public init?(dictionary: Foundation.NSDictionary)
-  public func getElements() -> [Place]
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [ItemBase]
+  public func getElements() -> [PoilabsVdNavigationCore.Place]
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.ItemBase]
   @objc deinit
 }
 public class FilteredPlace {
   public var city: Swift.String
-  public var placeList: [Place]
+  public var placeList: [PoilabsVdNavigationCore.Place]
   public init(withCity city: Swift.String)
   @objc deinit
 }
@@ -102,8 +103,8 @@ public class Map {
   public var vendor: Swift.String?
   public var accessToken: Swift.String?
   public var styleUrl: Swift.String?
-  public var floors: Swift.Array<Floors>?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Map]
+  public var floors: Swift.Array<PoilabsVdNavigationCore.Floors>?
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Map]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -121,10 +122,10 @@ public class FloorProperties {
 public class Floors {
   public var title_en: Swift.String?
   public var title: Swift.String?
-  public var properties: FloorProperties?
+  public var properties: PoilabsVdNavigationCore.FloorProperties?
   public var level: Swift.Int?
   public var mapRotateAngle: Swift.Int?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Floors]
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Floors]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -137,9 +138,12 @@ public class Place {
   public var address: Swift.String?
   public var lat: Swift.Double?
   public var lon: Swift.Double?
-  public var childs: [Place]?
+  public var childs: [PoilabsVdNavigationCore.Place]?
   public var description: Swift.String?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Place]
+  public var distance: Swift.Double?
+  public var isFavorite: Swift.Bool
+  public var type: Swift.String
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Place]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -148,7 +152,7 @@ public class Filters {
   public var pointType: [Swift.String]?
   public var storeType: Swift.String?
   public var networkType: Swift.String?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Filters]
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Filters]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -162,7 +166,7 @@ public class Filters {
 public class Geometry {
   public var type: Swift.String?
   public var coordinates: CoreLocation.CLLocationCoordinate2D?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Geometry]
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Geometry]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -178,28 +182,28 @@ public protocol RouteManagerDelegate {
   func routeManagerStepUpdate(navigationText: [Swift.String : Swift.String?])
 }
 public class RouteManager {
-  public var delegate: RouteManagerDelegate?
-  public init(destinationPoi: FilteredPoi)
+  public var delegate: PoilabsVdNavigationCore.RouteManagerDelegate?
+  public init(destinationPoi: PoilabsVdNavigationCore.FilteredPoi)
   public func navigate()
   public func reInitRoute()
   @objc deinit
 }
-extension RouteManager : NavigationManagerDelegate {
-  public func navigationManagerDidUpdateUserLocation(nodeList: [Poi], heading: CoreLocation.CLHeading)
+extension PoilabsVdNavigationCore.RouteManager : PoilabsVdNavigationCore.NavigationManagerDelegate {
+  public func navigationManagerDidUpdateUserLocation(nodeList: [PoilabsVdNavigationCore.Poi], heading: CoreLocation.CLHeading)
 }
 public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
 }
-@objc public class PlaceListManager : ObjectiveC.NSObject {
-  public var delegate: PlaceListManagerDelegate?
-  public init(target: Swift.String)
-  public func getPlaceList() -> [Place]
-  public func getPlaceFilteredList() -> [FilteredPlace]?
-  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [FilteredPlace]?
-  public func filterMallListForChild(withParent parentTitle: Swift.String, placeList: [Place]) -> [FilteredPlace]
+@objc @_inheritsConvenienceInitializers public class PlaceListManager : ObjectiveC.NSObject {
+  public var delegate: PoilabsVdNavigationCore.PlaceListManagerDelegate?
+  @objc override dynamic public init()
+  public func getPlaceList() -> [PoilabsVdNavigationCore.Place]
+  public func getPlaceFilteredList() -> [PoilabsVdNavigationCore.Place]?
+  public func getCategories() -> [Swift.String]
+  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [PoilabsVdNavigationCore.Place]?
   @objc deinit
 }
-extension PlaceListManager : CoreLocation.CLLocationManagerDelegate {
+extension PoilabsVdNavigationCore.PlaceListManager : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
 }
@@ -222,31 +226,31 @@ public class LocationProperties {
 public class PlaceDetailManager {
   public init(placeId: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getInfoText() -> Swift.String
-  public func getPointList() -> [FilteredPoi]
+  public func getPointList() -> [PoilabsVdNavigationCore.FilteredPoi]
   @objc deinit
 }
 public class PointDetailManager {
-  public init(target: Poi)
+  public init(target: PoilabsVdNavigationCore.Poi)
   public func getFloorLevel() -> Swift.String
   @objc deinit
 }
 public protocol NavigationManagerDelegate {
-  func navigationManagerFreeWalkState(state: FreeWalkState)
-  func navigationManagerDidUpdateUserLocation(nodeList: [Poi], heading: CoreLocation.CLHeading)
+  func navigationManagerFreeWalkState(state: PoilabsVdNavigationCore.FreeWalkState)
+  func navigationManagerDidUpdateUserLocation(nodeList: [PoilabsVdNavigationCore.Poi], heading: CoreLocation.CLHeading)
   func navigationManagerDidUpdateUserLocation(freeMoveText: [[Swift.String : Swift.String?]], floorLevelText: Swift.String)
   func navigationManager(didChangeAuthorization status: Swift.Bool)
   func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
 }
-extension NavigationManagerDelegate {
+extension PoilabsVdNavigationCore.NavigationManagerDelegate {
   public func navigationManager(didChangeAuthorization status: Swift.Bool)
   public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
-  public func navigationManagerFreeWalkState(state: FreeWalkState)
-  public func navigationManagerDidUpdateUserLocation(nodeList: [Poi], heading: CoreLocation.CLHeading)
+  public func navigationManagerFreeWalkState(state: PoilabsVdNavigationCore.FreeWalkState)
+  public func navigationManagerDidUpdateUserLocation(nodeList: [PoilabsVdNavigationCore.Poi], heading: CoreLocation.CLHeading)
   public func navigationManagerDidUpdateUserLocation(freeMoveText: [[Swift.String : Swift.String?]], floorLevelText: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class NavigationManager : ObjectiveC.NSObject {
-  public init(target: Place)
-  public var delegate: NavigationManagerDelegate? {
+  public init(target: PoilabsVdNavigationCore.Place)
+  public var delegate: PoilabsVdNavigationCore.NavigationManagerDelegate? {
     get
     set(value)
   }
@@ -258,7 +262,7 @@ public enum FreeWalkState {
   case waiting
   case notFound
   case found
-  public static func == (a: FreeWalkState, b: FreeWalkState) -> Swift.Bool
+  public static func == (a: PoilabsVdNavigationCore.FreeWalkState, b: PoilabsVdNavigationCore.FreeWalkState) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
