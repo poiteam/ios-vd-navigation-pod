@@ -207,6 +207,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSString;
 @class NSNumber;
 @class NSCoder;
 
@@ -214,6 +215,7 @@ SWIFT_CLASS("_TtC21PoilabsVdNavigationUI24AccesiblePickerContainer")
 @interface AccesiblePickerContainer : UIView
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@property (nonatomic, copy) NSString * _Nullable accessibilityValue;
 - (BOOL)accessibilityActivate SWIFT_WARN_UNUSED_RESULT;
 - (void)accessibilityIncrement;
 - (void)accessibilityDecrement;
@@ -221,7 +223,6 @@ SWIFT_CLASS("_TtC21PoilabsVdNavigationUI24AccesiblePickerContainer")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC21PoilabsVdNavigationUI24BUStringPickerController")
@@ -236,32 +237,15 @@ SWIFT_CLASS("_TtC21PoilabsVdNavigationUI24BUStringPickerController")
 
 
 
+
 SWIFT_CLASS("_TtC21PoilabsVdNavigationUI22StartingViewController")
 @interface StartingViewController : UIViewController
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC21PoilabsVdNavigationUI18MainViewController")
-@interface MainViewController : StartingViewController
-- (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@class UITableView;
-@class NSIndexPath;
-@class UITableViewCell;
-
-@interface MainViewController (SWIFT_EXTENSION(PoilabsVdNavigationUI)) <UITableViewDataSource, UITableViewDelegate>
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-@end
 
 
 

@@ -191,6 +191,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
+@import PoilabsPositioning;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -209,14 +210,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-SWIFT_CLASS("_TtC23PoilabsVdNavigationCore17NavigationManager")
-@interface NavigationManager : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-
 SWIFT_CLASS("_TtC23PoilabsVdNavigationCore16PlaceListManager")
 @interface PlaceListManager : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -228,6 +221,24 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore16PlaceListManager")
 @interface PlaceListManager (SWIFT_EXTENSION(PoilabsVdNavigationCore)) <CLLocationManagerDelegate>
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+@end
+
+
+SWIFT_CLASS("_TtC23PoilabsVdNavigationCore18PositioningManager")
+@interface PositioningManager : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSString;
+@class PLPBeaconNode;
+@class CLHeading;
+
+@interface PositioningManager (SWIFT_EXTENSION(PoilabsVdNavigationCore)) <PoilabsPositioningDelegate>
+- (void)poilabsPositioningWithDidStatusChange:(enum PLPStatus)status reason:(enum PLPLocationStatusReason)reason;
+- (void)poilabsPositioningWithDidFindBeacon:(NSString * _Nonnull)uuid major:(NSString * _Nonnull)major minor:(NSString * _Nonnull)minor;
+- (void)poilabsPositioningWithDidFail:(enum PoilabsPositioningError)error;
+- (void)poilabsPositioningWithDidUpdateLocation:(PLPBeaconNode * _Nonnull)location;
+- (void)poilabsPositioningWithDidUpdateHeading:(CLHeading * _Nonnull)heading;
 @end
 
 #if __has_attribute(external_source_symbol)

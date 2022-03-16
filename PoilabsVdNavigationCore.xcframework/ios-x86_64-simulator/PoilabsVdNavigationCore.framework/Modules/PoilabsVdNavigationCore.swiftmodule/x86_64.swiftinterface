@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PoilabsVdNavigationCore
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PoilabsVdNavigationCore
 import Alamofire
 import CoreBluetooth
 import CoreLocation
@@ -10,6 +10,40 @@ import PoilabsPositioning
 import Swift
 import UIKit
 import _Concurrency
+public protocol PositioningManagerDelegate {
+  func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
+  func positioningManager(didUpdateCurrentLocation location: (Poi, Swift.Int?))
+  func positioningManageer(didStatusChanged status: UserLocationStatus)
+  func positioningManager(didUpdate posibleUserLocations: [Poi])
+}
+public enum UserLocationStatus {
+  case waiting
+  case notFound
+  case found
+  public static func == (a: UserLocationStatus, b: UserLocationStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class PositioningManager : ObjectiveC.NSObject {
+  public var delegate: PositioningManagerDelegate? {
+    get
+    set(value)
+  }
+  public static var shared: PositioningManager
+  public func startPositioning()
+  public func getPlaceTitle() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
+  @objc dynamic public func poilabsPositioning(didStatusChange status: PoilabsPositioning.PLPStatus, reason: PoilabsPositioning.PLPLocationStatusReason)
+  @objc dynamic public func poilabsPositioning(didFindBeacon uuid: Swift.String, major: Swift.String, minor: Swift.String)
+  @objc dynamic public func poilabsPositioning(didFail error: PoilabsPositioning.PoilabsPositioningError)
+  @objc dynamic public func poilabsPositioning(didUpdateLocation location: PoilabsPositioning.PLPBeaconNode)
+  @objc dynamic public func poilabsPositioning(didUpdateHeading heading: CoreLocation.CLHeading)
+}
 public class Segment {
   public var finishPoiId: Swift.String?
   public var finishNode: PESGraphNode?
@@ -21,7 +55,9 @@ public class Segment {
   required public init?(dictionary: Foundation.NSDictionary, startID: Swift.String)
   @objc deinit
 }
-public class Poi {
+public class Poi : Swift.Hashable {
+  public static func == (lhs: Poi, rhs: Poi) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var isActive: Swift.Bool?
   public var filters: Filters?
   public var properties: DataProperties?
@@ -53,6 +89,9 @@ public class Poi {
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Poi]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public class NavigationProperties {
   public var isVisibleOnList: Swift.Bool
@@ -72,21 +111,31 @@ public protocol PoiVDNavigationManagerDelegate {
   func PoiVDNavigationManager(didChangeAuthorization status: Swift.Bool)
   func PoiVDNavigationManager(centralManagerDidUpdateState status: Swift.Bool)
 }
-public class PoiVDNavigationManager : NavigationManagerDelegate {
+public class PoiVDNavigationManager {
   public func navigationManager(didChangeAuthorization status: Swift.Bool)
   public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
   public var delegate: PoiVDNavigationManagerDelegate?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
   public func getMenuItems() -> [ItemBase]
-  public func startLocationTracking()
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class ItemCategory : Swift.Hashable {
+  public static func == (lhs: ItemCategory, rhs: ItemCategory) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var type: Swift.String
+  public var nameTr: Swift.String
+  public var nameEn: Swift.String
+  public var name: Swift.String {
+    get
+  }
+  @objc deinit
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public class ItemBase {
-  public var type: Swift.String?
-  public var nameTr: Swift.String?
-  public var nameEn: Swift.String?
-  public var name: [Swift.String : Swift.String]
+  public var category: ItemCategory
   public var elements: [Place]
   required public init?(dictionary: Foundation.NSDictionary)
   public func getElements() -> [Place]
@@ -115,7 +164,7 @@ public class FloorProperties {
   public var maxZoomLevel: Swift.Int?
   public var maxBounds: [[Swift.Double]]?
   public var level: Swift.Int?
-  public var conversionFactor: Swift.Int?
+  public var conversionFactor: Swift.Double?
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -142,7 +191,7 @@ public class Place {
   public var description: Swift.String?
   public var distance: Swift.Double?
   public var isFavorite: Swift.Bool
-  public var type: Swift.String
+  public var type: ItemCategory!
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Place]
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
@@ -175,21 +224,51 @@ public class MapProperties {
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
-public protocol RouteManagerDelegate {
-  func routeManagerPopUp(popUpMessage: Swift.String)
-  func routeManagerRouteSummary(title: Swift.String, floorDifference: Swift.Int, floorDifferenceText: Swift.String, lenght: Swift.Float)
-  func routeManagerArrived(title: Swift.String, rotation: Swift.String?)
-  func routeManagerStepUpdate(navigationText: [Swift.String : Swift.String?])
+public enum RouteError {
+  case noLocation
+  case outOfRoute
+  case noRoute
+  case unknown
+  public static func == (a: RouteError, b: RouteError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RemainingDistanceItem {
+  public let text: Swift.String
+  public var argumants: [Swift.Int]
 }
 public class RouteManager {
-  public var delegate: RouteManagerDelegate?
-  public init(destinationPoi: FilteredPoi)
+  public var delegate: RouteManagerDelegate? {
+    get
+    set(value)
+  }
+  public init(targetPoi: Poi)
   public func navigate()
   public func reInitRoute()
+  public func getFloorDifferance() -> Swift.Int?
+  public func getRouteLength() -> Swift.Int?
   @objc deinit
 }
-extension RouteManager : NavigationManagerDelegate {
-  public func navigationManagerDidUpdateUserLocation(nodeList: [Poi], heading: CoreLocation.CLHeading)
+extension RouteManager {
+  public func getRemainingSteps() -> [RemainingDistanceItem]
+}
+extension RouteManager : PositioningManagerDelegate {
+  public func positioningManager(didUpdate posibleUserLocations: [Poi])
+  public func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
+  public func positioningManager(didUpdateCurrentLocation location: (Poi, Swift.Int?))
+  public func positioningManageer(didStatusChanged status: UserLocationStatus)
+}
+public protocol RouteManagerDelegate {
+  func routeManager(floorChangeStep destinationFloor: Swift.Int)
+  func routeManager(currentUserLocation location: (Poi, Swift.Int?))
+  func routeManager(error: RouteError)
+  func routeManager(routeCalculated route: PESGraphRoute)
+  func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
+  func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
+  func routeManagerPopUp(popUpMessage: Swift.String)
+  func routeManagerArrived()
 }
 public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
@@ -199,7 +278,7 @@ public protocol PlaceListManagerDelegate {
   @objc override dynamic public init()
   public func getPlaceList() -> [Place]
   public func getPlaceFilteredList() -> [Place]?
-  public func getCategories() -> [Swift.String]
+  public func getCategories() -> [ItemCategory]
   public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [Place]?
   @objc deinit
 }
@@ -223,9 +302,14 @@ public class LocationProperties {
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
-public class PlaceDetailManager {
+public class StoreListManager {
   public init(placeId: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
   public func getInfoText() -> Swift.String
+  public func getStoreList() -> [Poi]
+  public func hasElevator() -> Swift.Bool
+  public func hasWc() -> Swift.Bool
+  public func getCategories() -> [Swift.String]
   public func getPointList() -> [FilteredPoi]
   @objc deinit
 }
@@ -233,38 +317,4 @@ public class PointDetailManager {
   public init(target: Poi)
   public func getFloorLevel() -> Swift.String
   @objc deinit
-}
-public protocol NavigationManagerDelegate {
-  func navigationManagerFreeWalkState(state: FreeWalkState)
-  func navigationManagerDidUpdateUserLocation(nodeList: [Poi], heading: CoreLocation.CLHeading)
-  func navigationManagerDidUpdateUserLocation(freeMoveText: [[Swift.String : Swift.String?]], floorLevelText: Swift.String)
-  func navigationManager(didChangeAuthorization status: Swift.Bool)
-  func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
-}
-extension NavigationManagerDelegate {
-  public func navigationManager(didChangeAuthorization status: Swift.Bool)
-  public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
-  public func navigationManagerFreeWalkState(state: FreeWalkState)
-  public func navigationManagerDidUpdateUserLocation(nodeList: [Poi], heading: CoreLocation.CLHeading)
-  public func navigationManagerDidUpdateUserLocation(freeMoveText: [[Swift.String : Swift.String?]], floorLevelText: Swift.String)
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class NavigationManager : ObjectiveC.NSObject {
-  public init(target: Place)
-  public var delegate: NavigationManagerDelegate? {
-    get
-    set(value)
-  }
-  public func CreateBeaconDataDictionary(_ identifier: Swift.String, _ secret: Swift.String, _ uuid: Swift.String, _ bundleId: Any, _ signalsArray: [Any]) -> Alamofire.Parameters
-  public func sortBeaconsData(forRSSI comingBeaconsArray: [Any]) -> [Any]
-  @objc deinit
-}
-public enum FreeWalkState {
-  case waiting
-  case notFound
-  case found
-  public static func == (a: FreeWalkState, b: FreeWalkState) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }

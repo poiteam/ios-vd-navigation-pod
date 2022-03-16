@@ -31,9 +31,9 @@
 "metersAway" = "meters away";
 
 //kat yonlendirmeleri
-"sameFloor" = "is at the same floor";
-"downFloor" = "floor(s) down";
-"upperFloor" = "floor(s) up";
+"sameFloor" = "At the same floor";
+"downFloor" = "%d Floor(s) down";
+"upperFloor" = "%d Floor(s) up";
 "elevatorDown" = "go down to";
 "elevatorUp" = "go up to";
 
@@ -112,3 +112,26 @@ right side.";
 "noLimit" = "No Limit";
 "category" = "Category";
 "apply" = "Apply";
+
+"showInfo" = "Show information";
+"noContent" = "No information";
+"ok" = "Ok";
+"info" = "Information";
+
+"clockRotation" = "%d o'clok";
+"floor" = "Floor";
+"meters" = "meters";
+"discovery" = "Discovery";
+"currentLocation" = "Current Location:";
+"nearByLocations" = "Nearby Locations:";
+
+
+
+"seeRemainingSteps" = "See Remaining Steps";
+"clearRoute" = "Clear Route";
+"destination" = "Destination";
+"arrivalTime" = "Arrival: %d minute(s)";
+"directionAndDistance" = "Go %d o'clock for %d meters";
+"goWithElevator" = "Go to floor %d with elevator";
+"arrived" = "You arrived at your destination!";
+"remainingSteps" = "Remaining Steps";

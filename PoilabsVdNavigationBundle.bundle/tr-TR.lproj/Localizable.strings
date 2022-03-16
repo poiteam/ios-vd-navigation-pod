@@ -30,9 +30,9 @@
 "metersAway" = "metre uzaklıkta";
 
 //kat yonlendirmeleri
-"sameFloor" = "bulunduğun katta";
-"downFloor" = "kat aşağıda";
-"upperFloor" = "kat yukarıda";
+"sameFloor" = "Bulunduğun katta";
+"downFloor" = "%d kat aşağıda";
+"upperFloor" = "%d kat yukarıda";
 "elevatorDown" = "e inin";
 "elevatorUp" = "e çıkın";
 
@@ -112,3 +112,26 @@
 "noLimit" = "Sınırsız";
 "category" = "Kategori";
 "apply" = "Uygula";
+
+"showInfo" = "Mekan bilgisini göster";
+"noContent" = "Mekan bilgisi bulunamadı";
+"ok" = "Tamam";
+"info" = "Hakkında";
+
+"clockRotation" = "Saat %d yönünde";
+"floor" = "Kat";
+"meters" = "metre";
+"discovery" = "Keşfet";
+"currentLocation" = "Mevcut Konum:";
+"nearByLocations" = "Yakındaki Konumlar:";
+
+
+
+"seeRemainingSteps" = "Kalan Adımları Gör";
+"clearRoute" = "Rotayı Temizle";
+"destination" = "Varış Yeri";
+"arrivalTime" = "Varış: %d dakika";
+"directionAndDistance" = "%d yönünde %d metre ilerle";
+"goWithElevator" = "Asansör ile kat %d e gidin";
+"arrived" = "Hedefinize ulaştınız!";
+"remainingSteps" = "Kalan Adımlar";

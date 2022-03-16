@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationUI
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationUI
 import CoreLocation
 import Foundation
 import PoilabsVdNavigationCore
@@ -14,12 +14,8 @@ public struct Style<View> where View : UIKit.UIView {
   public init(_ style: @escaping (View) -> Swift.Void)
   public func apply(to view: View)
 }
-extension UIKit.UIColor {
-  convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat)
-  convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat)
-}
 public class StyleSettings {
-  public static let shared: StyleSettings
+  public static let shared: PoilabsVdNavigationUI.StyleSettings
   public init()
   public var navigationBackgroundColor: UIKit.UIColor
   public var headerTextColor: UIKit.UIColor
@@ -41,40 +37,28 @@ public class StyleSettings {
   public var greyishBrown: UIKit.UIColor
   public var brownishGrey: UIKit.UIColor
   public var veryLightPink: UIKit.UIColor
+  public var veryLightPinkThree: UIKit.UIColor
   public var blindoorsBlack: UIKit.UIColor
+  public var blackTwo: UIKit.UIColor
   @objc deinit
+}
+extension UIKit.UIFont {
+  public static func jbs_registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
 }
 public class PoilabsVdNavigationUI {
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, colors: [UIKit.UIColor]? = nil, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class MainViewController : StartingViewController {
-  @_Concurrency.MainActor(unsafe) public var poiVDNavigation: PoilabsVdNavigationCore.PoiVDNavigationManager?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-extension MainViewController : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
-}
-extension MainViewController : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate {
-  @_Concurrency.MainActor(unsafe) public func PoiVDNavigationManager(didChangeAuthorization status: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func PoiVDNavigationManager(centralManagerDidUpdateState status: Swift.Bool)
-}
 extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) convenience public init<V>(style: Style<V>) where V : UIKit.UIView
-  @_Concurrency.MainActor(unsafe) public func apply<V>(_ style: Style<V>) where V : UIKit.UIView
+  @_Concurrency.MainActor(unsafe) convenience public init<V>(style: PoilabsVdNavigationUI.Style<V>) where V : UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public func apply<V>(_ style: PoilabsVdNavigationUI.Style<V>) where V : UIKit.UIView
   @discardableResult
-  @_Concurrency.MainActor(unsafe) public func style<V>(_ style: Style<V>) -> V where V : UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public func style<V>(_ style: PoilabsVdNavigationUI.Style<V>) -> V where V : UIKit.UIView
 }
 public typealias doneBlock = ((_ selectedRow: Swift.Int, _ value: Swift.String) -> ())?
 public typealias cancelBlock = (() -> ())?
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BUStringPickerController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) convenience public init(_ title: Swift.String = "", values: [Swift.String], initialValue: Swift.Int = 0, onSuccess: doneBlock? = nil, onCancel: cancelBlock?)
+  @_Concurrency.MainActor(unsafe) convenience public init(_ title: Swift.String = "", values: [Swift.String], initialValue: Swift.Int = 0, onSuccess: PoilabsVdNavigationUI.doneBlock? = nil, onCancel: PoilabsVdNavigationUI.cancelBlock?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func show()
   @objc @_Concurrency.MainActor(unsafe) public func showAnimation()
@@ -83,13 +67,17 @@ public typealias cancelBlock = (() -> ())?
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension BUStringPickerController {
+extension PoilabsVdNavigationUI.BUStringPickerController {
   @_Concurrency.MainActor(unsafe) public func setTitle(font: UIKit.UIFont? = nil)
   @_Concurrency.MainActor(unsafe) public func setDoneButton(_ title: Swift.String, font: UIKit.UIFont? = nil, textColor: UIKit.UIColor = .black)
   @_Concurrency.MainActor(unsafe) public func setCancelButton(_ title: Swift.String, font: UIKit.UIFont? = nil, textColor: UIKit.UIColor = .black)
   @_Concurrency.MainActor(unsafe) public func setPicker(_ font: UIKit.UIFont? = nil, _ textColor: UIKit.UIColor = .black, _ aligment: UIKit.NSTextAlignment = .center)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AccesiblePickerContainer : UIKit.UIView {
+  @objc override dynamic public var accessibilityValue: Swift.String? {
+    @objc get
+    @objc set
+  }
   @objc override dynamic public func accessibilityActivate() -> Swift.Bool
   @objc override dynamic public func accessibilityIncrement()
   @objc override dynamic public func accessibilityDecrement()
@@ -97,8 +85,13 @@ extension BUStringPickerController {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+extension UIKit.UIColor {
+  convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat)
+  convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat)
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class StartingViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
