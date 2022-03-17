@@ -46,7 +46,7 @@ extension UIKit.UIFont {
   public static func jbs_registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
 }
 public class PoilabsVdNavigationUI {
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, colors: [UIKit.UIColor]? = nil, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
   @objc deinit
 }
 extension UIKit.UIView {

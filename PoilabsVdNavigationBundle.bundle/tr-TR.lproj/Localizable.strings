@@ -131,7 +131,7 @@
 "clearRoute" = "Rotayı Temizle";
 "destination" = "Varış Yeri";
 "arrivalTime" = "Varış: %d dakika";
-"directionAndDistance" = "%d yönünde %d metre ilerle";
+"directionAndDistance" = "%d metre saat %d yönünde ilerle";
 "goWithElevator" = "Asansör ile kat %d e gidin";
 "arrived" = "Hedefinize ulaştınız!";
 "remainingSteps" = "Kalan Adımlar";

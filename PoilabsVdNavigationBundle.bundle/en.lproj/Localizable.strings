@@ -131,7 +131,7 @@ right side.";
 "clearRoute" = "Clear Route";
 "destination" = "Destination";
 "arrivalTime" = "Arrival: %d minute(s)";
-"directionAndDistance" = "Go %d o'clock for %d meters";
+"directionAndDistance" = "Walk %d meters at the direction of %d o'clock";
 "goWithElevator" = "Go to floor %d with elevator";
 "arrived" = "You arrived at your destination!";
 "remainingSteps" = "Remaining Steps";

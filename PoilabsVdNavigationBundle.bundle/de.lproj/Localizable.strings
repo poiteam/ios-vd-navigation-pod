@@ -1,0 +1,104 @@
+///*
+//  Localizable.strings
+//  ios-blindoors
+//
+//  Created by Emre Kuru on 25.03.2020.
+//  Copyright © 2020 Emre Kuru. All rights reserved.
+//*/
+//
+////MARK: Navigasyon
+
+"outOfRoute" = "Stellen Sie sicher, dass Sie auf dem richtigen Weg sind! Um die Route umzuleiten, schütteln Sie das Telefon.";
+//
+////kat yonlendirmeleri
+"sameFloor" = "auf der gleichen Etage";
+"downFloor" = "%d Etage tiefer";
+"upperFloor" = "%d Etage höher";
+
+//
+////rota adimlari
+//
+////MARK: Place Detail
+"elevator" = "Nächster Aufzug";
+"toilet" = "Nächste Toilette";
+"selectCategory" = "Kategorie auswählen";
+"all" = "Alle";
+"search" = "Suche";
+"done" = "Beendet";
+"cancel" = "Aufgeben";
+"locationWaiting" = "Standort ausstehend.";
+"locationNotFound" = "Ort nicht gefunden.";
+//
+////MARK: Point Detail
+"getRoute" = "Geh hierhin";
+"readContent" = "Inhalt lesen";
+//
+////MARK: General
+"pleaseWait" = "Warten Sie mal...";
+
+//MARK: User Guide
+"welcome" = "Willkommen!";
+"welcomeDesc" = "Wir freuen uns sehr, Sie unter uns zu sehen!\n\nReisen kann manchmal sehr schwierig sein. Deshalb haben wir diese App entwickelt.\n\nFangen wir mit der App an!";
+
+"howItWorks" = "Wie funktioniert es?";
+"howItWorksDesc" = "Wir verwenden Bluetooth-Sensoren, um Ihren Standort zu finden. Um diese Sensoren verwenden zu können, müssen Sie Standort- und Bluetooth-Berechtigungen erteilen. Stellen Sie sicher, dass Bluetooth und Ortungsdienste aktiviert sind und Sie über eine aktive Internetverbindung verfügen.\n\nFür die beste Erfahrung müssen Sie Ihr Telefon vor sich und parallel zum Boden halten";
+
+"venues" = "Orte";
+"venuesDesc" = "Sie können den Ortstyp auswählen.\n\nNachdem Sie einen Ortstyp ausgewählt haben, werden die verfügbaren Orte aufgelistet, beginnend mit dem Ort, der Ihnen am nächsten liegt. Sie können auch über die Suchleiste nach einem beliebigen Ort suchen.";
+
+"poiList" = "Standortliste";
+"poiListDesc" = "Sie können alle verfügbaren Plätze innerhalb des Ortes sehen.\n\nWenn es sich beispielsweise um ein Einkaufszentrum handelt, können Sie auf Geschäfte, Dienstleistungen und mehr zugreifen. Indem Sie einen Punkt auswählen, erhalten Sie weitere Informationen zu diesem Punkt.\n\nSie können die Liste auch nach Kategorien filtern.";
+
+"discoverMode" = "Erkundungsmodus";
+"discoverModeDesc" = "Sie können sich im Vorbeigehen über Orte in der Nähe und deren Standorte informieren.\n\nWenn zusätzliche Inhalte vorhanden sind, wird unten eine Schaltfläche angezeigt. Sie können auf Inhalte zugreifen, indem Sie auf die Schaltfläche klicken.";
+
+"navigation" = "Navigation";
+"navigationDesc" = "Nachdem Sie einen Standort ausgewählt und auf „Gehe hierher“ geklickt haben, beginnt Ihre Navigation.\n\nZuerst wird Ihr Standort und dann die Route berechnet.\n\nNachdem Sie eine kurze Information über die Route erhalten haben, müssen Sie in die richtige Richtung abbiegen, um die Navigation zu starten.";
+
+"navigationSteps" = "Navigationsschritte";
+"navigationStepsDesc" = "Sie können Benachrichtigungen während der Navigation folgen. Denken Sie daran, Ihr Telefon für die beste Erfahrung vor sich und parallel zum Boden zu halten\n\nSobald die Navigation startet, erhalten Sie ständige Updates. Sie können Ihre Route neu berechnen, indem Sie Ihr Telefon schütteln.
+Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer falschen Berechnung des Standorts vorkommen, dass es darauf hinweist, dass Sie sich nicht auf der Route befinden. Gehen Sie bitte noch ein wenig weiter. Wenn die Warnung weiterhin besteht, können Sie eine neue Route wählen, indem Sie Ihr Telefon schütteln.";
+
+"youAreAllSet" = "Alles ist bereit!";
+"youAreAllSetDesc" = "Es kann ein wenig verwirrend sein, da Sie es zum ersten Mal verwenden. Aber der beste Weg, neue Dinge zu lernen, ist das Üben.\n\nSind Sie bereit?";
+"start" = "Anfangen";
+"next" = "Nächste";
+
+"venues" = "Orte";
+"searchPlaceHolder" = "Wohin wollen Sie gehen?";
+//"noVenueFound" = "Not found venues";
+//"showOnMap" = "Show on map";
+//"addFav" = "Add to favorites";
+"showFavorites" = "Nur Lieblingsorte anzeigen";
+"openFilterView" = "Filterseite öffnen";
+"closeFilterView" = "Filterseite schließen";
+
+//"select" = "Select";
+//"unselect" = "Unselect";
+"favorites" = "Favoriten";
+"distance" = "Distanz";
+"noLimit" = "unbegrenzt";
+"category" = "Kategorie";
+"apply" = "Anwenden";
+//
+"showInfo" = "Standortinformationen anzeigen";
+//"noContent" = "No information";
+//"ok" = "Ok";
+//"info" = "Information";
+//
+"clockRotation" = "in Richtung %d Uhr";
+"floor" = "Etage";
+"meters" = "Meter";
+"discovery" = "Erkundungs";
+"currentLocation" = "Aktueller Standort:";
+"nearByLocations" = "Geschäfte in der Nähe:";
+//
+//
+"seeRemainingSteps" = "Siehe die verbleibenden Schritte";
+"clearRoute" = "Strecke löschen";
+"destination" = "Ziel";
+"arrivalTime" = "Ankunft: %d Minuten";
+"directionAndDistance" = "%d Meter vorwärts in Richtung %d Uhr";
+"goWithElevator" = "Fahren Sie mit dem Aufzug in die Etage %d";
+"arrived" = "Sie haben Ihr Ziel erreicht!";
+"remainingSteps" = "Verbleibenden Schritte";

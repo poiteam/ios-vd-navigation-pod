@@ -115,7 +115,7 @@ public class PoiVDNavigationManager {
   public func navigationManager(didChangeAuthorization status: Swift.Bool)
   public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
   public var delegate: PoiVDNavigationManagerDelegate?
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
   public func getMenuItems() -> [ItemBase]
   @objc deinit
