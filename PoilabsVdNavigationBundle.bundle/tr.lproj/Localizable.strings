@@ -1,0 +1,186 @@
+/*
+  Localizable.strings
+  ios-blindoors
+
+  Created by Emre Kuru on 25.03.2020.
+  Copyright © 2020 Emre Kuru. All rights reserved.
+*/
+
+//MARK: Navigasyon
+//yonler
+"onForward" = "Önünde";
+"onLeft" = "Solunda";
+"onRight" = "Sağında";
+"onBackward" = "Arkanda";
+
+//durumlar
+"routeCalculating" = "Rota hesaplanıyor.";
+"noRoute" = "Rota bulunamadı, farklı bir nokta ile tekrar deneyin.";
+"startWalking" = "Şimdi yürümeye başlayabilirsin.";
+"turnAround" = "Doğru yönün belirlenmesi için etrafınızda yavaşça dönün.";
+"outOfRoute" = "Rotada olduğunuzdan emin olunuz. Telefonu sallayarak yeniden rota alabilirsin.";
+"afterElevator" = "Gitmek istediğin kata geldin. Asansörden çıkınca telefonu sallayarak yönlendirme alabilirsin.";
+
+//yonlendirme
+"destinationPoint" = "Gitmek istediğin konum";
+"nearly" = "yaklaşık";
+"metersAway" = "metre uzaklıkta";
+
+//kat yonlendirmeleri
+"sameFloor" = "Bulunduğun katta";
+"downFloor" = "%d kat aşağıda";
+"upperFloor" = "%d kat yukarıda";
+"elevatorDown" = "e inin";
+"elevatorUp" = "e çıkın";
+
+//rota adimlari
+"yourLocation" = "Bulunduğun konum";
+"now" = "Şimdi";
+"turn" = "dönün";
+"elevatorAterxMeters" = "metre sonra asansöre binin";
+"turnRightAfterxMeters" = "metre sonra sağa dönün";
+"turnLeftAfterxMeters" = "metre sonra sola dönün";
+"goStraight" = "metre düz devam edin.";
+"arrived" = "adlı hedefine vardın.";
+"target" = "Hedef";
+
+//MARK: Place Detail
+"elevator" = "En Yakın Asansör";
+"toilet" = "En Yakın Tuvalet";
+"freeWalk" = "Serbest Dolaşım";
+"about" = "Hakkında";
+"selectCategory" = "Kategori Seçiniz";
+"all" = "Tümü";
+"search" = "Ara";
+"done" = "Bitti";
+"cancel" = "Vazgeç";
+"pointList" = "Konum Listesi";
+"locationWaiting" = "Konum bekleniyor.";
+"locationNotFound" = "Konum bulunamadı.";
+
+//MARK: Point Detail
+"getRoute" = "Buraya Git";
+"readContent" = "İçeriği Oku";
+
+//MARK: General
+"pleaseWait" = "Lütfen Bekleyin...";
+
+//MARK: User Guide
+"welcome" = "Hoş geldin!";
+"welcomeDesc" = "Seni aramızda gördüğümüz için mutluyuz!\n\nGezinmek bazen çok zor olabiliyor. Bu yüzden bu uygulamayı yarattık.\n\nUygulama hakkında bilgi edinmeye başlayalım!";
+
+"howItWorks" = "Nasıl çalışır?";
+"howItWorksDesc" = "Konumunu bulmak için bluetooth sensörlerini kullanıyoruz. Bu sensörleri kullanabilmemiz için konum ve bluetooth izinlerini vermen gerekiyor. Bluetooth ve konum servislerinin açık olduğundan ve aktif bir internet bağlantın olduğundan emin ol.\n\nEn iyi deneyim için telefonunu önünde ve yere paralel tutman gerekiyor.";
+
+"venues" = "Mekanlar";
+"venuesDesc" = "Mekânın türünü seçebilirsin.\n\nMekânın türünü seçtikten sonra erişilebilir mekanlar sana en yakın olandan başlanarak listelenecektir. Ayrıca bunları arama çubuğunu kullanarak da arayabilirsin.";
+
+"poiList" = "POI Listesi";
+"poiListDesc" = "Bir mekân içindeki tüm ulaşılabilir yerleri görebilirsin.\n\nÖrneğin AVM ise mağazalara, hizmetlere ve daha fazlasına ulaşırsın. Bir nokta seçerek o noktayla ilgili daha fazla bilgiye sahip olabilirsin.\n\nAyrıca kategorilere göre listeyi filtreleyebilirsin.";
+
+"discoverMode" = "Keşfet Modu";
+"discoverModeDesc" = "Etrafındakileri anlamana yardımcı olur.\n\nYanından geçerken yakındaki yerleri ve konumlarını öğrenebilirsin.\n\nEğer bir ek içerik varsa, altta bir düğme görünecektir.";
+
+"navigation" = "Navigasyon";
+"navigationDesc" = "Bir nokta seçip navigasyonu seçtiğinde, navigasyonun başlayacaktır.\n\nÖnce konumun sonra rota hesaplanır.\n\nGüzergâh hakkında kısa bir bilgi alacaksın. Daha sonra navigasyonu başlatmak için sağ tarafa bakman gerekiyor.";
+
+"navigationSteps" = "Navigasyon Adımları";
+"navigationStepsDesc" = "Doğru yöne gitmiyorsan lütfen nazikçe arkanı dön. Yön doğru olduğunda “Yürümeye Başla” mesajı görünecektir.\n\nNavigasyon başladıktan sonra sürekli güncellemeler alacaksın. Telefonunu sallayarak rotayı yeniden hesaplayabilirsiniz.\n\nBazen rotada olsan bile rotada değilsin diyebilir. Lütfen birkaç dakika yürümeye devam et. Rotada değilsin demeye devam ederse telefonunu sallayarak yeni bir rota alabilirsiniz.";
+
+"youAreAllSet" = "Hepiniz Hazırsınız!";
+"youAreAllSetDesc" = "İlk defa kullandığında kafa karıştırıcı olabilir. Ancak yeni bir şey öğrenmenin en iyi yolu sadece pratik yapmaktır.\n\nHazır mısın?";
+"start" = "Başla";
+"next" = "Sıradaki";
+
+
+"venues" = "Mekanlar";
+"searchPlaceHolder" = "Nereye gitmek istiyorsun?";
+"noVenueFound" = "Mekan bulunamadı";
+"showOnMap" = "Haritada göster";
+"addFav" = "Favorilere ekle";
+"showFavorites" = "Sadece favoriye eklenmiş mekanları göster";
+"openFilterView" = "Filtre ekleme sayfasını aç";
+"closeFilterView" = "Filtre ekleme sayfasını kapat";
+
+"select" = "Seç";
+"unselect" = "Seçimi kaldır";
+"favorites" = "Favoriler";
+"distance" = "Mesafe";
+"noLimit" = "Sınırsız";
+"category" = "Kategori";
+"apply" = "Uygula";
+
+"showInfo" = "Mekan bilgisini göster";
+"noContent" = "Mekan bilgisi bulunamadı";
+"ok" = "Tamam";
+"info" = "Hakkında";
+
+"clockRotation" = "Saat %d yönünde";
+"floor" = "Kat";
+"meters" = "metre";
+"discovery" = "Keşfet";
+"currentLocation" = "Mevcut Konum:";
+"nearByLocations" = "Yakındaki Konumlar:";
+
+
+
+"seeRemainingSteps" = "Kalan Adımları Gör";
+"clearRoute" = "Rotayı Temizle";
+"destination" = "Varış Yeri";
+"arrivalTime" = "Varış: %d dakika";
+"directionAndDistance" = "%d metre saat %d yönünde ilerle";
+"directionAndDistanceInFt" = "%d ft saat %d yönünde ilerle";
+"directionAndDistanceLR" = "%d metre %@ ilerle";
+"directionAndDistanceInFtLR" = "%d ft %@ ilerle";
+"goWithElevator" = "Asansör ile kat %d e gidin";
+"goWithEscalator" = "Yürüyen Merdiven ile kat %d e gidin";
+"goWithStairs" = "Merdiven ile kat %d e gidin";
+"arrived" = "Hedefinize ulaştınız!";
+"remainingSteps" = "Kalan Adımlar";
+
+"toRight" = "sağa";
+"toLeft" = "sola";
+"toForward" = "düz";
+"toBackward" = "geriye";
+
+
+"profile" = "Profil";
+"notifications" = "Bildirimler";
+"account" = "Hesap";
+"visual" = "Görsel";
+"language" = "Dil";
+"navigation" = "Navigasyon";
+"userGuide" = "Kullanıcı Kılavuzu";
+"contactUs" = "Bize Ulaşın";
+
+
+"colors" = "Renkler";
+"blackAndWhite" = "Siyah & Beyaz";
+"standart" = "Standart";
+"fontSize" = "Yazı Tipi Boyutu";
+
+"unitOfDistance" = "Mesafe Birimi";
+"metric" = "Metrik";
+"imperial" = "Mil";
+
+"directions" = "Yönler";
+"directionOfClock" = "Saat Yönü";
+"leftRight" = "Sol - Sağ";
+
+"routeOption" = "Rota Seçeneği";
+"onlyElevator" = "Yalnızca Asansör";
+"elevatorAndOthers" = "Asansör/ Yürüyen Merdiven/ Merdiven";
+
+"automReRoute" = "Otomatik Yeniden Yönlendirme";
+"active" = "Açık";
+"passive" = "Kapalı";
+
+
+"btPopUp" = "Bluetooth Ayarlarını Kontrol Edin";
+"locationPopUp" = "Konum Ayarlarını Kontrol Edin";
+
+
+"approve" = "Onayla";
+"loremIpsum" = "Bu bir örnek metindir";
+
+"completedProgress" = "%%%d tamamlandı";

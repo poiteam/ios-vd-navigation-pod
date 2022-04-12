@@ -8,6 +8,11 @@
 //
 ////MARK: Navigasyon
 
+"onForward" = "In the Front";
+"onLeft" = "On the Left";
+"onRight" = "On the Right";
+"onBackward" = "Behind";
+
 "outOfRoute" = "Stellen Sie sicher, dass Sie auf dem richtigen Weg sind! Um die Route umzuleiten, schütteln Sie das Telefon.";
 //
 ////kat yonlendirmeleri
@@ -99,6 +104,55 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "destination" = "Ziel";
 "arrivalTime" = "Ankunft: %d Minuten";
 "directionAndDistance" = "%d Meter vorwärts in Richtung %d Uhr";
+"directionAndDistanceInFt" = "%d ft vorwärts in Richtung %d Uhr";
 "goWithElevator" = "Fahren Sie mit dem Aufzug in die Etage %d";
+"goWithEscalator" = "Fahren Sie mit dem Rolltreppe in die Etage %d";
+"directionAndDistanceLR" = "Walk %d meters %@";
+"directionAndDistanceInFtLR" = "Walk %d ft %@";
+"goWithStairs" = "Fahren Sie mit dem Treppe in die Etage %d";
 "arrived" = "Sie haben Ihr Ziel erreicht!";
 "remainingSteps" = "Verbleibenden Schritte";
+
+"toRight" = "to right";
+"toLeft" = "to left";
+"toForward" = "forward";
+"toBackward" = "backward";
+
+"profile" = "Profil";
+"notifications" = "Benachrichtigungen";
+"account" = "Rechnung";
+"visual" = "Bild";
+"language" = "Sprache";
+"navigation" = "Navigation";
+"userGuide" = "Bedienungsanleitung";
+"contactUs" = "Kontaktieren Sie uns";
+
+"colors" = "Farben";
+"blackAndWhite" = "Schwarz und weiß";
+"standart" = "Standard";
+"fontSize" = "Schriftgröße";
+
+"unitOfDistance" = "Entfernungseinheit";
+"metric" = "Metrisch";
+"imperial" = "Meilen";
+
+"directions" = "Richtungen";
+"directionOfClock" = "Im Uhrzeigersinn";
+"leftRight" = "Links – Rechts";
+
+"routeOption" = "Routenoption";
+"onlyElevator" = "Nur Aufzug";
+"elevatorAndOthers" = "Aufzug / Rolltreppe / Treppe";
+
+"automReRoute" = "Automatische Weiterleitung";
+"active" = "Offen";
+"passive" = "Geschlossen";
+
+
+"btPopUp" = "Überprüfen Sie Ihre Bluetooth-Einstellungen!";
+"locationPopUp" = "Überprüfen Sie Ihre Standorteinstellungen!";
+
+"approve" = "Approve";
+"loremIpsum" = "Dies ist ein Mustertext";
+
+"completedProgress" = "%d%% abgeschlossen";

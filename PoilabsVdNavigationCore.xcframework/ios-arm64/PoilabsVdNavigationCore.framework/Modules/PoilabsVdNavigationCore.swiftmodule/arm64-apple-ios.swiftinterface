@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
 import Alamofire
 import CoreBluetooth
@@ -12,9 +12,20 @@ import UIKit
 import _Concurrency
 public protocol PositioningManagerDelegate {
   func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
-  func positioningManager(didUpdateCurrentLocation location: (Poi, Swift.Int?))
-  func positioningManageer(didStatusChanged status: UserLocationStatus)
-  func positioningManager(didUpdate posibleUserLocations: [Poi])
+  func positioningManager(didStatusChanged status: UserLocationStatus)
+}
+public protocol PositioninManagerErrorDelegate {
+  func positioningManager(didFail error: PMError)
+  func positioningManagerDidStart()
+}
+public enum PMError {
+  case location
+  case bluetooth
+  public static func == (a: PMError, b: PMError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public enum UserLocationStatus {
   case waiting
@@ -31,6 +42,7 @@ public enum UserLocationStatus {
     get
     set
   }
+  public var errorDelegate: PositioninManagerErrorDelegate?
   public static let shared: PositioningManager
   public func startPositioning()
   public func getPlaceTitle() -> Swift.String
@@ -38,6 +50,7 @@ public enum UserLocationStatus {
   @objc deinit
 }
 extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
+  @objc dynamic public func poilabsPositioningDidStart()
   @objc dynamic public func poilabsPositioning(didStatusChange status: PoilabsPositioning.PLPStatus, reason: PoilabsPositioning.PLPLocationStatusReason)
   @objc dynamic public func poilabsPositioning(didFindBeacon uuid: Swift.String, major: Swift.String, minor: Swift.String)
   @objc dynamic public func poilabsPositioning(didFail error: PoilabsPositioning.PoilabsPositioningError)
@@ -115,7 +128,7 @@ public class PoiVDNavigationManager {
   public func navigationManager(didChangeAuthorization status: Swift.Bool)
   public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
   public var delegate: PoiVDNavigationManagerDelegate?
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
   public func getMenuItems() -> [ItemBase]
   @objc deinit
@@ -225,15 +238,53 @@ public class MapProperties {
   @objc deinit
 }
 public enum RouteError {
-  case noLocation
-  case outOfRoute
-  case noRoute
-  case unknown
+  case noLocation, noRoute, unknown
   public static func == (a: RouteError, b: RouteError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+}
+public enum PoiFacility {
+  case wc, elevator
+  public static func == (a: PoiFacility, b: PoiFacility) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum SelectedGraph {
+  case mainGraph, disableGraph
+  public static func == (a: SelectedGraph, b: SelectedGraph) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum FloorPassMethod {
+  case elevator, escalator, stairs
+  public static func == (a: FloorPassMethod, b: FloorPassMethod) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum RouteStatus {
+  case outOfRoute, arrived, onRoute
+  public static func == (a: RouteStatus, b: RouteStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol RouteManagerDelegate {
+  func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod)
+  func routeManager(currentUserLocation location: (Poi, Swift.Int?))
+  func routeManager(error: RouteError)
+  func routeManager(routeCalculated route: PESGraphRoute, target: Poi)
+  func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
+  func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
+  func routeManager(didUpdate routeStatus: RouteStatus)
 }
 public struct RemainingDistanceItem {
   public let text: Swift.String
@@ -244,9 +295,10 @@ public class RouteManager {
     get
     set
   }
-  public init(targetPoi: Poi)
+  public init(targetPoi: Poi, on graph: SelectedGraph)
+  public init(type: PoiFacility, on graph: SelectedGraph)
   public func navigate()
-  public func reInitRoute()
+  public func reInitRoute(on graph: SelectedGraph)
   public func getFloorDifferance() -> Swift.Int?
   public func getRouteLength() -> Swift.Int?
   @objc deinit
@@ -255,20 +307,8 @@ extension RouteManager {
   public func getRemainingSteps() -> [RemainingDistanceItem]
 }
 extension RouteManager : PositioningManagerDelegate {
-  public func positioningManager(didUpdate posibleUserLocations: [Poi])
   public func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
-  public func positioningManager(didUpdateCurrentLocation location: (Poi, Swift.Int?))
-  public func positioningManageer(didStatusChanged status: UserLocationStatus)
-}
-public protocol RouteManagerDelegate {
-  func routeManager(floorChangeStep destinationFloor: Swift.Int)
-  func routeManager(currentUserLocation location: (Poi, Swift.Int?))
-  func routeManager(error: RouteError)
-  func routeManager(routeCalculated route: PESGraphRoute)
-  func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
-  func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
-  func routeManagerPopUp(popUpMessage: Swift.String)
-  func routeManagerArrived()
+  public func positioningManager(didStatusChanged status: UserLocationStatus)
 }
 public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
@@ -318,7 +358,17 @@ public class PointDetailManager {
   public func getFloorLevel() -> Swift.String
   @objc deinit
 }
+extension PMError : Swift.Equatable {}
+extension PMError : Swift.Hashable {}
 extension UserLocationStatus : Swift.Equatable {}
 extension UserLocationStatus : Swift.Hashable {}
 extension RouteError : Swift.Equatable {}
 extension RouteError : Swift.Hashable {}
+extension PoiFacility : Swift.Equatable {}
+extension PoiFacility : Swift.Hashable {}
+extension SelectedGraph : Swift.Equatable {}
+extension SelectedGraph : Swift.Hashable {}
+extension FloorPassMethod : Swift.Equatable {}
+extension FloorPassMethod : Swift.Hashable {}
+extension RouteStatus : Swift.Equatable {}
+extension RouteStatus : Swift.Hashable {}

@@ -12,10 +12,7 @@
 "onLeft" = "On the Left";
 "onRight" = "On the Right";
 "onBackward" = "Behind";
-"toRight" = "to right";
-"toLeft" = "to left";
-"Sol" = "left";
-"Sağ" = "right";
+
 
 //durumlar
 "routeCalculating" = "Calculating the Route.";
@@ -49,8 +46,8 @@
 "target" = "Target";
 
 //MARK: Place Detail
-"elevator" = "Nearest Elevator";
-"toilet" = "Nearest Toilet";
+"elevator" = "Closest Elevator";
+"toilet" = "Closest Toilet";
 "freeWalk" = "Orientation";
 "about" = "About the Venue";
 "selectCategory" = "Choose Category";
@@ -118,7 +115,7 @@ right side.";
 "ok" = "Ok";
 "info" = "Information";
 
-"clockRotation" = "%d o'clok";
+"clockRotation" = "%d o'clock";
 "floor" = "Floor";
 "meters" = "meters";
 "discovery" = "Discovery";
@@ -132,6 +129,56 @@ right side.";
 "destination" = "Destination";
 "arrivalTime" = "Arrival: %d minute(s)";
 "directionAndDistance" = "Walk %d meters at the direction of %d o'clock";
+"directionAndDistanceInFt" = "Walk %d ft at the direction of %d o'clock";
+"directionAndDistanceLR" = "Walk %d meters %@";
+"directionAndDistanceInFtLR" = "Walk %d ft %@";
 "goWithElevator" = "Go to floor %d with elevator";
+"goWithEscalator" = "Go to floor %d with escalator";
+"goWithStairs" = "Go to floor %d with stairs";
 "arrived" = "You arrived at your destination!";
 "remainingSteps" = "Remaining Steps";
+
+"toRight" = "to right";
+"toLeft" = "to left";
+"toForward" = "forward";
+"toBackward" = "backward";
+
+"profile" = "Profile";
+"notifications" = "Notifications";
+"account" = "Account";
+"visual" = "Visual";
+"language" = "Language";
+"navigation" = "Navigation";
+"userGuide" = "User Guide";
+"contactUs" = "Contact Us";
+
+"colors" = "Colors";
+"blackAndWhite" = "Black & White";
+"standart" = "Standard";
+"fontSize" = "Font Size";
+
+
+"unitOfDistance" = "Unit of Distance";
+"metric" = "Metric";
+"imperial" = "Imperial";
+
+"directions" = "Directions";
+"directionOfClock" = "Direction of Clock";
+"leftRight" = "Left - Right";
+
+"routeOption" = "Route Option";
+"onlyElevator" = "Only Elevator";
+"elevatorAndOthers" = "Elevator / Escalator / Stairs";
+
+"automReRoute" = "Automatic Redirection";
+"active" = "Active";
+"passive" = "Passive";
+
+
+"btPopUp" = "Check Bluetooth Settings";
+"locationPopUp" = "Check Location Settings";
+
+"approve" = "Approve";
+"loremIpsum" = "This is a sample text";
+
+"completedProgress" = "%d%% completed";

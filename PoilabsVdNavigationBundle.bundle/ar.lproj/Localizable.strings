@@ -8,6 +8,11 @@
 //
 ////MARK: Navigasyon
 
+"onForward" = "أمام";
+"onLeft" = "على اليسار";
+"onRight" = "على اليمين";
+"onBackward" = "خلف";
+
 "outOfRoute" = "تأكد من أنك على المسار الصحيح!";
 ////
 //////kat yonlendirmeleri
@@ -99,6 +104,56 @@
 "destination" = "الهدف";
 "arrivalTime" = "الوصول %d: دقيقة";
 "directionAndDistance" = "على بعد %d متر باتجاه الساعة %d";
+"directionAndDistanceInFt" = "على بعد %d متر باتجاه الساعة %d";
+"directionAndDistanceLR" = "Walk %d meters %@";
+"directionAndDistanceInFtLR" = "Walk %d ft %@";
 "goWithElevator" = "اذهب إلى الطابق %d بالمصعد";
+"goWithEscalator" = "اذهب إلى الطابق %d بالمصعد";
+"goWithStairs" = "اذهب إلى الطابق %d بالمصعد";
 "arrived" = "لقد وصلت إلى هذفك !";
 "remainingSteps" = "الخطوات المتبقية ";
+
+"toRight" = " إلى اليمين";
+"toLeft" = "غادر";
+"toForward" = "مستقيم";
+"toBackward" = "الى الخلف";
+
+
+"profile" = "التعريف";
+"notifications" = "الإشعارات ";
+"account" = "الحساب";
+"visual" = "مرئي";
+"language" = "اللغة";
+"navigation" = "التنقل ";
+"userGuide" = "دليل المستخدم ";
+"contactUs" = "اتصل بنا ";
+
+"colors" = "الالوان";
+"blackAndWhite" = "أسود وابيض";
+"standart" = "قياسي";
+"fontSize" = "حجم طراز الخط";
+
+"unitOfDistance" = "وحدة المسافة";
+"metric" = "كيلومتر";
+"imperial" = " ميل";
+
+"directions" = "الاتجاهات";
+"directionOfClock" = "الايسر";
+"leftRight" = "الاتجاه الايمن – الاتجاه";
+
+"routeOption" = "اختيار المسار ";
+"onlyElevator" = "مصعد فقط ";
+"elevatorAndOthers" = "مصعد سلم متحرك سلم";
+
+"automReRoute" = "إعادة التوجيه التلقائي";
+"active" = "مفتوح";
+"passive" = "مغلق";
+
+
+"btPopUp" = "تحقق من إعدادات البلوتوث الخاصة بك !";
+"locationPopUp" = "تحقق من إعدادات الموقع!";
+
+"approve" = "يوافق";
+"loremIpsum" = "هذا نموذج نص";
+
+"completedProgress" = "%d٪ اكتمل";

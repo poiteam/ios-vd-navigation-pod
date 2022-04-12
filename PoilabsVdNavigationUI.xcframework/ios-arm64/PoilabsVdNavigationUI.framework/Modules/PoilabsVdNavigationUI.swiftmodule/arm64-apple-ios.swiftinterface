@@ -1,8 +1,10 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationUI
+import CoreBluetooth
 import CoreLocation
 import Foundation
+import MessageUI
 import PoilabsVdNavigationCore
 @_exported import PoilabsVdNavigationUI
 import StepSlider
@@ -13,34 +15,6 @@ public struct Style<View> where View : UIKit.UIView {
   public let style: (View) -> Swift.Void
   public init(_ style: @escaping (View) -> Swift.Void)
   public func apply(to view: View)
-}
-public class StyleSettings {
-  public static let shared: StyleSettings
-  public init()
-  public var navigationBackgroundColor: UIKit.UIColor
-  public var headerTextColor: UIKit.UIColor
-  public var headerBackgroundColor: UIKit.UIColor
-  public var navigationTintColor: UIKit.UIColor
-  public var avmListTitleColor: UIKit.UIColor
-  public var avmListSubtitleColor: UIKit.UIColor
-  public var avmListArrowColor: UIKit.UIColor
-  public var detailMenuUnselected: UIKit.UIColor
-  public var detailMenuSelected: UIKit.UIColor
-  public var navigationSeperatorColor: UIKit.UIColor
-  public var progressTextColor: UIKit.UIColor
-  public var blackBackgroundColor: UIKit.UIColor
-  public var whiteBackgroundColor: UIKit.UIColor
-  public var brownGrey: UIKit.UIColor
-  public var darkishBlue: UIKit.UIColor
-  public var lightBlue: UIKit.UIColor
-  public var brownGreyTwo: UIKit.UIColor
-  public var greyishBrown: UIKit.UIColor
-  public var brownishGrey: UIKit.UIColor
-  public var veryLightPink: UIKit.UIColor
-  public var veryLightPinkThree: UIKit.UIColor
-  public var blindoorsBlack: UIKit.UIColor
-  public var blackTwo: UIKit.UIColor
-  @objc deinit
 }
 extension UIKit.UIFont {
   public static func jbs_registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
@@ -83,6 +57,26 @@ extension BUStringPickerController {
   @objc override dynamic public func accessibilityDecrement()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public class StyleSettings {
+  public static let shared: StyleSettings
+  public init()
+  public var navigationTintColor: UIKit.UIColor
+  public var avmListTitleColor: UIKit.UIColor
+  public var blackBackgroundColor: UIKit.UIColor
+  public var whiteBackgroundColor: UIKit.UIColor
+  public var brownGrey: UIKit.UIColor
+  public var darkishBlue: UIKit.UIColor
+  public var lightBlue: UIKit.UIColor
+  public var brownGreyTwo: UIKit.UIColor
+  public var greyishBrown: UIKit.UIColor
+  public var brownishGrey: UIKit.UIColor
+  public var veryLightPink: UIKit.UIColor
+  public var veryLightPinkThree: UIKit.UIColor
+  public var blindoorsBlack: UIKit.UIColor
+  public var blackTwo: UIKit.UIColor
+  public var blackThree: UIKit.UIColor
   @objc deinit
 }
 extension UIKit.UIColor {
