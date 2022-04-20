@@ -182,3 +182,4 @@ right side.";
 "loremIpsum" = "This is a sample text";
 
 "completedProgress" = "%d%% completed";
+"noAccessibleRoute" = "No accessible route found! Do you want to take a route by stairs or escalator?";

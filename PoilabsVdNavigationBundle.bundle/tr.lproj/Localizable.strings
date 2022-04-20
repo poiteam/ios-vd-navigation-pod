@@ -184,3 +184,4 @@
 "loremIpsum" = "Bu bir örnek metindir";
 
 "completedProgress" = "%%%d tamamlandı";
+"noAccessibleRoute" = "Erişilebilir rota bulunamadı! Merdiven ya da yürüyen merdivenden rota almak ister misin?";

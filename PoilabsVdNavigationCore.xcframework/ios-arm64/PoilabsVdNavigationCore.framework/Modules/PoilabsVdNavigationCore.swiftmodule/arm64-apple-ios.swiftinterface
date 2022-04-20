@@ -45,6 +45,7 @@ public enum UserLocationStatus {
   public var errorDelegate: PositioninManagerErrorDelegate?
   public static let shared: PositioningManager
   public func startPositioning()
+  public func stopPositioning()
   public func getPlaceTitle() -> Swift.String
   @objc override dynamic public init()
   @objc deinit
@@ -75,6 +76,8 @@ public class Poi : Swift.Hashable {
   public var filters: Filters?
   public var properties: DataProperties?
   public var map: Map?
+  public var title: Swift.String?
+  public var description: Swift.String?
   public var location: Location?
   public var type: Swift.String?
   public var secret: Swift.String?
@@ -84,12 +87,6 @@ public class Poi : Swift.Hashable {
   public var isDeleted: Swift.Bool?
   public var navigation: NavigationProperties?
   public var node: PESGraphNode?
-  public var localizedTitle: Swift.String? {
-    get
-  }
-  public var localizedDescription: Swift.String? {
-    get
-  }
   public var coordinates: CoreLocation.CLLocationCoordinate2D? {
     get
   }

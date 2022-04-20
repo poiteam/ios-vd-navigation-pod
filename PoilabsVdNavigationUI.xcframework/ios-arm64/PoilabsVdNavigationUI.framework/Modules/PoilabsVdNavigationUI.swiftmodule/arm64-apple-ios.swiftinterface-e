@@ -43,8 +43,8 @@ public typealias cancelBlock = (() -> ())?
 }
 extension PoilabsVdNavigationUI.BUStringPickerController {
   @_Concurrency.MainActor(unsafe) public func setTitle(font: UIKit.UIFont? = nil)
-  @_Concurrency.MainActor(unsafe) public func setDoneButton(_ title: Swift.String, font: UIKit.UIFont? = nil, textColor: UIKit.UIColor = .black)
-  @_Concurrency.MainActor(unsafe) public func setCancelButton(_ title: Swift.String, font: UIKit.UIFont? = nil, textColor: UIKit.UIColor = .black)
+  @_Concurrency.MainActor(unsafe) public func setDoneButton(_ title: Swift.String, font: UIKit.UIFont? = nil)
+  @_Concurrency.MainActor(unsafe) public func setCancelButton(_ title: Swift.String, font: UIKit.UIFont? = nil)
   @_Concurrency.MainActor(unsafe) public func setPicker(_ font: UIKit.UIFont? = nil, _ textColor: UIKit.UIColor = .black, _ aligment: UIKit.NSTextAlignment = .center)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AccesiblePickerContainer : UIKit.UIView {

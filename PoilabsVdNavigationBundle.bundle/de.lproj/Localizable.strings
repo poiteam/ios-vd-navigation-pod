@@ -156,3 +156,5 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "loremIpsum" = "Dies ist ein Mustertext";
 
 "completedProgress" = "%d%% abgeschlossen";
+"noAccessibleRoute" = "Keine barrierefreie Route gefunden! Möchten Sie eine Route über Treppen oder Rolltreppen nehmen?";
+"noRoute" = "Die Route konnte nicht erstellt werden! Versuchen Sie es an einem anderen Ort erneut!";
