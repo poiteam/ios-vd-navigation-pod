@@ -54,7 +54,8 @@ let uniqueIdentifier = UNIQUE_ID
 
 PoilabsVdNavigationUI(withApplicationID: appId, 
 					withApplicationSecret: secret, 
-					withUniqueIdentifier: uniqueIdentifier) { (controller) in
+					withUniqueIdentifier: uniqueIdentifier, 
+					lang: lang) { (controller) in
             //show controller
         }
 ```
@@ -72,7 +73,8 @@ let uniqueIdentifier = UNIQUE_IDENTIFIER
 PoilabsVdNavigationUI(configUrl: configUrl, 
 					withApplicationID: appId, 
 					withApplicationSecret: secret, 
-					withUniqueIdentifier: uniqueIdentifier) { (controller) in
+					withUniqueIdentifier: uniqueIdentifier, 
+					lang: lang) { (controller) in
             //show controller
         }
 ```
