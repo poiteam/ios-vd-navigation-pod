@@ -97,8 +97,10 @@
 "searchPlaceHolder" = "Nereye gitmek istiyorsun?";
 "noVenueFound" = "Mekan bulunamadı";
 "showOnMap" = "Haritada göster";
-"addFav" = "Favorilere ekle";
-"showFavorites" = "Sadece favoriye eklenmiş mekanları göster";
+"addFav" = "Favorilere eklemek için çift tıkla";
+"removeFav" = "Favorilerden çıkartmak için çift tıkla";
+"showFavorites" = "Sadece favorilere eklenmiş mekanları göstermek için çift tıkla";
+"showFavoritesUnselect" = "Tüm mekanları göstermek için çift tıkla";
 "openFilterView" = "Filtre ekleme sayfasını aç";
 "closeFilterView" = "Filtre ekleme sayfasını kapat";
 
@@ -132,9 +134,9 @@
 "directionAndDistanceInFt" = "%d ft saat %d yönünde ilerle";
 "directionAndDistanceLR" = "%d metre %@ ilerle";
 "directionAndDistanceInFtLR" = "%d ft %@ ilerle";
-"goWithElevator" = "Asansör ile kat %d e gidin";
-"goWithEscalator" = "Yürüyen Merdiven ile kat %d e gidin";
-"goWithStairs" = "Merdiven ile kat %d e gidin";
+"goWithElevator" = "Asansör ile %@ e gidin";
+"goWithEscalator" = "Yürüyen Merdiven ile %@ e gidin";
+"goWithStairs" = "Merdiven ile %@ e gidin";
 "arrived" = "Hedefinize ulaştınız!";
 "remainingSteps" = "Kalan Adımlar";
 
@@ -175,6 +177,21 @@
 "active" = "Açık";
 "passive" = "Kapalı";
 
+"currentLocationDirection" = "Mevcut Konum Yönü";
+"activateCurrentLocation" = "Mevcut Konum Saat Yönü, seçilen: Kapalı. Rota alma sırasında mevcut konumunuzun yön bilgisini açmak için çift tıklayın";
+"disableCurrentLocation" = "Mevcut Konum Saat Yönü, seçilen: Açık. Rota alma sırasında mevcut konumunuzun yön bilgisini kapatmak için çift tıklayın";
+
+"metricIsSelected" = "Mesafe Birimi, seçilen: metrik. Mil olarak değiştirmek için çift tıklayın";
+"imperialIsSelected" = "Mesafe Birimi, seçilen: mil. Metrik olarak değiştirmek için çift tıklayın";
+
+"clockwiseIsSelected" = "Yönler, seçilen: saat yönü. Sol-sağ olarak değiştirmek için çift tıklayın";
+"leftRightIsSelected" = "Yönler, seçilen: Sol-Sağ. Saat yönü olarak değiştirmek için çift tıklayın";
+
+"onlyElevatorIsSelected" = "Rota Seçeneği, seçilen: Yalnızca Asansör. Asansörden, Yürüyen Merdivenden ya da Merdivenden rota alabilmek için çift tıklayın";
+"allRoutesIsselected" = "Rota Seçeneği, seçilen: Asansör/Yürüyen Merdiven/Merdiven. Yalnızca Asansörlü rota almak için çift tıklayın";
+
+"autoReRouteIsActive" = "Otomatik Yeniden Yönlendirme, seçilen: Açık. Rotadan çıktığın tespit edildiğinde telefonu sallayarak yeni rota oluşturulmasını sağlamak için çift tıklayın";
+"autoReRouteIsPassive" = "Otomatik Yeniden Yönlendirme, seçilen: Kapalı. Rotadan çıktığın tespit edildiğinde otomatik olarak yeni rota oluşturulması için çift tıklayın";
 
 "btPopUp" = "Bluetooth Ayarlarını Kontrol Edin";
 "locationPopUp" = "Konum Ayarlarını Kontrol Edin";

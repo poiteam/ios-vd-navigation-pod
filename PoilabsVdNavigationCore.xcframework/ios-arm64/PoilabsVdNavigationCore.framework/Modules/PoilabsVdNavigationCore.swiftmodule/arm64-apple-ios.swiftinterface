@@ -47,6 +47,7 @@ public enum UserLocationStatus {
   public func startPositioning()
   public func stopPositioning()
   public func getPlaceTitle() -> Swift.String
+  public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
   @objc override dynamic public init()
   @objc deinit
 }

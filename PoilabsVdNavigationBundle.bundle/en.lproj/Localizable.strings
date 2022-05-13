@@ -98,8 +98,10 @@ right side.";
 "searchPlaceHolder" = "Where do you want to go?";
 "noVenueFound" = "Not found venues";
 "showOnMap" = "Show on map";
-"addFav" = "Add to favorites";
-"showFavorites" = "Show only favorite venues";
+"addFav" = "Double tap to add to favourites.";
+"removeFav" = "Double tap to remove from favourites.";
+"showFavorites" = "Double tap to show only favorite places";
+"showFavoritesUnselect" = "Double tap to show all venues";
 "openFilterView" = "Open filter selection";
 "closeFilterView" = "Close filter view";
 "select" = "Select";
@@ -132,9 +134,9 @@ right side.";
 "directionAndDistanceInFt" = "Walk %d ft at the direction of %d o'clock";
 "directionAndDistanceLR" = "Walk %d meters %@";
 "directionAndDistanceInFtLR" = "Walk %d ft %@";
-"goWithElevator" = "Go to floor %d with elevator";
-"goWithEscalator" = "Go to floor %d with escalator";
-"goWithStairs" = "Go to floor %d with stairs";
+"goWithElevator" = "Go to %@ with elevator";
+"goWithEscalator" = "Go to %@ with escalator";
+"goWithStairs" = "Go to %@ with stairs";
 "arrived" = "You arrived at your destination!";
 "remainingSteps" = "Remaining Steps";
 
@@ -174,6 +176,20 @@ right side.";
 "active" = "Active";
 "passive" = "Passive";
 
+"activateCurrentLocation" = "Current Position Clockwise, selected: Off. Double-tap to open the direction information of your current location while routing";
+"disableCurrentLocation" = "Current Position Clockwise, selected: On. Double-tap to turn off the direction information of your current location while routing";
+
+"metricIsSelected" = "Distance Unit, selected: metric. Double click to change to miles";
+"imperialIsSelected" = "Distance Unit, selected: miles. Double click to change to metric";
+
+"clockwiseIsSelected" = "Directions, selected: clockwise. Double click to change to left-right";
+"leftRightIsSelected" = "Directions, selected: Left-Right. Double click to change clockwise";
+
+"onlyElevatorIsSelected" = "Route Option, selected: Elevator Only. Double click to get route from Elevator, Escalator or Stairs";
+"allRoutesIsselected" = "Route Option, selected: Elevator/Escalator/Staircase. Double click to get only Elevator route";
+
+"autoReRouteIsActive" = "Auto Redirect, selected: On. Double-click to turn off new route creation without warning when off-route is detected";
+"autoReRouteIsPassive" = "Auto Redirect, selected: Off. Double-click to be alerted when detected straying from the route";
 
 "btPopUp" = "Check Bluetooth Settings";
 "locationPopUp" = "Check Location Settings";

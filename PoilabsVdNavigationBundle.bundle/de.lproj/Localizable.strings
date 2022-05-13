@@ -73,8 +73,10 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "searchPlaceHolder" = "Wohin wollen Sie gehen?";
 //"noVenueFound" = "Not found venues";
 //"showOnMap" = "Show on map";
-//"addFav" = "Add to favorites";
-"showFavorites" = "Nur Lieblingsorte anzeigen";
+"addFav" = "Doppelklicken, um zu den Favoriten hinzuzufügen.";
+"removeFav" = "Doppelklicken, um aus den Favoriten zu entfernen.";
+"showFavorites" = "Doppelklicken Sie, um nur Lieblingsorte anzuzeigen";
+"showFavoritesUnselect" = "Doppelklicken Sie, um alle Veranstaltungsorte anzuzeigen";
 "openFilterView" = "Filterseite öffnen";
 "closeFilterView" = "Filterseite schließen";
 
@@ -105,11 +107,11 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "arrivalTime" = "Ankunft: %d Minuten";
 "directionAndDistance" = "%d Meter vorwärts in Richtung %d Uhr";
 "directionAndDistanceInFt" = "%d ft vorwärts in Richtung %d Uhr";
-"goWithElevator" = "Fahren Sie mit dem Aufzug in die Etage %d";
-"goWithEscalator" = "Fahren Sie mit dem Rolltreppe in die Etage %d";
+"goWithElevator" = "Fahren Sie mit dem Aufzug in %@";
+"goWithEscalator" = "Fahren Sie mit dem Rolltreppe in %@";
 "directionAndDistanceLR" = "Walk %d meters %@";
 "directionAndDistanceInFtLR" = "Walk %d ft %@";
-"goWithStairs" = "Fahren Sie mit dem Treppe in die Etage %d";
+"goWithStairs" = "Fahren Sie mit dem Treppe in %@";
 "arrived" = "Sie haben Ihr Ziel erreicht!";
 "remainingSteps" = "Verbleibenden Schritte";
 
@@ -147,6 +149,21 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "automReRoute" = "Automatische Weiterleitung";
 "active" = "Offen";
 "passive" = "Geschlossen";
+
+"activateCurrentLocation" = "Aktuelle Position Im Uhrzeigersinn, ausgewählt: Aus. Doppelklicken Sie, um die Richtungsinformationen Ihres aktuellen Standorts während des Routings zu öffnen";
+"disableCurrentLocation" = "Aktuelle Position im Uhrzeigersinn, ausgewählt: Ein. Doppelklicken Sie, um die Richtungsinformationen Ihres aktuellen Standorts während des Routings auszuschalten";
+
+"metricIsSelected" = "Entfernungseinheit, ausgewählt: metrisch. Doppelklicken Sie, um zu Meilen zu wechseln";
+"imperialIsSelected" = "Gewählte Entfernungseinheit: Meilen. Doppelklicken Sie, um zur Metrik zu wechseln";
+
+"clockwiseIsSelected" = "Richtungen, ausgewählt: im Uhrzeigersinn. Doppelklicken Sie, um nach links-rechts zu wechseln";
+"leftRightIsSelected" = "Richtungen, ausgewählt: Links-Rechts. Doppelklicken Sie, um im Uhrzeigersinn zu wechseln";
+
+"onlyElevatorIsSelected" = "Routenoption, ausgewählt: Nur Aufzug. Doppelklicken Sie, um die Route vom Aufzug, der Rolltreppe oder der Treppe abzurufen";
+"allRoutesIsselected" = "Routenoption, ausgewählt: Aufzug/Rolltreppe/Treppe. Doppelklicken Sie, um nur die Aufzugsroute zu erhalten";
+
+"autoReRouteIsActive" = "Automatische Umleitung, ausgewählt: Ein. Doppelklicken, um die Erstellung einer neuen Route ohne Warnung zu deaktivieren, wenn eine Abweichung von der Route erkannt wird";
+"autoReRouteIsPassive" = "Automatische Weiterleitung, ausgewählt: Aus. Doppelklicken Sie, um benachrichtigt zu werden, wenn ein Abweichen von der Route erkannt wird";
 
 
 "btPopUp" = "Überprüfen Sie Ihre Bluetooth-Einstellungen!";
