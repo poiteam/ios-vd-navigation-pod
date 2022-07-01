@@ -20,8 +20,10 @@ extension UIKit.UIFont {
   public static func jbs_registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
 }
 public class PoilabsVdNavigationUI {
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, additionalViewControllers: [PoilabsVdNavigationUI.AdditionalSettings] = [], completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
   @objc deinit
+}
+public struct SettingType {
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) convenience public init<V>(style: PoilabsVdNavigationUI.Style<V>) where V : UIKit.UIView
@@ -82,6 +84,9 @@ public class StyleSettings {
 extension UIKit.UIColor {
   convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat)
   convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat)
+}
+public struct AdditionalSettings {
+  public init(title: Swift.String, image: UIKit.UIImage, controller: UIKit.UIViewController)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class StartingViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()

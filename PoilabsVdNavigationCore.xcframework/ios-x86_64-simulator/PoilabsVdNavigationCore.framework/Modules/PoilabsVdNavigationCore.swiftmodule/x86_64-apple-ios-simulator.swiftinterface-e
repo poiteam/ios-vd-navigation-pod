@@ -3,6 +3,7 @@
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
 import Alamofire
 import CoreBluetooth
+import CoreData
 import CoreLocation
 import Foundation
 import PoilabsPositioning
@@ -10,6 +11,21 @@ import PoilabsPositioning
 import Swift
 import UIKit
 import _Concurrency
+extension PoilabsVdNavigationCore.PropertiesMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.PropertiesMO>
+  @objc @NSManaged dynamic public var content: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var hoMallDescription: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.PointMO? {
+    @objc get
+    @objc set
+  }
+}
 public protocol PositioningManagerDelegate {
   func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])
   func positioningManager(didStatusChanged status: PoilabsVdNavigationCore.UserLocationStatus)
@@ -59,6 +75,29 @@ extension PoilabsVdNavigationCore.PositioningManager : PoilabsPositioning.Poilab
   @objc dynamic public func poilabsPositioning(didUpdateLocation location: PoilabsPositioning.PLPBeaconNode)
   @objc dynamic public func poilabsPositioning(didUpdateHeading heading: CoreLocation.CLHeading)
 }
+extension PoilabsVdNavigationCore.FacilityMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.FacilityMO>
+  @objc @NSManaged dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var pointType: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var order: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.ChildsMO? {
+    @objc get
+    @objc set
+  }
+}
+@_inheritsConvenienceInitializers @objc(SegmentMO) public class SegmentMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
 public class Segment {
   public var finishPoiId: Swift.String?
   public var finishNode: PoilabsVdNavigationCore.PESGraphNode?
@@ -68,24 +107,84 @@ public class Segment {
   public var isAvailableForDisabledPerson: Swift.Bool
   public class func modelsFromDictionaryArray(array: Foundation.NSArray, withStartId startID: Swift.String) -> [PoilabsVdNavigationCore.Segment]
   required public init?(dictionary: Foundation.NSDictionary, startID: Swift.String)
+  public init(startId: Swift.String, finishId: Swift.String, weight: Swift.Double, isAvailableForDisabledPerson: Swift.Bool)
   @objc deinit
 }
-public class Poi : Swift.Hashable {
+@_inheritsConvenienceInitializers @objc(PointMO) public class PointMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension PoilabsVdNavigationCore.LocationPropertiesMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.LocationPropertiesMO>
+  @objc @NSManaged dynamic public var floorLevel: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var shopCenterPoint: [Swift.Double]? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.LocationMO? {
+    @objc get
+    @objc set
+  }
+}
+@_inheritsConvenienceInitializers @objc(PropertiesMO) public class PropertiesMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension PoilabsVdNavigationCore.SegmentMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.SegmentMO>
+  @objc @NSManaged dynamic public var startId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var weight: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var isAvailableForDisabledPerson: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.NavigationMO? {
+    @objc get
+    @objc set
+  }
+}
+public class ChildBase {
+  public var allPointsForMap: [PoilabsVdNavigationCore.Poi]
+  public var mainGraph: PoilabsVdNavigationCore.PESGraph
+  public var disableGraph: PoilabsVdNavigationCore.PESGraph
+  public var map: PoilabsVdNavigationCore.Map?
+  public var facilities: [PoilabsVdNavigationCore.Facility]
+  public var placeTitle: Swift.String
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.ChildBase]
+  required public init?(dictionary: Foundation.NSDictionary)
+  public init(points: [PoilabsVdNavigationCore.Poi], floors: [PoilabsVdNavigationCore.Floors], facilities: [PoilabsVdNavigationCore.Facility], title: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(ChildsMO) public class ChildsMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(GeometryMO) public class GeometryMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Poi : Swift.Hashable {
   public static func == (lhs: PoilabsVdNavigationCore.Poi, rhs: PoilabsVdNavigationCore.Poi) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
-  public var isActive: Swift.Bool?
   public var filters: PoilabsVdNavigationCore.Filters?
   public var properties: PoilabsVdNavigationCore.DataProperties?
-  public var map: PoilabsVdNavigationCore.Map?
   public var title: Swift.String?
   public var description: Swift.String?
   public var location: PoilabsVdNavigationCore.Location?
-  public var type: Swift.String?
-  public var secret: Swift.String?
-  public var createdAt: Swift.Int?
   public var id: Swift.String?
-  public var updatedAt: Swift.Int?
-  public var isDeleted: Swift.Bool?
   public var navigation: PoilabsVdNavigationCore.NavigationProperties?
   public var node: PoilabsVdNavigationCore.PESGraphNode?
   public var coordinates: CoreLocation.CLLocationCoordinate2D? {
@@ -109,9 +208,51 @@ public class NavigationProperties {
   public var isVisibleOnMap: Swift.Bool
   public var segments: [PoilabsVdNavigationCore.Segment]?
   required public init?(dictionary: Foundation.NSDictionary)
+  public init(isVisibleOnList: Swift.Bool, isVisibleOnMap: Swift.Bool, segments: [PoilabsVdNavigationCore.Segment])
   @objc deinit
 }
-public class Location {
+extension PoilabsVdNavigationCore.FloorMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.FloorMO>
+  @objc @NSManaged dynamic public var level: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var mapRotateAngle: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var conversionFactor: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var routeConversionFactorDividend: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var conversionFactorDividend: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.ChildsMO? {
+    @objc get
+    @objc set
+  }
+}
+@_hasMissingDesignatedInitializers public class ConfigData {
+  public var uuid: Swift.String?
+  public var messagingTime: Swift.Double?
+  public var childsUrl: Swift.String?
+  public var minRssiLimit: Swift.Int?
+  public var elements: [PoilabsVdNavigationCore.Place]
+  public var menuLevel: Swift.Int?
+  required public init?(dictionary: Foundation.NSDictionary)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Location {
   public var geometry: PoilabsVdNavigationCore.Geometry?
   public var properties: PoilabsVdNavigationCore.LocationProperties?
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Location]
@@ -128,7 +269,7 @@ public class PoiVDNavigationManager {
   public var delegate: PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
-  public func getMenuItems() -> [PoilabsVdNavigationCore.ItemBase]
+  public func getMenuItems() -> [PoilabsVdNavigationCore.Place]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ItemCategory : Swift.Hashable {
@@ -153,67 +294,153 @@ public class ItemBase {
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.ItemBase]
   @objc deinit
 }
-public class FilteredPlace {
-  public var city: Swift.String
-  public var placeList: [PoilabsVdNavigationCore.Place]
-  public init(withCity city: Swift.String)
+@_inheritsConvenienceInitializers @objc(FloorMO) public class FloorMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(FacilityMO) public class FacilityMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(NavigationPropertiesMO) public class NavigationPropertiesMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension PoilabsVdNavigationCore.ConfigMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.ConfigMO>
+  @objc @NSManaged dynamic public var uuid: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var messagingTime: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var childsUrl: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var minRssiLimit: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var menuLevel: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var appId: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lang: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var places: Swift.Set<PoilabsVdNavigationCore.PlaceMO>? {
+    @objc get
+    @objc set
+  }
+}
+extension PoilabsVdNavigationCore.ConfigMO {
+  @objc(addPlacesObject:) @NSManaged dynamic public func addToPlaces(_ value: PoilabsVdNavigationCore.PlaceMO)
+  @objc(removePlacesObject:) @NSManaged dynamic public func removeFromPlaces(_ value: PoilabsVdNavigationCore.PlaceMO)
+  @objc(addPlaces:) @NSManaged dynamic public func addToPlaces(_ values: Foundation.NSSet)
+  @objc(removePlaces:) @NSManaged dynamic public func removeFromPlaces(_ values: Foundation.NSSet)
 }
 public class Map {
-  public var vendor: Swift.String?
-  public var accessToken: Swift.String?
-  public var styleUrl: Swift.String?
-  public var floors: Swift.Array<PoilabsVdNavigationCore.Floors>?
+  public var floors: [PoilabsVdNavigationCore.Floors]
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Map]
   required public init?(dictionary: Foundation.NSDictionary)
+  public init(floors: [PoilabsVdNavigationCore.Floors])
   @objc deinit
 }
+public class Facility : Swift.Codable {
+  public var title: Swift.String!
+  public var pointType: Swift.String!
+  public var order: Swift.Int!
+  required public init(dictionary: Foundation.NSDictionary)
+  public init(title: Swift.String, pointType: Swift.String, order: Swift.Int)
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Facility]
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+extension PoilabsVdNavigationCore.FiltersMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.FiltersMO>
+  @objc @NSManaged dynamic public var pointType: [Swift.String]? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.PointMO? {
+    @objc get
+    @objc set
+  }
+}
 public class FloorProperties {
-  public var centerPoint: [Swift.Double]?
-  public var zoomLevel: Swift.Int?
-  public var minZoomLevel: Swift.Int?
-  public var maxZoomLevel: Swift.Int?
-  public var maxBounds: [[Swift.Double]]?
   public var level: Swift.Int?
   public var conversionFactor: Swift.Double?
+  public var routeConversionFactorDividend: Swift.Double
+  public var conversionFactorDividend: Swift.Double
   required public init?(dictionary: Foundation.NSDictionary)
+  public init(level: Swift.Int, conversionFactor: Swift.Double, routeConversionFactorDividend: Swift.Double, conversionFactorDividend: Swift.Double)
   @objc deinit
 }
 public class Floors {
-  public var title_en: Swift.String?
   public var title: Swift.String?
   public var properties: PoilabsVdNavigationCore.FloorProperties?
   public var level: Swift.Int?
   public var mapRotateAngle: Swift.Int?
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Floors]
   required public init?(dictionary: Foundation.NSDictionary)
+  public init(title: Swift.String, level: Swift.Int, mapRotateAngle: Swift.Int, conversionFactor: Swift.Double, routeConversionFactorDividend: Swift.Double, conversionFactorDividend: Swift.Double)
   @objc deinit
 }
-public class Place {
-  public var id: Swift.String?
+@_hasMissingDesignatedInitializers public class Place {
+  public var id: Swift.String!
   public var title: Swift.String?
   public var major: [Swift.Int]
-  public var city: Swift.String?
-  public var district: Swift.String?
   public var address: Swift.String?
   public var lat: Swift.Double?
   public var lon: Swift.Double?
   public var childs: [PoilabsVdNavigationCore.Place]?
-  public var description: Swift.String?
   public var distance: Swift.Double?
   public var isFavorite: Swift.Bool
   public var type: PoilabsVdNavigationCore.ItemCategory!
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Place]
-  required public init?(dictionary: Foundation.NSDictionary)
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray, type: PoilabsVdNavigationCore.ItemCategory) -> [PoilabsVdNavigationCore.Place]
+  required public init?(dictionary: Foundation.NSDictionary, type: PoilabsVdNavigationCore.ItemCategory)
   @objc deinit
 }
-public class Filters {
-  public var placeType: [Swift.String]?
-  public var pointType: [Swift.String]?
-  public var storeType: Swift.String?
-  public var networkType: Swift.String?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Filters]
+extension PoilabsVdNavigationCore.NavigationMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.NavigationMO>
+  @objc @NSManaged dynamic public var properties: PoilabsVdNavigationCore.NavigationPropertiesMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.PointMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var segments: Foundation.NSSet? {
+    @objc get
+    @objc set
+  }
+}
+extension PoilabsVdNavigationCore.NavigationMO {
+  @objc(addSegmentsObject:) @NSManaged dynamic public func addToSegments(_ value: PoilabsVdNavigationCore.SegmentMO)
+  @objc(removeSegmentsObject:) @NSManaged dynamic public func removeFromSegments(_ value: PoilabsVdNavigationCore.SegmentMO)
+  @objc(addSegments:) @NSManaged dynamic public func addToSegments(_ values: Foundation.NSSet)
+  @objc(removeSegments:) @NSManaged dynamic public func removeFromSegments(_ values: Foundation.NSSet)
+}
+public class Filters : Swift.Codable {
+  public var pointType: [Swift.String]
   required public init?(dictionary: Foundation.NSDictionary)
+  public init(pointType: [Swift.String])
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc(LocationPropertiesMO) public class LocationPropertiesMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class FilteredPoi {
@@ -223,8 +450,7 @@ public class Filters {
   public var content: Swift.String?
   @objc deinit
 }
-public class Geometry {
-  public var type: Swift.String?
+@_hasMissingDesignatedInitializers public class Geometry {
   public var coordinates: CoreLocation.CLLocationCoordinate2D?
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.Geometry]
   required public init?(dictionary: Foundation.NSDictionary)
@@ -235,17 +461,17 @@ public class MapProperties {
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
+@_inheritsConvenienceInitializers @objc(NavigationMO) public class NavigationMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ConfigMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
 public enum RouteError {
   case noLocation, noRoute, unknown
   public static func == (a: PoilabsVdNavigationCore.RouteError, b: PoilabsVdNavigationCore.RouteError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum PoiFacility {
-  case wc, elevator
-  public static func == (a: PoilabsVdNavigationCore.PoiFacility, b: PoilabsVdNavigationCore.PoiFacility) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -294,9 +520,10 @@ public class RouteManager {
     set
   }
   public init(targetPoi: PoilabsVdNavigationCore.Poi, on graph: PoilabsVdNavigationCore.SelectedGraph)
-  public init(type: PoilabsVdNavigationCore.PoiFacility, on graph: PoilabsVdNavigationCore.SelectedGraph)
+  public init(type: Swift.String, on graph: PoilabsVdNavigationCore.SelectedGraph)
   public func navigate()
-  public func reInitRoute(on graph: PoilabsVdNavigationCore.SelectedGraph)
+  public func reInitRoute()
+  public func getSelectedGraph() -> PoilabsVdNavigationCore.SelectedGraph
   public func getFloorDifferance() -> Swift.Int?
   public func getRouteLength() -> Swift.Int?
   @objc deinit
@@ -307,6 +534,21 @@ extension PoilabsVdNavigationCore.RouteManager {
 extension PoilabsVdNavigationCore.RouteManager : PoilabsVdNavigationCore.PositioningManagerDelegate {
   public func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])
   public func positioningManager(didStatusChanged status: PoilabsVdNavigationCore.UserLocationStatus)
+}
+extension PoilabsVdNavigationCore.LocationMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.LocationMO>
+  @objc @NSManaged dynamic public var geometry: PoilabsVdNavigationCore.GeometryMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.PointMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var properties: PoilabsVdNavigationCore.LocationPropertiesMO? {
+    @objc get
+    @objc set
+  }
 }
 public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
@@ -324,20 +566,133 @@ extension PoilabsVdNavigationCore.PlaceListManager : CoreLocation.CLLocationMana
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
 }
-public class DataProperties {
+@_inheritsConvenienceInitializers @objc(LocationMO) public class LocationMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public class DataProperties : Swift.Codable {
   public var hoMallDescription: Swift.String
   public var hoMallDescription_en: Swift.String
   public var hoShopAdress: Swift.String?
   public var content: Swift.String?
   required public init?(dictionary: Foundation.NSDictionary)
+  public init(content: Swift.String?, hoMallDescription: Swift.String)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+extension PoilabsVdNavigationCore.PlaceMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.PlaceMO>
+  @objc @NSManaged dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var categoryTitle: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var categoryKey: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var major: [Swift.Int]? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var address: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lat: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lon: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.ConfigMO? {
+    @objc get
+    @objc set
+  }
+}
+@objc @_inheritsConvenienceInitializers public class PlaceMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
-public class LocationProperties {
-  public var city: Swift.String?
-  public var district: Swift.String?
+extension PoilabsVdNavigationCore.NavigationPropertiesMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.NavigationPropertiesMO>
+  @objc @NSManaged dynamic public var isVisibleOnList: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var isVisibleOnMap: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.NavigationMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var segments: Swift.Set<PoilabsVdNavigationCore.SegmentMO>? {
+    @objc get
+    @objc set
+  }
+}
+extension PoilabsVdNavigationCore.BeaconMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.BeaconMO>
+  @objc @NSManaged dynamic public var major: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var minor: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var uuid: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var placeId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lat: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lon: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var floor: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+}
+@_hasMissingDesignatedInitializers public class LocationProperties {
   public var floorLevel: Swift.Int?
   public var shopCenterPoint: CoreLocation.CLLocationCoordinate2D?
   required public init?(dictionary: Foundation.NSDictionary)
+  @objc deinit
+}
+extension PoilabsVdNavigationCore.GeometryMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.GeometryMO>
+  @objc @NSManaged dynamic public var coordinates: [Swift.Double]? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.LocationMO? {
+    @objc get
+    @objc set
+  }
+}
+@_inheritsConvenienceInitializers @objc(FiltersMO) public class FiltersMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
 public class StoreListManager {
@@ -345,15 +700,85 @@ public class StoreListManager {
   public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
   public func getInfoText() -> Swift.String
   public func getStoreList() -> [PoilabsVdNavigationCore.Poi]
-  public func hasElevator() -> Swift.Bool
-  public func hasWc() -> Swift.Bool
   public func getCategories() -> [Swift.String]
-  public func getPointList() -> [PoilabsVdNavigationCore.FilteredPoi]
+  public func getFacilities() -> [PoilabsVdNavigationCore.Facility]
   @objc deinit
 }
 public class PointDetailManager {
   public init(target: PoilabsVdNavigationCore.Poi)
   public func getFloorLevel() -> Swift.String
+  @objc deinit
+}
+extension PoilabsVdNavigationCore.ChildsMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.ChildsMO>
+  @objc @NSManaged dynamic public var placeId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lang: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var placeTitle: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var points: Swift.Set<PoilabsVdNavigationCore.PointMO>? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var floors: Swift.Set<PoilabsVdNavigationCore.FloorMO>? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var facilities: Swift.Set<PoilabsVdNavigationCore.FacilityMO>? {
+    @objc get
+    @objc set
+  }
+}
+extension PoilabsVdNavigationCore.ChildsMO {
+  @objc(addPointsObject:) @NSManaged dynamic public func addToPoints(_ value: PoilabsVdNavigationCore.PointMO)
+  @objc(removePointsObject:) @NSManaged dynamic public func removeFromPoints(_ value: PoilabsVdNavigationCore.PointMO)
+  @objc(addPoints:) @NSManaged dynamic public func addToPoints(_ values: Foundation.NSSet)
+  @objc(removePoints:) @NSManaged dynamic public func removeFromPoints(_ values: Foundation.NSSet)
+}
+extension PoilabsVdNavigationCore.PointMO {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.PointMO>
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var category: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var origin: PoilabsVdNavigationCore.ChildsMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var location: PoilabsVdNavigationCore.LocationMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var filters: PoilabsVdNavigationCore.FiltersMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var navigation: PoilabsVdNavigationCore.NavigationMO? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var properties: PoilabsVdNavigationCore.PropertiesMO? {
+    @objc get
+    @objc set
+  }
+}
+@_inheritsConvenienceInitializers @objc(BeaconMO) public class BeaconMO : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
 extension PoilabsVdNavigationCore.PMError : Swift.Equatable {}
@@ -362,8 +787,6 @@ extension PoilabsVdNavigationCore.UserLocationStatus : Swift.Equatable {}
 extension PoilabsVdNavigationCore.UserLocationStatus : Swift.Hashable {}
 extension PoilabsVdNavigationCore.RouteError : Swift.Equatable {}
 extension PoilabsVdNavigationCore.RouteError : Swift.Hashable {}
-extension PoilabsVdNavigationCore.PoiFacility : Swift.Equatable {}
-extension PoilabsVdNavigationCore.PoiFacility : Swift.Hashable {}
 extension PoilabsVdNavigationCore.SelectedGraph : Swift.Equatable {}
 extension PoilabsVdNavigationCore.SelectedGraph : Swift.Hashable {}
 extension PoilabsVdNavigationCore.FloorPassMethod : Swift.Equatable {}

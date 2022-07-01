@@ -43,6 +43,7 @@
 "turnLeftAfterxMeters" = "Turn Left after ";
 "goStraight" = "Go straight for ";
 "arrived" = "You have arrived";
+"arrivedWithTitle" = "You have arrived in %@";
 "target" = "Target";
 
 //MARK: Place Detail
@@ -68,29 +69,28 @@
 
 //MARK: User Guide
 "welcome" = "Welcome!";
-"welcomeDesc" = "We are happy to have you onboard!\n\nGetting around can be very challenging sometimes. This is why we built this application.\n\nLet’s start to learn about the app!";
+"welcomeDesc" = "We are so glad you joined us.\n\nWe hope that our application will help you in your active participation in daily life.\n\nYou can move on to the next stage and start learning about the app.\n\nBut don't forget! This app does not replace white cane.";
 
-"howItWorks" = "How it works?";
-"howItWorksDesc" = "We are using bluetooth sensors to find your location. In order to make it happen you need to give location and bluetooth permissions. Make sure your bluetooth and location services are on and you have an active internet connection.\n\nFor best experience you need to hold your phone in front of you and parallel to ground.";
+"howItWorks" = "How does it work?";
+"howItWorksDesc" = "We use Bluetooth sensors to find its location. In order for us to use these sensors, you need to give location and bluetooth permissions.\n\nMake sure your bluetooth and location services are turned on and you have an active internet connection!\n\nFor the best experience, you need to hold your phone in front of you and parallel to the ground.";
 
-"venues" = "Venues";
-"venuesDesc" = "You can select the type of the venue.\n\nAfter selecting the accessible venues will be listed starting from the nearest one. You can also search them using the search bar.";
+"venues" = "Places";
+"venuesDesc" = "Accessible venues will be listed starting with the closest to you. You can also filter any type of venue or search for a venue using the search bar.";
 
-"poiList" = "Poi List";
-"poiListDesc" = "See all the available locations inside a venue.\n\nFor example, if it is a mall, you will reach stores, facilities and more. If you select a point, you can have more information.\n\nYou can also filter the list depending on the categories.";
+"poiList" = "POI List";
+"poiListDesc" = "You can see all accessible places within a venue.\n\nFor example; If it's a mall, you'll find stores, services, and more. By selecting a location, you can have more information about that location.\n\nYou can also filter the list by categories.";
 
-"discoverMode" = "Discover Mode";
-"discoverModeDesc" = "It helps you to understand what is around you.\n\nWhen you walk by you will learn near by pois and their position.\n\nIf there is additional content, a button will appear at the bottom.";
+"discoverMode" = "Explore Mode";
+"discoverModeDesc" = "It helps you understand your location and surroundings.\n\nAs you pass by, you can find out your current location, nearby places and locations.";
 
 "navigation" = "Navigation";
-"navigationDesc" = "When you select a point and select navigate, your navigation will start.\n\nFirst your location then the route is calculated.\n\nYou will get a brief info about the route. In order to start the navigation, you need to face to the
-right side.";
+"navigationDesc" = "When you select a point, you will reach the location detail page. You can start the navigation with the 'Go Here' button on this page.\n\nBefore starting the navigation, it will be useful to make the appropriate settings from the navigation settings.";
 
 "navigationSteps" = "Navigation Steps";
-"navigationStepsDesc" = "Please gently turn around if you are not headed the right direction. When the direction is right “Start Walking” message will appear.\n\nAfter the navigation is started you will get continuous updates. You can re-calculate the route by shaking your phone.\n\nSometimes even if you are in the route it may say you are not in the route. Please continue for a few minutes. If it continues to say you are not in the route, you can get a new route by shaking your phone.";
+"navigationStepsDesc" = "Once the navigation starts, you will receive continuous updates.\n\nDepending on the setting you choose from the navigation settings, you may sometimes receive a warning that you are not on the route, even if you are on the route. Please keep walking a few more steps. If it keeps saying you're not on route, you can get a new route by shaking the phone.";
 
-"youAreAllSet" = "You are All Set!";
-"youAreAllSetDesc" = "It may be confusing when you first use it. But the best way to learn a new thing is simply by practice.\n\nAre you ready?";
+"youAreAllSet" = "Are you ready?";
+"youAreAllSetDesc" = "You may be a little confused by now. But the best way to learn something new is to practice.\n\nLet's start!";
 "start" = "Start";
 "next" = "Next";
 
@@ -104,6 +104,9 @@ right side.";
 "showFavoritesUnselect" = "Double tap to show all venues";
 "openFilterView" = "Open filter selection";
 "closeFilterView" = "Close filter view";
+"openCategoryView" = "Open category selection";
+"closeCategoryView" = "Close category view";
+
 "select" = "Select";
 "unselect" = "Unselect";
 "favorites" = "Favorites";
@@ -137,7 +140,6 @@ right side.";
 "goWithElevator" = "Go to %@ with elevator";
 "goWithEscalator" = "Go to %@ with escalator";
 "goWithStairs" = "Go to %@ with stairs";
-"arrived" = "You arrived at your destination!";
 "remainingSteps" = "Remaining Steps";
 
 "toRight" = "to right";
@@ -176,20 +178,31 @@ right side.";
 "active" = "Active";
 "passive" = "Passive";
 
-"activateCurrentLocation" = "Current Position Clockwise, selected: Off. Double-tap to open the direction information of your current location while routing";
-"disableCurrentLocation" = "Current Position Clockwise, selected: On. Double-tap to turn off the direction information of your current location while routing";
+"currentLocationDirection" = "Current Location";
+"activateCurrentLocation" = "Current Position Clockwise, selected: Off.";
+"disableCurrentLocation" = "Current Position Clockwise, selected: On.";
+"activateCurrentLocationHint" = "Double-tap to open the direction information of your current location while routing";
+"disableCurrentLocationHint" = "Double-tap to turn off the direction information of your current location while routing";
 
-"metricIsSelected" = "Distance Unit, selected: metric. Double click to change to miles";
-"imperialIsSelected" = "Distance Unit, selected: miles. Double click to change to metric";
+"metricIsSelected" = "Distance Unit, selected: metric.";
+"imperialIsSelected" = "Distance Unit, selected: miles.";
+"metricHint" = "Double click to change to miles";
+"imperialHint" = "Double click to change to metric";
 
-"clockwiseIsSelected" = "Directions, selected: clockwise. Double click to change to left-right";
-"leftRightIsSelected" = "Directions, selected: Left-Right. Double click to change clockwise";
+"clockwiseIsSelected" = "Directions, selected: clockwise.";
+"leftRightIsSelected" = "Directions, selected: Left-Right.";
+"clockwiseIsSelectedHint" = "Double click to change to left-right";
+"leftRightIsSelectedHint" = "Double click to change clockwise";
 
-"onlyElevatorIsSelected" = "Route Option, selected: Elevator Only. Double click to get route from Elevator, Escalator or Stairs";
-"allRoutesIsselected" = "Route Option, selected: Elevator/Escalator/Staircase. Double click to get only Elevator route";
+"onlyElevatorIsSelected" = "Route Option, selected: Elevator Only.";
+"allRoutesIsselected" = "Route Option, selected: Elevator/Escalator/Staircase.";
+"onlyElevatorIsSelectedHint" = "Double click to get route from Elevator, Escalator or Stairs";
+"allRoutesIsSelectedHint" = "Double click to get only Elevator route";
 
-"autoReRouteIsActive" = "Auto Redirect, selected: On. Double-click to turn off new route creation without warning when off-route is detected";
-"autoReRouteIsPassive" = "Auto Redirect, selected: Off. Double-click to be alerted when detected straying from the route";
+"autoReRouteIsActive" = "Auto Redirect, selected: On.";
+"autoReRouteIsPassive" = "Auto Redirect, selected: Off.";
+"autoReRouteIsActiveHint" = "Double-click to turn off new route creation without warning when off-route is detected";
+"autoReRouteIsPassiveHint" = "Double-click to be alerted when detected straying from the route";
 
 "btPopUp" = "Check Bluetooth Settings";
 "locationPopUp" = "Check Location Settings";
@@ -199,3 +212,7 @@ right side.";
 
 "completedProgress" = "%d%% completed";
 "noAccessibleRoute" = "No accessible route found! Do you want to take a route by stairs or escalator?";
+"noLocationError" = "Your location could not be detected!\nMake sure that you are in the location where the navigation service is located and in the coverage area of the sensors!";
+
+"selected" = "Selected";
+"doubleTapToSelect" = "Double tap to select";

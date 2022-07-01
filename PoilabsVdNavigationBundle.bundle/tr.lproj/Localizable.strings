@@ -41,7 +41,6 @@
 "turnRightAfterxMeters" = "metre sonra sağa dönün";
 "turnLeftAfterxMeters" = "metre sonra sola dönün";
 "goStraight" = "metre düz devam edin.";
-"arrived" = "adlı hedefine vardın.";
 "target" = "Hedef";
 
 //MARK: Place Detail
@@ -66,29 +65,29 @@
 "pleaseWait" = "Lütfen Bekleyin...";
 
 //MARK: User Guide
-"welcome" = "Hoş geldin!";
-"welcomeDesc" = "Seni aramızda gördüğümüz için mutluyuz!\n\nGezinmek bazen çok zor olabiliyor. Bu yüzden bu uygulamayı yarattık.\n\nUygulama hakkında bilgi edinmeye başlayalım!";
+"welcome" = "Hoşgeldin!";
+"welcomeDesc" = "Bize katıldığın için çok mutluyuz.\n\nUygulamamızın günlük hayata aktif katılımında sana kolaylık sağlamasını diliyoruz.\n\nSonraki aşamaya geçerek uygulama hakkında bilgi edinmeye başlayabilirsin.\n\nAncak Unutma! Bu uygulama beyaz baston yerine geçmez.";
 
 "howItWorks" = "Nasıl çalışır?";
-"howItWorksDesc" = "Konumunu bulmak için bluetooth sensörlerini kullanıyoruz. Bu sensörleri kullanabilmemiz için konum ve bluetooth izinlerini vermen gerekiyor. Bluetooth ve konum servislerinin açık olduğundan ve aktif bir internet bağlantın olduğundan emin ol.\n\nEn iyi deneyim için telefonunu önünde ve yere paralel tutman gerekiyor.";
+"howItWorksDesc" = "Konumunu bulmak için Bluetooth sensörlerini kullanıyoruz. Bu sensörleri kullanabilmemiz için konum ve bluetooth izinlerini vermen gerekiyor.\n\nBluetooth ve konum servislerinin açık olduğundan ve aktif bir internet bağlantın olduğundan emin ol!\n\nEn iyi deneyim için telefonunu önünde ve yere paralel tutman gerekiyor.";
 
 "venues" = "Mekanlar";
-"venuesDesc" = "Mekânın türünü seçebilirsin.\n\nMekânın türünü seçtikten sonra erişilebilir mekanlar sana en yakın olandan başlanarak listelenecektir. Ayrıca bunları arama çubuğunu kullanarak da arayabilirsin.";
+"venuesDesc" = "Erişilebilir mekanlar sana en yakın olandan başlayarak listelenecektir. Ayrıca herhangi bir mekân türünü filtreleyebilirsin ya da arama çubuğunu kullanarak bir mekanı arayabilirsin.";
 
 "poiList" = "POI Listesi";
-"poiListDesc" = "Bir mekân içindeki tüm ulaşılabilir yerleri görebilirsin.\n\nÖrneğin AVM ise mağazalara, hizmetlere ve daha fazlasına ulaşırsın. Bir nokta seçerek o noktayla ilgili daha fazla bilgiye sahip olabilirsin.\n\nAyrıca kategorilere göre listeyi filtreleyebilirsin.";
+"poiListDesc" = "Bir mekân içindeki tüm ulaşılabilir yerleri görebilirsin.\n\nÖrneğin AVM ise mağazalara, hizmetlere ve daha fazlasına ulaşırsın. Bir konum seçerek o konumla ilgili daha fazla bilgiye sahip olabilirsin.\n\nAyrıca kategorilere göre listeyi filtreleyebilirsin.";
 
 "discoverMode" = "Keşfet Modu";
-"discoverModeDesc" = "Etrafındakileri anlamana yardımcı olur.\n\nYanından geçerken yakındaki yerleri ve konumlarını öğrenebilirsin.\n\nEğer bir ek içerik varsa, altta bir düğme görünecektir.";
+"discoverModeDesc" = "Bulunduğun konumu ve çevresini anlamana yardımcı olur.\n\nYanından geçerken mevcut konumunu, yakınındaki yerleri ve konumlarını öğrenebilirsin.";
 
 "navigation" = "Navigasyon";
-"navigationDesc" = "Bir nokta seçip navigasyonu seçtiğinde, navigasyonun başlayacaktır.\n\nÖnce konumun sonra rota hesaplanır.\n\nGüzergâh hakkında kısa bir bilgi alacaksın. Daha sonra navigasyonu başlatmak için sağ tarafa bakman gerekiyor.";
+"navigationDesc" = "Bir nokta seçtiğinde konum detay sayfasına ulaşırsın. Bu sayfada yer alan 'Buraya Git' butonu ile navigasyonu başlatabilirsin.\n\nNavigasyonu başlatmadan önce navigasyon ayarlarından kendine uygun olan ayarları yapman faydalı olacaktır.";
 
 "navigationSteps" = "Navigasyon Adımları";
-"navigationStepsDesc" = "Doğru yöne gitmiyorsan lütfen nazikçe arkanı dön. Yön doğru olduğunda “Yürümeye Başla” mesajı görünecektir.\n\nNavigasyon başladıktan sonra sürekli güncellemeler alacaksın. Telefonunu sallayarak rotayı yeniden hesaplayabilirsiniz.\n\nBazen rotada olsan bile rotada değilsin diyebilir. Lütfen birkaç dakika yürümeye devam et. Rotada değilsin demeye devam ederse telefonunu sallayarak yeni bir rota alabilirsiniz.";
+"navigationStepsDesc" = "Navigasyon başladıktan sonra sürekli güncellemeler alacaksın.\n\nNavigasyon ayarlarından seçtiğin ayara göre bazen rotada olsan bile rotada değilsin uyarısı alabilirsin. Lütfen birkaç adım daha yürümeye devam et. Rotada değilsin demeye devam ederse telefonu sallayarak yeni bir rota alabilirsin.";
 
-"youAreAllSet" = "Hepiniz Hazırsınız!";
-"youAreAllSetDesc" = "İlk defa kullandığında kafa karıştırıcı olabilir. Ancak yeni bir şey öğrenmenin en iyi yolu sadece pratik yapmaktır.\n\nHazır mısın?";
+"youAreAllSet" = "Hazır mısın?";
+"youAreAllSetDesc" = "Şu ana kadar kafan biraz karışmış olabilir. Ancak yeni bir şey öğrenmenin en iyi yolu pratik yapmaktır.\n\nHadi başlayalım!";
 "start" = "Başla";
 "next" = "Sıradaki";
 
@@ -103,6 +102,8 @@
 "showFavoritesUnselect" = "Tüm mekanları göstermek için çift tıkla";
 "openFilterView" = "Filtre ekleme sayfasını aç";
 "closeFilterView" = "Filtre ekleme sayfasını kapat";
+"openCategoryView" = "Kategori seçme sayfasını aç";
+"closeCategoryView" = "Kategori seçme sayfasını kapat";
 
 "select" = "Seç";
 "unselect" = "Seçimi kaldır";
@@ -138,6 +139,7 @@
 "goWithEscalator" = "Yürüyen Merdiven ile %@ e gidin";
 "goWithStairs" = "Merdiven ile %@ e gidin";
 "arrived" = "Hedefinize ulaştınız!";
+"arrivedWithTitle" = "%@ e ulaştınız";
 "remainingSteps" = "Kalan Adımlar";
 
 "toRight" = "sağa";
@@ -178,20 +180,30 @@
 "passive" = "Kapalı";
 
 "currentLocationDirection" = "Mevcut Konum Yönü";
-"activateCurrentLocation" = "Mevcut Konum Saat Yönü, seçilen: Kapalı. Rota alma sırasında mevcut konumunuzun yön bilgisini açmak için çift tıklayın";
-"disableCurrentLocation" = "Mevcut Konum Saat Yönü, seçilen: Açık. Rota alma sırasında mevcut konumunuzun yön bilgisini kapatmak için çift tıklayın";
+"activateCurrentLocation" = "Mevcut Konum Saat Yönü, seçilen: Kapalı.";
+"disableCurrentLocation" = "Mevcut Konum Saat Yönü, seçilen: Açık.";
+"activateCurrentLocationHint" = "Rota alma sırasında mevcut konumunuzun yön bilgisini açmak için çift tıklayın";
+"disableCurrentLocationHint" = "Rota alma sırasında mevcut konumunuzun yön bilgisini kapatmak için çift tıklayın";
 
-"metricIsSelected" = "Mesafe Birimi, seçilen: metrik. Mil olarak değiştirmek için çift tıklayın";
-"imperialIsSelected" = "Mesafe Birimi, seçilen: mil. Metrik olarak değiştirmek için çift tıklayın";
+"metricIsSelected" = "Mesafe Birimi, seçilen: metrik.";
+"imperialIsSelected" = "Mesafe Birimi, seçilen: mil.";
+"metricHint" = "Mil olarak değiştirmek için çift tıklayın";
+"imperialHint" = "Metrik olarak değiştirmek için çift tıklayın";
 
-"clockwiseIsSelected" = "Yönler, seçilen: saat yönü. Sol-sağ olarak değiştirmek için çift tıklayın";
-"leftRightIsSelected" = "Yönler, seçilen: Sol-Sağ. Saat yönü olarak değiştirmek için çift tıklayın";
+"clockwiseIsSelected" = "Yönler, seçilen: saat yönü.";
+"leftRightIsSelected" = "Yönler, seçilen: Sol-Sağ.";
+"clockwiseIsSelectedHint" = "Sol-sağ olarak değiştirmek için çift tıklayın";
+"leftRightIsSelectedHint" = "Saat yönü olarak değiştirmek için çift tıklayın";
 
-"onlyElevatorIsSelected" = "Rota Seçeneği, seçilen: Yalnızca Asansör. Asansörden, Yürüyen Merdivenden ya da Merdivenden rota alabilmek için çift tıklayın";
-"allRoutesIsselected" = "Rota Seçeneği, seçilen: Asansör/Yürüyen Merdiven/Merdiven. Yalnızca Asansörlü rota almak için çift tıklayın";
+"onlyElevatorIsSelected" = "Rota Seçeneği, seçilen: Yalnızca Asansör.";
+"allRoutesIsselected" = "Rota Seçeneği, seçilen: Asansör/Yürüyen Merdiven/Merdiven.";
+"onlyElevatorIsSelectedHint" = "Asansörden, Yürüyen Merdivenden ya da Merdivenden rota alabilmek için çift tıklayın";
+"allRoutesIsSelectedHint" = "Yalnızca Asansörlü rota almak için çift tıklayın";
 
-"autoReRouteIsActive" = "Otomatik Yeniden Yönlendirme, seçilen: Açık. Rotadan çıktığın tespit edildiğinde telefonu sallayarak yeni rota oluşturulmasını sağlamak için çift tıklayın";
-"autoReRouteIsPassive" = "Otomatik Yeniden Yönlendirme, seçilen: Kapalı. Rotadan çıktığın tespit edildiğinde otomatik olarak yeni rota oluşturulması için çift tıklayın";
+"autoReRouteIsActive" = "Otomatik Yeniden Yönlendirme, seçilen: Açık.";
+"autoReRouteIsPassive" = "Otomatik Yeniden Yönlendirme, seçilen: Kapalı.";
+"autoReRouteIsActiveHint" = "Rotadan çıktığın tespit edildiğinde telefonu sallayarak yeni rota oluşturulmasını sağlamak için çift tıklayın";
+"autoReRouteIsPassiveHint" = "Rotadan çıktığın tespit edildiğinde otomatik olarak yeni rota oluşturulması için çift tıklayın";
 
 "btPopUp" = "Bluetooth Ayarlarını Kontrol Edin";
 "locationPopUp" = "Konum Ayarlarını Kontrol Edin";
@@ -202,3 +214,7 @@
 
 "completedProgress" = "%%%d tamamlandı";
 "noAccessibleRoute" = "Erişilebilir rota bulunamadı! Merdiven ya da yürüyen merdivenden rota almak ister misin?";
+"noLocationError" = "Konumunuz tespit edilemedi!\nNavigasyon hizmetinin yer aldığı mekanda ve sensörlerin kapsama alanında olduğunuzdan emin olunuz!";
+
+"selected" = "Seçili";
+"doubleTapToSelect" = "Seçmek için çift tıklayın";

@@ -188,6 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreData;
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
@@ -209,6 +210,215 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSEntityDescription;
+@class NSManagedObjectContext;
+
+SWIFT_CLASS_NAMED("BeaconMO")
+@interface BeaconMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class NSNumber;
+@class NSString;
+
+@interface BeaconMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic) int64_t major;
+@property (nonatomic) int64_t minor;
+@property (nonatomic, copy) NSString * _Nullable uuid;
+@property (nonatomic, copy) NSString * _Nullable placeId;
+@property (nonatomic) double lat;
+@property (nonatomic) double lon;
+@property (nonatomic) int64_t floor;
+@end
+
+
+SWIFT_CLASS_NAMED("ChildsMO")
+@interface ChildsMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class PointMO;
+@class NSSet;
+
+@interface ChildsMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+- (void)addPointsObject:(PointMO * _Nonnull)value;
+- (void)removePointsObject:(PointMO * _Nonnull)value;
+- (void)addPoints:(NSSet * _Nonnull)values;
+- (void)removePoints:(NSSet * _Nonnull)values;
+@end
+
+@class FloorMO;
+@class FacilityMO;
+
+@interface ChildsMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSString * _Nullable placeId;
+@property (nonatomic, copy) NSString * _Nullable lang;
+@property (nonatomic, copy) NSString * _Nonnull placeTitle;
+@property (nonatomic, copy) NSSet<PointMO *> * _Nullable points;
+@property (nonatomic, copy) NSSet<FloorMO *> * _Nullable floors;
+@property (nonatomic, copy) NSSet<FacilityMO *> * _Nullable facilities;
+@end
+
+
+SWIFT_CLASS("_TtC23PoilabsVdNavigationCore8ConfigMO")
+@interface ConfigMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class PlaceMO;
+
+@interface ConfigMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+- (void)addPlacesObject:(PlaceMO * _Nonnull)value;
+- (void)removePlacesObject:(PlaceMO * _Nonnull)value;
+- (void)addPlaces:(NSSet * _Nonnull)values;
+- (void)removePlaces:(NSSet * _Nonnull)values;
+@end
+
+
+@interface ConfigMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSString * _Nullable uuid;
+@property (nonatomic) double messagingTime;
+@property (nonatomic, copy) NSString * _Nullable childsUrl;
+@property (nonatomic) int64_t minRssiLimit;
+@property (nonatomic) int64_t menuLevel;
+@property (nonatomic, copy) NSString * _Nonnull appId;
+@property (nonatomic, copy) NSString * _Nonnull lang;
+@property (nonatomic, copy) NSSet<PlaceMO *> * _Nullable places;
+@end
+
+
+SWIFT_CLASS_NAMED("FacilityMO")
+@interface FacilityMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface FacilityMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable pointType;
+@property (nonatomic) NSInteger order;
+@property (nonatomic, strong) ChildsMO * _Nullable origin;
+@end
+
+
+SWIFT_CLASS_NAMED("FiltersMO")
+@interface FiltersMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface FiltersMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable pointType;
+@property (nonatomic, strong) PointMO * _Nullable origin;
+@end
+
+
+SWIFT_CLASS_NAMED("FloorMO")
+@interface FloorMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface FloorMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic) int64_t level;
+@property (nonatomic) int64_t mapRotateAngle;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic) double conversionFactor;
+@property (nonatomic) double routeConversionFactorDividend;
+@property (nonatomic) double conversionFactorDividend;
+@property (nonatomic, strong) ChildsMO * _Nullable origin;
+@end
+
+
+SWIFT_CLASS_NAMED("GeometryMO")
+@interface GeometryMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class LocationMO;
+
+@interface GeometryMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nullable coordinates;
+@property (nonatomic, strong) LocationMO * _Nullable origin;
+@end
+
+
+SWIFT_CLASS_NAMED("LocationMO")
+@interface LocationMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class LocationPropertiesMO;
+
+@interface LocationMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, strong) GeometryMO * _Nullable geometry;
+@property (nonatomic, strong) PointMO * _Nullable origin;
+@property (nonatomic, strong) LocationPropertiesMO * _Nullable properties;
+@end
+
+
+SWIFT_CLASS_NAMED("LocationPropertiesMO")
+@interface LocationPropertiesMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface LocationPropertiesMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic) int64_t floorLevel;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nullable shopCenterPoint;
+@property (nonatomic, strong) LocationMO * _Nullable origin;
+@end
+
+
+SWIFT_CLASS_NAMED("NavigationMO")
+@interface NavigationMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class SegmentMO;
+
+@interface NavigationMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+- (void)addSegmentsObject:(SegmentMO * _Nonnull)value;
+- (void)removeSegmentsObject:(SegmentMO * _Nonnull)value;
+- (void)addSegments:(NSSet * _Nonnull)values;
+- (void)removeSegments:(NSSet * _Nonnull)values;
+@end
+
+@class NavigationPropertiesMO;
+
+@interface NavigationMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, strong) NavigationPropertiesMO * _Nullable properties;
+@property (nonatomic, strong) PointMO * _Nullable origin;
+@property (nonatomic, strong) NSSet * _Nullable segments;
+@end
+
+
+SWIFT_CLASS_NAMED("NavigationPropertiesMO")
+@interface NavigationPropertiesMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+@interface NavigationPropertiesMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic) BOOL isVisibleOnList;
+@property (nonatomic) BOOL isVisibleOnMap;
+@property (nonatomic, strong) NavigationMO * _Nullable origin;
+@property (nonatomic, copy) NSSet<SegmentMO *> * _Nullable segments;
+@end
+
 
 SWIFT_CLASS("_TtC23PoilabsVdNavigationCore16PlaceListManager")
 @interface PlaceListManager : NSObject
@@ -224,12 +434,51 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore16PlaceListManager")
 @end
 
 
+SWIFT_CLASS("_TtC23PoilabsVdNavigationCore7PlaceMO")
+@interface PlaceMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface PlaceMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable id;
+@property (nonatomic, copy) NSString * _Nullable categoryTitle;
+@property (nonatomic, copy) NSString * _Nullable categoryKey;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nullable major;
+@property (nonatomic, copy) NSString * _Nullable address;
+@property (nonatomic) double lat;
+@property (nonatomic) double lon;
+@property (nonatomic, strong) ConfigMO * _Nullable origin;
+@end
+
+
+SWIFT_CLASS_NAMED("PointMO")
+@interface PointMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class PropertiesMO;
+
+@interface PointMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSString * _Nullable id;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable category;
+@property (nonatomic, strong) ChildsMO * _Nullable origin;
+@property (nonatomic, strong) LocationMO * _Nullable location;
+@property (nonatomic, strong) FiltersMO * _Nullable filters;
+@property (nonatomic, strong) NavigationMO * _Nullable navigation;
+@property (nonatomic, strong) PropertiesMO * _Nullable properties;
+@end
+
+
 SWIFT_CLASS("_TtC23PoilabsVdNavigationCore18PositioningManager")
 @interface PositioningManager : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
 @class PLPBeaconNode;
 @class CLHeading;
 
@@ -240,6 +489,36 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore18PositioningManager")
 - (void)poilabsPositioningWithDidFail:(enum PoilabsPositioningError)error;
 - (void)poilabsPositioningWithDidUpdateLocation:(PLPBeaconNode * _Nonnull)location;
 - (void)poilabsPositioningWithDidUpdateHeading:(CLHeading * _Nonnull)heading;
+@end
+
+
+SWIFT_CLASS_NAMED("PropertiesMO")
+@interface PropertiesMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface PropertiesMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSString * _Nullable content;
+@property (nonatomic, copy) NSString * _Nullable hoMallDescription;
+@property (nonatomic, strong) PointMO * _Nullable origin;
+@end
+
+
+SWIFT_CLASS_NAMED("SegmentMO")
+@interface SegmentMO : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface SegmentMO (SWIFT_EXTENSION(PoilabsVdNavigationCore))
+@property (nonatomic, copy) NSString * _Nullable startId;
+@property (nonatomic, copy) NSString * _Nullable id;
+@property (nonatomic) double weight;
+@property (nonatomic) BOOL isAvailableForDisabledPerson;
+@property (nonatomic, strong) NavigationMO * _Nullable origin;
 @end
 
 #if __has_attribute(external_source_symbol)

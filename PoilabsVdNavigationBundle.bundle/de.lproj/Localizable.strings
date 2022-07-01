@@ -42,30 +42,29 @@
 "pleaseWait" = "Warten Sie mal...";
 
 //MARK: User Guide
-"welcome" = "Willkommen!";
-"welcomeDesc" = "Wir freuen uns sehr, Sie unter uns zu sehen!\n\nReisen kann manchmal sehr schwierig sein. Deshalb haben wir diese App entwickelt.\n\nFangen wir mit der App an!";
+"welcome" = "Herzlich willkommen!";
+"welcomeDesc" = "Wir sind so froh, dass Sie sich uns angeschlossen haben.\n\nWir hoffen, dass unsere Anwendung Sie bei Ihrer aktiven Teilnahme am täglichen Leben unterstützt.\n\nSie können mit der nächsten Stufe fortfahren und sich über die App informieren.\n\nAber nicht vergessen! Diese App ersetzt keinen weißen Stock.";
 
 "howItWorks" = "Wie funktioniert es?";
-"howItWorksDesc" = "Wir verwenden Bluetooth-Sensoren, um Ihren Standort zu finden. Um diese Sensoren verwenden zu können, müssen Sie Standort- und Bluetooth-Berechtigungen erteilen. Stellen Sie sicher, dass Bluetooth und Ortungsdienste aktiviert sind und Sie über eine aktive Internetverbindung verfügen.\n\nFür die beste Erfahrung müssen Sie Ihr Telefon vor sich und parallel zum Boden halten";
+"howItWorksDesc" = "Wir verwenden Bluetooth-Sensoren, um seinen Standort zu finden. Damit wir diese Sensoren verwenden können, müssen Sie Standort- und Bluetooth-Berechtigungen erteilen.\n\nStellen Sie sicher, dass Bluetooth und Ortungsdienste aktiviert sind und Sie über eine aktive Internetverbindung verfügen!\n\nFür die beste Erfahrung müssen Sie Ihr Telefon vor sich und parallel zum Boden halten.";
 
-"venues" = "Orte";
-"venuesDesc" = "Sie können den Ortstyp auswählen.\n\nNachdem Sie einen Ortstyp ausgewählt haben, werden die verfügbaren Orte aufgelistet, beginnend mit dem Ort, der Ihnen am nächsten liegt. Sie können auch über die Suchleiste nach einem beliebigen Ort suchen.";
+"venues" = "Setzt";
+"venuesDesc" = "Zugängliche Veranstaltungsorte werden aufgelistet, beginnend mit dem nächstgelegenen. Sie können auch jede Art von Veranstaltungsort filtern oder mithilfe der Suchleiste nach einem Veranstaltungsort suchen.";
 
-"poiList" = "Standortliste";
-"poiListDesc" = "Sie können alle verfügbaren Plätze innerhalb des Ortes sehen.\n\nWenn es sich beispielsweise um ein Einkaufszentrum handelt, können Sie auf Geschäfte, Dienstleistungen und mehr zugreifen. Indem Sie einen Punkt auswählen, erhalten Sie weitere Informationen zu diesem Punkt.\n\nSie können die Liste auch nach Kategorien filtern.";
+"poiList" = "POI-Liste";
+"poiListDesc" = "Sie können alle zugänglichen Orte innerhalb eines Veranstaltungsortes sehen.\n\nZum Beispiel; Wenn es sich um ein Einkaufszentrum handelt, finden Sie Geschäfte, Dienstleistungen und mehr. Wenn Sie einen Standort auswählen, erhalten Sie weitere Informationen zu diesem Standort.\n\nSie können die Liste auch nach Kategorien filtern.";
 
 "discoverMode" = "Erkundungsmodus";
-"discoverModeDesc" = "Sie können sich im Vorbeigehen über Orte in der Nähe und deren Standorte informieren.\n\nWenn zusätzliche Inhalte vorhanden sind, wird unten eine Schaltfläche angezeigt. Sie können auf Inhalte zugreifen, indem Sie auf die Schaltfläche klicken.";
+"discoverModeDesc" = "Es hilft Ihnen, Ihren Standort und Ihre Umgebung zu verstehen.\n\nWenn Sie vorbeifahren, können Sie Ihren aktuellen Standort, Orte in der Nähe und Orte herausfinden.";
 
 "navigation" = "Navigation";
-"navigationDesc" = "Nachdem Sie einen Standort ausgewählt und auf „Gehe hierher“ geklickt haben, beginnt Ihre Navigation.\n\nZuerst wird Ihr Standort und dann die Route berechnet.\n\nNachdem Sie eine kurze Information über die Route erhalten haben, müssen Sie in die richtige Richtung abbiegen, um die Navigation zu starten.";
+"navigationDesc" = "Wenn Sie einen Punkt auswählen, gelangen Sie auf die Standortdetailseite. Sie können die Navigation mit der Schaltfläche „Go There“ auf dieser Seite starten.\n\nBevor Sie mit der Navigation beginnen, ist es sinnvoll, die entsprechenden Einstellungen in den Navigationseinstellungen vorzunehmen.";
 
 "navigationSteps" = "Navigationsschritte";
-"navigationStepsDesc" = "Sie können Benachrichtigungen während der Navigation folgen. Denken Sie daran, Ihr Telefon für die beste Erfahrung vor sich und parallel zum Boden zu halten\n\nSobald die Navigation startet, erhalten Sie ständige Updates. Sie können Ihre Route neu berechnen, indem Sie Ihr Telefon schütteln.
-Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer falschen Berechnung des Standorts vorkommen, dass es darauf hinweist, dass Sie sich nicht auf der Route befinden. Gehen Sie bitte noch ein wenig weiter. Wenn die Warnung weiterhin besteht, können Sie eine neue Route wählen, indem Sie Ihr Telefon schütteln.";
+"navigationStepsDesc" = "Sobald die Navigation startet, erhalten Sie fortlaufende Updates.\n\nAbhängig von der von Ihnen gewählten Einstellung in den Navigationseinstellungen erhalten Sie manchmal eine Warnung, dass Sie sich nicht auf der Route befinden, obwohl Sie sich auf der Route befinden. Wenn immer wieder angezeigt wird, dass Sie nicht auf der Route sind, können Sie eine neue Route abrufen, indem Sie das Telefon schütteln.";
 
-"youAreAllSet" = "Alles ist bereit!";
-"youAreAllSetDesc" = "Es kann ein wenig verwirrend sein, da Sie es zum ersten Mal verwenden. Aber der beste Weg, neue Dinge zu lernen, ist das Üben.\n\nSind Sie bereit?";
+"youAreAllSet" = "Sind Sie bereit?";
+"youAreAllSetDesc" = "SSie sind jetzt vielleicht etwas verwirrt. Aber der beste Weg, etwas Neues zu lernen, ist das Üben.\n\nLasst uns beginnen!";
 "start" = "Anfangen";
 "next" = "Nächste";
 
@@ -79,6 +78,8 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "showFavoritesUnselect" = "Doppelklicken Sie, um alle Veranstaltungsorte anzuzeigen";
 "openFilterView" = "Filterseite öffnen";
 "closeFilterView" = "Filterseite schließen";
+"openCategoryView" = "Kategorieauswahlseite öffnen";
+"closeCategoryView" = "Kategorieauswahlseite schließen";
 
 //"select" = "Select";
 //"unselect" = "Unselect";
@@ -90,7 +91,7 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 //
 "showInfo" = "Standortinformationen anzeigen";
 //"noContent" = "No information";
-//"ok" = "Ok";
+"ok" = "Ok";
 //"info" = "Information";
 //
 "clockRotation" = "in Richtung %d Uhr";
@@ -113,6 +114,7 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "directionAndDistanceInFtLR" = "Walk %d ft %@";
 "goWithStairs" = "Fahren Sie mit dem Treppe in %@";
 "arrived" = "Sie haben Ihr Ziel erreicht!";
+"arrivedWithTitle" = "Sie haben %@ erreicht";
 "remainingSteps" = "Verbleibenden Schritte";
 
 "toRight" = "to right";
@@ -150,20 +152,31 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "active" = "Offen";
 "passive" = "Geschlossen";
 
-"activateCurrentLocation" = "Aktuelle Position Im Uhrzeigersinn, ausgewählt: Aus. Doppelklicken Sie, um die Richtungsinformationen Ihres aktuellen Standorts während des Routings zu öffnen";
-"disableCurrentLocation" = "Aktuelle Position im Uhrzeigersinn, ausgewählt: Ein. Doppelklicken Sie, um die Richtungsinformationen Ihres aktuellen Standorts während des Routings auszuschalten";
+"currentLocationDirection" = "Aktueller Standort";
+"activateCurrentLocation" = "Aktuelle Position Im Uhrzeigersinn, ausgewählt: Aus.";
+"disableCurrentLocation" = "Aktuelle Position im Uhrzeigersinn, ausgewählt: Ein.";
+"activateCurrentLocationHint" = "Doppelklicken Sie, um die Richtungsinformationen Ihres aktuellen Standorts während des Routings zu öffnen";
+"disableCurrentLocationHint" = "Doppelklicken Sie, um die Richtungsinformationen Ihres aktuellen Standorts während des Routings auszuschalten";
 
-"metricIsSelected" = "Entfernungseinheit, ausgewählt: metrisch. Doppelklicken Sie, um zu Meilen zu wechseln";
-"imperialIsSelected" = "Gewählte Entfernungseinheit: Meilen. Doppelklicken Sie, um zur Metrik zu wechseln";
+"metricIsSelected" = "Entfernungseinheit, ausgewählt: metrisch.";
+"imperialIsSelected" = "Gewählte Entfernungseinheit: Meilen.";
+"metricHint" = "Doppelklicken Sie, um zu Meilen zu wechseln";
+"imperialHint" = "Doppelklicken Sie, um zur Metrik zu wechseln";
 
-"clockwiseIsSelected" = "Richtungen, ausgewählt: im Uhrzeigersinn. Doppelklicken Sie, um nach links-rechts zu wechseln";
-"leftRightIsSelected" = "Richtungen, ausgewählt: Links-Rechts. Doppelklicken Sie, um im Uhrzeigersinn zu wechseln";
+"clockwiseIsSelected" = "Richtungen, ausgewählt: im Uhrzeigersinn.";
+"leftRightIsSelected" = "Richtungen, ausgewählt: Links-Rechts.";
+"clockwiseIsSelectedHint" = "Doppelklicken Sie, um nach links-rechts zu wechseln";
+"leftRightIsSelectedHint" = "Doppelklicken Sie, um im Uhrzeigersinn zu wechseln";
 
-"onlyElevatorIsSelected" = "Routenoption, ausgewählt: Nur Aufzug. Doppelklicken Sie, um die Route vom Aufzug, der Rolltreppe oder der Treppe abzurufen";
-"allRoutesIsselected" = "Routenoption, ausgewählt: Aufzug/Rolltreppe/Treppe. Doppelklicken Sie, um nur die Aufzugsroute zu erhalten";
+"onlyElevatorIsSelected" = "Routenoption, ausgewählt: Nur Aufzug.";
+"allRoutesIsselected" = "Routenoption, ausgewählt: Aufzug/Rolltreppe/Treppe.";
+"onlyElevatorIsSelectedHint" = "Doppelklicken Sie, um die Route vom Aufzug, der Rolltreppe oder der Treppe abzurufen";
+"allRoutesIsSelectedHint" = "Doppelklicken Sie, um nur die Aufzugsroute zu erhalten";
 
-"autoReRouteIsActive" = "Automatische Umleitung, ausgewählt: Ein. Doppelklicken, um die Erstellung einer neuen Route ohne Warnung zu deaktivieren, wenn eine Abweichung von der Route erkannt wird";
-"autoReRouteIsPassive" = "Automatische Weiterleitung, ausgewählt: Aus. Doppelklicken Sie, um benachrichtigt zu werden, wenn ein Abweichen von der Route erkannt wird";
+"autoReRouteIsActive" = "Automatische Umleitung, ausgewählt: Ein.";
+"autoReRouteIsPassive" = "Automatische Weiterleitung, ausgewählt: Aus.";
+"autoReRouteIsActiveHint" = "Doppelklicken, um die Erstellung einer neuen Route ohne Warnung zu deaktivieren, wenn eine Abweichung von der Route erkannt wird";
+"autoReRouteIsPassiveHint" = "Doppelklicken Sie, um benachrichtigt zu werden, wenn ein Abweichen von der Route erkannt wird";
 
 
 "btPopUp" = "Überprüfen Sie Ihre Bluetooth-Einstellungen!";
@@ -175,3 +188,7 @@ Selbst wenn Sie sich auf der Route befinden, kann es  manchmal aufgrund einer fa
 "completedProgress" = "%d%% abgeschlossen";
 "noAccessibleRoute" = "Keine barrierefreie Route gefunden! Möchten Sie eine Route über Treppen oder Rolltreppen nehmen?";
 "noRoute" = "Die Route konnte nicht erstellt werden! Versuchen Sie es an einem anderen Ort erneut!";
+"noLocationError" = "Ihr Standort konnte nicht erkannt werden!\nStellen Sie sicher, dass Sie sich an dem Ort befinden, an dem sich der Navigationsdienst befindet, und im Erfassungsbereich der Sensoren!";
+
+"selected" = "Ausgewählt";
+"doubleTapToSelect" = "Zum Auswählen doppeltippen";
