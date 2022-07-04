@@ -530,6 +530,7 @@ public class RouteManager {
 }
 extension PoilabsVdNavigationCore.RouteManager {
   public func getRemainingSteps() -> [PoilabsVdNavigationCore.RemainingDistanceItem]
+  public func postRouteNotCreated(deviceModel: Swift.String, timeStamp: Swift.String, sdkVersion: Swift.String, completion: @escaping ((Swift.Error?) -> Swift.Void))
 }
 extension PoilabsVdNavigationCore.RouteManager : PoilabsVdNavigationCore.PositioningManagerDelegate {
   public func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])

@@ -530,6 +530,7 @@ public class RouteManager {
 }
 extension RouteManager {
   public func getRemainingSteps() -> [RemainingDistanceItem]
+  public func postRouteNotCreated(deviceModel: Swift.String, timeStamp: Swift.String, sdkVersion: Swift.String, completion: @escaping ((Swift.Error?) -> Swift.Void))
 }
 extension RouteManager : PositioningManagerDelegate {
   public func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])

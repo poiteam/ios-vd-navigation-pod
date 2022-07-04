@@ -31,6 +31,14 @@ extension UIKit.UIView {
   @discardableResult
   @_Concurrency.MainActor(unsafe) public func style<V>(_ style: Style<V>) -> V where V : UIKit.UIView
 }
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let deviceModelName: Swift.String
+}
+extension Foundation.Bundle {
+  public class var applicationVersionNumber: Swift.String {
+    get
+  }
+}
 public typealias doneBlock = ((_ selectedRow: Swift.Int, _ value: Swift.String) -> ())?
 public typealias cancelBlock = (() -> ())?
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BUStringPickerController : UIKit.UIViewController {
