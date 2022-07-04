@@ -211,6 +211,11 @@ public class NavigationProperties {
   public init(isVisibleOnList: Swift.Bool, isVisibleOnMap: Swift.Bool, segments: [PoilabsVdNavigationCore.Segment])
   @objc deinit
 }
+extension Foundation.Bundle {
+  public class var applicationVersionNumber: Swift.String {
+    get
+  }
+}
 extension PoilabsVdNavigationCore.FloorMO {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PoilabsVdNavigationCore.FloorMO>
   @objc @NSManaged dynamic public var level: Swift.Int64 {
@@ -465,6 +470,9 @@ public class MapProperties {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let deviceModelName: Swift.String
+}
 @objc @_inheritsConvenienceInitializers public class ConfigMO : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
@@ -530,7 +538,6 @@ public class RouteManager {
 }
 extension PoilabsVdNavigationCore.RouteManager {
   public func getRemainingSteps() -> [PoilabsVdNavigationCore.RemainingDistanceItem]
-  public func postRouteNotCreated(deviceModel: Swift.String, timeStamp: Swift.String, sdkVersion: Swift.String, completion: @escaping ((Swift.Error?) -> Swift.Void))
 }
 extension PoilabsVdNavigationCore.RouteManager : PoilabsVdNavigationCore.PositioningManagerDelegate {
   public func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])

@@ -233,6 +233,7 @@ SWIFT_CLASS_NAMED("BeaconMO")
 @end
 
 
+
 SWIFT_CLASS_NAMED("ChildsMO")
 @interface ChildsMO : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
@@ -520,6 +521,7 @@ SWIFT_CLASS_NAMED("SegmentMO")
 @property (nonatomic) BOOL isAvailableForDisabledPerson;
 @property (nonatomic, strong) NavigationMO * _Nullable origin;
 @end
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
