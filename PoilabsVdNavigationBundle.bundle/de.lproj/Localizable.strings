@@ -51,11 +51,11 @@
 "venues" = "Setzt";
 "venuesDesc" = "Zugängliche Veranstaltungsorte werden aufgelistet, beginnend mit dem nächstgelegenen. Sie können auch jede Art von Veranstaltungsort filtern oder mithilfe der Suchleiste nach einem Veranstaltungsort suchen.";
 
-"poiList" = "POI-Liste";
-"poiListDesc" = "Sie können alle zugänglichen Orte innerhalb eines Veranstaltungsortes sehen.\n\nZum Beispiel; Wenn es sich um ein Einkaufszentrum handelt, finden Sie Geschäfte, Dienstleistungen und mehr. Wenn Sie einen Standort auswählen, erhalten Sie weitere Informationen zu diesem Standort.\n\nSie können die Liste auch nach Kategorien filtern.";
+"poiList" = "Standort-Liste";
+"poiListDesc" = "Sie können alle zugänglichen Orte innerhalb eines Veranstaltungsortes sehen.\n\nZum Beispiel; Bibliotheksabteilungen, die Werke im Museum oder Sie erreichen Einkaufszentren. Wenn an Ihrem Standort Inhalte vorhanden sind, können Sie zuhören und eine Route dorthin einschlagen.\n\nSie können die Liste auch nach Kategorien filtern.";
 
 "discoverMode" = "Erkundungsmodus";
-"discoverModeDesc" = "Es hilft Ihnen, Ihren Standort und Ihre Umgebung zu verstehen.\n\nWenn Sie vorbeifahren, können Sie Ihren aktuellen Standort, Orte in der Nähe und Orte herausfinden.";
+"discoverModeDesc" = "Es hilft Ihnen, Ihren Standort und Ihre Umgebung zu verstehen.\n\nWährend Sie unterwegs sind, können Sie Ihren aktuellen Standort, Orte in der Nähe und Standorte herausfinden.\n\nWenn sich an Ihrem Standort Inhalte befinden, wird außerdem unter den Informationen im Uhrzeigersinn eine Schaltfläche angezeigt. Sie können den Inhalt anhören, indem Sie auf diese Schaltfläche oder die Standortinformationen doppelklicken.";
 
 "navigation" = "Navigation";
 "navigationDesc" = "Wenn Sie einen Punkt auswählen, gelangen Sie auf die Standortdetailseite. Sie können die Navigation mit der Schaltfläche „Go There“ auf dieser Seite starten.\n\nBevor Sie mit der Navigation beginnen, ist es sinnvoll, die entsprechenden Einstellungen in den Navigationseinstellungen vorzunehmen.";
@@ -100,6 +100,8 @@
 "discovery" = "Erkundungs";
 "currentLocation" = "Aktueller Standort:";
 "nearByLocations" = "Geschäfte in der Nähe:";
+"contentAvailable" = "Inhalt verfügbar";
+"contentButton" = "Doppeltippen, um den Inhalt anzuhören";
 //
 //
 "seeRemainingSteps" = "Siehe die verbleibenden Schritte";

@@ -163,9 +163,10 @@ public class ChildBase {
   public var map: PoilabsVdNavigationCore.Map?
   public var facilities: [PoilabsVdNavigationCore.Facility]
   public var placeTitle: Swift.String
+  public var placeDescription: Swift.String
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.ChildBase]
   required public init?(dictionary: Foundation.NSDictionary)
-  public init(points: [PoilabsVdNavigationCore.Poi], floors: [PoilabsVdNavigationCore.Floors], facilities: [PoilabsVdNavigationCore.Facility], title: Swift.String)
+  public init(points: [PoilabsVdNavigationCore.Poi], floors: [PoilabsVdNavigationCore.Floors], facilities: [PoilabsVdNavigationCore.Facility], title: Swift.String, placeDescription: Swift.String)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(ChildsMO) public class ChildsMO : CoreData.NSManagedObject {
@@ -248,12 +249,6 @@ extension PoilabsVdNavigationCore.FloorMO {
   }
 }
 @_hasMissingDesignatedInitializers public class ConfigData {
-  public var uuid: Swift.String?
-  public var messagingTime: Swift.Double?
-  public var childsUrl: Swift.String?
-  public var minRssiLimit: Swift.Int?
-  public var elements: [PoilabsVdNavigationCore.Place]
-  public var menuLevel: Swift.Int?
   required public init?(dictionary: Foundation.NSDictionary)
   @objc deinit
 }
@@ -565,6 +560,9 @@ public protocol PlaceListManagerDelegate {
   public var delegate: PoilabsVdNavigationCore.PlaceListManagerDelegate?
   @objc override dynamic public init()
   public func getPlaceList() -> [PoilabsVdNavigationCore.Place]
+  public func deleteStoredConfig(appId: Swift.String, lang: Swift.String)
+  public func saveConfig(config: PoilabsVdNavigationCore.ConfigData, appId: Swift.String, lang: Swift.String)
+  public func getConfig(appId: Swift.String, lang: Swift.String) -> Swift.Result<PoilabsVdNavigationCore.ConfigData?, Swift.Error>
   public func getPlaceFilteredList() -> [PoilabsVdNavigationCore.Place]?
   public func getCategories() -> [PoilabsVdNavigationCore.ItemCategory]
   public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [PoilabsVdNavigationCore.Place]?
@@ -703,8 +701,9 @@ extension PoilabsVdNavigationCore.GeometryMO {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
-public class StoreListManager {
+@_hasMissingDesignatedInitializers public class StoreListManager {
   public init(placeId: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  public func getStoredPoints(placeId: Swift.String) -> PoilabsVdNavigationCore.ChildBase?
   public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
   public func getInfoText() -> Swift.String
   public func getStoreList() -> [PoilabsVdNavigationCore.Poi]
@@ -740,6 +739,10 @@ extension PoilabsVdNavigationCore.ChildsMO {
     @objc set
   }
   @objc @NSManaged dynamic public var facilities: Swift.Set<PoilabsVdNavigationCore.FacilityMO>? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var hoMallDescription: Swift.String {
     @objc get
     @objc set
   }

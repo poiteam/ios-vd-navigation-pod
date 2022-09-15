@@ -77,11 +77,11 @@
 "venues" = "Places";
 "venuesDesc" = "Accessible venues will be listed starting with the closest to you. You can also filter any type of venue or search for a venue using the search bar.";
 
-"poiList" = "POI List";
-"poiListDesc" = "You can see all accessible places within a venue.\n\nFor example; If it's a mall, you'll find stores, services, and more. By selecting a location, you can have more information about that location.\n\nYou can also filter the list by categories.";
+"poiList" = "Location List";
+"poiListDesc" = "You can see all accessible locations within a venue.\n\nFor example; You can reach library sections, the works in the museum or shopping mall stores. If there is content in your location, you can listen and take a route there.\n\nYou can also filter the list by categories.";
 
 "discoverMode" = "Explore Mode";
-"discoverModeDesc" = "It helps you understand your location and surroundings.\n\nAs you pass by, you can find out your current location, nearby places and locations.";
+"discoverModeDesc" = "It helps you understand your location and surroundings.\n\nAs you roam, you can find out your current location, nearby places and locations.\n\nIn addition, if there is content in your location, a button will appear under the clockwise information. You can listen to the content by double-clicking this button or the location information.";
 
 "navigation" = "Navigation";
 "navigationDesc" = "When you select a point, you will reach the location detail page. You can start the navigation with the 'Go Here' button on this page.\n\nBefore starting the navigation, it will be useful to make the appropriate settings from the navigation settings.";
@@ -126,6 +126,8 @@
 "discovery" = "Discovery";
 "currentLocation" = "Current Location:";
 "nearByLocations" = "Nearby Locations:";
+"contentAvailable" = "Content Available";
+"contentButton" = "Double tap to listen to the content";
 
 
 

@@ -74,11 +74,11 @@
 "venues" = "Mekanlar";
 "venuesDesc" = "Erişilebilir mekanlar sana en yakın olandan başlayarak listelenecektir. Ayrıca herhangi bir mekân türünü filtreleyebilirsin ya da arama çubuğunu kullanarak bir mekanı arayabilirsin.";
 
-"poiList" = "POI Listesi";
-"poiListDesc" = "Bir mekân içindeki tüm ulaşılabilir yerleri görebilirsin.\n\nÖrneğin AVM ise mağazalara, hizmetlere ve daha fazlasına ulaşırsın. Bir konum seçerek o konumla ilgili daha fazla bilgiye sahip olabilirsin.\n\nAyrıca kategorilere göre listeyi filtreleyebilirsin.";
+"poiList" = "Konum Listesi";
+"poiListDesc" = "Bir mekan içindeki tüm ulaşılabilir konumları görebilirsin.\n\nÖrneğin; kütüphane bölümlerine, müzedeki eserlere ya da AVM mağazalarına  ulaşabilirsin. Bulunduğun konumda içerik varsa dinleyebilir, buralara rota alabilirsin.\n\nAyrıca kategorilerine göre listeyi filtreleyebilirsin.";
 
 "discoverMode" = "Keşfet Modu";
-"discoverModeDesc" = "Bulunduğun konumu ve çevresini anlamana yardımcı olur.\n\nYanından geçerken mevcut konumunu, yakınındaki yerleri ve konumlarını öğrenebilirsin.";
+"discoverModeDesc" = "Bulunduğun konumu ve çevresini anlamana yardımcı olur.\n\nDolaşırken mevcut konumunu, yakınındaki yerleri ve konumlarını öğrenebilirsin.\n\nAyrıca bulunduğun konumda içerik varsa saat yönü bilgisinin altında buton belirecektir. Bu butona ya da konum bilgisine çift tıklayarak içeriği dinleyebilirsin.";
 
 "navigation" = "Navigasyon";
 "navigationDesc" = "Bir nokta seçtiğinde konum detay sayfasına ulaşırsın. Bu sayfada yer alan 'Buraya Git' butonu ile navigasyonu başlatabilirsin.\n\nNavigasyonu başlatmadan önce navigasyon ayarlarından kendine uygun olan ayarları yapman faydalı olacaktır.";
@@ -124,6 +124,8 @@
 "discovery" = "Keşfet";
 "currentLocation" = "Mevcut Konum:";
 "nearByLocations" = "Yakındaki Konumlar:";
+"contentAvailable" = "İçerik Mevcut";
+"contentButton" = "İçeriği dinlemek için çift dokunun";
 
 
 

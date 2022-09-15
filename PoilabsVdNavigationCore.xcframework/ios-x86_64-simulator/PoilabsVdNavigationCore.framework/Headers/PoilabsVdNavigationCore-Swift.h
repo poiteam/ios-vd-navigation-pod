@@ -261,6 +261,7 @@ SWIFT_CLASS_NAMED("ChildsMO")
 @property (nonatomic, copy) NSSet<PointMO *> * _Nullable points;
 @property (nonatomic, copy) NSSet<FloorMO *> * _Nullable floors;
 @property (nonatomic, copy) NSSet<FacilityMO *> * _Nullable facilities;
+@property (nonatomic, copy) NSString * _Nonnull hoMallDescription;
 @end
 
 
