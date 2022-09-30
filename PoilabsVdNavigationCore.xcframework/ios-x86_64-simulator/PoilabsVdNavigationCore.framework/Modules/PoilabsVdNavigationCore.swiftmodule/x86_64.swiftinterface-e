@@ -605,6 +605,10 @@ extension PoilabsVdNavigationCore.PlaceMO {
     @objc get
     @objc set
   }
+  @objc @NSManaged dynamic public var categoryTitleEn: Swift.String? {
+    @objc get
+    @objc set
+  }
   @objc @NSManaged dynamic public var major: [Swift.Int]? {
     @objc get
     @objc set

@@ -448,6 +448,7 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore7PlaceMO")
 @property (nonatomic, copy) NSString * _Nullable id;
 @property (nonatomic, copy) NSString * _Nullable categoryTitle;
 @property (nonatomic, copy) NSString * _Nullable categoryKey;
+@property (nonatomic, copy) NSString * _Nullable categoryTitleEn;
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nullable major;
 @property (nonatomic, copy) NSString * _Nullable address;
 @property (nonatomic) double lat;
