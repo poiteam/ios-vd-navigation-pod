@@ -562,7 +562,7 @@ public protocol PlaceListManagerDelegate {
   public func getPlaceList() -> [Place]
   public func deleteStoredConfig(appId: Swift.String, lang: Swift.String)
   public func saveConfig(config: ConfigData, appId: Swift.String, lang: Swift.String)
-  public func getConfig(appId: Swift.String, lang: Swift.String) -> Swift.Result<ConfigData?, Swift.Error>
+  public func getConfig(appId: Swift.String, lang: Swift.String) -> ConfigData?
   public func getPlaceFilteredList() -> [Place]?
   public func getCategories() -> [ItemCategory]
   public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [Place]?
@@ -602,10 +602,6 @@ extension PlaceMO {
     @objc set
   }
   @objc @NSManaged dynamic public var categoryKey: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var categoryTitleEn: Swift.String? {
     @objc get
     @objc set
   }

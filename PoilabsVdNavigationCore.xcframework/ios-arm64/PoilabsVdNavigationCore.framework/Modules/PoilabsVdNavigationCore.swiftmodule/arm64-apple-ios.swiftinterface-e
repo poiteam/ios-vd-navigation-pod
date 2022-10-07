@@ -562,7 +562,7 @@ public protocol PlaceListManagerDelegate {
   public func getPlaceList() -> [PoilabsVdNavigationCore.Place]
   public func deleteStoredConfig(appId: Swift.String, lang: Swift.String)
   public func saveConfig(config: PoilabsVdNavigationCore.ConfigData, appId: Swift.String, lang: Swift.String)
-  public func getConfig(appId: Swift.String, lang: Swift.String) -> Swift.Result<PoilabsVdNavigationCore.ConfigData?, Swift.Error>
+  public func getConfig(appId: Swift.String, lang: Swift.String) -> PoilabsVdNavigationCore.ConfigData?
   public func getPlaceFilteredList() -> [PoilabsVdNavigationCore.Place]?
   public func getCategories() -> [PoilabsVdNavigationCore.ItemCategory]
   public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [PoilabsVdNavigationCore.Place]?
@@ -602,10 +602,6 @@ extension PoilabsVdNavigationCore.PlaceMO {
     @objc set
   }
   @objc @NSManaged dynamic public var categoryKey: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var categoryTitleEn: Swift.String? {
     @objc get
     @objc set
   }
