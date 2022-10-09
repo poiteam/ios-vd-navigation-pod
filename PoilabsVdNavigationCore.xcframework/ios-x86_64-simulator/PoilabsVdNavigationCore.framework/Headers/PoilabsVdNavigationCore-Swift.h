@@ -308,6 +308,7 @@ SWIFT_CLASS_NAMED("FacilityMO")
 @end
 
 
+
 SWIFT_CLASS_NAMED("FiltersMO")
 @interface FiltersMO : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
