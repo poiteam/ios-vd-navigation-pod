@@ -561,7 +561,7 @@ public protocol PlaceListManagerDelegate {
   @objc override dynamic public init()
   public func getPlaceList() -> [Place]
   public func deleteStoredConfig(appId: Swift.String, lang: Swift.String)
-  public func saveConfig(config: ConfigData, appId: Swift.String, lang: Swift.String)
+  public func saveConfig(configDict: Foundation.NSDictionary, appId: Swift.String, lang: Swift.String)
   public func getConfig(appId: Swift.String, lang: Swift.String) -> ConfigData?
   public func getPlaceFilteredList() -> [Place]?
   public func getCategories() -> [ItemCategory]

@@ -561,7 +561,7 @@ public protocol PlaceListManagerDelegate {
   @objc override dynamic public init()
   public func getPlaceList() -> [PoilabsVdNavigationCore.Place]
   public func deleteStoredConfig(appId: Swift.String, lang: Swift.String)
-  public func saveConfig(config: PoilabsVdNavigationCore.ConfigData, appId: Swift.String, lang: Swift.String)
+  public func saveConfig(configDict: Foundation.NSDictionary, appId: Swift.String, lang: Swift.String)
   public func getConfig(appId: Swift.String, lang: Swift.String) -> PoilabsVdNavigationCore.ConfigData?
   public func getPlaceFilteredList() -> [PoilabsVdNavigationCore.Place]?
   public func getCategories() -> [PoilabsVdNavigationCore.ItemCategory]
