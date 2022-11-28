@@ -149,6 +149,7 @@
 "toForward" = "düz";
 "toBackward" = "geriye";
 
+"close" = "Kapat";
 
 "profile" = "Profil";
 "notifications" = "Bildirimler";

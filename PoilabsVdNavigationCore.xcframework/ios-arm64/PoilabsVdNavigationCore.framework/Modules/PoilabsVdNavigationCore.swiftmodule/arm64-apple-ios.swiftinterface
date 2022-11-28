@@ -3,7 +3,6 @@
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
 import Alamofire
 import CoreBluetooth
-import CoreData
 import CoreLocation
 import Foundation
 import PoilabsPositioning
@@ -11,21 +10,6 @@ import PoilabsPositioning
 import Swift
 import UIKit
 import _Concurrency
-extension PropertiesMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PropertiesMO>
-  @objc @NSManaged dynamic public var content: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var hoMallDescription: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: PointMO? {
-    @objc get
-    @objc set
-  }
-}
 public protocol PositioningManagerDelegate {
   func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
   func positioningManager(didStatusChanged status: UserLocationStatus)
@@ -75,119 +59,191 @@ extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
   @objc dynamic public func poilabsPositioning(didUpdateLocation location: PoilabsPositioning.PLPBeaconNode)
   @objc dynamic public func poilabsPositioning(didUpdateHeading heading: CoreLocation.CLHeading)
 }
-extension FacilityMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<FacilityMO>
-  @objc @NSManaged dynamic public var title: Swift.String? {
-    @objc get
-    @objc set
+public struct ChildBase : Swift.Codable {
+  public let status: Swift.Int
+  public let data: [Child]
+  public var map: Map {
+    get
   }
-  @objc @NSManaged dynamic public var pointType: Swift.String? {
-    @objc get
-    @objc set
+  public var allPointsForMap: [Poi] {
+    get
   }
-  @objc @NSManaged dynamic public var order: Swift.Int {
-    @objc get
-    @objc set
+  public var mainGraph: PESGraph {
+    get
   }
-  @objc @NSManaged dynamic public var origin: ChildsMO? {
-    @objc get
-    @objc set
+  public var disableGraph: PESGraph {
+    get
   }
+  public var placeTitle: Swift.String {
+    get
+  }
+  public var placeDescription: Swift.String {
+    get
+  }
+  public var facilities: [Facility] {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers @objc(SegmentMO) public class SegmentMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
+public struct Child : Swift.Codable {
+  public let isActive: Swift.Bool?
+  public let filters: Filter
+  public let map: Map?
+  public let title: Swift.String
+  public let description: Swift.String?
+  public let major: [Swift.Int]?
+  public let location: Location?
+  public let conversionFactor: Swift.Double?
+  public let type: Swift.String?
+  public let createdAt: Swift.Int?
+  public let id: Swift.String?
+  public let updatedAt: Swift.Int?
+  public let rid: Swift.String?
+  public let _self: Swift.String?
+  public let etag: Swift.String?
+  public let attachments: Swift.String?
+  public let ts: Swift.Int?
+  public let facilities: [Facility]?
+  public let navigation: Navigation?
+  public let properties: ChildProperties?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-public class Segment {
-  public var finishPoiId: Swift.String?
-  public var finishNode: PESGraphNode?
+public struct Filter : Swift.Codable {
+  public let placeType: [Swift.String]?
+  public let pointType: [Swift.String]?
+  public let networkType: Swift.String?
+  public let storeType: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Map : Swift.Codable {
+  public let vendor: Swift.String
+  public let accessToken: Swift.String
+  public let styleUrl: Swift.String
+  public let floors: [Floor]?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Floor : Swift.Codable {
+  public let title: Swift.String
+  public let properties: FloorProperties?
+  public let level: Swift.Int
+  public let mapRotateAngle: Swift.Int?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct FloorProperties : Swift.Codable {
+  public let centerPoint: [Swift.Double]
+  public let conversionFactor: Swift.Double?
+  public let maxBounds: [[Swift.Double]]
+  public let minZoomLevel: Swift.Double
+  public let zoomLevel: Swift.Double
+  public let maxZoomLevel: Swift.Double
+  public var routeConversionFactorDividend: Swift.Double?
+  public var conversionFactorDividend: Swift.Double?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Location : Swift.Codable {
+  public let geometry: Geometry
+  public let properties: LocationProperties?
+  public let type: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Geometry : Swift.Codable {
+  public let type: Swift.String
+  public let coordinates: [Swift.Double]
+  public var locationCoordinates: CoreLocation.CLLocationCoordinate2D? {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct LocationProperties : Swift.Codable {
+  public let city: Swift.String?
+  public let district: Swift.String?
+  public let address: Swift.String?
+  public let floorLevel: Swift.Int?
+  public let shopCenterPoint: [Swift.Double]?
+  public var shopCenterPointCoordinates: CoreLocation.CLLocationCoordinate2D? {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Facility : Swift.Codable {
+  public let pointType: Swift.String
+  public let order: Swift.Int
+  public let title: Swift.String
+  public let titleEn: Swift.String
+  public let iconUrl: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Navigation : Swift.Codable {
+  public let properties: NavigationProperties?
+  public var segments: [Segment]?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct NavigationProperties : Swift.Codable {
+  public var isVisOnList: Swift.Bool {
+    get
+  }
+  public var isVisOnMap: Swift.Bool {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Segment : Swift.Codable {
+  public let id: Swift.String
+  public let mapWeight: Swift.Double?
+  public let weight: Swift.Double?
   public var startPoiId: Swift.String?
-  public var startNode: PESGraphNode?
-  public var weight: Swift.Double?
-  public var isAvailableForDisabledPerson: Swift.Bool
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray, withStartId startID: Swift.String) -> [Segment]
-  required public init?(dictionary: Foundation.NSDictionary, startID: Swift.String)
-  public init(startId: Swift.String, finishId: Swift.String, weight: Swift.Double, isAvailableForDisabledPerson: Swift.Bool)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc(PointMO) public class PointMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-extension LocationPropertiesMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<LocationPropertiesMO>
-  @objc @NSManaged dynamic public var floorLevel: Swift.Int64 {
-    @objc get
-    @objc set
+  public var finishPoiId: Swift.String?
+  public var isAvailableForDisPerson: Swift.Bool {
+    get
   }
-  @objc @NSManaged dynamic public var shopCenterPoint: [Swift.Double]? {
-    @objc get
-    @objc set
+  public var startNode: PESGraphNode? {
+    get
   }
-  @objc @NSManaged dynamic public var origin: LocationMO? {
-    @objc get
-    @objc set
+  public var finishNode: PESGraphNode? {
+    get
   }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers @objc(PropertiesMO) public class PropertiesMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
+public struct ChildProperties : Swift.Codable {
+  public let merchantId: Swift.Int?
+  public let content: Swift.String?
+  public let hoShopNavigation: Swift.String?
+  public let hoShopFreeMove: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-extension SegmentMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<SegmentMO>
-  @objc @NSManaged dynamic public var startId: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var id: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var weight: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var isAvailableForDisabledPerson: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: NavigationMO? {
-    @objc get
-    @objc set
-  }
+public struct PlaceBeacons : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-public class ChildBase {
-  public var allPointsForMap: [Poi]
-  public var mainGraph: PESGraph
-  public var disableGraph: PESGraph
-  public var map: Map?
-  public var facilities: [Facility]
-  public var placeTitle: Swift.String
-  public var placeDescription: Swift.String
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [ChildBase]
-  required public init?(dictionary: Foundation.NSDictionary)
-  public init(points: [Poi], floors: [Floors], facilities: [Facility], title: Swift.String, placeDescription: Swift.String)
-  @objc deinit
+public struct Beacon : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers @objc(ChildsMO) public class ChildsMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc(GeometryMO) public class GeometryMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class Poi : Swift.Hashable {
-  public static func == (lhs: Poi, rhs: Poi) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var filters: Filters?
-  public var properties: DataProperties?
+public struct Poi {
+  public var filters: Filter?
+  public var properties: ChildProperties?
   public var title: Swift.String?
   public var description: Swift.String?
   public var location: Location?
   public var id: Swift.String?
-  public var navigation: NavigationProperties?
-  public var node: PESGraphNode?
+  public var navigation: Navigation?
+  public var node: PESGraphNode? {
+    get
+  }
   public var coordinates: CoreLocation.CLLocationCoordinate2D? {
     get
   }
@@ -197,67 +253,135 @@ public class ChildBase {
   public var floorLevel: Swift.Int? {
     get
   }
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Poi]
-  required public init?(dictionary: Foundation.NSDictionary)
-  @objc deinit
+}
+extension Poi : Swift.Hashable {
+  public static func == (lhs: Poi, rhs: Poi) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-}
-public class NavigationProperties {
-  public var isVisibleOnList: Swift.Bool
-  public var isVisibleOnMap: Swift.Bool
-  public var segments: [Segment]?
-  required public init?(dictionary: Foundation.NSDictionary)
-  public init(isVisibleOnList: Swift.Bool, isVisibleOnMap: Swift.Bool, segments: [Segment])
-  @objc deinit
 }
 extension Foundation.Bundle {
   public class var applicationVersionNumber: Swift.String {
     get
   }
 }
-extension FloorMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<FloorMO>
-  @objc @NSManaged dynamic public var level: Swift.Int64 {
-    @objc get
-    @objc set
+public struct FullInit : Swift.Codable {
+  public let uuid: Swift.String
+  public let messagingTime: Swift.Double
+  public let beaconCount: Swift.Int, minRssiLimit: Swift.Int
+  public let fullInit: Swift.Bool
+  public let positioning: Positioning
+  public let lists: [FullInitList]
+  public let childsURL: Swift.String
+  public let messageURL: Swift.String
+  public let topPlaceURL: Swift.String, beaconListURL: Swift.String, placeBeaconsURL: Swift.String
+  public let initListURL: Swift.String
+  public let menuLevel: Swift.Int
+  public var allChilds: [[Child]] {
+    get
   }
-  @objc @NSManaged dynamic public var mapRotateAngle: Swift.Int64 {
-    @objc get
-    @objc set
+  public var placeBeacons: [PlaceBeacons] {
+    get
   }
-  @objc @NSManaged dynamic public var title: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var conversionFactor: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var routeConversionFactorDividend: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var conversionFactorDividend: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: ChildsMO? {
-    @objc get
-    @objc set
-  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers public class ConfigData {
-  required public init?(dictionary: Foundation.NSDictionary)
-  @objc deinit
+public struct FullInitList : Swift.Codable {
+  public let type: Swift.String
+  public let excludes: [Swift.String]?
+  public let name: Name
+  public let elements: [FullInitElement]
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers public class Location {
-  public var geometry: Geometry?
-  public var properties: LocationProperties?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Location]
-  required public init?(dictionary: Foundation.NSDictionary)
-  @objc deinit
+public struct FullInitElement : Swift.Codable {
+  public let id: Swift.String, title: Swift.String, description: Swift.String
+  public let major: [Swift.Int]?
+  public let city: Swift.String, district: Swift.String, address: Swift.String
+  public let lon: Swift.Double, lat: Swift.Double
+  public let place: Child?
+  public let points: [Child]?
+  public let beacons: [Beacon]?
+  public var allChilds: [Child] {
+    get
+  }
+  public var placeBeacons: PlaceBeacons? {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ConfigData : Swift.Codable {
+  public let uuid: Swift.String
+  public let messagingTime: Swift.Double
+  public let beaconCount: Swift.Int
+  public let fullInit: Swift.Bool?
+  public let positioning: Positioning?
+  public let lists: [List]
+  public let childsURL: Swift.String
+  public let messageURL: Swift.String
+  public let topPlaceURL: Swift.String, beaconListURL: Swift.String, placeBeaconsURL: Swift.String
+  public let initListURL: Swift.String?
+  public let menuLevel: Swift.Int
+  public var allElements: [Element] {
+    get
+  }
+  public var minRSSILimitIOS: Swift.Int? {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct List : Swift.Codable {
+  public let type: Swift.String
+  public let excludes: [Swift.String]?
+  public let name: Name
+  public let elements: [Element]
+  public let child: ListChild?
+  public let includes: [Swift.String]?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ListChild : Swift.Codable {
+  public let type: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Element : Swift.Codable {
+  public let id: Swift.String, title: Swift.String, elementDescription: Swift.String
+  public let major: [Swift.Int]?
+  public let city: Swift.String, district: Swift.String, address: Swift.String
+  public let lon: Swift.Double, lat: Swift.Double
+  public let childs: [ChildElement]?
+  public let parents: [Swift.String]?
+  public var distance: Swift.Double?
+  public var isFavorite: Swift.Bool
+  public var childsList: [Element]? {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ChildElement : Swift.Codable {
+  public let id: Swift.String, title: Swift.String, childDescription: Swift.String
+  public let major: [Swift.Int]
+  public let lon: Swift.Double, lat: Swift.Double
+  public let city: Swift.String?, district: Swift.String?, address: Swift.String?
+  public func toElement() -> Element
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Name : Swift.Codable {
+  public let tr: Swift.String, en: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Positioning : Swift.Codable {
+  public let beaconScanInterval: Swift.Double, locationUpdateInterval: Swift.Double
+  public let requestInterval: Swift.Int
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol PoiVDNavigationManagerDelegate {
   func PoiVDNavigationManager(didChangeAuthorization status: Swift.Bool)
@@ -269,7 +393,7 @@ public class PoiVDNavigationManager {
   public var delegate: PoiVDNavigationManagerDelegate?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
-  public func getMenuItems() -> [Place]
+  public func getMenuItems() -> [Element]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ItemCategory : Swift.Hashable {
@@ -294,107 +418,6 @@ public class ItemBase {
   public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [ItemBase]
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(FloorMO) public class FloorMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc(FacilityMO) public class FacilityMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc(NavigationPropertiesMO) public class NavigationPropertiesMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-extension ConfigMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<ConfigMO>
-  @objc @NSManaged dynamic public var uuid: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var messagingTime: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var childsUrl: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var minRssiLimit: Swift.Int64 {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var menuLevel: Swift.Int64 {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var appId: Swift.String {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var lang: Swift.String {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var places: Swift.Set<PlaceMO>? {
-    @objc get
-    @objc set
-  }
-}
-extension ConfigMO {
-  @objc(addPlacesObject:) @NSManaged dynamic public func addToPlaces(_ value: PlaceMO)
-  @objc(removePlacesObject:) @NSManaged dynamic public func removeFromPlaces(_ value: PlaceMO)
-  @objc(addPlaces:) @NSManaged dynamic public func addToPlaces(_ values: Foundation.NSSet)
-  @objc(removePlaces:) @NSManaged dynamic public func removeFromPlaces(_ values: Foundation.NSSet)
-}
-public class Map {
-  public var floors: [Floors]
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Map]
-  required public init?(dictionary: Foundation.NSDictionary)
-  public init(floors: [Floors])
-  @objc deinit
-}
-public class Facility : Swift.Codable {
-  public var title: Swift.String!
-  public var pointType: Swift.String!
-  public var order: Swift.Int!
-  required public init(dictionary: Foundation.NSDictionary)
-  public init(title: Swift.String, pointType: Swift.String, order: Swift.Int)
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Facility]
-  @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
-}
-extension FiltersMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<FiltersMO>
-  @objc @NSManaged dynamic public var pointType: [Swift.String]? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: PointMO? {
-    @objc get
-    @objc set
-  }
-}
-public class FloorProperties {
-  public var level: Swift.Int?
-  public var conversionFactor: Swift.Double?
-  public var routeConversionFactorDividend: Swift.Double
-  public var conversionFactorDividend: Swift.Double
-  required public init?(dictionary: Foundation.NSDictionary)
-  public init(level: Swift.Int, conversionFactor: Swift.Double, routeConversionFactorDividend: Swift.Double, conversionFactorDividend: Swift.Double)
-  @objc deinit
-}
-public class Floors {
-  public var title: Swift.String?
-  public var properties: FloorProperties?
-  public var level: Swift.Int?
-  public var mapRotateAngle: Swift.Int?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Floors]
-  required public init?(dictionary: Foundation.NSDictionary)
-  public init(title: Swift.String, level: Swift.Int, mapRotateAngle: Swift.Int, conversionFactor: Swift.Double, routeConversionFactorDividend: Swift.Double, conversionFactorDividend: Swift.Double)
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers public class Place {
   public var id: Swift.String!
   public var title: Swift.String?
@@ -410,67 +433,8 @@ public class Floors {
   required public init?(dictionary: Foundation.NSDictionary, type: ItemCategory)
   @objc deinit
 }
-extension NavigationMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<NavigationMO>
-  @objc @NSManaged dynamic public var properties: NavigationPropertiesMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: PointMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var segments: Foundation.NSSet? {
-    @objc get
-    @objc set
-  }
-}
-extension NavigationMO {
-  @objc(addSegmentsObject:) @NSManaged dynamic public func addToSegments(_ value: SegmentMO)
-  @objc(removeSegmentsObject:) @NSManaged dynamic public func removeFromSegments(_ value: SegmentMO)
-  @objc(addSegments:) @NSManaged dynamic public func addToSegments(_ values: Foundation.NSSet)
-  @objc(removeSegments:) @NSManaged dynamic public func removeFromSegments(_ values: Foundation.NSSet)
-}
-public class Filters : Swift.Codable {
-  public var pointType: [Swift.String]
-  required public init?(dictionary: Foundation.NSDictionary)
-  public init(pointType: [Swift.String])
-  @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
-}
-@_inheritsConvenienceInitializers @objc(LocationPropertiesMO) public class LocationPropertiesMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class FilteredPoi {
-  public var title: Swift.String
-  public var description: Swift.String
-  public var floor: Swift.String
-  public var content: Swift.String?
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class Geometry {
-  public var coordinates: CoreLocation.CLLocationCoordinate2D?
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [Geometry]
-  required public init?(dictionary: Foundation.NSDictionary)
-  @objc deinit
-}
-public class MapProperties {
-  public var defaultFloor: Swift.Int?
-  required public init?(dictionary: Foundation.NSDictionary)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc(NavigationMO) public class NavigationMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let deviceModelName: Swift.String
-}
-@objc @_inheritsConvenienceInitializers public class ConfigMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
 }
 public enum RouteError {
   case noLocation, noRoute, unknown
@@ -538,172 +502,24 @@ extension RouteManager : PositioningManagerDelegate {
   public func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
   public func positioningManager(didStatusChanged status: UserLocationStatus)
 }
-extension LocationMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<LocationMO>
-  @objc @NSManaged dynamic public var geometry: GeometryMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: PointMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var properties: LocationPropertiesMO? {
-    @objc get
-    @objc set
-  }
-}
 public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers public class PlaceListManager : ObjectiveC.NSObject {
   public var delegate: PlaceListManagerDelegate?
   @objc override dynamic public init()
-  public func getPlaceList() -> [Place]
-  public func deleteStoredConfig(appId: Swift.String, lang: Swift.String)
-  public func saveConfig(configDict: Foundation.NSDictionary, appId: Swift.String, lang: Swift.String)
+  public func getConfigList() -> [List]
+  public func getPlaceList() -> [Element]
+  public func saveConfig(config: ConfigData, appId: Swift.String, lang: Swift.String)
   public func getConfig(appId: Swift.String, lang: Swift.String) -> ConfigData?
-  public func getPlaceFilteredList() -> [Place]?
+  public func getPlaceFilteredList() -> [Element]?
   public func getCategories() -> [ItemCategory]
-  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [Place]?
+  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [Element]?
   @objc deinit
 }
 extension PlaceListManager : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
-}
-@_inheritsConvenienceInitializers @objc(LocationMO) public class LocationMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-public class DataProperties : Swift.Codable {
-  public var hoMallDescription: Swift.String
-  public var hoMallDescription_en: Swift.String
-  public var hoShopAdress: Swift.String?
-  public var content: Swift.String?
-  required public init?(dictionary: Foundation.NSDictionary)
-  public init(content: Swift.String?, hoMallDescription: Swift.String)
-  @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
-}
-extension PlaceMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PlaceMO>
-  @objc @NSManaged dynamic public var title: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var id: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var categoryTitle: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var categoryKey: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var categoryTitleEn: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var major: [Swift.Int]? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var address: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var lat: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var lon: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: ConfigMO? {
-    @objc get
-    @objc set
-  }
-}
-@objc @_inheritsConvenienceInitializers public class PlaceMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
-}
-extension NavigationPropertiesMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<NavigationPropertiesMO>
-  @objc @NSManaged dynamic public var isVisibleOnList: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var isVisibleOnMap: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: NavigationMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var segments: Swift.Set<SegmentMO>? {
-    @objc get
-    @objc set
-  }
-}
-extension BeaconMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<BeaconMO>
-  @objc @NSManaged dynamic public var major: Swift.Int64 {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var minor: Swift.Int64 {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var uuid: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var placeId: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var lat: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var lon: Swift.Double {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var floor: Swift.Int64 {
-    @objc get
-    @objc set
-  }
-}
-@_hasMissingDesignatedInitializers public class LocationProperties {
-  public var floorLevel: Swift.Int?
-  public var shopCenterPoint: CoreLocation.CLLocationCoordinate2D?
-  required public init?(dictionary: Foundation.NSDictionary)
-  @objc deinit
-}
-extension GeometryMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<GeometryMO>
-  @objc @NSManaged dynamic public var coordinates: [Swift.Double]? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: LocationMO? {
-    @objc get
-    @objc set
-  }
-}
-@_inheritsConvenienceInitializers @objc(FiltersMO) public class FiltersMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class StoreListManager {
   public init(placeId: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
@@ -718,82 +534,6 @@ extension GeometryMO {
 public class PointDetailManager {
   public init(target: Poi)
   public func getFloorLevel() -> Swift.String
-  @objc deinit
-}
-extension ChildsMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<ChildsMO>
-  @objc @NSManaged dynamic public var placeId: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var lang: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var placeTitle: Swift.String {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var points: Swift.Set<PointMO>? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var floors: Swift.Set<FloorMO>? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var facilities: Swift.Set<FacilityMO>? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var hoMallDescription: Swift.String {
-    @objc get
-    @objc set
-  }
-}
-extension ChildsMO {
-  @objc(addPointsObject:) @NSManaged dynamic public func addToPoints(_ value: PointMO)
-  @objc(removePointsObject:) @NSManaged dynamic public func removeFromPoints(_ value: PointMO)
-  @objc(addPoints:) @NSManaged dynamic public func addToPoints(_ values: Foundation.NSSet)
-  @objc(removePoints:) @NSManaged dynamic public func removeFromPoints(_ values: Foundation.NSSet)
-}
-extension PointMO {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<PointMO>
-  @objc @NSManaged dynamic public var id: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var title: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var category: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var origin: ChildsMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var location: LocationMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var filters: FiltersMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var navigation: NavigationMO? {
-    @objc get
-    @objc set
-  }
-  @objc @NSManaged dynamic public var properties: PropertiesMO? {
-    @objc get
-    @objc set
-  }
-}
-@_inheritsConvenienceInitializers @objc(BeaconMO) public class BeaconMO : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
 extension PMError : Swift.Equatable {}

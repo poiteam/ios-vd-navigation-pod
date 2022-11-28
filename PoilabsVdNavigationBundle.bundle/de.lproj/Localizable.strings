@@ -124,6 +124,8 @@
 "toForward" = "forward";
 "toBackward" = "backward";
 
+"close" = "schließen";
+
 "profile" = "Profil";
 "notifications" = "Benachrichtigungen";
 "account" = "Rechnung";

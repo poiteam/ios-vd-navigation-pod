@@ -149,6 +149,8 @@
 "toForward" = "forward";
 "toBackward" = "backward";
 
+"close" = "Close";
+
 "profile" = "Profile";
 "notifications" = "Notifications";
 "account" = "Account";
