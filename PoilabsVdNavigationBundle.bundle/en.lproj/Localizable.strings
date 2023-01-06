@@ -220,3 +220,8 @@
 
 "selected" = "Selected";
 "doubleTapToSelect" = "Double tap to select";
+
+"afterThat" = "After that";
+
+"floorChangeWarning" = "The location you want to go is at the same level as your floor. However, you will need to change the floor during the routing.";
+"caution" = "Caution!";

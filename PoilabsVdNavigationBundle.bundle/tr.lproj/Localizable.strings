@@ -137,9 +137,9 @@
 "directionAndDistanceInFt" = "%d ft saat %d yönünde ilerle";
 "directionAndDistanceLR" = "%d metre %@ ilerle";
 "directionAndDistanceInFtLR" = "%d ft %@ ilerle";
-"goWithElevator" = "Asansör ile %@ e gidin";
-"goWithEscalator" = "Yürüyen Merdiven ile %@ e gidin";
-"goWithStairs" = "Merdiven ile %@ e gidin";
+"goWithElevator" = "Asansör ile %@ e git";
+"goWithEscalator" = "Yürüyen Merdiven ile %@ e git";
+"goWithStairs" = "Merdiven ile %@ e git";
 "arrived" = "Hedefinize ulaştınız!";
 "arrivedWithTitle" = "%@ e ulaştınız";
 "remainingSteps" = "Kalan Adımlar";
@@ -221,3 +221,8 @@
 
 "selected" = "Seçili";
 "doubleTapToSelect" = "Seçmek için çift tıklayın";
+
+"afterThat" = "Sonra";
+
+"floorChangeWarning" = "Gitmek istediğiniz konum bulunduğunuz kat ile aynı seviyede. Ancak yönlendirme sırasında kat değiştirmeniz gerekecek.";
+"caution" = "Dikkat!";

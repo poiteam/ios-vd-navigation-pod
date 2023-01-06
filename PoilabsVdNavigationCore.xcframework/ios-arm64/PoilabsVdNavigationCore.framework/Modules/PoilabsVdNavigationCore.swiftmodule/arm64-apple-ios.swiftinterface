@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import Alamofire
 import CoreBluetooth
 import CoreLocation
@@ -10,7 +11,9 @@ import PoilabsPositioning
 import Swift
 import UIKit
 import _Concurrency
+import _StringProcessing
 public protocol PositioningManagerDelegate {
+  func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, heading: CoreLocation.CLHeading)
   func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
   func positioningManager(didStatusChanged status: UserLocationStatus)
 }
@@ -52,12 +55,16 @@ public enum UserLocationStatus {
   @objc deinit
 }
 extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
+  @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocationCoordinate2D, area: Swift.Double)
   @objc dynamic public func poilabsPositioningDidStart()
   @objc dynamic public func poilabsPositioning(didStatusChange status: PoilabsPositioning.PLPStatus, reason: PoilabsPositioning.PLPLocationStatusReason)
   @objc dynamic public func poilabsPositioning(didFindBeacon uuid: Swift.String, major: Swift.String, minor: Swift.String)
   @objc dynamic public func poilabsPositioning(didFail error: PoilabsPositioning.PoilabsPositioningError)
-  @objc dynamic public func poilabsPositioning(didUpdateLocation location: PoilabsPositioning.PLPBeaconNode)
   @objc dynamic public func poilabsPositioning(didUpdateHeading heading: CoreLocation.CLHeading)
+}
+public struct PLCategory : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ChildBase : Swift.Codable {
   public let status: Swift.Int
@@ -74,6 +81,7 @@ public struct ChildBase : Swift.Codable {
   public var disableGraph: PESGraph {
     get
   }
+  public func getSameLevelPoisGraph(floorLevel: Swift.Int) -> PESGraph
   public var placeTitle: Swift.String {
     get
   }
@@ -93,28 +101,20 @@ public struct Child : Swift.Codable {
   public let title: Swift.String
   public let description: Swift.String?
   public let major: [Swift.Int]?
-  public let location: Location?
+  public let location: Location
   public let conversionFactor: Swift.Double?
   public let type: Swift.String?
   public let createdAt: Swift.Int?
   public let id: Swift.String?
-  public let updatedAt: Swift.Int?
-  public let rid: Swift.String?
-  public let _self: Swift.String?
-  public let etag: Swift.String?
-  public let attachments: Swift.String?
-  public let ts: Swift.Int?
   public let facilities: [Facility]?
   public let navigation: Navigation?
   public let properties: ChildProperties?
+  public let category: PLCategory?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Filter : Swift.Codable {
-  public let placeType: [Swift.String]?
   public let pointType: [Swift.String]?
-  public let networkType: Swift.String?
-  public let storeType: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -149,23 +149,18 @@ public struct FloorProperties : Swift.Codable {
 public struct Location : Swift.Codable {
   public let geometry: Geometry
   public let properties: LocationProperties?
-  public let type: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Geometry : Swift.Codable {
-  public let type: Swift.String
   public let coordinates: [Swift.Double]
-  public var locationCoordinates: CoreLocation.CLLocationCoordinate2D? {
+  public var locationCoordinates: CoreLocation.CLLocationCoordinate2D {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct LocationProperties : Swift.Codable {
-  public let city: Swift.String?
-  public let district: Swift.String?
-  public let address: Swift.String?
   public let floorLevel: Swift.Int?
   public let shopCenterPoint: [Swift.Double]?
   public var shopCenterPointCoordinates: CoreLocation.CLLocationCoordinate2D? {
@@ -218,10 +213,8 @@ public struct Segment : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct ChildProperties : Swift.Codable {
-  public let merchantId: Swift.Int?
   public let content: Swift.String?
-  public let hoShopNavigation: Swift.String?
-  public let hoShopFreeMove: Swift.String?
+  public let restrictionWarning: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -238,19 +231,23 @@ public struct Poi {
   public var properties: ChildProperties?
   public var title: Swift.String?
   public var description: Swift.String?
-  public var location: Location?
+  public var location: Location
   public var id: Swift.String?
   public var navigation: Navigation?
+  public var category: PLCategory?
   public var node: PESGraphNode? {
     get
   }
-  public var coordinates: CoreLocation.CLLocationCoordinate2D? {
+  public var coordinates: CoreLocation.CLLocationCoordinate2D {
     get
   }
   public var centerPoint: CoreLocation.CLLocationCoordinate2D? {
     get
   }
   public var floorLevel: Swift.Int? {
+    get
+  }
+  public var categoryName: Swift.String? {
     get
   }
 }
@@ -496,9 +493,11 @@ public class RouteManager {
   @objc deinit
 }
 extension RouteManager {
-  public func getRemainingSteps() -> [RemainingDistanceItem]
+  public func getRemainingSteps(firstNSteps: Swift.Int? = nil) -> [RemainingDistanceItem]
+  public func getRoutePois() -> [Poi]
 }
 extension RouteManager : PositioningManagerDelegate {
+  public func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, heading: CoreLocation.CLHeading)
   public func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
   public func positioningManager(didStatusChanged status: UserLocationStatus)
 }
@@ -523,7 +522,6 @@ extension PlaceListManager : CoreLocation.CLLocationManagerDelegate {
 }
 @_hasMissingDesignatedInitializers public class StoreListManager {
   public init(placeId: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
-  public func getStoredPoints(placeId: Swift.String) -> ChildBase?
   public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
   public func getInfoText() -> Swift.String
   public func getStoreList() -> [Poi]

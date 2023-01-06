@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import Alamofire
 import CoreBluetooth
 import CoreLocation
@@ -10,18 +11,20 @@ import PoilabsPositioning
 import Swift
 import UIKit
 import _Concurrency
+import _StringProcessing
 public protocol PositioningManagerDelegate {
-  func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])
-  func positioningManager(didStatusChanged status: PoilabsVdNavigationCore.UserLocationStatus)
+  func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, heading: CoreLocation.CLHeading)
+  func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
+  func positioningManager(didStatusChanged status: UserLocationStatus)
 }
 public protocol PositioninManagerErrorDelegate {
-  func positioningManager(didFail error: PoilabsVdNavigationCore.PMError)
+  func positioningManager(didFail error: PMError)
   func positioningManagerDidStart()
 }
 public enum PMError {
   case location
   case bluetooth
-  public static func == (a: PoilabsVdNavigationCore.PMError, b: PoilabsVdNavigationCore.PMError) -> Swift.Bool
+  public static func == (a: PMError, b: PMError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -31,19 +34,19 @@ public enum UserLocationStatus {
   case waiting
   case notFound
   case found
-  public static func == (a: PoilabsVdNavigationCore.UserLocationStatus, b: PoilabsVdNavigationCore.UserLocationStatus) -> Swift.Bool
+  public static func == (a: UserLocationStatus, b: UserLocationStatus) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
 @objc @_inheritsConvenienceInitializers public class PositioningManager : ObjectiveC.NSObject {
-  public var delegate: PoilabsVdNavigationCore.PositioningManagerDelegate? {
+  public var delegate: PositioningManagerDelegate? {
     get
     set
   }
-  public var errorDelegate: PoilabsVdNavigationCore.PositioninManagerErrorDelegate?
-  public static let shared: PoilabsVdNavigationCore.PositioningManager
+  public var errorDelegate: PositioninManagerErrorDelegate?
+  public static let shared: PositioningManager
   public func startPositioning()
   public func stopPositioning()
   public func getPlaceTitle() -> Swift.String
@@ -51,36 +54,41 @@ public enum UserLocationStatus {
   @objc override dynamic public init()
   @objc deinit
 }
-extension PoilabsVdNavigationCore.PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
+extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
+  @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocationCoordinate2D, area: Swift.Double)
   @objc dynamic public func poilabsPositioningDidStart()
   @objc dynamic public func poilabsPositioning(didStatusChange status: PoilabsPositioning.PLPStatus, reason: PoilabsPositioning.PLPLocationStatusReason)
   @objc dynamic public func poilabsPositioning(didFindBeacon uuid: Swift.String, major: Swift.String, minor: Swift.String)
   @objc dynamic public func poilabsPositioning(didFail error: PoilabsPositioning.PoilabsPositioningError)
-  @objc dynamic public func poilabsPositioning(didUpdateLocation location: PoilabsPositioning.PLPBeaconNode)
   @objc dynamic public func poilabsPositioning(didUpdateHeading heading: CoreLocation.CLHeading)
+}
+public struct PLCategory : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ChildBase : Swift.Codable {
   public let status: Swift.Int
-  public let data: [PoilabsVdNavigationCore.Child]
-  public var map: PoilabsVdNavigationCore.Map {
+  public let data: [Child]
+  public var map: Map {
     get
   }
-  public var allPointsForMap: [PoilabsVdNavigationCore.Poi] {
+  public var allPointsForMap: [Poi] {
     get
   }
-  public var mainGraph: PoilabsVdNavigationCore.PESGraph {
+  public var mainGraph: PESGraph {
     get
   }
-  public var disableGraph: PoilabsVdNavigationCore.PESGraph {
+  public var disableGraph: PESGraph {
     get
   }
+  public func getSameLevelPoisGraph(floorLevel: Swift.Int) -> PESGraph
   public var placeTitle: Swift.String {
     get
   }
   public var placeDescription: Swift.String {
     get
   }
-  public var facilities: [PoilabsVdNavigationCore.Facility] {
+  public var facilities: [Facility] {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
@@ -88,33 +96,25 @@ public struct ChildBase : Swift.Codable {
 }
 public struct Child : Swift.Codable {
   public let isActive: Swift.Bool?
-  public let filters: PoilabsVdNavigationCore.Filter
-  public let map: PoilabsVdNavigationCore.Map?
+  public let filters: Filter
+  public let map: Map?
   public let title: Swift.String
   public let description: Swift.String?
   public let major: [Swift.Int]?
-  public let location: PoilabsVdNavigationCore.Location?
+  public let location: Location
   public let conversionFactor: Swift.Double?
   public let type: Swift.String?
   public let createdAt: Swift.Int?
   public let id: Swift.String?
-  public let updatedAt: Swift.Int?
-  public let rid: Swift.String?
-  public let _self: Swift.String?
-  public let etag: Swift.String?
-  public let attachments: Swift.String?
-  public let ts: Swift.Int?
-  public let facilities: [PoilabsVdNavigationCore.Facility]?
-  public let navigation: PoilabsVdNavigationCore.Navigation?
-  public let properties: PoilabsVdNavigationCore.ChildProperties?
+  public let facilities: [Facility]?
+  public let navigation: Navigation?
+  public let properties: ChildProperties?
+  public let category: PLCategory?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Filter : Swift.Codable {
-  public let placeType: [Swift.String]?
   public let pointType: [Swift.String]?
-  public let networkType: Swift.String?
-  public let storeType: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -122,13 +122,13 @@ public struct Map : Swift.Codable {
   public let vendor: Swift.String
   public let accessToken: Swift.String
   public let styleUrl: Swift.String
-  public let floors: [PoilabsVdNavigationCore.Floor]?
+  public let floors: [Floor]?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Floor : Swift.Codable {
   public let title: Swift.String
-  public let properties: PoilabsVdNavigationCore.FloorProperties?
+  public let properties: FloorProperties?
   public let level: Swift.Int
   public let mapRotateAngle: Swift.Int?
   public func encode(to encoder: Swift.Encoder) throws
@@ -147,25 +147,20 @@ public struct FloorProperties : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Location : Swift.Codable {
-  public let geometry: PoilabsVdNavigationCore.Geometry
-  public let properties: PoilabsVdNavigationCore.LocationProperties?
-  public let type: Swift.String?
+  public let geometry: Geometry
+  public let properties: LocationProperties?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Geometry : Swift.Codable {
-  public let type: Swift.String
   public let coordinates: [Swift.Double]
-  public var locationCoordinates: CoreLocation.CLLocationCoordinate2D? {
+  public var locationCoordinates: CoreLocation.CLLocationCoordinate2D {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct LocationProperties : Swift.Codable {
-  public let city: Swift.String?
-  public let district: Swift.String?
-  public let address: Swift.String?
   public let floorLevel: Swift.Int?
   public let shopCenterPoint: [Swift.Double]?
   public var shopCenterPointCoordinates: CoreLocation.CLLocationCoordinate2D? {
@@ -184,8 +179,8 @@ public struct Facility : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Navigation : Swift.Codable {
-  public let properties: PoilabsVdNavigationCore.NavigationProperties?
-  public var segments: [PoilabsVdNavigationCore.Segment]?
+  public let properties: NavigationProperties?
+  public var segments: [Segment]?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -208,20 +203,18 @@ public struct Segment : Swift.Codable {
   public var isAvailableForDisPerson: Swift.Bool {
     get
   }
-  public var startNode: PoilabsVdNavigationCore.PESGraphNode? {
+  public var startNode: PESGraphNode? {
     get
   }
-  public var finishNode: PoilabsVdNavigationCore.PESGraphNode? {
+  public var finishNode: PESGraphNode? {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct ChildProperties : Swift.Codable {
-  public let merchantId: Swift.Int?
   public let content: Swift.String?
-  public let hoShopNavigation: Swift.String?
-  public let hoShopFreeMove: Swift.String?
+  public let restrictionWarning: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -234,17 +227,18 @@ public struct Beacon : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Poi {
-  public var filters: PoilabsVdNavigationCore.Filter?
-  public var properties: PoilabsVdNavigationCore.ChildProperties?
+  public var filters: Filter?
+  public var properties: ChildProperties?
   public var title: Swift.String?
   public var description: Swift.String?
-  public var location: PoilabsVdNavigationCore.Location?
+  public var location: Location
   public var id: Swift.String?
-  public var navigation: PoilabsVdNavigationCore.Navigation?
-  public var node: PoilabsVdNavigationCore.PESGraphNode? {
+  public var navigation: Navigation?
+  public var category: PLCategory?
+  public var node: PESGraphNode? {
     get
   }
-  public var coordinates: CoreLocation.CLLocationCoordinate2D? {
+  public var coordinates: CoreLocation.CLLocationCoordinate2D {
     get
   }
   public var centerPoint: CoreLocation.CLLocationCoordinate2D? {
@@ -253,9 +247,12 @@ public struct Poi {
   public var floorLevel: Swift.Int? {
     get
   }
+  public var categoryName: Swift.String? {
+    get
+  }
 }
-extension PoilabsVdNavigationCore.Poi : Swift.Hashable {
-  public static func == (lhs: PoilabsVdNavigationCore.Poi, rhs: PoilabsVdNavigationCore.Poi) -> Swift.Bool
+extension Poi : Swift.Hashable {
+  public static func == (lhs: Poi, rhs: Poi) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -271,17 +268,17 @@ public struct FullInit : Swift.Codable {
   public let messagingTime: Swift.Double
   public let beaconCount: Swift.Int, minRssiLimit: Swift.Int
   public let fullInit: Swift.Bool
-  public let positioning: PoilabsVdNavigationCore.Positioning
-  public let lists: [PoilabsVdNavigationCore.FullInitList]
+  public let positioning: Positioning
+  public let lists: [FullInitList]
   public let childsURL: Swift.String
   public let messageURL: Swift.String
   public let topPlaceURL: Swift.String, beaconListURL: Swift.String, placeBeaconsURL: Swift.String
   public let initListURL: Swift.String
   public let menuLevel: Swift.Int
-  public var allChilds: [[PoilabsVdNavigationCore.Child]] {
+  public var allChilds: [[Child]] {
     get
   }
-  public var placeBeacons: [PoilabsVdNavigationCore.PlaceBeacons] {
+  public var placeBeacons: [PlaceBeacons] {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
@@ -290,8 +287,8 @@ public struct FullInit : Swift.Codable {
 public struct FullInitList : Swift.Codable {
   public let type: Swift.String
   public let excludes: [Swift.String]?
-  public let name: PoilabsVdNavigationCore.Name
-  public let elements: [PoilabsVdNavigationCore.FullInitElement]
+  public let name: Name
+  public let elements: [FullInitElement]
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -300,13 +297,13 @@ public struct FullInitElement : Swift.Codable {
   public let major: [Swift.Int]?
   public let city: Swift.String, district: Swift.String, address: Swift.String
   public let lon: Swift.Double, lat: Swift.Double
-  public let place: PoilabsVdNavigationCore.Child?
-  public let points: [PoilabsVdNavigationCore.Child]?
-  public let beacons: [PoilabsVdNavigationCore.Beacon]?
-  public var allChilds: [PoilabsVdNavigationCore.Child] {
+  public let place: Child?
+  public let points: [Child]?
+  public let beacons: [Beacon]?
+  public var allChilds: [Child] {
     get
   }
-  public var placeBeacons: PoilabsVdNavigationCore.PlaceBeacons? {
+  public var placeBeacons: PlaceBeacons? {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
@@ -317,14 +314,14 @@ public struct ConfigData : Swift.Codable {
   public let messagingTime: Swift.Double
   public let beaconCount: Swift.Int
   public let fullInit: Swift.Bool?
-  public let positioning: PoilabsVdNavigationCore.Positioning?
-  public let lists: [PoilabsVdNavigationCore.List]
+  public let positioning: Positioning?
+  public let lists: [List]
   public let childsURL: Swift.String
   public let messageURL: Swift.String
   public let topPlaceURL: Swift.String, beaconListURL: Swift.String, placeBeaconsURL: Swift.String
   public let initListURL: Swift.String?
   public let menuLevel: Swift.Int
-  public var allElements: [PoilabsVdNavigationCore.Element] {
+  public var allElements: [Element] {
     get
   }
   public var minRSSILimitIOS: Swift.Int? {
@@ -336,9 +333,9 @@ public struct ConfigData : Swift.Codable {
 public struct List : Swift.Codable {
   public let type: Swift.String
   public let excludes: [Swift.String]?
-  public let name: PoilabsVdNavigationCore.Name
-  public let elements: [PoilabsVdNavigationCore.Element]
-  public let child: PoilabsVdNavigationCore.ListChild?
+  public let name: Name
+  public let elements: [Element]
+  public let child: ListChild?
   public let includes: [Swift.String]?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -353,11 +350,11 @@ public struct Element : Swift.Codable {
   public let major: [Swift.Int]?
   public let city: Swift.String, district: Swift.String, address: Swift.String
   public let lon: Swift.Double, lat: Swift.Double
-  public let childs: [PoilabsVdNavigationCore.ChildElement]?
+  public let childs: [ChildElement]?
   public let parents: [Swift.String]?
   public var distance: Swift.Double?
   public var isFavorite: Swift.Bool
-  public var childsList: [PoilabsVdNavigationCore.Element]? {
+  public var childsList: [Element]? {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
@@ -368,7 +365,7 @@ public struct ChildElement : Swift.Codable {
   public let major: [Swift.Int]
   public let lon: Swift.Double, lat: Swift.Double
   public let city: Swift.String?, district: Swift.String?, address: Swift.String?
-  public func toElement() -> PoilabsVdNavigationCore.Element
+  public func toElement() -> Element
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -390,14 +387,14 @@ public protocol PoiVDNavigationManagerDelegate {
 public class PoiVDNavigationManager {
   public func navigationManager(didChangeAuthorization status: Swift.Bool)
   public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
-  public var delegate: PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate?
+  public var delegate: PoiVDNavigationManagerDelegate?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
-  public func getMenuItems() -> [PoilabsVdNavigationCore.Element]
+  public func getMenuItems() -> [Element]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ItemCategory : Swift.Hashable {
-  public static func == (lhs: PoilabsVdNavigationCore.ItemCategory, rhs: PoilabsVdNavigationCore.ItemCategory) -> Swift.Bool
+  public static func == (lhs: ItemCategory, rhs: ItemCategory) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var type: Swift.String
   public var nameTr: Swift.String
@@ -411,11 +408,11 @@ public class PoiVDNavigationManager {
   }
 }
 public class ItemBase {
-  public var category: PoilabsVdNavigationCore.ItemCategory
-  public var elements: [PoilabsVdNavigationCore.Place]
+  public var category: ItemCategory
+  public var elements: [Place]
   required public init?(dictionary: Foundation.NSDictionary)
-  public func getElements() -> [PoilabsVdNavigationCore.Place]
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [PoilabsVdNavigationCore.ItemBase]
+  public func getElements() -> [Place]
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray) -> [ItemBase]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Place {
@@ -425,12 +422,12 @@ public class ItemBase {
   public var address: Swift.String?
   public var lat: Swift.Double?
   public var lon: Swift.Double?
-  public var childs: [PoilabsVdNavigationCore.Place]?
+  public var childs: [Place]?
   public var distance: Swift.Double?
   public var isFavorite: Swift.Bool
-  public var type: PoilabsVdNavigationCore.ItemCategory!
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray, type: PoilabsVdNavigationCore.ItemCategory) -> [PoilabsVdNavigationCore.Place]
-  required public init?(dictionary: Foundation.NSDictionary, type: PoilabsVdNavigationCore.ItemCategory)
+  public var type: ItemCategory!
+  public class func modelsFromDictionaryArray(array: Foundation.NSArray, type: ItemCategory) -> [Place]
+  required public init?(dictionary: Foundation.NSDictionary, type: ItemCategory)
   @objc deinit
 }
 extension UIKit.UIDevice {
@@ -438,7 +435,7 @@ extension UIKit.UIDevice {
 }
 public enum RouteError {
   case noLocation, noRoute, unknown
-  public static func == (a: PoilabsVdNavigationCore.RouteError, b: PoilabsVdNavigationCore.RouteError) -> Swift.Bool
+  public static func == (a: RouteError, b: RouteError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -446,7 +443,7 @@ public enum RouteError {
 }
 public enum SelectedGraph {
   case mainGraph, disableGraph
-  public static func == (a: PoilabsVdNavigationCore.SelectedGraph, b: PoilabsVdNavigationCore.SelectedGraph) -> Swift.Bool
+  public static func == (a: SelectedGraph, b: SelectedGraph) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -454,7 +451,7 @@ public enum SelectedGraph {
 }
 public enum FloorPassMethod {
   case elevator, escalator, stairs
-  public static func == (a: PoilabsVdNavigationCore.FloorPassMethod, b: PoilabsVdNavigationCore.FloorPassMethod) -> Swift.Bool
+  public static func == (a: FloorPassMethod, b: FloorPassMethod) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -462,89 +459,90 @@ public enum FloorPassMethod {
 }
 public enum RouteStatus {
   case outOfRoute, arrived, onRoute
-  public static func == (a: PoilabsVdNavigationCore.RouteStatus, b: PoilabsVdNavigationCore.RouteStatus) -> Swift.Bool
+  public static func == (a: RouteStatus, b: RouteStatus) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
 public protocol RouteManagerDelegate {
-  func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: PoilabsVdNavigationCore.FloorPassMethod)
-  func routeManager(currentUserLocation location: (PoilabsVdNavigationCore.Poi, Swift.Int?))
-  func routeManager(error: PoilabsVdNavigationCore.RouteError)
-  func routeManager(routeCalculated route: PoilabsVdNavigationCore.PESGraphRoute, target: PoilabsVdNavigationCore.Poi)
+  func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod)
+  func routeManager(currentUserLocation location: (Poi, Swift.Int?))
+  func routeManager(error: RouteError)
+  func routeManager(routeCalculated route: PESGraphRoute, target: Poi)
   func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
   func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
-  func routeManager(didUpdate routeStatus: PoilabsVdNavigationCore.RouteStatus)
+  func routeManager(didUpdate routeStatus: RouteStatus)
 }
 public struct RemainingDistanceItem {
   public let text: Swift.String
   public var argumants: [Swift.Int]
 }
 public class RouteManager {
-  public var delegate: PoilabsVdNavigationCore.RouteManagerDelegate? {
+  public var delegate: RouteManagerDelegate? {
     get
     set
   }
-  public init(targetPoi: PoilabsVdNavigationCore.Poi, on graph: PoilabsVdNavigationCore.SelectedGraph)
-  public init(type: Swift.String, on graph: PoilabsVdNavigationCore.SelectedGraph)
+  public init(targetPoi: Poi, on graph: SelectedGraph)
+  public init(type: Swift.String, on graph: SelectedGraph)
   public func navigate()
   public func reInitRoute()
-  public func getSelectedGraph() -> PoilabsVdNavigationCore.SelectedGraph
+  public func getSelectedGraph() -> SelectedGraph
   public func getFloorDifferance() -> Swift.Int?
   public func getRouteLength() -> Swift.Int?
   @objc deinit
 }
-extension PoilabsVdNavigationCore.RouteManager {
-  public func getRemainingSteps() -> [PoilabsVdNavigationCore.RemainingDistanceItem]
+extension RouteManager {
+  public func getRemainingSteps(firstNSteps: Swift.Int? = nil) -> [RemainingDistanceItem]
+  public func getRoutePois() -> [Poi]
 }
-extension PoilabsVdNavigationCore.RouteManager : PoilabsVdNavigationCore.PositioningManagerDelegate {
-  public func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])
-  public func positioningManager(didStatusChanged status: PoilabsVdNavigationCore.UserLocationStatus)
+extension RouteManager : PositioningManagerDelegate {
+  public func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, heading: CoreLocation.CLHeading)
+  public func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
+  public func positioningManager(didStatusChanged status: UserLocationStatus)
 }
 public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers public class PlaceListManager : ObjectiveC.NSObject {
-  public var delegate: PoilabsVdNavigationCore.PlaceListManagerDelegate?
+  public var delegate: PlaceListManagerDelegate?
   @objc override dynamic public init()
-  public func getConfigList() -> [PoilabsVdNavigationCore.List]
-  public func getPlaceList() -> [PoilabsVdNavigationCore.Element]
-  public func saveConfig(config: PoilabsVdNavigationCore.ConfigData, appId: Swift.String, lang: Swift.String)
-  public func getConfig(appId: Swift.String, lang: Swift.String) -> PoilabsVdNavigationCore.ConfigData?
-  public func getPlaceFilteredList() -> [PoilabsVdNavigationCore.Element]?
-  public func getCategories() -> [PoilabsVdNavigationCore.ItemCategory]
-  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [PoilabsVdNavigationCore.Element]?
+  public func getConfigList() -> [List]
+  public func getPlaceList() -> [Element]
+  public func saveConfig(config: ConfigData, appId: Swift.String, lang: Swift.String)
+  public func getConfig(appId: Swift.String, lang: Swift.String) -> ConfigData?
+  public func getPlaceFilteredList() -> [Element]?
+  public func getCategories() -> [ItemCategory]
+  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [Element]?
   @objc deinit
 }
-extension PoilabsVdNavigationCore.PlaceListManager : CoreLocation.CLLocationManagerDelegate {
+extension PlaceListManager : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
 }
 @_hasMissingDesignatedInitializers public class StoreListManager {
   public init(placeId: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
-  public func getStoredPoints(placeId: Swift.String) -> PoilabsVdNavigationCore.ChildBase?
   public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
   public func getInfoText() -> Swift.String
-  public func getStoreList() -> [PoilabsVdNavigationCore.Poi]
+  public func getStoreList() -> [Poi]
   public func getCategories() -> [Swift.String]
-  public func getFacilities() -> [PoilabsVdNavigationCore.Facility]
+  public func getFacilities() -> [Facility]
   @objc deinit
 }
 public class PointDetailManager {
-  public init(target: PoilabsVdNavigationCore.Poi)
+  public init(target: Poi)
   public func getFloorLevel() -> Swift.String
   @objc deinit
 }
-extension PoilabsVdNavigationCore.PMError : Swift.Equatable {}
-extension PoilabsVdNavigationCore.PMError : Swift.Hashable {}
-extension PoilabsVdNavigationCore.UserLocationStatus : Swift.Equatable {}
-extension PoilabsVdNavigationCore.UserLocationStatus : Swift.Hashable {}
-extension PoilabsVdNavigationCore.RouteError : Swift.Equatable {}
-extension PoilabsVdNavigationCore.RouteError : Swift.Hashable {}
-extension PoilabsVdNavigationCore.SelectedGraph : Swift.Equatable {}
-extension PoilabsVdNavigationCore.SelectedGraph : Swift.Hashable {}
-extension PoilabsVdNavigationCore.FloorPassMethod : Swift.Equatable {}
-extension PoilabsVdNavigationCore.FloorPassMethod : Swift.Hashable {}
-extension PoilabsVdNavigationCore.RouteStatus : Swift.Equatable {}
-extension PoilabsVdNavigationCore.RouteStatus : Swift.Hashable {}
+extension PMError : Swift.Equatable {}
+extension PMError : Swift.Hashable {}
+extension UserLocationStatus : Swift.Equatable {}
+extension UserLocationStatus : Swift.Hashable {}
+extension RouteError : Swift.Equatable {}
+extension RouteError : Swift.Hashable {}
+extension SelectedGraph : Swift.Equatable {}
+extension SelectedGraph : Swift.Hashable {}
+extension FloorPassMethod : Swift.Equatable {}
+extension FloorPassMethod : Swift.Hashable {}
+extension RouteStatus : Swift.Equatable {}
+extension RouteStatus : Swift.Hashable {}
