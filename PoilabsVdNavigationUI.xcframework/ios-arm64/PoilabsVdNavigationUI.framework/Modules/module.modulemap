@@ -6,6 +6,6 @@ framework module PoilabsVdNavigationUI {
 }
 
 module PoilabsVdNavigationUI.Swift {
-  header "PoilabsVdNavigationUI-Swift.h"
-  requires objc
+    header "PoilabsVdNavigationUI-Swift.h"
+    requires objc
 }
