@@ -2,7 +2,6 @@
 // swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
 import Alamofire
-import CoreBluetooth
 import CoreLocation
 import Foundation
 import PoilabsPositioning
@@ -64,21 +63,34 @@ public struct PLCategory : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public enum NavigationSettingsRouteOptionType : Swift.String, Swift.Codable, Swift.CaseIterable {
+  case all, elevator, escalator, stairs
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [NavigationSettingsRouteOptionType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [NavigationSettingsRouteOptionType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public struct ChildBase : Swift.Codable {
   public let status: Swift.Int
   public let data: [Child]
+  public var allPointsForMap: [Poi]
   public var map: Map {
     get
   }
-  public var allPointsForMap: [Poi] {
-    get
-  }
+  public init(from decoder: Swift.Decoder) throws
+  public init(status: Swift.Int, data: [Child])
   public var mainGraph: PESGraph {
     get
   }
   public var disableGraph: PESGraph {
     get
   }
+  public func getGraphWithoutSegment(removedSegments: [(Swift.String, Swift.String)], graph: SelectedGraph) -> PESGraph
   public func getSameLevelPoisGraph(floorLevel: Swift.Int) -> PESGraph
   public var placeTitle: Swift.String {
     get
@@ -90,10 +102,8 @@ public struct ChildBase : Swift.Codable {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 public struct Child : Swift.Codable {
-  public let isActive: Swift.Bool?
   public let filters: Filter
   public let map: Map?
   public let title: Swift.String
@@ -224,7 +234,7 @@ public struct Beacon : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct Poi {
+public struct Poi : Swift.Codable {
   public var filters: Filter?
   public var properties: ChildProperties?
   public var title: Swift.String?
@@ -248,6 +258,8 @@ public struct Poi {
   public var categoryName: Swift.String? {
     get
   }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension Poi : Swift.Hashable {
   public static func == (lhs: Poi, rhs: Poi) -> Swift.Bool
@@ -379,12 +391,9 @@ public struct Positioning : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public protocol PoiVDNavigationManagerDelegate {
-  func PoiVDNavigationManager(didChangeAuthorization status: Swift.Bool)
-  func PoiVDNavigationManager(centralManagerDidUpdateState status: Swift.Bool)
+  func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
 }
 public class PoiVDNavigationManager {
-  public func navigationManager(didChangeAuthorization status: Swift.Bool)
-  public func navigationManager(centralManagerDidUpdateState status: Swift.Bool)
   public var delegate: PoiVDNavigationManagerDelegate?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   public func getMenuLevel() -> Swift.Int
@@ -440,7 +449,7 @@ public enum RouteError {
   }
 }
 public enum SelectedGraph {
-  case mainGraph, disableGraph
+  case mainGraph, graphWithSelections
   public static func == (a: SelectedGraph, b: SelectedGraph) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -486,6 +495,7 @@ public class RouteManager {
   public func navigate()
   public func reInitRoute()
   public func getSelectedGraph() -> SelectedGraph
+  public func createAlternativeRoute(graph: SelectedGraph) -> Swift.Bool
   public func getFloorDifferance() -> Swift.Int?
   public func getRouteLength() -> Swift.Int?
   @objc deinit
@@ -536,6 +546,9 @@ extension PMError : Swift.Equatable {}
 extension PMError : Swift.Hashable {}
 extension UserLocationStatus : Swift.Equatable {}
 extension UserLocationStatus : Swift.Hashable {}
+extension NavigationSettingsRouteOptionType : Swift.Equatable {}
+extension NavigationSettingsRouteOptionType : Swift.Hashable {}
+extension NavigationSettingsRouteOptionType : Swift.RawRepresentable {}
 extension RouteError : Swift.Equatable {}
 extension RouteError : Swift.Hashable {}
 extension SelectedGraph : Swift.Equatable {}

@@ -11,12 +11,6 @@ To integrate PoilabsNavigation into your Xcode project using CocoaPods, specify 
 ``` curl
 pod 'PoilabsVdNavigation'
 ```
-	
-### Manually
-
-* Add **PoilabsVdNavigationCore.xcframework** and **PoilabsVdNavigationUI.xcframework** files to your "Frameworks, Libaries, and Embedded Content" in your Project’s General Tab.
-
-* Add **PoilabsVdNavigationBundle.bundle** file to your Copy bundle Resources in Build Phases tab.
 
 
 ## PRE-REQUIREMENTS
@@ -59,6 +53,18 @@ PoilabsVdNavigationUI(withApplicationID: appId,
             //show controller
         }
 ```
+
+
+### PoilabsVdNavigationDelegate
+
+**didUserLocationChange** callback is triggered when location change.
+
+```swift
+    func poilabsVdNavigation(didUpdate userLocation: CLLocationCoordinate2D) {
+    
+    }
+```
+
 If you want to do requests on another url, you can specify it on init.
 
 
@@ -78,5 +84,6 @@ PoilabsVdNavigationUI(configUrl: configUrl,
             //show controller
         }
 ```
+
 
 

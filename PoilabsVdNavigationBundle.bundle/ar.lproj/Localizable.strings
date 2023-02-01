@@ -151,6 +151,9 @@
 "routeOption" = "اختيار المسار ";
 "onlyElevator" = "مصعد فقط ";
 "elevatorAndOthers" = "مصعد سلم متحرك سلم";
+"elevator" = "مصعد";
+"escalator" = "سلم كهربائى";
+"stairs" = "سلالم";
 
 "automReRoute" = "إعادة التوجيه التلقائي";
 "active" = "مفتوح";

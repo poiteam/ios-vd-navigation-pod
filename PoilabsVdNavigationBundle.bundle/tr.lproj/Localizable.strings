@@ -177,6 +177,9 @@
 "routeOption" = "Rota Seçeneği";
 "onlyElevator" = "Yalnızca Asansör";
 "elevatorAndOthers" = "Asansör/ Yürüyen Merdiven/ Merdiven";
+"elevator" = "Asansör";
+"escalator" = "Yürüyen Merdiven";
+"stairs" = "Merdiven";
 
 "automReRoute" = "Otomatik Yeniden Yönlendirme";
 "active" = "Açık";

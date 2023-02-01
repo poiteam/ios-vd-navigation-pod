@@ -151,6 +151,9 @@
 "routeOption" = "Routenoption";
 "onlyElevator" = "Nur Aufzug";
 "elevatorAndOthers" = "Aufzug / Rolltreppe / Treppe";
+"elevator" = "Aufzug";
+"escalator" = "Rolltreppe";
+"stairs" = "Treppe";
 
 "automReRoute" = "Automatische Weiterleitung";
 "active" = "Offen";

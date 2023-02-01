@@ -177,6 +177,9 @@
 "routeOption" = "Route Option";
 "onlyElevator" = "Only Elevator";
 "elevatorAndOthers" = "Elevator / Escalator / Stairs";
+"elevator" = "Elevator";
+"escalator" = "Escalator";
+"stairs" = "Stairs";
 
 "automReRoute" = "Automatic Redirection";
 "active" = "Active";

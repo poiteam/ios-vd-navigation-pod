@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationUI
+import AudioToolbox
 import CoreBluetooth
 import CoreLocation
 import Foundation
@@ -19,9 +20,19 @@ public struct Style<View> where View : UIKit.UIView {
 extension UIKit.UIFont {
   public static func jbs_registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
 }
+public protocol PoilabsVdNavigationDelegate {
+  func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
+}
+extension PoilabsVdNavigationUI.PoilabsVdNavigationDelegate {
+  public func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
+}
 public class PoilabsVdNavigationUI {
+  public var delegate: PoilabsVdNavigationUI.PoilabsVdNavigationDelegate?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, additionalViewControllers: [PoilabsVdNavigationUI.AdditionalSettings] = [], completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
   @objc deinit
+}
+extension PoilabsVdNavigationUI.PoilabsVdNavigationUI : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate {
+  public func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
 }
 public struct SettingType {
 }
