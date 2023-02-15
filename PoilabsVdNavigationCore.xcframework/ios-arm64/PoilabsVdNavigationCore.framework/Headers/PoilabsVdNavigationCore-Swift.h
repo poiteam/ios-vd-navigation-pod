@@ -242,7 +242,7 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore18PositioningManager")
 @class CLHeading;
 
 @interface PositioningManager (SWIFT_EXTENSION(PoilabsVdNavigationCore)) <PoilabsPositioningDelegate>
-- (void)poilabsPositioningWithDidUpdateLocation:(CLLocationCoordinate2D)location area:(double)area;
+- (void)poilabsPositioningWithDidUpdateLocation:(CLLocationCoordinate2D)location floorLevel:(NSInteger)floorLevel accuracy:(double)accuracy;
 - (void)poilabsPositioningDidStart;
 - (void)poilabsPositioningWithDidStatusChange:(enum PLPStatus)status reason:(enum PLPLocationStatusReason)reason;
 - (void)poilabsPositioningWithDidFindBeacon:(NSString * _Nonnull)uuid major:(NSString * _Nonnull)major minor:(NSString * _Nonnull)minor;

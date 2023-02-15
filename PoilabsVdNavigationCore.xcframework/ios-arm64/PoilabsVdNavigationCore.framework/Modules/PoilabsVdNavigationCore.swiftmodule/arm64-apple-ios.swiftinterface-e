@@ -52,7 +52,7 @@ public enum UserLocationStatus {
   @objc deinit
 }
 extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
-  @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocationCoordinate2D, area: Swift.Double)
+  @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, accuracy: Swift.Double)
   @objc dynamic public func poilabsPositioningDidStart()
   @objc dynamic public func poilabsPositioning(didStatusChange status: PoilabsPositioning.PLPStatus, reason: PoilabsPositioning.PLPLocationStatusReason)
   @objc dynamic public func poilabsPositioning(didFindBeacon uuid: Swift.String, major: Swift.String, minor: Swift.String)
@@ -222,7 +222,7 @@ public struct Segment : Swift.Codable {
 }
 public struct ChildProperties : Swift.Codable {
   public let content: Swift.String?
-  public let restrictionWarning: Swift.String?
+  public var restrictionWarning: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
