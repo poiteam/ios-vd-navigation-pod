@@ -41,6 +41,6 @@ s.pod_target_xcconfig = {
 s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavigationCore.xcframework'
 s.resources = 'PoilabsVdNavigationBundle.bundle'
 s.dependency 'Alamofire', '~> 4.9.1'
-s.dependency 'PoilabsPositioning', '1.0.8'
+s.dependency 'PoilabsPositioning', '1.0.9'
 s.dependency 'StepSlider', '~> 1.8.0'
 end
