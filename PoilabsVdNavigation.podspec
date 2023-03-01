@@ -17,7 +17,7 @@ s.summary = "Poilabs Indoor Navigation Framework"
 #s.requires_arc = true
 
 #2
-s.version = "4.2.8"
+s.version = "4.2.9"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -41,6 +41,6 @@ s.pod_target_xcconfig = {
 s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavigationCore.xcframework'
 s.resources = 'PoilabsVdNavigationBundle.bundle'
 s.dependency 'Alamofire', '~> 4.9.1'
-s.dependency 'PoilabsPositioning', '1.0.9'
+s.dependency 'PoilabsPositioning', '1.0.10'
 s.dependency 'StepSlider', '~> 1.8.0'
 end

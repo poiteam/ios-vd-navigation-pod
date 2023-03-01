@@ -52,16 +52,13 @@ public enum UserLocationStatus {
   @objc deinit
 }
 extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
+  @objc dynamic public func poilabsPositioning(didThresholdChange threshold: Swift.Int)
   @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, accuracy: Swift.Double)
   @objc dynamic public func poilabsPositioningDidStart()
   @objc dynamic public func poilabsPositioning(didStatusChange status: PoilabsPositioning.PLPStatus, reason: PoilabsPositioning.PLPLocationStatusReason)
   @objc dynamic public func poilabsPositioning(didFindBeacon uuid: Swift.String, major: Swift.String, minor: Swift.String)
   @objc dynamic public func poilabsPositioning(didFail error: PoilabsPositioning.PoilabsPositioningError)
   @objc dynamic public func poilabsPositioning(didUpdateHeading heading: CoreLocation.CLHeading)
-}
-public struct PLCategory : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 public enum NavigationSettingsRouteOptionType : Swift.String, Swift.Codable, Swift.CaseIterable {
   case all, elevator, escalator, stairs
@@ -76,14 +73,16 @@ public enum NavigationSettingsRouteOptionType : Swift.String, Swift.Codable, Swi
   }
 }
 public struct ChildBase : Swift.Codable {
-  public let status: Swift.Int
   public let data: [Child]
   public var allPointsForMap: [Poi]
   public var map: Map {
     get
   }
+  public var arrivedBuffer: Swift.Double {
+    get
+  }
   public init(from decoder: Swift.Decoder) throws
-  public init(status: Swift.Int, data: [Child])
+  public init(data: [Child])
   public var mainGraph: PESGraph {
     get
   }
@@ -104,20 +103,6 @@ public struct ChildBase : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Child : Swift.Codable {
-  public let filters: Filter
-  public let map: Map?
-  public let title: Swift.String
-  public let description: Swift.String?
-  public let major: [Swift.Int]?
-  public let location: Location
-  public let conversionFactor: Swift.Double?
-  public let type: Swift.String?
-  public let createdAt: Swift.Int?
-  public let id: Swift.String?
-  public let facilities: [Facility]?
-  public let navigation: Navigation?
-  public let properties: ChildProperties?
-  public let category: PLCategory?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -127,9 +112,6 @@ public struct Filter : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Map : Swift.Codable {
-  public let vendor: Swift.String
-  public let accessToken: Swift.String
-  public let styleUrl: Swift.String
   public let floors: [Floor]?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -145,10 +127,6 @@ public struct Floor : Swift.Codable {
 public struct FloorProperties : Swift.Codable {
   public let centerPoint: [Swift.Double]
   public let conversionFactor: Swift.Double?
-  public let maxBounds: [[Swift.Double]]
-  public let minZoomLevel: Swift.Double
-  public let zoomLevel: Swift.Double
-  public let maxZoomLevel: Swift.Double
   public var routeConversionFactorDividend: Swift.Double?
   public var conversionFactorDividend: Swift.Double?
   public func encode(to encoder: Swift.Encoder) throws
@@ -237,12 +215,10 @@ public struct Beacon : Swift.Codable {
 public struct Poi : Swift.Codable {
   public var filters: Filter?
   public var properties: ChildProperties?
-  public var title: Swift.String?
-  public var description: Swift.String?
-  public var location: Location
+  public var title: Swift.String
   public var id: Swift.String?
   public var navigation: Navigation?
-  public var category: PLCategory?
+  public let tags: [Swift.String]
   public var node: PESGraphNode? {
     get
   }
@@ -255,9 +231,13 @@ public struct Poi : Swift.Codable {
   public var floorLevel: Swift.Int? {
     get
   }
-  public var categoryName: Swift.String? {
+  public var categoryOrSubcategoryName: Swift.String {
     get
   }
+  public var categoryName: Swift.String {
+    get
+  }
+  public func contains(keyword: Swift.String) -> Swift.Bool
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
