@@ -60,7 +60,7 @@ PoilabsVdNavigationUI(withApplicationID: appId,
 **didUserLocationChange** callback is triggered when location change.
 
 ```swift
-    func poilabsVdNavigation(didUpdate userLocation: CLLocationCoordinate2D) {
+        func poilabsVdNavigation(didUpdate userLocation: CLLocationCoordinate2D, floorLevel: Int, floorName: String) {
     
     }
 ```

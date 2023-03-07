@@ -22,9 +22,11 @@ extension UIKit.UIFont {
 }
 public protocol PoilabsVdNavigationDelegate {
   func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
+  func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
 }
 extension PoilabsVdNavigationDelegate {
   public func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
+  public func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
 }
 public class PoilabsVdNavigationUI {
   public var delegate: PoilabsVdNavigationDelegate?
@@ -32,7 +34,7 @@ public class PoilabsVdNavigationUI {
   @objc deinit
 }
 extension PoilabsVdNavigationUI : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate {
-  public func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
+  public func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
 }
 public struct SettingType {
 }

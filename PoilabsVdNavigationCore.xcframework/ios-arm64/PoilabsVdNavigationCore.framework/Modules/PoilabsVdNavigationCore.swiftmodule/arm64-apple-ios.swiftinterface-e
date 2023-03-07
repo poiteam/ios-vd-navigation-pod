@@ -72,55 +72,8 @@ public enum NavigationSettingsRouteOptionType : Swift.String, Swift.Codable, Swi
     get
   }
 }
-public struct ChildBase : Swift.Codable {
-  public let data: [Child]
-  public var allPointsForMap: [Poi]
-  public var map: Map {
-    get
-  }
-  public var arrivedBuffer: Swift.Double {
-    get
-  }
-  public init(from decoder: Swift.Decoder) throws
-  public init(data: [Child])
-  public var mainGraph: PESGraph {
-    get
-  }
-  public var disableGraph: PESGraph {
-    get
-  }
-  public func getGraphWithoutSegment(removedSegments: [(Swift.String, Swift.String)], graph: SelectedGraph) -> PESGraph
-  public func getSameLevelPoisGraph(floorLevel: Swift.Int) -> PESGraph
-  public var placeTitle: Swift.String {
-    get
-  }
-  public var placeDescription: Swift.String {
-    get
-  }
-  public var facilities: [Facility] {
-    get
-  }
-  public func encode(to encoder: Swift.Encoder) throws
-}
-public struct Child : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
 public struct Filter : Swift.Codable {
   public let pointType: [Swift.String]?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct Map : Swift.Codable {
-  public let floors: [Floor]?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct Floor : Swift.Codable {
-  public let title: Swift.String
-  public let properties: FloorProperties?
-  public let level: Swift.Int
-  public let mapRotateAngle: Swift.Int?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -253,52 +206,6 @@ extension Foundation.Bundle {
     get
   }
 }
-public struct FullInit : Swift.Codable {
-  public let uuid: Swift.String
-  public let messagingTime: Swift.Double
-  public let beaconCount: Swift.Int, minRssiLimit: Swift.Int
-  public let fullInit: Swift.Bool
-  public let positioning: Positioning
-  public let lists: [FullInitList]
-  public let childsURL: Swift.String
-  public let messageURL: Swift.String
-  public let topPlaceURL: Swift.String, beaconListURL: Swift.String, placeBeaconsURL: Swift.String
-  public let initListURL: Swift.String
-  public let menuLevel: Swift.Int
-  public var allChilds: [[Child]] {
-    get
-  }
-  public var placeBeacons: [PlaceBeacons] {
-    get
-  }
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct FullInitList : Swift.Codable {
-  public let type: Swift.String
-  public let excludes: [Swift.String]?
-  public let name: Name
-  public let elements: [FullInitElement]
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct FullInitElement : Swift.Codable {
-  public let id: Swift.String, title: Swift.String, description: Swift.String
-  public let major: [Swift.Int]?
-  public let city: Swift.String, district: Swift.String, address: Swift.String
-  public let lon: Swift.Double, lat: Swift.Double
-  public let place: Child?
-  public let points: [Child]?
-  public let beacons: [Beacon]?
-  public var allChilds: [Child] {
-    get
-  }
-  public var placeBeacons: PlaceBeacons? {
-    get
-  }
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
 public struct ConfigData : Swift.Codable {
   public let uuid: Swift.String
   public let messagingTime: Swift.Double
@@ -371,7 +278,7 @@ public struct Positioning : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public protocol PoiVDNavigationManagerDelegate {
-  func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
+  func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
 }
 public class PoiVDNavigationManager {
   public var delegate: PoiVDNavigationManagerDelegate?
