@@ -72,11 +72,6 @@ public enum NavigationSettingsRouteOptionType : Swift.String, Swift.Codable, Swi
     get
   }
 }
-public struct Filter : Swift.Codable {
-  public let pointType: [Swift.String]?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
 public struct FloorProperties : Swift.Codable {
   public let centerPoint: [Swift.Double]
   public let conversionFactor: Swift.Double?
@@ -135,7 +130,7 @@ public struct NavigationProperties : Swift.Codable {
 }
 public struct Segment : Swift.Codable {
   public let id: Swift.String
-  public let mapWeight: Swift.Double?
+  public let routeWeight: Swift.Double?
   public let weight: Swift.Double?
   public var startPoiId: Swift.String?
   public var finishPoiId: Swift.String?
@@ -166,12 +161,12 @@ public struct Beacon : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Poi : Swift.Codable {
-  public var filters: Filter?
   public var properties: ChildProperties?
   public var title: Swift.String
   public var id: Swift.String?
   public var navigation: Navigation?
-  public let tags: [Swift.String]
+  public let tags: [Swift.String]?
+  public init(from decoder: Swift.Decoder) throws
   public var node: PESGraphNode? {
     get
   }
@@ -192,7 +187,6 @@ public struct Poi : Swift.Codable {
   }
   public func contains(keyword: Swift.String) -> Swift.Bool
   public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 extension Poi : Swift.Hashable {
   public static func == (lhs: Poi, rhs: Poi) -> Swift.Bool
@@ -214,8 +208,7 @@ public struct ConfigData : Swift.Codable {
   public let positioning: Positioning?
   public let lists: [List]
   public let childsURL: Swift.String
-  public let messageURL: Swift.String
-  public let topPlaceURL: Swift.String, beaconListURL: Swift.String, placeBeaconsURL: Swift.String
+  public let placeBeaconsURL: Swift.String
   public let initListURL: Swift.String?
   public let menuLevel: Swift.Int
   public var allElements: [Element] {
@@ -229,42 +222,24 @@ public struct ConfigData : Swift.Codable {
 }
 public struct List : Swift.Codable {
   public let type: Swift.String
-  public let excludes: [Swift.String]?
   public let name: Name
   public let elements: [Element]
-  public let child: ListChild?
-  public let includes: [Swift.String]?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct ListChild : Swift.Codable {
-  public let type: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Element : Swift.Codable {
-  public let id: Swift.String, title: Swift.String, elementDescription: Swift.String
+  public let id: Swift.String, title: Swift.String
   public let major: [Swift.Int]?
-  public let city: Swift.String, district: Swift.String, address: Swift.String
+  public let address: Swift.String?
   public let lon: Swift.Double, lat: Swift.Double
-  public let childs: [ChildElement]?
-  public let parents: [Swift.String]?
+  public let childs: [Element]?
+  public init(from decoder: Swift.Decoder) throws
   public var distance: Swift.Double?
   public var isFavorite: Swift.Bool
   public var childsList: [Element]? {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct ChildElement : Swift.Codable {
-  public let id: Swift.String, title: Swift.String, childDescription: Swift.String
-  public let major: [Swift.Int]
-  public let lon: Swift.Double, lat: Swift.Double
-  public let city: Swift.String?, district: Swift.String?, address: Swift.String?
-  public func toElement() -> Element
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 public struct Name : Swift.Codable {
   public let tr: Swift.String, en: Swift.String
@@ -367,6 +342,10 @@ public protocol RouteManagerDelegate {
   func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
   func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
   func routeManager(didUpdate routeStatus: RouteStatus)
+  func routeManager(arrivedAtDirection direction: Swift.Int)
+}
+extension RouteManagerDelegate {
+  public func routeManager(arrivedAtDirection direction: Swift.Int)
 }
 public struct RemainingDistanceItem {
   public let text: Swift.String
@@ -421,6 +400,8 @@ extension PlaceListManager : CoreLocation.CLLocationManagerDelegate {
   public func getInfoText() -> Swift.String
   public func getStoreList() -> [Poi]
   public func getCategories() -> [Swift.String]
+  public func sortPoisByLocation(pois: [Poi]) -> [Poi]
+  public func filterPoisByReachableZones(pois: [Poi]) -> [Poi]
   public func getFacilities() -> [Facility]
   @objc deinit
 }
