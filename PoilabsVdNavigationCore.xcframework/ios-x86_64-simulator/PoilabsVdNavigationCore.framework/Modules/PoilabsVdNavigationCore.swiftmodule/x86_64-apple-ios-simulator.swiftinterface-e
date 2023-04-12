@@ -283,9 +283,7 @@ public enum NavigationSettingsRouteOptionType : Swift.String, Swift.Codable, Swi
   }
 }
 public struct FloorProperties : Swift.Codable {
-  public let centerPoint: [Swift.Double]
   public let conversionFactor: Swift.Double?
-  public var routeConversionFactorDividend: Swift.Double?
   public var conversionFactorDividend: Swift.Double?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
