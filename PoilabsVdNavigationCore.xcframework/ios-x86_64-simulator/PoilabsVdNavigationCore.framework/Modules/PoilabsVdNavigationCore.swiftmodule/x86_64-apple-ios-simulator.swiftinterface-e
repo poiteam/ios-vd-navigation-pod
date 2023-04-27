@@ -157,6 +157,8 @@ public enum UserLocationStatus {
   public func stopPositioning()
   public func getPlaceTitle() -> Swift.String
   public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
+  public func getCurrentLocationDistanceLimit() -> Swift.Int
+  public func getCurrentLocationDistanceLimit() -> Swift.Double
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1077,7 +1079,7 @@ public enum RouteStatus {
 }
 public protocol RouteManagerDelegate {
   func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod)
-  func routeManager(currentUserLocation location: (Poi, Swift.Int?))
+  func routeManager(currentUserLocation location: Poi, rotation: Swift.Int?, distance: Swift.Double)
   func routeManager(error: RouteError)
   func routeManager(routeCalculated route: PESGraphRoute, target: Poi)
   func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
