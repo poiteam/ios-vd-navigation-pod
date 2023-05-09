@@ -76,6 +76,14 @@ extension Timeline : Swift.CustomDebugStringConvertible {
 extension NetworkReachabilityManager.NetworkReachabilityStatus : Swift.Equatable {
 }
 public func == (lhs: NetworkReachabilityManager.NetworkReachabilityStatus, rhs: NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Bool
+public struct Guide : Swift.Codable {
+  public let image: Swift.String?
+  public let title: Swift.String
+  public let subtitle: Swift.String?
+  public let content: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 public enum Result<Value> {
   case success(Value)
   case failure(Swift.Error)
@@ -318,7 +326,6 @@ public struct Facility : Swift.Codable {
   public let order: Swift.Int
   public let title: Swift.String
   public let titleEn: Swift.String
-  public let iconUrl: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -492,6 +499,11 @@ extension Foundation.Bundle {
     get
   }
 }
+public class UserGuideManager {
+  public init()
+  public func getUserGuideItems() -> [Guide]
+  @objc deinit
+}
 public enum AFError : Swift.Error {
   public enum ParameterEncodingFailureReason {
     case missingURL
@@ -583,14 +595,13 @@ extension AFError : Foundation.LocalizedError {
 public struct ConfigData : Swift.Codable {
   public let uuid: Swift.String
   public let messagingTime: Swift.Double
-  public let beaconCount: Swift.Int
   public let fullInit: Swift.Bool?
-  public let positioning: Positioning?
   public let lists: [List]
   public let childsURL: Swift.String
   public let placeBeaconsURL: Swift.String
   public let initListURL: Swift.String?
   public let menuLevel: Swift.Int
+  public let guide: [Guide]
   public var allElements: [Element] {
     get
   }
@@ -1128,9 +1139,9 @@ public protocol PlaceListManagerDelegate {
   public func getPlaceList() -> [Element]
   public func saveConfig(config: ConfigData, appId: Swift.String, lang: Swift.String)
   public func getConfig(appId: Swift.String, lang: Swift.String) -> ConfigData?
-  public func getPlaceFilteredList() -> [Element]?
+  public func getPlaceFilteredList(elements: [Element]) -> [Element]?
   public func getCategories() -> [ItemCategory]
-  public func searchPlaceFilteredList(withQuery query: Swift.String? = "") -> [Element]?
+  public func searchPlaceFilteredList(withQuery query: Swift.String? = "", on elements: [Element]) -> [Element]?
   @objc deinit
 }
 extension PlaceListManager : CoreLocation.CLLocationManagerDelegate {

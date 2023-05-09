@@ -19,7 +19,7 @@
     /**
     	A collection of PESGraphNodes managed by the graph.  Keys will be identifiers for
         each node in the graph, with coresponding values also being NSMutableDictionaries.
-        The keys in each sub NSMutableDictionary will then also be identifiers for nodes, 
+        The keys in each sub NSMutableDictionary will then also be identifiers for nodes,
         with those coresponding values being PESGraphEdge objects
      */
     NSMutableDictionary *nodeEdges;
@@ -69,7 +69,7 @@
 /**
 	Returns an unordered collection of all nodes that receive edges from the given node.
 	@param aNode a node to test for neighbors of
-	@returns a set of zero or more other nodes.  Returns nil if aNode is not a member of the 
+	@returns a set of zero or more other nodes.  Returns nil if aNode is not a member of the
         graph
  */
 - (NSSet *)neighborsOfNode:(PESGraphNode *)aNode;
@@ -94,7 +94,7 @@
 - (void)addEdge:(PESGraphEdge *)anEdge fromNode:(PESGraphNode *)aNode toNode:(PESGraphNode *)anotherNode;
 
 /**
-    Removes a directional, weighted edge between two nodes in the graph.  If the edge does not exist, the 
+    Removes a directional, weighted edge between two nodes in the graph.  If the edge does not exist, the
     method does nothing.
     @param aNode the node that the edge travels from
     @param anotherNode the node that the edge travels to
@@ -112,11 +112,11 @@
 - (void)addBiDirectionalEdge:(PESGraphEdge *)anEdge fromNode:(PESGraphNode *)aNode toNode:(PESGraphNode *)anotherNode;
 
 /**
-    Removes a bi-directional, weighted edge between two nodes in the graph.  If either edge does not exist, the 
+    Removes a bi-directional, weighted edge between two nodes in the graph.  If either edge does not exist, the
     method does nothing.
     @param aNode the node that the edge travels from
     @param anotherNode the node that the edge travels to
-    @returns a boolean description of whether a bi-directional edge was removed 
+    @returns a boolean description of whether a bi-directional edge was removed
  */
 - (BOOL)removeBiDirectionalEdgeFromNode:(PESGraphNode*)aNode toNode:(PESGraphNode*)anotherNode;
 
@@ -134,13 +134,16 @@
 #pragma mark "Private" methods
 
 /**
-	Used internally to find the smallest, non-infitiy value from values in the dictionary that corespond to
+    Used internally to find the smallest, non-infitiy value from values in the dictionary that corespond to
     keys in anArray, and return the coresponding key.  Returns nil if no such value exists
-	@param aDictionary a dictionary of NSNumbers
+    @param aDictionary a dictionary of NSNumbers
     @param anArray a subset of keys in the dictionary to test.
-	@returns the key that coresponds to the smallest, non infinity value in the dictionary, or else nil
+    @returns the key that coresponds to the smallest, non infinity value in the dictionary, or else nil
  */
 - (id)keyOfSmallestValue:(NSDictionary *)aDictionary withInKeys:(NSArray *)anArray;
 
 
+- (PESGraphNode *)findNearestNodeOfType:(NSString *)targetType fromNode:(PESGraphNode *)startNode;
+
 @end
+
