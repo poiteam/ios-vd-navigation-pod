@@ -17,7 +17,7 @@ s.summary = "Poilabs Indoor Navigation Framework"
 #s.requires_arc = true
 
 #2
-s.version = "4.2.20"
+s.version = "4.2.21"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -42,4 +42,5 @@ s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavig
 s.resources = 'PoilabsVdNavigationBundle.bundle'
 s.dependency 'PoilabsPositioning', '1.0.13'
 s.dependency 'StepSlider', '~> 1.8.0'
+s.dependency 'PoilabsSdkAnalytics', '1.0.6'
 end
