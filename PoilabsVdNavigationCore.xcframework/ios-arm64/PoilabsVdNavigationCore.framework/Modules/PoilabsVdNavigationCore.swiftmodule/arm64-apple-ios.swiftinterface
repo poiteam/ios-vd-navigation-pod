@@ -1245,7 +1245,7 @@ extension Foundation.Notification {
   public func getCategories() -> [Swift.String]
   public func sortPoisByLocation(pois: [Poi]) -> [Poi]
   public func filterPoisByReachableZones(pois: [Poi]) -> [Poi]
-  public func filterPoiList(withKeyword keyword: Swift.String) -> [Poi]
+  public func filterPoiList(withKeyword keyword: Swift.String, andCategoryFilter category: Swift.String? = nil) -> [Poi]
   public func getFacilities() -> [Facility]
   @objc deinit
 }
