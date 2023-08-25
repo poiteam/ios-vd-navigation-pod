@@ -42,5 +42,6 @@ s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavig
 s.resources = 'PoilabsVdNavigationBundle.bundle'
 s.dependency 'PoilabsPositioning', '1.0.13'
 s.dependency 'StepSlider', '~> 1.8.0'
-s.dependency 'PoilabsSdkAnalytics', '1.0.7'
+s.dependency 'PoilabsSdkAnalytics', '1.0.8'
+s.dependency 'PoilabsCore', '1.0.0'
 end
