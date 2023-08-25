@@ -229,3 +229,5 @@
 
 "floorChangeWarning" = "Gitmek istediğiniz konum bulunduğunuz kat ile aynı seviyede. Ancak yönlendirme sırasında kat değiştirmeniz gerekecek.";
 "caution" = "Dikkat!";
+
+"alternativeRoute" = "Alternatif Rota";

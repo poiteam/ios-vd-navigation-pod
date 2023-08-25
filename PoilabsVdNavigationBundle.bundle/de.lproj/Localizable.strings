@@ -204,3 +204,5 @@
 
 "floorChangeWarning" = "Der Ort, an dem Sie gehen möchten, befindet sich auf dem gleichen Niveau wie Ihr Boden. Sie müssen jedoch während des Routings den Boden ändern.";
 "caution" = "Achtung!";
+
+"alternativeRoute" = "alternative Route";

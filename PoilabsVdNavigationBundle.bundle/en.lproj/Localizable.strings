@@ -228,3 +228,5 @@
 
 "floorChangeWarning" = "The location you want to go is at the same level as your floor. However, you will need to change the floor during the routing.";
 "caution" = "Caution!";
+
+"alternativeRoute" = "Alternative Route";
