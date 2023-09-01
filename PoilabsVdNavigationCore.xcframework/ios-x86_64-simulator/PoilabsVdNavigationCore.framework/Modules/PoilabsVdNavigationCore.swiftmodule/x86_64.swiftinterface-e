@@ -129,7 +129,7 @@ extension PoilabsVdNavigationCore.Result {
   public func ifFailure(_ closure: () throws -> Swift.Void) rethrows -> PoilabsVdNavigationCore.Result<Value>
 }
 public protocol PositioningManagerDelegate {
-  func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, heading: CoreLocation.CLHeading)
+  func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, heading: CoreLocation.CLHeading)
   func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])
   func positioningManager(didStatusChanged status: PoilabsVdNavigationCore.UserLocationStatus)
 }
@@ -344,8 +344,8 @@ public struct Segment : Swift.Codable {
   public var isAvailableForDisPerson: Swift.Bool {
     get
   }
-  public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct ChildProperties : Swift.Codable {
   public let content: Swift.String?
@@ -1095,7 +1095,7 @@ extension PoilabsVdNavigationCore.RouteManager {
   public func getRoutePois() -> [PoilabsVdNavigationCore.Poi]
 }
 extension PoilabsVdNavigationCore.RouteManager : PoilabsVdNavigationCore.PositioningManagerDelegate {
-  public func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, heading: CoreLocation.CLHeading)
+  public func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, heading: CoreLocation.CLHeading)
   public func positioningManager(didUpdateNearByLocations locations: [(PoilabsVdNavigationCore.Poi, Swift.Double, Swift.Int?)])
   public func positioningManager(didStatusChanged status: PoilabsVdNavigationCore.UserLocationStatus)
 }

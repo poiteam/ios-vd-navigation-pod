@@ -23,14 +23,19 @@ extension UIKit.UIFont {
 public protocol PoilabsVdNavigationDelegate {
   func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
   func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
+  func poilabsVdNavigationDidTapOnAdditionalButton()
 }
 extension PoilabsVdNavigationUI.PoilabsVdNavigationDelegate {
   public func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
   public func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
+  public func poilabsVdNavigationDidTapOnAdditionalButton()
+}
+public struct AdditionalButton {
+  public init(icon: UIKit.UIImage, title: Swift.String)
 }
 public class PoilabsVdNavigationUI {
   public var delegate: PoilabsVdNavigationUI.PoilabsVdNavigationDelegate?
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, additionalViewControllers: [PoilabsVdNavigationUI.AdditionalSettings] = [], completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, additionalViewControllers: [PoilabsVdNavigationUI.AdditionalSettings] = [], additionalButton: PoilabsVdNavigationUI.AdditionalButton? = nil, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
   @objc deinit
 }
 extension PoilabsVdNavigationUI.PoilabsVdNavigationUI : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate {
