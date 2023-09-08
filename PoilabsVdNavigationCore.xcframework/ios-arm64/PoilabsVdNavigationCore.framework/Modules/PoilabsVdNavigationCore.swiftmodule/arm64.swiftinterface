@@ -326,6 +326,9 @@ public struct Navigation : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct NavigationProperties : Swift.Codable {
+  public var isPrivilaged: Swift.Bool {
+    get
+  }
   public var isVisOnList: Swift.Bool {
     get
   }
