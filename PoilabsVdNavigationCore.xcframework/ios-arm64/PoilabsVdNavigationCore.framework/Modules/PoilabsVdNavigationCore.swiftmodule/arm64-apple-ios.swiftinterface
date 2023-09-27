@@ -150,6 +150,7 @@ public enum UserLocationStatus {
   case waiting
   case notFound
   case found
+  case arrived
   public static func == (a: UserLocationStatus, b: UserLocationStatus) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
