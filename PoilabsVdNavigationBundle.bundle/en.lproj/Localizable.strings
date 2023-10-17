@@ -139,10 +139,14 @@
 "directionAndDistanceInFt" = "Walk %d ft at the direction of %d o'clock";
 "directionAndDistanceLR" = "Walk %d meters %@";
 "directionAndDistanceInFtLR" = "Walk %d ft %@";
+"goDistanceBackward" = "Walk %d meters backward";
+"goDistanceBackwardInFt" = "Walk %d ft backward";
 "goWithElevator" = "Go to %@ with elevator";
 "goWithEscalator" = "Go to %@ with escalator";
 "goWithStairs" = "Go to %@ with stairs";
 "remainingSteps" = "Remaining Steps";
+"targetAfterElevatorUp" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
+"targetAgterElevatorDown" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
 
 "toRight" = "to right";
 "toLeft" = "to left";

@@ -481,13 +481,9 @@ extension SessionDelegate : Foundation.URLSessionStreamDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, betterRouteDiscoveredFor streamTask: Foundation.URLSessionStreamTask)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, streamTask: Foundation.URLSessionStreamTask, didBecome inputStream: Foundation.InputStream, outputStream: Foundation.OutputStream)
 }
-extension Foundation.Bundle {
-  public class var applicationVersionNumber: Swift.String {
-    get
-  }
-}
 public class UserGuideManager {
   public init()
+  public func getPoilabsVdNavigationVersionNumber() -> Swift.String
   public func getUserGuideItems() -> [Guide]
   public var contactEmail: Swift.String {
     get
@@ -589,6 +585,7 @@ public struct ConfigData : Swift.Codable {
   public let lists: [List]
   public let menuLevel: Swift.Int
   public let guide: [Guide]
+  public init(from decoder: Swift.Decoder) throws
   public var allElements: [Element] {
     get
   }
@@ -596,7 +593,6 @@ public struct ConfigData : Swift.Codable {
     get
   }
   public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 public struct List : Swift.Codable {
   public let type: Swift.String
@@ -622,9 +618,13 @@ public struct Element : Swift.Codable {
 public protocol PoiVDNavigationManagerDelegate {
   func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
 }
+public struct PoiVdNavigationManagerSettings {
+  public let usedLanguages: [Swift.String]
+  public let usedFloorChangeMethods: [Swift.String]
+}
 public class PoiVDNavigationManager {
   public var delegate: PoiVDNavigationManagerDelegate?
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Result<PoiVdNavigationManagerSettings, Swift.Error>) -> Swift.Void)
   public func sdkRemoved()
   public func getMenuLevel() -> Swift.Int
   public func getMenuItems() -> [Element]
@@ -1056,7 +1056,7 @@ public enum FloorPassMethod : Swift.String, Swift.Codable, Swift.CaseIterable {
   }
 }
 public enum RouteStatus {
-  case outOfRoute, arrived, onRoute
+  case outOfRoute, arrived, onRoute, arrivedAfterElevator
   public static func == (a: RouteStatus, b: RouteStatus) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1064,7 +1064,7 @@ public enum RouteStatus {
   }
 }
 public protocol RouteManagerDelegate {
-  func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod)
+  func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod, isFinalStep: Swift.Bool)
   func routeManager(currentUserLocation location: Poi, rotation: Swift.Int?, distance: Swift.Double)
   func routeManager(error: RouteError)
   func routeManager(routeCalculated target: Poi)
@@ -1074,7 +1074,14 @@ public protocol RouteManagerDelegate {
   func routeManager(arrivedAtDirection direction: Swift.Int)
 }
 extension RouteManagerDelegate {
+  public func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod, isFinalStep: Swift.Bool)
   public func routeManager(arrivedAtDirection direction: Swift.Int)
+  public func routeManager(currentUserLocation location: Poi, rotation: Swift.Int?, distance: Swift.Double)
+  public func routeManager(error: RouteError)
+  public func routeManager(routeCalculated target: Poi)
+  public func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
+  public func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
+  public func routeManager(didUpdate routeStatus: RouteStatus)
 }
 public struct RemainingDistanceItem {
   public let text: Swift.String

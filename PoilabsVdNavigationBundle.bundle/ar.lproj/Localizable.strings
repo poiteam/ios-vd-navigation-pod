@@ -112,12 +112,16 @@
 "directionAndDistanceInFt" = "على بعد %d متر باتجاه الساعة %d";
 "directionAndDistanceLR" = "Walk %d meters %@";
 "directionAndDistanceInFtLR" = "Walk %d ft %@";
+"goDistanceBackward" = "Walk %d meters backward";
+"goDistanceBackwardInFt" = "Walk %d ft backward";
 "goWithElevator" = "اذهب إلى الطابق %@ بالمصعد";
 "goWithEscalator" = "اذهب إلى الطابق %@ بالمصعد";
 "goWithStairs" = "اذهب إلى الطابق %@ بالمصعد";
 "arrived" = "لقد وصلت إلى هذفك !";
 "arrivedWithTitle" = "@% لقد وصلت إلى هذفك !";
 "remainingSteps" = "الخطوات المتبقية ";
+"targetAfterElevatorUp" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
+"targetAgterElevatorDown" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
 
 "toRight" = " إلى اليمين";
 "toLeft" = "غادر";

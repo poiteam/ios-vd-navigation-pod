@@ -213,7 +213,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
 SWIFT_CLASS("_TtC23PoilabsVdNavigationCore16PlaceListManager")
 @interface PlaceListManager : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

@@ -137,12 +137,16 @@
 "directionAndDistanceInFt" = "%d ft saat %d yönünde ilerle";
 "directionAndDistanceLR" = "%d metre %@ ilerle";
 "directionAndDistanceInFtLR" = "%d ft %@ ilerle";
+"goDistanceBackward" = "%d metre geriye gidiniz";
+"goDistanceBackwardInFt" = "%d ft geriye gidiniz";
 "goWithElevator" = "Asansör ile %@ e git";
 "goWithEscalator" = "Yürüyen Merdiven ile %@ e git";
 "goWithStairs" = "Merdiven ile %@ e git";
 "arrived" = "Hedefinize ulaştınız!";
 "arrivedWithTitle" = "%@ e ulaştınız";
 "remainingSteps" = "Kalan Adımlar";
+"targetAfterElevatorUp" = "Asansöre ulaştınız.\nHedefinize ulaşmak için %@ 'a çıkın.";
+"targetAgterElevatorDown" = "Asansöre ulaştınız.\nHedefinize ulaşmak için %@ 'a inin.";
 
 "toRight" = "sağa";
 "toLeft" = "sola";
