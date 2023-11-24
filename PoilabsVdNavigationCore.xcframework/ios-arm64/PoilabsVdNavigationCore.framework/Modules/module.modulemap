@@ -1,11 +1,11 @@
 framework module PoilabsVdNavigationCore {
   umbrella header "PoilabsVdNavigationCore.h"
-
   export *
+
   module * { export * }
 }
 
 module PoilabsVdNavigationCore.Swift {
-    header "PoilabsVdNavigationCore-Swift.h"
-    requires objc
+  header "PoilabsVdNavigationCore-Swift.h"
+  requires objc
 }

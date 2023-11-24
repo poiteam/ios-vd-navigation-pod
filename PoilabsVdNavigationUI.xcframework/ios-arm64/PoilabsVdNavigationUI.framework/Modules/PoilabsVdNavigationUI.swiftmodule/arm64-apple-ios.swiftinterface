@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AudioToolbox
 import CoreBluetooth
 import CoreLocation
@@ -12,6 +13,8 @@ import StepSlider
 import Swift
 import UIKit
 import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
 public struct Style<View> where View : UIKit.UIView {
   public let style: (View) -> Swift.Void
   public init(_ style: @escaping (View) -> Swift.Void)
@@ -34,7 +37,7 @@ public struct AdditionalButton {
   public init(icon: UIKit.UIImage, title: Swift.String)
 }
 public class PoilabsVdNavigationUI {
-  public var delegate: PoilabsVdNavigationDelegate?
+  public var delegate: (any PoilabsVdNavigationDelegate)?
   public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, additionalViewControllers: [AdditionalSettings] = [], additionalButton: AdditionalButton? = nil, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
   @objc deinit
 }
@@ -68,14 +71,14 @@ extension BUStringPickerController {
   @_Concurrency.MainActor(unsafe) public func setPicker(_ font: UIKit.UIFont? = nil, _ textColor: UIKit.UIColor = .black, _ aligment: UIKit.NSTextAlignment = .center)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AccesiblePickerContainer : UIKit.UIView {
-  @objc override dynamic public var accessibilityValue: Swift.String? {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityValue: Swift.String? {
     @objc get
     @objc set
   }
-  @objc override dynamic public func accessibilityActivate() -> Swift.Bool
-  @objc override dynamic public func accessibilityIncrement()
-  @objc override dynamic public func accessibilityDecrement()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func accessibilityActivate() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func accessibilityIncrement()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func accessibilityDecrement()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -100,8 +103,8 @@ public class StyleSettings {
   @objc deinit
 }
 extension UIKit.UIColor {
-  convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat)
-  convenience public init(r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat)
+  convenience public init(r: CoreFoundation.CGFloat, g: CoreFoundation.CGFloat, b: CoreFoundation.CGFloat)
+  convenience public init(r: CoreFoundation.CGFloat, g: CoreFoundation.CGFloat, b: CoreFoundation.CGFloat, a: CoreFoundation.CGFloat)
 }
 public struct AdditionalSettings {
   public init(title: Swift.String, image: UIKit.UIImage, controller: UIKit.UIViewController)
