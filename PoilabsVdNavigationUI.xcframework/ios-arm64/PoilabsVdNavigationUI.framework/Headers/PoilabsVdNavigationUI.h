@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "StepSlider.h"
 //! Project version number for PoilabsVdNavigationUI.
 FOUNDATION_EXPORT double PoilabsVdNavigationUIVersionNumber;
 
@@ -15,4 +15,3 @@ FOUNDATION_EXPORT const unsigned char PoilabsVdNavigationUIVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <PoilabsVdNavigationUI/PublicHeader.h>
 
-#import "StepSlider.h"
