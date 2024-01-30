@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StepSlider.h"
 //! Project version number for PoilabsVdNavigationUI.
 FOUNDATION_EXPORT double PoilabsVdNavigationUIVersionNumber;
 
