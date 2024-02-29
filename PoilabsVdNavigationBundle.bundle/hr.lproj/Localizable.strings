@@ -1,0 +1,236 @@
+/*
+  Localizable.strings
+  ios-blindoors
+
+  Created by Emre Kuru on 25.03.2020.
+  Copyright © 2020 Emre Kuru. All rights reserved.
+*/
+
+//MARK: Navigasyon
+//yonler
+"onForward" = "Ispred";
+"onLeft" = "Lijevo od tebe";
+"onRight" = "Desno od tebe";
+"onBackward" = "Iza tebe";
+
+
+//durumlar
+"routeCalculating" = "Ruta se računa.";
+"noRoute" = "Ruta nije pronađena, pokušajte s drugom točkom.";
+"startWalking" = "Možete početi hodati sada.";
+"turnAround" = "Polako se okrenite kako biste odredili pravac.";
+"outOfRoute" = "Provjerite jeste li na ruti. Telefonom protresite da biste ponovno dobili rutu.";
+"afterElevator" = "Dolazite do kata na kojem želite ići. Kad izađete iz lifta, možete protresati telefon za vođenje.";
+
+//yonlendirme
+"destinationPoint" = "Mjesto na koje želite ići";
+"nearly" = "otprilike";
+"metersAway" = "metara udaljenosti";
+
+//kat yonlendirmeleri
+"sameFloor" = "Na trenutnom katu";
+"downFloor" = "%d kata dolje";
+"upperFloor" = "%d kata gore";
+"elevatorDown" = "siđite";
+"elevatorUp" = "popnite se";
+
+//rota adimlari
+"yourLocation" = "Vaša trenutna lokacija";
+"now" = "Sada";
+"turn" = "Okrenite se";
+"elevatorAterxMeters" = "Nakon što uđete u lift, hodajte %s metara.";
+"turnRightAfterxMeters" = "Nakon %s metara skrenite desno.";
+"turnLeftAfterxMeters" = "Nakon %s metara skrenite lijevo.";
+"goStraight" = "Nastavite ravno %s metara.";
+"arrived" = "Stigli ste do odredišta!";
+"arrivedWithTitle" = "Stigli ste do %@";
+"target" = "Cilj";
+
+//MARK: Place Detail
+"elevator" = "Najbliži lift";
+"toilet" = "Najbliži WC";
+"freeWalk" = "Slobodno kretanje";
+"about" = "O aplikaciji";
+"selectCategory" = "Odaberite kategoriju";
+"all" = "Sve";
+"search" = "Traži";
+"done" = "Gotovo";
+"cancel" = "Odustani";
+"pointList" = "Popis lokacija";
+"locationWaiting" = "Čekanje lokacije.";
+"locationNotFound" = "Lokacija nije pronađena.";
+
+//MARK: Point Detail
+"getRoute" = "Idi ovamo";
+"readContent" = "Pročitaj sadržaj";
+
+//MARK: General
+"pleaseWait" = "Molimo pričekajte...";
+
+//MARK: User Guide
+"welcome" = "Dobrodošli!";
+"welcomeDesc" = "Drago nam je što ste se pridružili!\n\nŽelimo vam olakšati sudjelovanje u svakodnevnom životu putem naše aplikacije.\n\nMožete nastaviti na sljedeću fazu i početi saznati više o aplikaciji.\n\nAli imajte na umu! Ova aplikacija ne zamjenjuje bijeli štap.";
+
+"howItWorks" = "Kako funkcionira?";
+"howItWorksDesc" = "Koristimo Bluetooth senzore za pronalaženje vaše lokacije. Da bismo mogli koristiti ove senzore, potrebno je da odobrite lokacijske i Bluetooth dozvole.\n\nBudite sigurni da su Bluetooth i lokacijske usluge omogućene te da imate aktivnu internetsku vezu!\n\nZa najbolje iskustvo, važno je da držite telefon ispred sebe i paralelno s podom.";
+
+"venues" = "Lokacije";
+"venuesDesc" = "Pristupačne lokacije bit će vam prikazane počevši od najbliže. Također možete filtrirati lokacije prema vrsti ili pretražiti lokaciju koristeći traku za pretraživanje.";
+
+"poiList" = "Popis lokacija";
+"poiListDesc" = "Možete vidjeti sve pristupačne lokacije unutar određene lokacije.\n\nNa primjer, možete pristupiti odjelima knjižnica, umjetničkim djelima u muzejima ili trgovinama u trgovačkim centrima. Ako ima sadržaja na vašoj trenutačnoj lokaciji, možete ga poslušati ili dobiti upute za te lokacije.";
+
+"discoverMode" = "Način istraživanja";
+"discoverModeDesc" = "Pomaže vam da razumijete svoju trenutačnu lokaciju i okolinu.\n\nDok se krećete, možete saznati svoju trenutačnu lokaciju, bliske lokacije i orijentire.\n\nTakođer, ako postoji sadržaj na vašoj trenutačnoj lokaciji, ispod informacija o smjeru bit će vidljivo dugme. Dvostrukim klikom na to dugme ili na informacije o lokaciji možete slušati sadržaj.";
+
+"navigation" = "Navigacija";
+"navigationDesc" = "Kada odaberete točku, doći ćete do detaljne stranice lokacije. Na toj stranici možete pokrenuti navigaciju pritiskom na gumb 'Idi ovamo'.\n\nPrije pokretanja navigacije, korisno je postaviti odgovarajuće postavke navigacije putem postavki navigacije.";
+
+"navigationSteps" = "Koraci navigacije";
+"navigationStepsDesc" = "Nakon pokretanja navigacije, stalno ćete primati ažuriranja.\n\nOvisno o postavkama navigacije koje ste odabrali, ponekad ćete možda dobiti upozorenje da niste na ruti, čak i ako jeste. Molimo vas da nastavite hodati još nekoliko koraka. Ako nastavite dobivati upozorenje da niste na ruti, možete protresti telefon kako biste dobili novu rutu.";
+
+"youAreAllSet" = "Jeste li spremni?";
+"youAreAllSetDesc" = "Možda ste zbunjeni do sada. Međutim, najbolji način učenja novih stvari je vježba.\n\nHajde da počnemo!";
+"start" = "Počni";
+"next" = "Sljedeći";
+
+"venues" = "Lokacije";
+"searchPlaceHolder" = "Kamo želite ići?";
+"noVenueFound" = "Lokacija nije pronađena";
+"showOnMap" = "Prikaži na karti";
+"addFav" = "Dvokliknite za dodavanje u favorite";
+"removeFav" = "Dvokliknite za uklanjanje iz favorita";
+"showFavorites" = "Dvokliknite da biste prikazali samo lokacije koje su dodane u favorite";
+"showFavoritesUnselect" = "Dvokliknite da biste prikazali sve lokacije";
+"openFilterView" = "Otvori stranicu za dodavanje filtra";
+"closeFilterView" = "Zatvori stranicu za dodavanje filtra";
+"openCategoryView" = "Kategoriju otvori";
+"closeCategoryView" = "Zatvori kategoriju";
+
+"select" = "Odaberi";
+"unselect" = "Odabir ukloni";
+"favorites" = "Favoriti";
+"distance" = "Udaljenost";
+"noLimit" = "Neograničeno";
+"category" = "Kategorija";
+"apply" = "Primjeni";
+
+"showInfo" = "Prikaži informacije o lokaciji";
+"noContent" = "Informacije o lokaciji nisu pronađene";
+"ok" = "U redu";
+"info" = "O aplikaciji";
+
+"clockRotation" = "U smjeru %d sati";
+"floor" = "Kat";
+"meters" = "metara";
+"discovery" = "Otkrij";
+"currentLocation" = "Trenutna lokacija:";
+"nearByLocations" = "Bliske lokacije:";
+"contentAvailable" = "Sadržaj je dostupan";
+"contentButton" = "Dvostruko dodirnite da biste slušali sadržaj";
+
+
+"seeRemainingSteps" = "Pogledaj preostale korake";
+"clearRoute" = "Očisti rutu";
+"destination" = "Odredište";
+"arrivalTime" = "Dolazak: %d minuta";
+"directionAndDistance" = "%d metara u smjeru sata %d";
+"directionAndDistanceInFt" = "%d stopa u smjeru sata %d";
+"directionAndDistanceLR" = "%d metara naprijed %@";
+"directionAndDistanceInFtLR" = "%d stopa naprijed %@";
+"goDistanceBackward" = "%d metara nazad";
+"goDistanceBackwardInFt" = "%d stopa nazad";
+"goWithElevator" = "Idi do %@ pomoću lifta";
+"goWithEscalator" = "Idi do %@ pomoću pokretnih stepenica";
+"goWithStairs" = "Idi do %@ pomoću stepenica";
+"remainingSteps" = "Preostali koraci";
+"targetAfterElevatorUp" = "Stigli ste do lifta.\nDa biste došli do odredišta, idite do %@.";
+"targetAgterElevatorDown" = "Stigli ste do lifta.\nDa biste došli do odredišta, idite do %@.";
+
+"toRight" = "Desno";
+"toLeft" = "Lijevo";
+"toForward" = "Naprijed";
+"toBackward" = "Natrag";
+
+"close" = "Zatvori";
+
+"profile" = "Profil";
+"notifications" = "Obavijesti";
+"account" = "Račun";
+"visual" = "Vizualno";
+"language" = "Jezik";
+"navigation" = "Navigacija";
+"userGuide" = "Korisnički priručnik";
+"contactUs" = "Kontaktirajte nas";
+
+"colors" = "Boje";
+"blackAndWhite" = "Crno-bijelo";
+"standart" = "Standardno";
+"fontSize" = "Veličina fonta";
+
+
+"unitOfDistance" = "Mjerna jedinica udaljenosti";
+"metric" = "Metrički";
+"imperial" = "Milja";
+
+"directions" = "Smjerovi";
+"directionOfClock" = "Smjer sata";
+"leftRight" = "Lijevo - Desno";
+
+"routeOption" = "Opcija rute";
+"onlyElevator" = "Samo lift";
+"elevatorAndOthers" = "Lift/Pokretne stepenice/Stepenice";
+"elevator" = "Lift";
+"escalator" = "Pokretne stepenice";
+"stairs" = "Stepenice";
+
+"automReRoute" = "Automatsko ponovno usmjeravanje";
+"active" = "Uključeno";
+"passive" = "Isključeno";
+
+"currentLocationDirection" = "Smjer trenutne lokacije";
+"activateCurrentLocation" = "Smjer sata trenutne lokacije, odabrano: Isključeno.";
+"disableCurrentLocation" = "Smjer sata trenutne lokacije, odabrano: Uključeno.";
+"activateCurrentLocationHint" = "Dvaput dodirnite da biste otvorili smjer trenutne lokacije tijekom dobivanja rute";
+"disableCurrentLocationHint" = "Dvaput dodirnite da biste zatvorili smjer trenutne lokacije tijekom dobivanja rute";
+
+"metricIsSelected" = "Mjerna jedinica udaljenosti, odabrano: metrički.";
+"imperialIsSelected" = "Mjerna jedinica udaljenosti, odabrano: milja.";
+"metricHint" = "Dvaput dodirnite za promjenu na milje";
+"imperialHint" = "Dvaput dodirnite za promjenu na metrički";
+
+"clockwiseIsSelected" = "Smjerovi, odabrano: smjer sata.";
+"leftRightIsSelected" = "Smjerovi, odabrano: Lijevo - Desno.";
+"clockwiseIsSelectedHint" = "Dvaput dodirnite za promjenu na Lijevo - Desno";
+"leftRightIsSelectedHint" = "Dvaput dodirnite za promjenu na smjer sata";
+
+"onlyElevatorIsSelected" = "Opcija rute, odabrano: Samo lift.";
+"allRoutesIsselected" = "Opcija rute, odabrano: Lift/Pokretne stepenice/Stepenice.";
+"onlyElevatorIsSelectedHint" = "Dvaput dodirnite za dobivanje rute putem lifta, pokretnih stepenica ili stepenica";
+"allRoutesIsSelectedHint" = "Dvaput dodirnite za dobivanje rute samo putem lifta";
+
+"autoReRouteIsActive" = "Automatsko ponovno usmjeravanje, odabrano: Uključeno.";
+"autoReRouteIsPassive" = "Automatsko ponovno usmjeravanje, odabrano: Isključeno.";
+"autoReRouteIsActiveHint" = "Dvaput dodirnite da biste omogućili ponovno usmjeravanje kad odstupite s rute";
+"autoReRouteIsPassiveHint" = "Dvaput dodirnite za automatsko ponovno usmjeravanje kad odstupite s rute";
+
+"btPopUp" = "Provjerite postavke Bluetootha";
+"locationPopUp" = "Provjerite postavke lokacije";
+
+"approve" = "Potvrdi";
+"loremIpsum" = "Ovo je primjer teksta";
+
+"completedProgress" = "%d%% završeno";
+"noAccessibleRoute" = "Nije pronađena dostupna ruta! Želite li dobiti rutu preko stepenica ili pokretnih stepenica?";
+
+"noLocationError" = "Vaša lokacija nije prepoznata!\nProvjerite jeste li u mjestu koje podržava navigaciju i jeste li unutar dosega senzora!";
+
+"selected" = "Odabrano";
+"doubleTapToSelect" = "Dvaput dodirnite da biste odabrali";
+
+"afterThat" = "Kasnije";
+
+"floorChangeWarning" = "Odredište na koje želite ići nalazi se na istom katu na kojem se trenutačno nalazite. Međutim, tijekom vođenja bit ćete preusmjereni na drugi kat.";
+"caution" = "Pazite!";
+
+"alternativeRoute" = "Alternativna ruta";
