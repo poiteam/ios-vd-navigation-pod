@@ -43,5 +43,4 @@ s.resources = 'PoilabsVdNavigationBundle.bundle'
 s.dependency 'PoilabsPositioning', '1.0.16'
 s.dependency 'PoilabsSdkAnalytics', '1.0.10'
 s.dependency 'PoilabsCore', '1.0.4'
-s.dependency 'StepSlider'
 end
