@@ -8,7 +8,6 @@ import Foundation
 import MessageUI
 import PoilabsVdNavigationCore
 @_exported import PoilabsVdNavigationUI
-import StepSlider
 import Swift
 import UIKit
 import _Concurrency
