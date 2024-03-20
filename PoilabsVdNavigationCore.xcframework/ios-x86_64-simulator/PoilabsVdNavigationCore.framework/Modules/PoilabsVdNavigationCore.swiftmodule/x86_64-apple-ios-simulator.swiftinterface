@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PoilabsVdNavigationCore
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name PoilabsVdNavigationCore
 import CoreLocation
 import Dispatch
 import Foundation
@@ -13,6 +13,8 @@ import Swift
 import SystemConfiguration
 import UIKit
 import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
 public struct Timeline {
   public let requestStartTime: CoreFoundation.CFAbsoluteTime
   public let initialResponseTime: CoreFoundation.CFAbsoluteTime
@@ -83,12 +85,12 @@ public struct Guide : Swift.Codable {
   public let title: Swift.String
   public let subtitle: Swift.String?
   public let content: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum Result<Value> {
   case success(Value)
-  case failure(Swift.Error)
+  case failure(any Swift.Error)
   public var isSuccess: Swift.Bool {
     get
   }
@@ -98,7 +100,7 @@ public enum Result<Value> {
   public var value: Value? {
     get
   }
-  public var error: Swift.Error? {
+  public var error: (any Swift.Error)? {
     get
   }
 }
@@ -117,12 +119,12 @@ extension Result {
   public func unwrap() throws -> Value
   public func map<T>(_ transform: (Value) -> T) -> Result<T>
   public func flatMap<T>(_ transform: (Value) throws -> T) -> Result<T>
-  public func mapError<T>(_ transform: (Swift.Error) -> T) -> Result<Value> where T : Swift.Error
-  public func flatMapError<T>(_ transform: (Swift.Error) throws -> T) -> Result<Value> where T : Swift.Error
+  public func mapError<T>(_ transform: (any Swift.Error) -> T) -> Result<Value> where T : Swift.Error
+  public func flatMapError<T>(_ transform: (any Swift.Error) throws -> T) -> Result<Value> where T : Swift.Error
   @discardableResult
   public func withValue(_ closure: (Value) throws -> Swift.Void) rethrows -> Result<Value>
   @discardableResult
-  public func withError(_ closure: (Swift.Error) throws -> Swift.Void) rethrows -> Result<Value>
+  public func withError(_ closure: (any Swift.Error) throws -> Swift.Void) rethrows -> Result<Value>
   @discardableResult
   public func ifSuccess(_ closure: () throws -> Swift.Void) rethrows -> Result<Value>
   @discardableResult
@@ -158,11 +160,11 @@ public enum UserLocationStatus {
   }
 }
 @objc @_inheritsConvenienceInitializers public class PositioningManager : ObjectiveC.NSObject {
-  public var delegate: PositioningManagerDelegate? {
+  public var delegate: (any PositioningManagerDelegate)? {
     get
     set
   }
-  public var errorDelegate: PositioninManagerErrorDelegate?
+  public var errorDelegate: (any PositioninManagerErrorDelegate)?
   public static let shared: PositioningManager
   public func startPositioning()
   public func stopPositioning()
@@ -187,7 +189,7 @@ public protocol RequestAdapter {
 }
 public typealias RequestRetryCompletion = (_ shouldRetry: Swift.Bool, _ timeDelay: Foundation.TimeInterval) -> Swift.Void
 public protocol RequestRetrier {
-  func should(_ manager: SessionManager, retry request: Request, with error: Swift.Error, completion: @escaping RequestRetryCompletion)
+  func should(_ manager: SessionManager, retry request: Request, with error: any Swift.Error, completion: @escaping RequestRetryCompletion)
 }
 public typealias HTTPHeaders = [Swift.String : Swift.String]
 @_hasMissingDesignatedInitializers open class Request {
@@ -286,22 +288,22 @@ open class StreamRequest : Request {
 public struct FloorProperties : Swift.Codable {
   public let conversionFactor: Swift.Double?
   public var conversionFactorDividend: Swift.Double?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Location : Swift.Codable {
   public let geometry: Geometry
   public let properties: LocationProperties?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Geometry : Swift.Codable {
   public let coordinates: [Swift.Double]
   public var locationCoordinates: CoreLocation.CLLocationCoordinate2D {
     get
   }
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct LocationProperties : Swift.Codable {
   public let floorLevel: Swift.Int?
@@ -309,22 +311,22 @@ public struct LocationProperties : Swift.Codable {
   public var shopCenterPointCoordinates: CoreLocation.CLLocationCoordinate2D? {
     get
   }
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Facility : Swift.Codable {
   public let pointType: Swift.String
   public let order: Swift.Int
   public let title: Swift.String
   public let titleEn: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Navigation : Swift.Codable {
   public let properties: NavigationProperties?
   public var segments: [Segment]?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct NavigationProperties : Swift.Codable {
   public var privilegedRouteBuffer: Swift.Int {
@@ -339,8 +341,8 @@ public struct NavigationProperties : Swift.Codable {
   public var isVisOnMap: Swift.Bool {
     get
   }
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Segment : Swift.Codable {
   public let id: Swift.String
@@ -351,22 +353,22 @@ public struct Segment : Swift.Codable {
   public var isAvailableForDisPerson: Swift.Bool {
     get
   }
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct ChildProperties : Swift.Codable {
   public let content: Swift.String?
   public var restrictionWarning: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PlaceBeacons : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Beacon : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Poi : Swift.Codable {
   public var properties: ChildProperties?
@@ -374,7 +376,7 @@ public struct Poi : Swift.Codable {
   public var id: Swift.String?
   public var navigation: Navigation?
   public let tags: [Swift.String]?
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
   public var coordinates: CoreLocation.CLLocationCoordinate2D {
     get
   }
@@ -390,7 +392,7 @@ public struct Poi : Swift.Codable {
   public var categoryName: Swift.String {
     get
   }
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension Poi : Swift.Hashable {
   public static func == (lhs: Poi, rhs: Poi) -> Swift.Bool
@@ -400,7 +402,7 @@ extension Poi : Swift.Hashable {
   }
 }
 @objc @_inheritsConvenienceInitializers open class SessionDelegate : ObjectiveC.NSObject {
-  open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, Swift.Error?) -> Swift.Void)?
+  open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, (any Swift.Error)?) -> Swift.Void)?
   open var sessionDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge) -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?))?
   open var sessionDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
   open var sessionDidFinishEventsForBackgroundURLSession: ((Foundation.URLSession) -> Swift.Void)?
@@ -411,7 +413,7 @@ extension Poi : Swift.Hashable {
   open var taskNeedNewBodyStream: ((Foundation.URLSession, Foundation.URLSessionTask) -> Foundation.InputStream?)?
   open var taskNeedNewBodyStreamWithCompletion: ((Foundation.URLSession, Foundation.URLSessionTask, @escaping (Foundation.InputStream?) -> Swift.Void) -> Swift.Void)?
   open var taskDidSendBodyData: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
-  open var taskDidComplete: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Error?) -> Swift.Void)?
+  open var taskDidComplete: ((Foundation.URLSession, Foundation.URLSessionTask, (any Swift.Error)?) -> Swift.Void)?
   open var dataTaskDidReceiveResponse: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLResponse) -> Foundation.URLSession.ResponseDisposition)?
   open var dataTaskDidReceiveResponseWithCompletion: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLResponse, @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void) -> Swift.Void)?
   open var dataTaskDidBecomeDownloadTask: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLSessionDownloadTask) -> Swift.Void)?
@@ -450,7 +452,7 @@ extension Poi : Swift.Hashable {
   @objc deinit
 }
 extension SessionDelegate : Foundation.URLSessionDelegate {
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: Swift.Error?)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: (any Swift.Error)?)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
   @objc dynamic open func urlSessionDidFinishEvents(forBackgroundURLSession session: Foundation.URLSession)
 }
@@ -461,7 +463,7 @@ extension SessionDelegate : Foundation.URLSessionTaskDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
   @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
   @objc(URLSession:task:didFinishCollectingMetrics:) dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
-  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
 }
 extension SessionDelegate : Foundation.URLSessionDataDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
@@ -493,23 +495,23 @@ public class UserGuideManager {
 public enum AFError : Swift.Error {
   public enum ParameterEncodingFailureReason {
     case missingURL
-    case jsonEncodingFailed(error: Swift.Error)
-    case propertyListEncodingFailed(error: Swift.Error)
+    case jsonEncodingFailed(error: any Swift.Error)
+    case propertyListEncodingFailed(error: any Swift.Error)
   }
   public enum MultipartEncodingFailureReason {
     case bodyPartURLInvalid(url: Foundation.URL)
     case bodyPartFilenameInvalid(in: Foundation.URL)
     case bodyPartFileNotReachable(at: Foundation.URL)
-    case bodyPartFileNotReachableWithError(atURL: Foundation.URL, error: Swift.Error)
+    case bodyPartFileNotReachableWithError(atURL: Foundation.URL, error: any Swift.Error)
     case bodyPartFileIsDirectory(at: Foundation.URL)
     case bodyPartFileSizeNotAvailable(at: Foundation.URL)
-    case bodyPartFileSizeQueryFailedWithError(forURL: Foundation.URL, error: Swift.Error)
+    case bodyPartFileSizeQueryFailedWithError(forURL: Foundation.URL, error: any Swift.Error)
     case bodyPartInputStreamCreationFailed(for: Foundation.URL)
     case outputStreamCreationFailed(for: Foundation.URL)
     case outputStreamFileAlreadyExists(at: Foundation.URL)
     case outputStreamURLInvalid(url: Foundation.URL)
-    case outputStreamWriteFailed(error: Swift.Error)
-    case inputStreamReadFailed(error: Swift.Error)
+    case outputStreamWriteFailed(error: any Swift.Error)
+    case inputStreamReadFailed(error: any Swift.Error)
   }
   public enum ResponseValidationFailureReason {
     case dataFileNil
@@ -524,10 +526,10 @@ public enum AFError : Swift.Error {
     case inputFileNil
     case inputFileReadFailed(at: Foundation.URL)
     case stringSerializationFailed(encoding: Swift.String.Encoding)
-    case jsonSerializationFailed(error: Swift.Error)
-    case propertyListSerializationFailed(error: Swift.Error)
+    case jsonSerializationFailed(error: any Swift.Error)
+    case propertyListSerializationFailed(error: any Swift.Error)
   }
-  case invalidURL(url: URLConvertible)
+  case invalidURL(url: any URLConvertible)
   case parameterEncodingFailed(reason: AFError.ParameterEncodingFailureReason)
   case multipartEncodingFailed(reason: AFError.MultipartEncodingFailureReason)
   case responseValidationFailed(reason: AFError.ResponseValidationFailureReason)
@@ -551,13 +553,13 @@ extension AFError {
   }
 }
 extension AFError {
-  public var urlConvertible: URLConvertible? {
+  public var urlConvertible: (any URLConvertible)? {
     get
   }
   public var url: Foundation.URL? {
     get
   }
-  public var underlyingError: Swift.Error? {
+  public var underlyingError: (any Swift.Error)? {
     get
   }
   public var acceptableContentTypes: [Swift.String]? {
@@ -585,21 +587,21 @@ public struct ConfigData : Swift.Codable {
   public let lists: [List]
   public let menuLevel: Swift.Int
   public let guide: [Guide]
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
   public var allElements: [Element] {
     get
   }
   public var minRSSILimitIOS: Swift.Int? {
     get
   }
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct List : Swift.Codable {
   public let type: Swift.String
   public let title: Swift.String
   public let elements: [Element]
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Element : Swift.Codable {
   public let id: Swift.String, title: Swift.String
@@ -607,13 +609,13 @@ public struct Element : Swift.Codable {
   public let address: Swift.String?
   public let lon: Swift.Double, lat: Swift.Double
   public let childs: [Element]?
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
   public var distance: Swift.Double?
   public var isFavorite: Swift.Bool
   public var childsList: [Element]? {
     get
   }
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public protocol PoiVDNavigationManagerDelegate {
   func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
@@ -623,8 +625,8 @@ public struct PoiVdNavigationManagerSettings {
   public let usedFloorChangeMethods: [Swift.String]
 }
 public class PoiVDNavigationManager {
-  public var delegate: PoiVDNavigationManagerDelegate?
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Result<PoiVdNavigationManagerSettings, Swift.Error>) -> Swift.Void)
+  public var delegate: (any PoiVDNavigationManagerDelegate)?
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, lang: Swift.String, completionHandler: @escaping (Swift.Result<PoiVdNavigationManagerSettings, any Swift.Error>) -> Swift.Void)
   public func sdkRemoved()
   public func getMenuLevel() -> Swift.Int
   public func getMenuItems() -> [Element]
@@ -649,7 +651,7 @@ public class PoiVDNavigationManager {
 open class SessionManager {
   public enum MultipartFormDataEncodingResult {
     case success(request: UploadRequest, streamingFromDisk: Swift.Bool, streamFileURL: Foundation.URL?)
-    case failure(Swift.Error)
+    case failure(any Swift.Error)
   }
   public static let `default`: SessionManager
   public static let defaultHTTPHeaders: HTTPHeaders
@@ -657,8 +659,8 @@ open class SessionManager {
   final public let session: Foundation.URLSession
   final public let delegate: SessionDelegate
   open var startRequestsImmediately: Swift.Bool
-  open var adapter: RequestAdapter?
-  open var retrier: RequestRetrier? {
+  open var adapter: (any RequestAdapter)?
+  open var retrier: (any RequestRetrier)? {
     get
     set
   }
@@ -667,29 +669,29 @@ open class SessionManager {
   public init?(session: Foundation.URLSession, delegate: SessionDelegate, serverTrustPolicyManager: ServerTrustPolicyManager? = nil)
   @objc deinit
   @discardableResult
-  open func request(_ url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest
+  open func request(_ url: any URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: any ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest
   @discardableResult
-  open func request(_ urlRequest: URLRequestConvertible) -> DataRequest
+  open func request(_ urlRequest: any URLRequestConvertible) -> DataRequest
   @discardableResult
-  open func download(_ url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
+  open func download(_ url: any URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: any ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
   @discardableResult
-  open func download(_ urlRequest: URLRequestConvertible, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
+  open func download(_ urlRequest: any URLRequestConvertible, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
   @discardableResult
   open func download(resumingWith resumeData: Foundation.Data, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
   @discardableResult
-  open func upload(_ fileURL: Foundation.URL, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
+  open func upload(_ fileURL: Foundation.URL, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
   @discardableResult
-  open func upload(_ fileURL: Foundation.URL, with urlRequest: URLRequestConvertible) -> UploadRequest
+  open func upload(_ fileURL: Foundation.URL, with urlRequest: any URLRequestConvertible) -> UploadRequest
   @discardableResult
-  open func upload(_ data: Foundation.Data, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
+  open func upload(_ data: Foundation.Data, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
   @discardableResult
-  open func upload(_ data: Foundation.Data, with urlRequest: URLRequestConvertible) -> UploadRequest
+  open func upload(_ data: Foundation.Data, with urlRequest: any URLRequestConvertible) -> UploadRequest
   @discardableResult
-  open func upload(_ stream: Foundation.InputStream, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
+  open func upload(_ stream: Foundation.InputStream, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
   @discardableResult
-  open func upload(_ stream: Foundation.InputStream, with urlRequest: URLRequestConvertible) -> UploadRequest
-  open func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil, queue: Dispatch.DispatchQueue? = nil, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-  open func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: URLRequestConvertible, queue: Dispatch.DispatchQueue? = nil, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+  open func upload(_ stream: Foundation.InputStream, with urlRequest: any URLRequestConvertible) -> UploadRequest
+  open func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil, queue: Dispatch.DispatchQueue? = nil, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+  open func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: any URLRequestConvertible, queue: Dispatch.DispatchQueue? = nil, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
   @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
   @discardableResult
   open func stream(withHostName hostName: Swift.String, port: Swift.Int) -> StreamRequest
@@ -702,13 +704,13 @@ open class SessionManager {
   public var data: Foundation.Data? {
     get
   }
-  public var error: Swift.Error?
+  public var error: (any Swift.Error)?
   @objc deinit
 }
 extension Request {
   public enum ValidationResult {
     case success
-    case failure(Swift.Error)
+    case failure(any Swift.Error)
   }
 }
 extension DataRequest {
@@ -754,9 +756,9 @@ public struct DefaultDataResponse {
   public let request: Foundation.URLRequest?
   public let response: Foundation.HTTPURLResponse?
   public let data: Foundation.Data?
-  public let error: Swift.Error?
+  public let error: (any Swift.Error)?
   public let timeline: Timeline
-  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?, timeline: Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?, timeline: Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
 }
 public struct DataResponse<Value> {
   public let request: Foundation.URLRequest?
@@ -767,7 +769,7 @@ public struct DataResponse<Value> {
   public var value: Value? {
     get
   }
-  public var error: Swift.Error? {
+  public var error: (any Swift.Error)? {
     get
   }
   public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, result: Result<Value>, timeline: Timeline = Timeline())
@@ -783,8 +785,8 @@ extension DataResponse : Swift.CustomStringConvertible, Swift.CustomDebugStringC
 extension DataResponse {
   public func map<T>(_ transform: (Value) -> T) -> DataResponse<T>
   public func flatMap<T>(_ transform: (Value) throws -> T) -> DataResponse<T>
-  public func mapError<E>(_ transform: (Swift.Error) -> E) -> DataResponse<Value> where E : Swift.Error
-  public func flatMapError<E>(_ transform: (Swift.Error) throws -> E) -> DataResponse<Value> where E : Swift.Error
+  public func mapError<E>(_ transform: (any Swift.Error) -> E) -> DataResponse<Value> where E : Swift.Error
+  public func flatMapError<E>(_ transform: (any Swift.Error) throws -> E) -> DataResponse<Value> where E : Swift.Error
 }
 public struct DefaultDownloadResponse {
   public let request: Foundation.URLRequest?
@@ -792,9 +794,9 @@ public struct DefaultDownloadResponse {
   public let temporaryURL: Foundation.URL?
   public let destinationURL: Foundation.URL?
   public let resumeData: Foundation.Data?
-  public let error: Swift.Error?
+  public let error: (any Swift.Error)?
   public let timeline: Timeline
-  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, temporaryURL: Foundation.URL?, destinationURL: Foundation.URL?, resumeData: Foundation.Data?, error: Swift.Error?, timeline: Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, temporaryURL: Foundation.URL?, destinationURL: Foundation.URL?, resumeData: Foundation.Data?, error: (any Swift.Error)?, timeline: Timeline = Timeline(), metrics: Swift.AnyObject? = nil)
 }
 public struct DownloadResponse<Value> {
   public let request: Foundation.URLRequest?
@@ -807,7 +809,7 @@ public struct DownloadResponse<Value> {
   public var value: Value? {
     get
   }
-  public var error: Swift.Error? {
+  public var error: (any Swift.Error)? {
     get
   }
   public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, temporaryURL: Foundation.URL?, destinationURL: Foundation.URL?, resumeData: Foundation.Data?, result: Result<Value>, timeline: Timeline = Timeline())
@@ -823,8 +825,8 @@ extension DownloadResponse : Swift.CustomStringConvertible, Swift.CustomDebugStr
 extension DownloadResponse {
   public func map<T>(_ transform: (Value) -> T) -> DownloadResponse<T>
   public func flatMap<T>(_ transform: (Value) throws -> T) -> DownloadResponse<T>
-  public func mapError<E>(_ transform: (Swift.Error) -> E) -> DownloadResponse<Value> where E : Swift.Error
-  public func flatMapError<E>(_ transform: (Swift.Error) throws -> E) -> DownloadResponse<Value> where E : Swift.Error
+  public func mapError<E>(_ transform: (any Swift.Error) -> E) -> DownloadResponse<Value> where E : Swift.Error
+  public func flatMapError<E>(_ transform: (any Swift.Error) throws -> E) -> DownloadResponse<Value> where E : Swift.Error
 }
 @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DefaultDataResponse {
@@ -852,21 +854,21 @@ extension DownloadResponse {
 }
 public protocol DataResponseSerializerProtocol {
   associatedtype SerializedObject
-  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Result<Self.SerializedObject> { get }
+  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, (any Swift.Error)?) -> Result<Self.SerializedObject> { get }
 }
 public struct DataResponseSerializer<Value> : DataResponseSerializerProtocol {
   public typealias SerializedObject = Value
-  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Result<Value>
-  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Swift.Error?) -> Result<Value>)
+  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, (any Swift.Error)?) -> Result<Value>
+  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, (any Swift.Error)?) -> Result<Value>)
 }
 public protocol DownloadResponseSerializerProtocol {
   associatedtype SerializedObject
-  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Result<Self.SerializedObject> { get }
+  var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, (any Swift.Error)?) -> Result<Self.SerializedObject> { get }
 }
 public struct DownloadResponseSerializer<Value> : DownloadResponseSerializerProtocol {
   public typealias SerializedObject = Value
-  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Result<Value>
-  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, Swift.Error?) -> Result<Value>)
+  public var serializeResponse: (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, (any Swift.Error)?) -> Result<Value>
+  public init(serializeResponse: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.URL?, (any Swift.Error)?) -> Result<Value>)
 }
 extension DataRequest {
   @discardableResult
@@ -881,7 +883,7 @@ extension DownloadRequest {
   public func response<T>(queue: Dispatch.DispatchQueue? = nil, responseSerializer: T, completionHandler: @escaping (DownloadResponse<T.SerializedObject>) -> Swift.Void) -> Self where T : DownloadResponseSerializerProtocol
 }
 extension Request {
-  public static func serializeResponseData(response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Result<Foundation.Data>
+  public static func serializeResponseData(response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) -> Result<Foundation.Data>
 }
 extension DataRequest {
   public static func dataResponseSerializer() -> DataResponseSerializer<Foundation.Data>
@@ -894,7 +896,7 @@ extension DownloadRequest {
   public func responseData(queue: Dispatch.DispatchQueue? = nil, completionHandler: @escaping (DownloadResponse<Foundation.Data>) -> Swift.Void) -> Self
 }
 extension Request {
-  public static func serializeResponseString(encoding: Swift.String.Encoding?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Result<Swift.String>
+  public static func serializeResponseString(encoding: Swift.String.Encoding?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) -> Result<Swift.String>
 }
 extension DataRequest {
   public static func stringResponseSerializer(encoding: Swift.String.Encoding? = nil) -> DataResponseSerializer<Swift.String>
@@ -907,7 +909,7 @@ extension DownloadRequest {
   public func responseString(queue: Dispatch.DispatchQueue? = nil, encoding: Swift.String.Encoding? = nil, completionHandler: @escaping (DownloadResponse<Swift.String>) -> Swift.Void) -> Self
 }
 extension Request {
-  public static func serializeResponseJSON(options: Foundation.JSONSerialization.ReadingOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Result<Any>
+  public static func serializeResponseJSON(options: Foundation.JSONSerialization.ReadingOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) -> Result<Any>
 }
 extension DataRequest {
   public static func jsonResponseSerializer(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> DataResponseSerializer<Any>
@@ -920,7 +922,7 @@ extension DownloadRequest {
   public func responseJSON(queue: Dispatch.DispatchQueue? = nil, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments, completionHandler: @escaping (DownloadResponse<Any>) -> Swift.Void) -> Self
 }
 extension Request {
-  public static func serializeResponsePropertyList(options: Foundation.PropertyListSerialization.ReadOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) -> Result<Any>
+  public static func serializeResponsePropertyList(options: Foundation.PropertyListSerialization.ReadOptions, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) -> Result<Any>
 }
 extension DataRequest {
   public static func propertyListResponseSerializer(options: Foundation.PropertyListSerialization.ReadOptions = []) -> DataResponseSerializer<Any>
@@ -992,32 +994,32 @@ extension Foundation.URLRequest : URLRequestConvertible {
   public func asURLRequest() throws -> Foundation.URLRequest
 }
 extension Foundation.URLRequest {
-  public init(url: URLConvertible, method: HTTPMethod, headers: HTTPHeaders? = nil) throws
+  public init(url: any URLConvertible, method: HTTPMethod, headers: HTTPHeaders? = nil) throws
 }
 @discardableResult
-public func request(_ url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest
+public func request(_ url: any URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: any ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest
 @discardableResult
-public func request(_ urlRequest: URLRequestConvertible) -> DataRequest
+public func request(_ urlRequest: any URLRequestConvertible) -> DataRequest
 @discardableResult
-public func download(_ url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
+public func download(_ url: any URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: any ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
 @discardableResult
-public func download(_ urlRequest: URLRequestConvertible, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
+public func download(_ urlRequest: any URLRequestConvertible, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
 @discardableResult
 public func download(resumingWith resumeData: Foundation.Data, to destination: DownloadRequest.DownloadFileDestination? = nil) -> DownloadRequest
 @discardableResult
-public func upload(_ fileURL: Foundation.URL, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
+public func upload(_ fileURL: Foundation.URL, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
 @discardableResult
-public func upload(_ fileURL: Foundation.URL, with urlRequest: URLRequestConvertible) -> UploadRequest
+public func upload(_ fileURL: Foundation.URL, with urlRequest: any URLRequestConvertible) -> UploadRequest
 @discardableResult
-public func upload(_ data: Foundation.Data, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
+public func upload(_ data: Foundation.Data, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
 @discardableResult
-public func upload(_ data: Foundation.Data, with urlRequest: URLRequestConvertible) -> UploadRequest
+public func upload(_ data: Foundation.Data, with urlRequest: any URLRequestConvertible) -> UploadRequest
 @discardableResult
-public func upload(_ stream: Foundation.InputStream, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
+public func upload(_ stream: Foundation.InputStream, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil) -> UploadRequest
 @discardableResult
-public func upload(_ stream: Foundation.InputStream, with urlRequest: URLRequestConvertible) -> UploadRequest
-public func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
-public func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: URLRequestConvertible, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+public func upload(_ stream: Foundation.InputStream, with urlRequest: any URLRequestConvertible) -> UploadRequest
+public func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, to url: any URLConvertible, method: HTTPMethod = .post, headers: HTTPHeaders? = nil, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
+public func upload(multipartFormData: @escaping (MultipartFormData) -> Swift.Void, usingThreshold encodingMemoryThreshold: Swift.UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, with urlRequest: any URLRequestConvertible, encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Swift.Void)?)
 @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
 @discardableResult
 public func stream(withHostName hostName: Swift.String, port: Swift.Int) -> StreamRequest
@@ -1088,7 +1090,7 @@ public struct RemainingDistanceItem {
   public var argumants: [Swift.Int]
 }
 public class RouteManager {
-  public var delegate: RouteManagerDelegate? {
+  public var delegate: (any RouteManagerDelegate)? {
     get
     set
   }
@@ -1118,7 +1120,7 @@ public protocol PlaceListManagerDelegate {
   func placeListLoaded(status: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers public class PlaceListManager : ObjectiveC.NSObject {
-  public var delegate: PlaceListManagerDelegate?
+  public var delegate: (any PlaceListManagerDelegate)?
   @objc override dynamic public init()
   public func getConfigList() -> [List]
   public func getPlaceList() -> [Element]
@@ -1151,7 +1153,7 @@ public enum HTTPMethod : Swift.String {
 }
 public typealias Parameters = [Swift.String : Any]
 public protocol ParameterEncoding {
-  func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
+  func encode(_ urlRequest: any URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
 }
 public struct URLEncoding : ParameterEncoding {
   public enum Destination {
@@ -1194,7 +1196,7 @@ public struct URLEncoding : ParameterEncoding {
   public let arrayEncoding: URLEncoding.ArrayEncoding
   public let boolEncoding: URLEncoding.BoolEncoding
   public init(destination: URLEncoding.Destination = .methodDependent, arrayEncoding: URLEncoding.ArrayEncoding = .brackets, boolEncoding: URLEncoding.BoolEncoding = .numeric)
-  public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
+  public func encode(_ urlRequest: any URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
   public func queryComponents(fromKey key: Swift.String, value: Any) -> [(Swift.String, Swift.String)]
   public func escape(_ string: Swift.String) -> Swift.String
 }
@@ -1207,8 +1209,8 @@ public struct JSONEncoding : ParameterEncoding {
   }
   public let options: Foundation.JSONSerialization.WritingOptions
   public init(options: Foundation.JSONSerialization.WritingOptions = [])
-  public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
-  public func encode(_ urlRequest: URLRequestConvertible, withJSONObject jsonObject: Any? = nil) throws -> Foundation.URLRequest
+  public func encode(_ urlRequest: any URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
+  public func encode(_ urlRequest: any URLRequestConvertible, withJSONObject jsonObject: Any? = nil) throws -> Foundation.URLRequest
 }
 public struct PropertyListEncoding : ParameterEncoding {
   public static var `default`: PropertyListEncoding {
@@ -1223,7 +1225,7 @@ public struct PropertyListEncoding : ParameterEncoding {
   public let format: Foundation.PropertyListSerialization.PropertyListFormat
   public let options: Foundation.PropertyListSerialization.WriteOptions
   public init(format: Foundation.PropertyListSerialization.PropertyListFormat = .xml, options: Foundation.PropertyListSerialization.WriteOptions = 0)
-  public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
+  public func encode(_ urlRequest: any URLRequestConvertible, with parameters: Parameters?) throws -> Foundation.URLRequest
 }
 extension Foundation.NSNotification.Name {
   public struct Task {
