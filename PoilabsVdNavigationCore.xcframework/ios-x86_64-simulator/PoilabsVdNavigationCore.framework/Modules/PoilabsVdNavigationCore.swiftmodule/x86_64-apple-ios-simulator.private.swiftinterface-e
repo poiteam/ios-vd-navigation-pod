@@ -176,6 +176,7 @@ public enum UserLocationStatus {
   @objc deinit
 }
 extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
+  public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocation)
   @objc dynamic public func poilabsPositioning(didThresholdChange threshold: Swift.Int)
   @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, accuracy: Swift.Double)
   @objc dynamic public func poilabsPositioningDidStart()

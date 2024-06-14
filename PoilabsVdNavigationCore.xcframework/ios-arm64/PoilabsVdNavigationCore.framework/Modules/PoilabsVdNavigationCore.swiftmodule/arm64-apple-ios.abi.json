@@ -3940,7 +3940,8 @@
             "mangledName": "$s23PoilabsVdNavigationCore18PositioningManagerC05startE0yyF",
             "moduleName": "PoilabsVdNavigationCore",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4079,6 +4080,33 @@
               "Override"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "poilabsPositioning",
+            "printedName": "poilabsPositioning(didUpdateLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23PoilabsVdNavigationCore18PositioningManagerC07poilabsE017didUpdateLocationySo10CLLocationC_tF",
+            "mangledName": "$s23PoilabsVdNavigationCore18PositioningManagerC07poilabsE017didUpdateLocationySo10CLLocationC_tF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -42712,7 +42740,7 @@
       "kind": "StringLiteral",
       "offset": 344,
       "length": 7,
-      "value": "\"4.5.6\""
+      "value": "\"4.5.7\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/DataManager.swift",
