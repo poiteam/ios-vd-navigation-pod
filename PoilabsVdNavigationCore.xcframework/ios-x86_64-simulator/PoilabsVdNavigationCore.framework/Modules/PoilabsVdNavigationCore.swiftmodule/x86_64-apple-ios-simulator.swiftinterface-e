@@ -131,7 +131,7 @@ extension Result {
   public func ifFailure(_ closure: () throws -> Swift.Void) rethrows -> Result<Value>
 }
 public protocol PositioningManagerDelegate {
-  func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, heading: CoreLocation.CLHeading)
+  func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, heading: CoreLocation.CLHeading, in placeId: Swift.String)
   func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
   func positioningManager(didStatusChanged status: UserLocationStatus)
 }
@@ -1113,7 +1113,7 @@ extension RouteManager {
   public func getRemainingQmsTime() -> Swift.Int
 }
 extension RouteManager : PositioningManagerDelegate {
-  public func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, heading: CoreLocation.CLHeading)
+  public func positioningManager(didUpdate coordinate: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, heading: CoreLocation.CLHeading, in placeId: Swift.String)
   public func positioningManager(didUpdateNearByLocations locations: [(Poi, Swift.Double, Swift.Int?)])
   public func positioningManager(didStatusChanged status: UserLocationStatus)
 }

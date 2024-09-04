@@ -2978,7 +2978,7 @@
           {
             "kind": "Function",
             "name": "positioningManager",
-            "printedName": "positioningManager(didUpdate:floorLevel:heading:)",
+            "printedName": "positioningManager(didUpdate:floorLevel:heading:in:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3002,11 +3002,17 @@
                 "name": "CLHeading",
                 "printedName": "CoreLocation.CLHeading",
                 "usr": "c:objc(cs)CLHeading"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore26PositioningManagerDelegateP011positioningF09didUpdate10floorLevel7headingySo22CLLocationCoordinate2DV_SiSo9CLHeadingCtF",
-            "mangledName": "$s23PoilabsVdNavigationCore26PositioningManagerDelegateP011positioningF09didUpdate10floorLevel7headingySo22CLLocationCoordinate2DV_SiSo9CLHeadingCtF",
+            "usr": "s:23PoilabsVdNavigationCore26PositioningManagerDelegateP011positioningF09didUpdate10floorLevel7heading2inySo22CLLocationCoordinate2DV_SiSo9CLHeadingCSStF",
+            "mangledName": "$s23PoilabsVdNavigationCore26PositioningManagerDelegateP011positioningF09didUpdate10floorLevel7heading2inySo22CLLocationCoordinate2DV_SiSo9CLHeadingCSStF",
             "moduleName": "PoilabsVdNavigationCore",
             "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.PositioningManagerDelegate>",
             "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.PositioningManagerDelegate>",
@@ -37368,7 +37374,7 @@
           {
             "kind": "Function",
             "name": "positioningManager",
-            "printedName": "positioningManager(didUpdate:floorLevel:heading:)",
+            "printedName": "positioningManager(didUpdate:floorLevel:heading:in:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -37392,11 +37398,17 @@
                 "name": "CLHeading",
                 "printedName": "CoreLocation.CLHeading",
                 "usr": "c:objc(cs)CLHeading"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore12RouteManagerC011positioningF09didUpdate10floorLevel7headingySo22CLLocationCoordinate2DV_SiSo9CLHeadingCtF",
-            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC011positioningF09didUpdate10floorLevel7headingySo22CLLocationCoordinate2DV_SiSo9CLHeadingCtF",
+            "usr": "s:23PoilabsVdNavigationCore12RouteManagerC011positioningF09didUpdate10floorLevel7heading2inySo22CLLocationCoordinate2DV_SiSo9CLHeadingCSStF",
+            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC011positioningF09didUpdate10floorLevel7heading2inySo22CLLocationCoordinate2DV_SiSo9CLHeadingCSStF",
             "moduleName": "PoilabsVdNavigationCore",
             "declAttributes": [
               "AccessControl"
@@ -42740,7 +42752,7 @@
       "kind": "StringLiteral",
       "offset": 344,
       "length": 7,
-      "value": "\"4.5.7\""
+      "value": "\"4.6.1\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/DataManager.swift",
