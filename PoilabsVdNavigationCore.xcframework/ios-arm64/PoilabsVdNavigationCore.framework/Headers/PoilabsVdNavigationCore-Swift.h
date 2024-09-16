@@ -328,6 +328,7 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore18PositioningManager")
 @class CLHeading;
 
 @interface PositioningManager (SWIFT_EXTENSION(PoilabsVdNavigationCore)) <PoilabsPositioningDelegate>
+- (void)poilabsPositioningWithDidUpdateLocation:(CLLocation * _Nonnull)location;
 - (void)poilabsPositioningWithDidThresholdChange:(NSInteger)threshold;
 - (void)poilabsPositioningWithDidUpdateLocation:(CLLocationCoordinate2D)location floorLevel:(NSInteger)floorLevel accuracy:(double)accuracy;
 - (void)poilabsPositioningDidStart;

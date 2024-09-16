@@ -40,7 +40,7 @@ s.pod_target_xcconfig = {
 
 s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavigationCore.xcframework'
 s.resources = 'PoilabsVdNavigationBundle.bundle'
-s.dependency 'PoilabsPositioning', '1.0.17'
-s.dependency 'PoilabsSdkAnalytics', '1.0.10'
+s.dependency 'PoilabsPositioning', '1.1.0'
+s.dependency 'PoilabsSdkAnalytics', '1.0.12'
 s.dependency 'PoilabsCore', '1.0.9'
 end

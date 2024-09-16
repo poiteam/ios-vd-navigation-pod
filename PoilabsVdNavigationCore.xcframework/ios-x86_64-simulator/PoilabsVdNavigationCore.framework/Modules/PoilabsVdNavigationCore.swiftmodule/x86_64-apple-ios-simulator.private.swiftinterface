@@ -166,6 +166,8 @@ public enum UserLocationStatus {
   }
   public var errorDelegate: (any PositioninManagerErrorDelegate)?
   public static let shared: PositioningManager
+  public func startOutdoorPositioning()
+  public func stopOutdoorPositioning()
   public func startPositioning()
   public func stopPositioning()
   public func getPlaceTitle() -> Swift.String
@@ -176,7 +178,7 @@ public enum UserLocationStatus {
   @objc deinit
 }
 extension PositioningManager : PoilabsPositioning.PoilabsPositioningDelegate {
-  public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocation)
+  @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocation)
   @objc dynamic public func poilabsPositioning(didThresholdChange threshold: Swift.Int)
   @objc dynamic public func poilabsPositioning(didUpdateLocation location: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, accuracy: Swift.Double)
   @objc dynamic public func poilabsPositioningDidStart()
@@ -610,6 +612,7 @@ public struct Element : Swift.Codable {
   public let address: Swift.String?
   public let lon: Swift.Double, lat: Swift.Double
   public let childs: [Element]?
+  public let outdoor: Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
   public var distance: Swift.Double?
   public var isFavorite: Swift.Bool
@@ -645,8 +648,8 @@ public class PoiVDNavigationManager {
 }
 @_hasMissingDesignatedInitializers public class ItemBase {
   public var category: ItemCategory
-  public var elements: [Place]
-  public func getElements() -> [Place]
+  public var elements: [Element]
+  public func getElements() -> [Element]
   @objc deinit
 }
 open class SessionManager {
@@ -956,21 +959,6 @@ open class MultipartFormData {
   public func writeEncodedData(to fileURL: Foundation.URL) throws
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class Place {
-  public var id: Swift.String!
-  public var title: Swift.String?
-  public var major: [Swift.Int]
-  public var address: Swift.String?
-  public var lat: Swift.Double?
-  public var lon: Swift.Double?
-  public var childs: [Place]?
-  public var distance: Swift.Double?
-  public var isFavorite: Swift.Bool
-  public var type: ItemCategory!
-  public class func modelsFromDictionaryArray(array: Foundation.NSArray, type: ItemCategory) -> [Place]
-  required public init?(dictionary: Foundation.NSDictionary, type: ItemCategory)
-  @objc deinit
-}
 public protocol URLConvertible {
   func asURL() throws -> Foundation.URL
 }
@@ -1244,6 +1232,7 @@ extension Foundation.Notification {
 }
 @_hasMissingDesignatedInitializers public class StoreListManager {
   public init(placeId: Swift.String, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  public func storeListDisappeared()
   public func getTitleFloor(withFloorLevel floorLevel: Swift.Int) -> Swift.String
   public func getInfoText() -> Swift.String
   public func getStoreList() -> [Poi]
