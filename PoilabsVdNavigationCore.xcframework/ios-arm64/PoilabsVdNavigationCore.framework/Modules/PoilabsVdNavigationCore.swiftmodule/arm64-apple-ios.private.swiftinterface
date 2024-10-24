@@ -325,28 +325,6 @@ public struct Facility : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct Navigation : Swift.Codable {
-  public let properties: NavigationProperties?
-  public var segments: [Segment]?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct NavigationProperties : Swift.Codable {
-  public var privilegedRouteBuffer: Swift.Int {
-    get
-  }
-  public var isPrivilaged: Swift.Bool {
-    get
-  }
-  public var isVisOnList: Swift.Bool {
-    get
-  }
-  public var isVisOnMap: Swift.Bool {
-    get
-  }
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
 public struct Segment : Swift.Codable {
   public let id: Swift.String
   public let routeWeight: Swift.Double?
@@ -377,7 +355,6 @@ public struct Poi : Swift.Codable {
   public var properties: ChildProperties?
   public var title: Swift.String
   public var id: Swift.String?
-  public var navigation: Navigation?
   public let tags: [Swift.String]?
   public init(from decoder: any Swift.Decoder) throws
   public var coordinates: CoreLocation.CLLocationCoordinate2D {
@@ -622,7 +599,7 @@ public struct Element : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public protocol PoiVDNavigationManagerDelegate {
-  func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
+  func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String, placeId: Swift.String)
 }
 public struct PoiVdNavigationManagerSettings {
   public let usedLanguages: [Swift.String]
@@ -1055,36 +1032,34 @@ public enum RouteStatus {
   }
 }
 public protocol RouteManagerDelegate {
-  func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod, isFinalStep: Swift.Bool)
   func routeManager(currentUserLocation location: Poi, rotation: Swift.Int?, distance: Swift.Double)
   func routeManager(error: RouteError)
-  func routeManager(routeCalculated target: Poi)
-  func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
+  func routeManager(routeCalculated route: PoilabsCore.PLNRoute)
   func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
   func routeManager(didUpdate routeStatus: RouteStatus)
   func routeManager(arrivedAtDirection direction: Swift.Int)
+  func routeManager(stepUpdatedForStep step: PoilabsCore.PLNStep, forDistance distance: Swift.Int, toDirection direction: Swift.Int)
+  func routeManager(isOnStepChangeForStep step: PoilabsCore.PLNStep, isFinalStep: Swift.Bool)
 }
 extension RouteManagerDelegate {
-  public func routeManager(floorChangeStep destinationFloor: Swift.Int, by floorPassMethod: FloorPassMethod, isFinalStep: Swift.Bool)
   public func routeManager(arrivedAtDirection direction: Swift.Int)
   public func routeManager(currentUserLocation location: Poi, rotation: Swift.Int?, distance: Swift.Double)
   public func routeManager(error: RouteError)
-  public func routeManager(routeCalculated target: Poi)
-  public func routeManager(updateCurrentStep meters: Swift.Int, rotation: Swift.Int)
+  public func routeManager(routeCalculated route: PoilabsCore.PLNRoute)
   public func routeManager(updateRouteSummary distance: Swift.Int, floorDif: Swift.Int, rotation: Swift.Int?)
   public func routeManager(didUpdate routeStatus: RouteStatus)
+  public func routeManager(stepUpdatedForStep step: PoilabsCore.PLNStep, forDistance distance: Swift.Int, toDirection direction: Swift.Int)
+  public func routeManager(isOnStepChangeForStep step: PoilabsCore.PLNStep, isFinalStep: Swift.Bool)
 }
-public struct RemainingDistanceItem {
-  public let text: Swift.String
-  public var argumants: [Swift.Int]
-}
-public class RouteManager {
+@objc @_inheritsConvenienceInitializers public class RouteManager : ObjectiveC.NSObject {
   public var delegate: (any RouteManagerDelegate)? {
     get
     set
   }
+  @objc override dynamic public init()
   public init(targetPoi: Poi, withFloorPassMethods methods: RouteGraphOption)
   public init(type: Swift.String, withFloorPassMethods methods: RouteGraphOption)
+  public func getPoi(withId poiId: Swift.String) -> Poi?
   public func routeRemoved()
   public func navigate()
   public func reInitRoute()
@@ -1095,8 +1070,12 @@ public class RouteManager {
   public func getRouteLength() -> Swift.Int?
   @objc deinit
 }
+extension RouteManager : PoilabsCore.PLCoreDelegate {
+  @objc dynamic public func didStepUpdate(forRouteIndex routeIndex: Swift.Int32, step stepIndex: Swift.Int32, withDistance distance: Swift.Int32, toDirection direction: Swift.Int32)
+  @objc dynamic public func isOnStepChange(forRouteIndex routeIndex: Swift.Int32, step stepIndex: Swift.Int32, for stepType: PoilabsCore.PLNStepType)
+}
 extension RouteManager {
-  public func getRemainingSteps(firstNSteps: Swift.Int? = nil) -> [RemainingDistanceItem]
+  public func getRemainingSteps() -> [PoilabsCore.PLNStep]
   public func getRoutePois() -> [Poi]
   public func getRemainingQmsTime() -> Swift.Int
 }

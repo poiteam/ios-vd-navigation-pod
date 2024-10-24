@@ -9486,522 +9486,6 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "Navigation",
-        "printedName": "Navigation",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "properties",
-            "printedName": "properties",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "PoilabsVdNavigationCore.NavigationProperties?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NavigationProperties",
-                    "printedName": "PoilabsVdNavigationCore.NavigationProperties",
-                    "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore0C0V10propertiesAA0C10PropertiesVSgvp",
-            "mangledName": "$s23PoilabsVdNavigationCore0C0V10propertiesAA0C10PropertiesVSgvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "PoilabsVdNavigationCore.NavigationProperties?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NavigationProperties",
-                        "printedName": "PoilabsVdNavigationCore.NavigationProperties",
-                        "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C0V10propertiesAA0C10PropertiesVSgvg",
-                "mangledName": "$s23PoilabsVdNavigationCore0C0V10propertiesAA0C10PropertiesVSgvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "segments",
-            "printedName": "segments",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[PoilabsVdNavigationCore.Segment]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[PoilabsVdNavigationCore.Segment]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Segment",
-                        "printedName": "PoilabsVdNavigationCore.Segment",
-                        "usr": "s:23PoilabsVdNavigationCore7SegmentV"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvp",
-            "mangledName": "$s23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[PoilabsVdNavigationCore.Segment]?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Array",
-                        "printedName": "[PoilabsVdNavigationCore.Segment]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Segment",
-                            "printedName": "PoilabsVdNavigationCore.Segment",
-                            "usr": "s:23PoilabsVdNavigationCore7SegmentV"
-                          }
-                        ],
-                        "usr": "s:Sa"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvg",
-                "mangledName": "$s23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[PoilabsVdNavigationCore.Segment]?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Array",
-                        "printedName": "[PoilabsVdNavigationCore.Segment]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Segment",
-                            "printedName": "PoilabsVdNavigationCore.Segment",
-                            "usr": "s:23PoilabsVdNavigationCore7SegmentV"
-                          }
-                        ],
-                        "usr": "s:Sa"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvs",
-                "mangledName": "$s23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvs",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvM",
-                "mangledName": "$s23PoilabsVdNavigationCore0C0V8segmentsSayAA7SegmentVGSgvM",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Navigation",
-                "printedName": "PoilabsVdNavigationCore.Navigation",
-                "usr": "s:23PoilabsVdNavigationCore0C0V"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:23PoilabsVdNavigationCore0C0V4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s23PoilabsVdNavigationCore0C0V4fromACs7Decoder_p_tKcfc",
-            "moduleName": "PoilabsVdNavigationCore",
-            "implicit": true,
-            "throwing": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "encode",
-            "printedName": "encode(to:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Encoder",
-                "printedName": "any Swift.Encoder",
-                "usr": "s:s7EncoderP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore0C0V6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s23PoilabsVdNavigationCore0C0V6encode2toys7Encoder_p_tKF",
-            "moduleName": "PoilabsVdNavigationCore",
-            "implicit": true,
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:23PoilabsVdNavigationCore0C0V",
-        "mangledName": "$s23PoilabsVdNavigationCore0C0V",
-        "moduleName": "PoilabsVdNavigationCore",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "NavigationProperties",
-        "printedName": "NavigationProperties",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "privilegedRouteBuffer",
-            "printedName": "privilegedRouteBuffer",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV21privilegedRouteBufferSivp",
-            "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV21privilegedRouteBufferSivp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV21privilegedRouteBufferSivg",
-                "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV21privilegedRouteBufferSivg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "isPrivilaged",
-            "printedName": "isPrivilaged",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV12isPrivilagedSbvp",
-            "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV12isPrivilagedSbvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV12isPrivilagedSbvg",
-                "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV12isPrivilagedSbvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "isVisOnList",
-            "printedName": "isVisOnList",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV11isVisOnListSbvp",
-            "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV11isVisOnListSbvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV11isVisOnListSbvg",
-                "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV11isVisOnListSbvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "isVisOnMap",
-            "printedName": "isVisOnMap",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV10isVisOnMapSbvp",
-            "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV10isVisOnMapSbvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV10isVisOnMapSbvg",
-                "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV10isVisOnMapSbvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationProperties",
-                "printedName": "PoilabsVdNavigationCore.NavigationProperties",
-                "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV4fromACs7Decoder_p_tKcfc",
-            "moduleName": "PoilabsVdNavigationCore",
-            "implicit": true,
-            "throwing": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "encode",
-            "printedName": "encode(to:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Encoder",
-                "printedName": "any Swift.Encoder",
-                "usr": "s:s7EncoderP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV6encode2toys7Encoder_p_tKF",
-            "moduleName": "PoilabsVdNavigationCore",
-            "implicit": true,
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:23PoilabsVdNavigationCore0C10PropertiesV",
-        "mangledName": "$s23PoilabsVdNavigationCore0C10PropertiesV",
-        "moduleName": "PoilabsVdNavigationCore",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
         "name": "Segment",
         "printedName": "Segment",
         "children": [
@@ -11262,116 +10746,6 @@
                 "declKind": "Accessor",
                 "usr": "s:23PoilabsVdNavigationCore3PoiV2idSSSgvM",
                 "mangledName": "$s23PoilabsVdNavigationCore3PoiV2idSSSgvM",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "navigation",
-            "printedName": "navigation",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "PoilabsVdNavigationCore.Navigation?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Navigation",
-                    "printedName": "PoilabsVdNavigationCore.Navigation",
-                    "usr": "s:23PoilabsVdNavigationCore0C0V"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvp",
-            "mangledName": "$s23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "PoilabsVdNavigationCore.Navigation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Navigation",
-                        "printedName": "PoilabsVdNavigationCore.Navigation",
-                        "usr": "s:23PoilabsVdNavigationCore0C0V"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvg",
-                "mangledName": "$s23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "PoilabsVdNavigationCore.Navigation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Navigation",
-                        "printedName": "PoilabsVdNavigationCore.Navigation",
-                        "usr": "s:23PoilabsVdNavigationCore0C0V"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvs",
-                "mangledName": "$s23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvs",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvM",
-                "mangledName": "$s23PoilabsVdNavigationCore3PoiV10navigationAA0C0VSgvM",
                 "moduleName": "PoilabsVdNavigationCore",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -23542,7 +22916,7 @@
           {
             "kind": "Function",
             "name": "poiVdNavigationManager",
-            "printedName": "poiVdNavigationManager(didUpdate:floorLevel:floorName:)",
+            "printedName": "poiVdNavigationManager(didUpdate:floorLevel:floorName:placeId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -23566,11 +22940,17 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore30PoiVDNavigationManagerDelegateP03poibcG09didUpdate10floorLevel0L4NameySo22CLLocationCoordinate2DV_SiSStF",
-            "mangledName": "$s23PoilabsVdNavigationCore30PoiVDNavigationManagerDelegateP03poibcG09didUpdate10floorLevel0L4NameySo22CLLocationCoordinate2DV_SiSStF",
+            "usr": "s:23PoilabsVdNavigationCore30PoiVDNavigationManagerDelegateP03poibcG09didUpdate10floorLevel0L4Name7placeIdySo22CLLocationCoordinate2DV_SiS2StF",
+            "mangledName": "$s23PoilabsVdNavigationCore30PoiVDNavigationManagerDelegateP03poibcG09didUpdate10floorLevel0L4Name7placeIdySo22CLLocationCoordinate2DV_SiS2StF",
             "moduleName": "PoilabsVdNavigationCore",
             "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate>",
             "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate>",
@@ -35077,45 +34457,6 @@
           {
             "kind": "Function",
             "name": "routeManager",
-            "printedName": "routeManager(floorChangeStep:by:isFinalStep:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "FloorPassMethod",
-                "printedName": "PoilabsVdNavigationCore.FloorPassMethod",
-                "usr": "s:23PoilabsVdNavigationCore15FloorPassMethodO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF015floorChangeStep2by07isFinalK0ySi_AA15FloorPassMethodOSbtF",
-            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF015floorChangeStep2by07isFinalK0ySi_AA15FloorPassMethodOSbtF",
-            "moduleName": "PoilabsVdNavigationCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
-            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "routeManager",
             "printedName": "routeManager(currentUserLocation:rotation:distance:)",
             "children": [
               {
@@ -35199,47 +34540,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Poi",
-                "printedName": "PoilabsVdNavigationCore.Poi",
-                "usr": "s:23PoilabsVdNavigationCore3PoiV"
+                "name": "PLNRoute",
+                "printedName": "PoilabsCore.PLNRoute",
+                "usr": "c:objc(cs)PLNRoute"
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF00H10CalculatedyAA3PoiV_tF",
-            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF00H10CalculatedyAA3PoiV_tF",
-            "moduleName": "PoilabsVdNavigationCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
-            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "routeManager",
-            "printedName": "routeManager(updateCurrentStep:rotation:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF017updateCurrentStep8rotationySi_SitF",
-            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF017updateCurrentStep8rotationySi_SitF",
+            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF00H10CalculatedySo8PLNRouteC_tF",
+            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF00H10CalculatedySo8PLNRouteC_tF",
             "moduleName": "PoilabsVdNavigationCore",
             "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
             "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
@@ -35351,12 +34659,18 @@
           {
             "kind": "Function",
             "name": "routeManager",
-            "printedName": "routeManager(floorChangeStep:by:isFinalStep:)",
+            "printedName": "routeManager(stepUpdatedForStep:forDistance:toDirection:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLNStep",
+                "printedName": "PoilabsCore.PLNStep",
+                "usr": "c:objc(cs)PLNStep"
               },
               {
                 "kind": "TypeNominal",
@@ -35366,9 +34680,36 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "FloorPassMethod",
-                "printedName": "PoilabsVdNavigationCore.FloorPassMethod",
-                "usr": "s:23PoilabsVdNavigationCore15FloorPassMethodO"
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF018stepUpdatedForStep11forDistance11toDirectionySo7PLNStepC_S2itF",
+            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF018stepUpdatedForStep11forDistance11toDirectionySo7PLNStepC_S2itF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
+            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "routeManager",
+            "printedName": "routeManager(isOnStepChangeForStep:isFinalStep:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLNStep",
+                "printedName": "PoilabsCore.PLNStep",
+                "usr": "c:objc(cs)PLNStep"
               },
               {
                 "kind": "TypeNominal",
@@ -35378,12 +34719,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF015floorChangeStep2by07isFinalK0ySi_AA15FloorPassMethodOSbtF",
-            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF015floorChangeStep2by07isFinalK0ySi_AA15FloorPassMethodOSbtF",
+            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF0017isOnStepChangeForK00i5FinalK0ySo7PLNStepC_SbtF",
+            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegateP05routeF0017isOnStepChangeForK00i5FinalK0ySo7PLNStepC_SbtF",
             "moduleName": "PoilabsVdNavigationCore",
             "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
             "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
-            "isFromExtension": true,
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -35496,46 +34838,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Poi",
-                "printedName": "PoilabsVdNavigationCore.Poi",
-                "usr": "s:23PoilabsVdNavigationCore3PoiV"
+                "name": "PLNRoute",
+                "printedName": "PoilabsCore.PLNRoute",
+                "usr": "c:objc(cs)PLNRoute"
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF00H10CalculatedyAA3PoiV_tF",
-            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF00H10CalculatedyAA3PoiV_tF",
-            "moduleName": "PoilabsVdNavigationCore",
-            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
-            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "routeManager",
-            "printedName": "routeManager(updateCurrentStep:rotation:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF017updateCurrentStep8rotationySi_SitF",
-            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF017updateCurrentStep8rotationySi_SitF",
+            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF00H10CalculatedySo8PLNRouteC_tF",
+            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF00H10CalculatedySo8PLNRouteC_tF",
             "moduleName": "PoilabsVdNavigationCore",
             "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
             "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
@@ -35613,179 +34923,81 @@
             "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "routeManager",
+            "printedName": "routeManager(stepUpdatedForStep:forDistance:toDirection:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLNStep",
+                "printedName": "PoilabsCore.PLNStep",
+                "usr": "c:objc(cs)PLNStep"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF018stepUpdatedForStep11forDistance11toDirectionySo7PLNStepC_S2itF",
+            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF018stepUpdatedForStep11forDistance11toDirectionySo7PLNStepC_S2itF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
+            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "routeManager",
+            "printedName": "routeManager(isOnStepChangeForStep:isFinalStep:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLNStep",
+                "printedName": "PoilabsCore.PLNStep",
+                "usr": "c:objc(cs)PLNStep"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF0017isOnStepChangeForK00i5FinalK0ySo7PLNStepC_SbtF",
+            "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegatePAAE05routeF0017isOnStepChangeForK00i5FinalK0ySo7PLNStepC_SbtF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationCore.RouteManagerDelegate>",
+            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationCore.RouteManagerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
         "usr": "s:23PoilabsVdNavigationCore20RouteManagerDelegateP",
         "mangledName": "$s23PoilabsVdNavigationCore20RouteManagerDelegateP",
-        "moduleName": "PoilabsVdNavigationCore",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "RemainingDistanceItem",
-        "printedName": "RemainingDistanceItem",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "text",
-            "printedName": "text",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV4textSSvp",
-            "mangledName": "$s23PoilabsVdNavigationCore21RemainingDistanceItemV4textSSvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV4textSSvg",
-                "mangledName": "$s23PoilabsVdNavigationCore21RemainingDistanceItemV4textSSvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "argumants",
-            "printedName": "argumants",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Swift.Int]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvp",
-            "mangledName": "$s23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvp",
-            "moduleName": "PoilabsVdNavigationCore",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.Int]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvg",
-                "mangledName": "$s23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvg",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.Int]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvs",
-                "mangledName": "$s23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvs",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvM",
-                "mangledName": "$s23PoilabsVdNavigationCore21RemainingDistanceItemV9argumantsSaySiGvM",
-                "moduleName": "PoilabsVdNavigationCore",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV",
-        "mangledName": "$s23PoilabsVdNavigationCore21RemainingDistanceItemV",
         "moduleName": "PoilabsVdNavigationCore",
         "declAttributes": [
           "AccessControl"
@@ -35909,13 +35121,39 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RouteManager",
+                "printedName": "PoilabsVdNavigationCore.RouteManager",
+                "usr": "c:@M@PoilabsVdNavigationCore@objc(cs)RouteManager"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@PoilabsVdNavigationCore@objc(cs)RouteManager(im)init",
+            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerCACycfc",
+            "moduleName": "PoilabsVdNavigationCore",
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(targetPoi:withFloorPassMethods:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "RouteManager",
                 "printedName": "PoilabsVdNavigationCore.RouteManager",
-                "usr": "s:23PoilabsVdNavigationCore12RouteManagerC"
+                "usr": "c:@M@PoilabsVdNavigationCore@objc(cs)RouteManager"
               },
               {
                 "kind": "TypeNominal",
@@ -35948,7 +35186,7 @@
                 "kind": "TypeNominal",
                 "name": "RouteManager",
                 "printedName": "PoilabsVdNavigationCore.RouteManager",
-                "usr": "s:23PoilabsVdNavigationCore12RouteManagerC"
+                "usr": "c:@M@PoilabsVdNavigationCore@objc(cs)RouteManager"
               },
               {
                 "kind": "TypeNominal",
@@ -35971,6 +35209,41 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "getPoi",
+            "printedName": "getPoi(withId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PoilabsVdNavigationCore.Poi?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Poi",
+                    "printedName": "PoilabsVdNavigationCore.Poi",
+                    "usr": "s:23PoilabsVdNavigationCore3PoiV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23PoilabsVdNavigationCore12RouteManagerC6getPoi6withIdAA0H0VSgSS_tF",
+            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC6getPoi6withIdAA0H0VSgSS_tF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -36163,42 +35436,117 @@
           },
           {
             "kind": "Function",
+            "name": "didStepUpdate",
+            "printedName": "didStepUpdate(forRouteIndex:step:withDistance:toDirection:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@PoilabsVdNavigationCore@objc(cs)RouteManager(im)didStepUpdateForRouteIndex:stepIndex:withDistance:toDirection:",
+            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC13didStepUpdate03forE5Index4step12withDistance11toDirectionys5Int32V_A3JtF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "objc_name": "didStepUpdateForRouteIndex:stepIndex:withDistance:toDirection:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isOnStepChange",
+            "printedName": "isOnStepChange(forRouteIndex:step:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLNStepType",
+                "printedName": "PoilabsCore.PLNStepType",
+                "usr": "c:@E@PLNStepType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@PoilabsVdNavigationCore@objc(cs)RouteManager(im)isOnStepChangeForRouteIndex:stepIndex:forStepType:",
+            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC14isOnStepChange03forE5Index4step0K0ys5Int32V_AISo11PLNStepTypeVtF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "objc_name": "isOnStepChangeForRouteIndex:stepIndex:forStepType:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getRemainingSteps",
-            "printedName": "getRemainingSteps(firstNSteps:)",
+            "printedName": "getRemainingSteps()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[PoilabsVdNavigationCore.RemainingDistanceItem]",
+                "printedName": "[PoilabsCore.PLNStep]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "RemainingDistanceItem",
-                    "printedName": "PoilabsVdNavigationCore.RemainingDistanceItem",
-                    "usr": "s:23PoilabsVdNavigationCore21RemainingDistanceItemV"
+                    "name": "PLNStep",
+                    "printedName": "PoilabsCore.PLNStep",
+                    "usr": "c:objc(cs)PLNStep"
                   }
                 ],
                 "usr": "s:Sa"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Int?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PoilabsVdNavigationCore12RouteManagerC17getRemainingSteps11firstNStepsSayAA0H12DistanceItemVGSiSg_tF",
-            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC17getRemainingSteps11firstNStepsSayAA0H12DistanceItemVGSiSg_tF",
+            "usr": "s:23PoilabsVdNavigationCore12RouteManagerC17getRemainingStepsSaySo7PLNStepCGyF",
+            "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC17getRemainingStepsSaySo7PLNStepCGyF",
             "moduleName": "PoilabsVdNavigationCore",
             "declAttributes": [
               "AccessControl"
@@ -36394,11 +35742,17 @@
           }
         ],
         "declKind": "Class",
-        "usr": "s:23PoilabsVdNavigationCore12RouteManagerC",
+        "usr": "c:@M@PoilabsVdNavigationCore@objc(cs)RouteManager",
         "mangledName": "$s23PoilabsVdNavigationCore12RouteManagerC",
         "moduleName": "PoilabsVdNavigationCore",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
         ],
         "conformances": [
           {
@@ -36407,6 +35761,55 @@
             "printedName": "PositioningManagerDelegate",
             "usr": "s:23PoilabsVdNavigationCore26PositioningManagerDelegateP",
             "mangledName": "$s23PoilabsVdNavigationCore26PositioningManagerDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
       },
@@ -41659,7 +41062,7 @@
       "kind": "StringLiteral",
       "offset": 344,
       "length": 7,
-      "value": "\"6.5.0\""
+      "value": "\"7.0.0\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/DataManager.swift",
@@ -41720,77 +41123,77 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 2969,
+      "offset": 3007,
       "length": 21,
       "value": "\"iosWeinbergConstant\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 2969,
+      "offset": 3007,
       "length": 21,
       "value": "\"iosWeinbergConstant\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 3354,
+      "offset": 4079,
       "length": 23,
       "value": "\"iosBeaconScanInterval\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 3413,
+      "offset": 4138,
       "length": 19,
       "value": "\"rerouteDurationVd\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 3468,
+      "offset": 4193,
       "length": 19,
       "value": "\"rerouteDistanceVd\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 3354,
+      "offset": 4079,
       "length": 23,
       "value": "\"iosBeaconScanInterval\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 3413,
+      "offset": 4138,
       "length": 19,
       "value": "\"rerouteDurationVd\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 3468,
+      "offset": 4193,
       "length": 19,
       "value": "\"rerouteDistanceVd\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "IntegerLiteral",
-      "offset": 6686,
+      "offset": 7411,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 7844,
+      "offset": 8569,
       "length": 10,
       "value": "\"title_en\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 7844,
+      "offset": 8569,
       "length": 10,
       "value": "\"title_en\""
     },
@@ -41867,28 +41270,28 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/PoiVDNavigationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 777,
+      "offset": 794,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/PoiVDNavigationManager.swift",
       "kind": "FloatLiteral",
-      "offset": 814,
+      "offset": 831,
       "length": 20,
       "value": "0.017453292519943295"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/PoiVDNavigationManager.swift",
       "kind": "FloatLiteral",
-      "offset": 861,
+      "offset": 878,
       "length": 17,
       "value": "57.29577951308232"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/PoiVDNavigationManager.swift",
       "kind": "FloatLiteral",
-      "offset": 904,
+      "offset": 921,
       "length": 10,
       "value": "6371000.00"
     },
@@ -42336,21 +41739,21 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "Array",
-      "offset": 2682,
+      "offset": 2566,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "Array",
-      "offset": 2872,
+      "offset": 2756,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3052,
+      "offset": 2936,
       "length": 5,
       "value": "false"
     },

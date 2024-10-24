@@ -280,6 +280,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
+@import PoilabsCore;
 @import PoilabsPositioning;
 #endif
 
@@ -337,6 +338,20 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore18PositioningManager")
 - (void)poilabsPositioningWithDidFail:(enum PoilabsPositioningError)error;
 - (void)poilabsPositioningWithDidUpdateHeading:(CLHeading * _Nonnull)heading;
 @end
+
+
+SWIFT_CLASS("_TtC23PoilabsVdNavigationCore12RouteManager")
+@interface RouteManager : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface RouteManager (SWIFT_EXTENSION(PoilabsVdNavigationCore)) <PLCoreDelegate>
+- (void)didStepUpdateForRouteIndex:(int32_t)routeIndex stepIndex:(int32_t)stepIndex withDistance:(int32_t)distance toDirection:(int32_t)direction;
+- (void)isOnStepChangeForRouteIndex:(int32_t)routeIndex stepIndex:(int32_t)stepIndex forStepType:(PLNStepType)stepType;
+@end
+
+
 
 
 /// Responsible for handling all delegate callbacks for the underlying session.
@@ -401,42 +416,6 @@ SWIFT_CLASS("_TtC23PoilabsVdNavigationCore15SessionDelegate")
 /// If this header was not provided, the value is NSURLSessionTransferSizeUnknown.
 ///
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes;
-@end
-
-@class NSURLSessionStreamTask;
-@class NSInputStream;
-@class NSOutputStream;
-
-SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
-@interface SessionDelegate (SWIFT_EXTENSION(PoilabsVdNavigationCore)) <NSURLSessionStreamDelegate>
-/// Tells the delegate that the read side of the connection has been closed.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session readClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the write side of the connection has been closed.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session writeClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the system has determined that a better route to the host is available.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session betterRouteDiscoveredForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the stream task has been completed and provides the unopened stream objects.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-/// \param inputStream The new input stream.
-///
-/// \param outputStream The new output stream.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session streamTask:(NSURLSessionStreamTask * _Nonnull)streamTask didBecomeInputStream:(NSInputStream * _Nonnull)inputStream outputStream:(NSOutputStream * _Nonnull)outputStream;
 @end
 
 @class NSURLSessionDataTask;
@@ -514,6 +493,42 @@ SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.1
 /// \param session The session that no longer has any outstanding requests.
 ///
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
+@end
+
+@class NSURLSessionStreamTask;
+@class NSInputStream;
+@class NSOutputStream;
+
+SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
+@interface SessionDelegate (SWIFT_EXTENSION(PoilabsVdNavigationCore)) <NSURLSessionStreamDelegate>
+/// Tells the delegate that the read side of the connection has been closed.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session readClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the write side of the connection has been closed.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session writeClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the system has determined that a better route to the host is available.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session betterRouteDiscoveredForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the stream task has been completed and provides the unopened stream objects.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+/// \param inputStream The new input stream.
+///
+/// \param outputStream The new output stream.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session streamTask:(NSURLSessionStreamTask * _Nonnull)streamTask didBecomeInputStream:(NSInputStream * _Nonnull)inputStream outputStream:(NSOutputStream * _Nonnull)outputStream;
 @end
 
 @class NSURLSessionTask;

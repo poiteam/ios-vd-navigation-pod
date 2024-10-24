@@ -23,6 +23,13 @@
       },
       {
         "kind": "Import",
+        "name": "PoilabsCore",
+        "printedName": "PoilabsCore",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -103,6 +110,13 @@
         "kind": "Import",
         "name": "CoreLocation",
         "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI"
+      },
+      {
+        "kind": "Import",
+        "name": "PoilabsCore",
+        "printedName": "PoilabsCore",
         "declKind": "Import",
         "moduleName": "PoilabsVdNavigationUI"
       },
@@ -398,6 +412,13 @@
       },
       {
         "kind": "Import",
+        "name": "PoilabsCore",
+        "printedName": "PoilabsCore",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -576,6 +597,33 @@
           {
             "kind": "Function",
             "name": "poilabsVdNavigation",
+            "printedName": "poilabsVdNavigation(locationIn:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21PoilabsVdNavigationUI0abC8DelegateP07poilabsbC010locationInySS_tF",
+            "mangledName": "$s21PoilabsVdNavigationUI0abC8DelegateP07poilabsbC010locationInySS_tF",
+            "moduleName": "PoilabsVdNavigationUI",
+            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationUI.PoilabsVdNavigationDelegate>",
+            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationUI.PoilabsVdNavigationDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "poilabsVdNavigation",
             "printedName": "poilabsVdNavigation(didUpdate:)",
             "children": [
               {
@@ -651,6 +699,32 @@
             "declKind": "Func",
             "usr": "s:21PoilabsVdNavigationUI0abC8DelegatePAAE07poilabsbC24DidTapOnAdditionalButtonyyF",
             "mangledName": "$s21PoilabsVdNavigationUI0abC8DelegatePAAE07poilabsbC24DidTapOnAdditionalButtonyyF",
+            "moduleName": "PoilabsVdNavigationUI",
+            "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationUI.PoilabsVdNavigationDelegate>",
+            "sugared_genericSig": "<Self where Self : PoilabsVdNavigationUI.PoilabsVdNavigationDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "poilabsVdNavigation",
+            "printedName": "poilabsVdNavigation(locationIn:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21PoilabsVdNavigationUI0abC8DelegatePAAE07poilabsbC010locationInySS_tF",
+            "mangledName": "$s21PoilabsVdNavigationUI0abC8DelegatePAAE07poilabsbC010locationInySS_tF",
             "moduleName": "PoilabsVdNavigationUI",
             "genericSig": "<τ_0_0 where τ_0_0 : PoilabsVdNavigationUI.PoilabsVdNavigationDelegate>",
             "sugared_genericSig": "<Self where Self : PoilabsVdNavigationUI.PoilabsVdNavigationDelegate>",
@@ -933,7 +1007,7 @@
           {
             "kind": "Function",
             "name": "poiVdNavigationManager",
-            "printedName": "poiVdNavigationManager(didUpdate:floorLevel:floorName:)",
+            "printedName": "poiVdNavigationManager(didUpdate:floorLevel:floorName:placeId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -957,11 +1031,17 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:21PoilabsVdNavigationUIAAC03poibC7Manager9didUpdate10floorLevel0I4NameySo22CLLocationCoordinate2DV_SiSStF",
-            "mangledName": "$s21PoilabsVdNavigationUIAAC03poibC7Manager9didUpdate10floorLevel0I4NameySo22CLLocationCoordinate2DV_SiSStF",
+            "usr": "s:21PoilabsVdNavigationUIAAC03poibC7Manager9didUpdate10floorLevel0I4Name7placeIdySo22CLLocationCoordinate2DV_SiS2StF",
+            "mangledName": "$s21PoilabsVdNavigationUIAAC03poibC7Manager9didUpdate10floorLevel0I4Name7placeIdySo22CLLocationCoordinate2DV_SiS2StF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
               "AccessControl"
@@ -1106,6 +1186,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -1175,6 +1265,13 @@
         "kind": "Import",
         "name": "CoreLocation",
         "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI"
+      },
+      {
+        "kind": "Import",
+        "name": "PoilabsCore",
+        "printedName": "PoilabsCore",
         "declKind": "Import",
         "moduleName": "PoilabsVdNavigationUI"
       },
@@ -4627,42 +4724,42 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/StoreListViewController.swift",
       "kind": "StringLiteral",
-      "offset": 241,
+      "offset": 260,
       "length": 26,
       "value": "\"kMagazaListTableViewCell\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/StoreListViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 666,
+      "offset": 685,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/StoreListViewController.swift",
       "kind": "StringLiteral",
-      "offset": 709,
+      "offset": 728,
       "length": 18,
       "value": "\"locationNotFound\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/StoreListViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 789,
+      "offset": 808,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/StoreListViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1391,
+      "offset": 1410,
       "length": 5,
       "value": "\"all\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/StoreListViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1582,
+      "offset": 1601,
       "length": 8,
       "value": "\"search\""
     },
@@ -4774,77 +4871,77 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1613,
+      "offset": 2398,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1642,
+      "offset": 2427,
       "length": 18,
       "value": "\"alternativeRoute\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1965,
+      "offset": 2750,
       "length": 19,
       "value": "\"seeRemainingSteps\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2283,
+      "offset": 3068,
       "length": 12,
       "value": "\"clearRoute\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2588,
+      "offset": 3373,
       "length": 51,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2591,
+      "offset": 3376,
       "length": 13,
       "value": "\"destination\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2616,
+      "offset": 3401,
       "length": 1,
       "value": "\":\n \""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2638,
+      "offset": 3423,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3130,
-      "length": 2,
-      "value": "50"
+      "kind": "FloatLiteral",
+      "offset": 3933,
+      "length": 4,
+      "value": "85.0"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3193,
+      "offset": 4000,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3245,
+      "offset": 4052,
       "length": 1,
       "value": "1"
     },
@@ -6160,7 +6257,7 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/View\/RouteCurrentLocationView.swift",
       "kind": "StringLiteral",
-      "offset": 528,
+      "offset": 547,
       "length": 17,
       "value": "\"currentLocation\""
     },
@@ -6286,7 +6383,7 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI.swift",
       "kind": "Array",
-      "offset": 1754,
+      "offset": 1891,
       "length": 2,
       "value": "[]"
     },
@@ -6839,14 +6936,14 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/PointDetailViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1462,
+      "offset": 1481,
       "length": 10,
       "value": "\"getRoute\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/PointDetailViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1857,
+      "offset": 1876,
       "length": 13,
       "value": "\"readContent\""
     },
@@ -7371,42 +7468,42 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
       "kind": "StringLiteral",
-      "offset": 2946,
+      "offset": 2683,
       "length": 7,
       "value": "\"cross\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
       "kind": "StringLiteral",
-      "offset": 3097,
+      "offset": 2834,
       "length": 7,
       "value": "\"close\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3393,
+      "offset": 3130,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
       "kind": "StringLiteral",
-      "offset": 3633,
+      "offset": 3370,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
       "kind": "StringLiteral",
-      "offset": 3946,
+      "offset": 3708,
       "length": 9,
       "value": "\"approve\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
       "kind": "StringLiteral",
-      "offset": 4241,
+      "offset": 4021,
       "length": 8,
       "value": "\"cancel\""
     },

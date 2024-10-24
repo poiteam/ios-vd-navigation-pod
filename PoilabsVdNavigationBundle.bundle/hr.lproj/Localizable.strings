@@ -234,3 +234,83 @@
 "caution" = "Pazite!";
 
 "alternativeRoute" = "Alternativna ruta";
+
+// MARK: Next step
+"thenTurnLeft" = "Zatim skrenite lijevo";
+"thenTurnLeftAt" = "Zatim skrenite lijevo na %@";
+"thenTurnSlightlyLeft" = "Zatim lagano skrenite lijevo";
+"thenTurnSlightlyLeftAt" = "Zatim lagano skrenite lijevo na %@";
+
+"thenTurnRight" = "Zatim skrenite desno";
+"thenTurnRightAt" = "Zatim skrenite desno na %@";
+"thenTurnSlightlyRight" = "Zatim lagano skrenite desno";
+"thenTurnSlightlyRightAt" = "Zatim lagano skrenite desno na %@";
+
+"thenStraight" = "Zatim nastavite ravno";
+
+"thenUp" = "Zatim idite gore s %@ sa %@";
+"thenUpOne" = "Zatim idite jedan kat gore s %@";
+
+"thenDown" = "Zatim idite dolje s %@ sa %@";
+"thenDownOne" = "Zatim idite jedan kat dolje s %@";
+
+"thenArrived" = "Zatim ćete stići na odredište";
+
+"thenPass" = "Zatim prođite %@";
+
+// MARK: Step change
+"pass" = "Sada prođite %@";
+
+"upZeroMeter" = "Sada idite gore s %@ sa %@";
+"upZeroMeterOne" = "Sada idite jedan kat gore s %@";
+
+"downZeroMeter" = "Sada idite dolje s %@ sa %@";
+"downZeroMeterOne" = "Sada idite jedan kat dolje s %@";
+
+"nowTurnLeft" = "Sada skrenite lijevo";
+"nowTurnLeftAt" = "Sada skrenite lijevo na %@";
+"nowTurnSlightlyLeft" = "Sada lagano skrenite lijevo";
+"nowTurnSlightlyLeftAt" = "Sada lagano skrenite lijevo na %@";
+
+"nowTurnRight" = "Sada skrenite desno";
+"nowTurnRightAt" = "Sada skrenite desno na %@";
+"nowTurnSlightlyRight" = "Sada lagano skrenite desno";
+"nowTurnSlightlyRightAt" = "Sada lagano skrenite desno na %@";
+
+// MARK: Remaining Steps
+"goStraightForAndLeft" = "Idite ravno %d metara, zatim skrenite lijevo";
+"goStraightForAndLeftAt" = "Idite ravno %d metara, zatim skrenite lijevo na %@";
+"goStraightForAndSlightlyLeft" = "Idite ravno %d metara, zatim lagano skrenite lijevo";
+"goStraightForAndSlightlyLeftAt" = "Idite ravno %d metara, zatim lagano skrenite lijevo na %@";
+
+"goStraightForAndRight" = "Idite ravno %d metara, zatim skrenite desno";
+"goStraightForAndRightAt" = "Idite ravno %d metara, zatim skrenite desno na %@";
+"goStraightForAndSlightlyRight" = "Idite ravno %d metara, zatim lagano skrenite desno";
+"goStraightForAndSlightlyRightAt" = "Idite ravno %d metara, zatim lagano skrenite desno na %@";
+
+"goStraightForAndPass" = "Idite ravno %d metara, zatim prođite %@";
+
+"goStraightForAndGoUpTo" = "Idite ravno %d metara, zatim idite gore s %@ sa %@";
+"goStraightForAndGoUpOne" = "Idite ravno %d metara, zatim idite jedan kat gore s %@";
+"takeAndGoUpTo" = "Uzmite %@ i idite gore s %@";
+"takeAndGoUpOne" = "Uzmite %@ i idite jedan kat gore s %@";
+
+"goStraightForAndGoDownTo" = "Idite ravno %d metara, zatim idite dolje s %@ sa %@";
+"goStraightForAndGoDownOne" = "Idite ravno %d metara, zatim idite jedan kat dolje s %@";
+"takeAndGoDownTo" = "Uzmite %@ i idite dolje s %@";
+"takeAndGoDownOne" = "Uzmite %@ i idite jedan kat dolje s %@";
+
+"goStraightThenReach" = "Idite ravno %d metara. Zatim ćete stići na odredište";
+
+"passThrough" = "Prođite kroz %@";
+
+"targetOnTheSameFloor" = "Vaše odredište je na trenutnom katu.";
+"targetOnTheFloor" = "Vaše odredište je na %@";
+"targetDistanceAndTime" = "Udaljeno je %d metara. Približno vrijeme rute je %d minuta.";
+"targetWillBeOn" = "Po dolasku, vaše odredište će biti na vašoj %@.";
+
+"inFrontOfYou" = "ispred vas";
+"slightlyToYourLeft" = "lagano s vaše lijeve strane";
+"slightlyToYourRight" = "lagano s vaše desne strane";
+"onYourRight" = "s vaše desne strane";
+"onYourLeft" = "s vaše lijeve strane";

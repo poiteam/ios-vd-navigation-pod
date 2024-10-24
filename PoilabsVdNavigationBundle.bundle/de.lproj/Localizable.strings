@@ -210,3 +210,83 @@
 "caution" = "Achtung!";
 
 "alternativeRoute" = "alternative Route";
+
+//MARK: Next step
+"thenTurnLeft" = "Dann links abbiegen";
+"thenTurnLeftAt" = "Dann bei %@ links abbiegen";
+"thenTurnSlightlyLeft" = "Dann leicht links abbiegen";
+"thenTurnSlightlyLeftAt" = "Dann bei %@ leicht links abbiegen";
+
+"thenTurnRight" = "Dann rechts abbiegen";
+"thenTurnRightAt" = "Dann bei %@ rechts abbiegen";
+"thenTurnSlightlyRight" = "Dann leicht rechts abbiegen";
+"thenTurnSlightlyRightAt" = "Dann bei %@ leicht rechts abbiegen";
+
+"thenStraight" = "Dann geradeaus weitergehen";
+
+"thenUp" = "Dann mit %@ bei %@ hinaufgehen";
+"thenUpOne" = "Dann mit %@ einen Stock hinaufgehen";
+
+"thenDown" = "Dann mit %@ bei %@ hinuntergehen";
+"thenDownOne" = "Dann mit %@ einen Stock hinuntergehen";
+
+"thenArrived" = "Dann erreichen Sie Ihr Ziel";
+
+"thenPass" = "Dann %@ passieren";
+
+//MARK: Step change
+"pass" = "Jetzt %@ passieren";
+
+"upZeroMeter" = "Jetzt mit %@ bei %@ hinaufgehen";
+"upZeroMeterOne" = "Jetzt mit %@ einen Stock hinaufgehen";
+
+"downZeroMeter" = "Jetzt mit %@ bei %@ hinuntergehen";
+"downZeroMeterOne" = "Jetzt mit %@ einen Stock hinuntergehen";
+
+"nowTurnLeft" = "Jetzt links abbiegen";
+"nowTurnLeftAt" = "Jetzt bei %@ links abbiegen";
+"nowTurnSlightlyLeft" = "Jetzt leicht links abbiegen";
+"nowTurnSlightlyLeftAt" = "Jetzt bei %@ leicht links abbiegen";
+
+"nowTurnRight" = "Jetzt rechts abbiegen";
+"nowTurnRightAt" = "Jetzt bei %@ rechts abbiegen";
+"nowTurnSlightlyRight" = "Jetzt leicht rechts abbiegen";
+"nowTurnSlightlyRightAt" = "Jetzt bei %@ leicht rechts abbiegen";
+
+//MARK: Remaining Steps
+"goStraightForAndLeft" = "Gehen Sie %d Meter geradeaus, dann links abbiegen";
+"goStraightForAndLeftAt" = "Gehen Sie %d Meter geradeaus, dann bei %@ links abbiegen";
+"goStraightForAndSlightlyLeft" = "Gehen Sie %d Meter geradeaus, dann leicht links abbiegen";
+"goStraightForAndSlightlyLeftAt" = "Gehen Sie %d Meter geradeaus, dann bei %@ leicht links abbiegen";
+
+"goStraightForAndRight" = "Gehen Sie %d Meter geradeaus, dann rechts abbiegen";
+"goStraightForAndRightAt" = "Gehen Sie %d Meter geradeaus, dann bei %@ rechts abbiegen";
+"goStraightForAndSlightlyRight" = "Gehen Sie %d Meter geradeaus, dann leicht rechts abbiegen";
+"goStraightForAndSlightlyRightAt" = "Gehen Sie %d Meter geradeaus, dann bei %@ leicht rechts abbiegen";
+
+"goStraightForAndPass" = "Gehen Sie %d Meter geradeaus, dann %@ passieren";
+
+"goStraightForAndGoUpTo" = "Gehen Sie %d Meter geradeaus, dann mit %@ bei %@ hinaufgehen";
+"goStraightForAndGoUpOne" = "Gehen Sie %d Meter geradeaus, dann mit %@ einen Stock hinaufgehen";
+"takeAndGoUpTo" = "Nehmen Sie %@ und gehen Sie zu %@ hinauf";
+"takeAndGoUpOne" = "Nehmen Sie %@ und gehen Sie einen Stock hinauf";
+
+"goStraightForAndGoDownTo" = "Gehen Sie %d Meter geradeaus, dann mit %@ bei %@ hinuntergehen";
+"goStraightForAndGoDownOne" = "Gehen Sie %d Meter geradeaus, dann mit %@ einen Stock hinuntergehen";
+"takeAndGoDownTo" = "Nehmen Sie %@ und gehen Sie zu %@ hinunter";
+"takeAndGoDownOne" = "Nehmen Sie %@ und gehen Sie einen Stock hinunter";
+
+"goStraightThenReach" = "Gehen Sie %d Meter geradeaus. Dann erreichen Sie Ihr Ziel";
+
+"passThrough" = "%@ durchgehen";
+
+"targetOnTheSameFloor" = "Ihr Ziel befindet sich auf Ihrer aktuellen Etage.";
+"targetOnTheFloor" = "Ihr Ziel befindet sich im %@.";
+"targetDistanceAndTime" = "Es ist %d Meter entfernt. Die ungefähre Wegzeit beträgt %d Minuten. ";
+"targetWillBeOn" = "Bei Ankunft wird Ihr Ziel auf Ihrer %@ sein.";
+
+"inFrontOfYou" = "vor Ihnen";
+"slightlyToYourLeft" = "leicht zu Ihrer Linken";
+"slightlyToYourRight" = "leicht zu Ihrer Rechten";
+"onYourRight" = "zu Ihrer Rechten";
+"onYourLeft" = "zu Ihrer Linken";

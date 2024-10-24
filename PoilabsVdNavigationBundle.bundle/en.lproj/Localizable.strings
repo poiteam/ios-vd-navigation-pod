@@ -234,3 +234,83 @@
 "caution" = "Caution!";
 
 "alternativeRoute" = "Alternative Route";
+
+//MARK: Next step
+"thenTurnLeft" = "Then turn left";
+"thenTurnLeftAt" = "Then turn left at %@";
+"thenTurnSlightlyLeft" = "Then turn slightly left";
+"thenTurnSlightlyLeftAt" = "Then turn slightly left at %@";
+
+"thenTurnRight" = "Then turn right";
+"thenTurnRightAt" = "Then turn right at %@";
+"thenTurnSlightlyRight" = "Then turn slightly right";
+"thenTurnSlightlyRightAt" = "Then turn slightly right at %@";
+
+"thenStraight" = "Then go straight";
+
+"thenUp" = "Then take the %@ and go up to %@";
+"thenUpOne" = "Then take the %@ and go up 1 level";
+
+"thenDown" = " Then take the %@ and go down to %@";
+"thenDownOne" = "Then take the %@ and go down 1 level";
+
+"thenArrived" = "Then you will reach your destination";
+
+"thenPass" = "Then pass %@";
+
+//MARK: Step change
+"pass" = "Now pass %@";
+
+"upZeroMeter" = "Now take %@ and go up to %@";
+"upZeroMeterOne" = "Now take %@ and go up one floor";
+
+"downZeroMeter" = "Now take %@ and go down to %@";
+"downZeroMeterOne" = "Now take %@ and go down one floor";
+
+"nowTurnLeft" = "Now turn left";
+"nowTurnLeftAt" = "Now turn left at %@";
+"nowTurnSlightlyLeft" = "Now turn slightly left";
+"nowTurnSlightlyLeftAt" = "Now turn slightly left at %@";
+
+"nowTurnRight" = "Now turn right";
+"nowTurnRightAt" = "Now turn right at %@";
+"nowTurnSlightlyRight" = "Now turn slightly right";
+"nowTurnSlightlyRightAt" = "Now turn slightly right at %@";
+
+//MARK: Remaining Steps
+"goStraightForAndLeft" = "Go straight for %d meters, then turn left";
+"goStraightForAndLeftAt" = "Go straight for %d meters, then turn left at %@";
+"goStraightForAndSlightlyLeft" = "Go straight for %d meters, then turn slightly left";
+"goStraightForAndSlightlyLeftAt" = "Go straight for %d meters, then turn slightly left at %@";
+
+"goStraightForAndRight" = "Go straight for %d meters, then turn right";
+"goStraightForAndRightAt" = "Go straight for %d meters, then turn right at %@";
+"goStraightForAndSlightlyRight" = "Go straight for %d meters, then turn slightly right";
+"goStraightForAndSlightlyRightAt" = "Go straight for %d meters, then turn slightly right at %@";
+
+"goStraightForAndPass" = "Go straight for %d meters, then pass %@";
+
+"goStraightForAndGoUpTo" = "Go straight for %d meters, then take the %@ and go up to %@";
+"goStraightForAndGoUpOne" = "Go straight for %d meters, then take the %@ and go up 1 level";
+"takeAndGoUpTo" = "Take %@ and go up to %@";
+"takeAndGoUpOne" = "Take %@ and go up one floor";
+
+"goStraightForAndGoDownTo" = "Go straight for %d meters, then take the %@ and go down to %@";
+"goStraightForAndGoDownOne" = "Go straight for %d meters, then take the %@ and go down 1 level";
+"takeAndGoDownTo" = "Take %@ and go down to %@";
+"takeAndGoDownOne" = "Take %@ and go down one floor";
+
+"goStraightThenReach" = "Go straight for %d meters. Then you will reach your destination";
+
+"passThrough" = "Pass through %@";
+
+"targetOnTheSameFloor" = "Your destination is on your current floor. ";
+"targetOnTheFloor" = "Your destination is on the %@.";
+"targetDistanceAndTime" = "It is %d meters away. The approximate route time is %d minutes.";
+"targetWillBeOn" = "Upon arrival, your destination will be %@.";
+
+"inFrontOfYou" = "in front of you";
+"slightlyToYourLeft" = "slightly to your left";
+"slightlyToYourRight" = "slightly to your right";
+"onYourRight" = "on your right";
+"onYourLeft" = "on your left";

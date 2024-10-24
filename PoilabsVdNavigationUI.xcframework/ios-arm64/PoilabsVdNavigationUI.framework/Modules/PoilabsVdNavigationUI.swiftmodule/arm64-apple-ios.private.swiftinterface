@@ -6,6 +6,7 @@ import CoreBluetooth
 import CoreLocation
 import Foundation
 import MessageUI
+import PoilabsCore
 import PoilabsVdNavigationCore
 @_exported import PoilabsVdNavigationUI
 import Swift
@@ -25,11 +26,13 @@ public protocol PoilabsVdNavigationDelegate {
   func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
   func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
   func poilabsVdNavigationDidTapOnAdditionalButton()
+  func poilabsVdNavigation(locationIn placeId: Swift.String)
 }
 extension PoilabsVdNavigationDelegate {
   public func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D)
   public func poilabsVdNavigation(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
   public func poilabsVdNavigationDidTapOnAdditionalButton()
+  public func poilabsVdNavigation(locationIn placeId: Swift.String)
 }
 public struct AdditionalButton {
   public init(icon: UIKit.UIImage, title: Swift.String)
@@ -40,7 +43,7 @@ public class PoilabsVdNavigationUI {
   @objc deinit
 }
 extension PoilabsVdNavigationUI : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate {
-  public func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String)
+  public func poiVdNavigationManager(didUpdate userLocation: CoreLocation.CLLocationCoordinate2D, floorLevel: Swift.Int, floorName: Swift.String, placeId: Swift.String)
 }
 public struct SettingType {
 }

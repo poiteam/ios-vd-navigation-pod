@@ -200,3 +200,83 @@
 "caution" = "خطر";
 
 "alternativeRoute" = "طريق بديل";
+
+//MARK: Next step
+"thenTurnLeft" = "ثم انعطف يسارًا";
+"thenTurnLeftAt" = "ثم انعطف يسارًا عند %@";
+"thenTurnSlightlyLeft" = "ثم انعطف قليلاً يسارًا";
+"thenTurnSlightlyLeftAt" = "ثم انعطف قليلاً يسارًا عند %@";
+
+"thenTurnRight" = "ثم انعطف يمينًا";
+"thenTurnRightAt" = "ثم انعطف يمينًا عند %@";
+"thenTurnSlightlyRight" = "ثم انعطف قليلاً يمينًا";
+"thenTurnSlightlyRightAt" = "ثم انعطف قليلاً يمينًا عند %@";
+
+"thenStraight" = "ثم واصل السير مباشرة";
+
+"thenUp" = "ثم اصعد بـ %@ مع %@";
+"thenUpOne" = "ثم اصعد طابقًا واحدًا بـ %@";
+
+"thenDown" = "ثم انزل بـ %@ مع %@";
+"thenDownOne" = "ثم انزل طابقًا واحدًا بـ %@";
+
+"thenArrived" = "ثم ستصل إلى وجهتك";
+
+"thenPass" = "ثم تجاوز %@";
+
+//MARK: Step change
+"pass" = "الآن تجاوز %@";
+
+"upZeroMeter" = "الآن اصعد بـ %@ مع %@";
+"upZeroMeterOne" = "الآن اصعد طابقًا واحدًا بـ %@";
+
+"downZeroMeter" = "الآن انزل بـ %@ مع %@";
+"downZeroMeterOne" = "الآن انزل طابقًا واحدًا بـ %@";
+
+"nowTurnLeft" = "الآن انعطف يسارًا";
+"nowTurnLeftAt" = "الآن انعطف يسارًا عند %@";
+"nowTurnSlightlyLeft" = "الآن انعطف قليلاً يسارًا";
+"nowTurnSlightlyLeftAt" = "الآن انعطف قليلاً يسارًا عند %@";
+
+"nowTurnRight" = "الآن انعطف يمينًا";
+"nowTurnRightAt" = "الآن انعطف يمينًا عند %@";
+"nowTurnSlightlyRight" = "الآن انعطف قليلاً يمينًا";
+"nowTurnSlightlyRightAt" = "الآن انعطف قليلاً يمينًا عند %@";
+
+//MARK: Remaining Steps
+"goStraightForAndLeft" = "اذهب مباشرة لمسافة %d متر ثم انعطف يسارًا";
+"goStraightForAndLeftAt" = "اذهب مباشرة لمسافة %d متر ثم انعطف يسارًا عند %@";
+"goStraightForAndSlightlyLeft" = "اذهب مباشرة لمسافة %d متر ثم انعطف قليلاً يسارًا";
+"goStraightForAndSlightlyLeftAt" = "اذهب مباشرة لمسافة %d متر ثم انعطف قليلاً يسارًا عند %@";
+
+"goStraightForAndRight" = "اذهب مباشرة لمسافة %d متر ثم انعطف يمينًا";
+"goStraightForAndRightAt" = "اذهب مباشرة لمسافة %d متر ثم انعطف يمينًا عند %@";
+"goStraightForAndSlightlyRight" = "اذهب مباشرة لمسافة %d متر ثم انعطف قليلاً يمينًا";
+"goStraightForAndSlightlyRightAt" = "اذهب مباشرة لمسافة %d متر ثم انعطف قليلاً يمينًا عند %@";
+
+"goStraightForAndPass" = "اذهب مباشرة لمسافة %d متر ثم تجاوز %@";
+
+"goStraightForAndGoUpTo" = "اذهب مباشرة لمسافة %d متر ثم اصعد بـ %@ مع %@";
+"goStraightForAndGoUpOne" = "اذهب مباشرة لمسافة %d متر ثم اصعد طابقًا واحدًا بـ %@";
+"takeAndGoUpTo" = "خذ %@ واصعد بـ %@";
+"takeAndGoUpOne" = "خذ %@ واصعد طابقًا واحدًا بـ %@";
+
+"goStraightForAndGoDownTo" = "اذهب مباشرة لمسافة %d متر ثم انزل بـ %@ مع %@";
+"goStraightForAndGoDownOne" = "اذهب مباشرة لمسافة %d متر ثم انزل طابقًا واحدًا بـ %@";
+"takeAndGoDownTo" = "خذ %@ وانزل بـ %@";
+"takeAndGoDownOne" = "خذ %@ وانزل طابقًا واحدًا بـ %@";
+
+"goStraightThenReach" = "اذهب مباشرة لمسافة %d متر. بعد ذلك ستصل إلى وجهتك";
+
+"passThrough" = "تجاوز %@";
+
+"targetOnTheSameFloor" = "هدفك في الطابق الحالي.";
+"targetOnTheFloor" = "هدفك في الطابق %@.";
+"targetDistanceAndTime" = " يبعد %d متر. الوقت التقديري للمسار هو %d دقيقة. ";
+"targetWillBeOn" = "عند الوصول، سيكون هدفك %@.";
+
+"inFrontOfYou" = "أمامك";
+"slightlyToYourLeft" = "على يسارك قليلاً";
+"slightlyToYourRight" = "على يمينك قليلاً";
+"onYourRight" = "على يمينك";
+"onYourLeft" = "على يسارك";

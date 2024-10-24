@@ -235,3 +235,83 @@
 "caution" = "Dikkat!";
 
 "alternativeRoute" = "Alternatif Rota";
+//MARK: Next step
+"thenTurnLeft" = "Sonra sola dönün";
+"thenTurnLeftAt" = "Sonra %@ sola dönün";
+"thenTurnSlightlyLeft" = "Sonra hafifçe sola dönün";
+"thenTurnSlightlyLeftAt" = "Sonra %@ hafifçe sola dönün";
+
+"thenTurnRight" = "Sonra sağa dönün";
+"thenTurnRightAt" = "Sonra %@ sağa dönün";
+"thenTurnSlightlyRight" = "Sonra hafifçe sağa dönün";
+"thenTurnSlightlyRightAt" = "Sonra %@ hafifçe sağa dönün";
+
+"thenStraight" = "Sonra düz devam edin";
+
+"thenUp" = "Sonra %@ ile %@ çıkın";
+"thenUpOne" = "Sonra %@ ile bir kat yukarı çıkın";
+
+"thenDown" = "Sonra %@ ile %@ inin";
+"thenDownOne" = "Sonra %@ ile bir kat aşağı inin";
+
+"thenArrived" = "Sonra hedefinize varacaksınız";
+
+"thenPass" = "Sonra %@ geçin";
+
+//MARK: Step change
+"pass" = "Şimdi %@ geçin";
+
+"upZeroMeter" = "Şimdi %@ ile %@ çıkın";
+"upZeroMeterOne" = "Şimdi %@ ile 1 kat yukarı çıkın";
+
+"downZeroMeter" = "Şimdi %@ ile %@ inin";
+"downZeroMeterOne" = "Şimdi %@ ile 1 kat aşağı inin";
+
+"nowTurnLeft" = "Şimdi sola dönün";
+"nowTurnLeftAt" = "Şimdi %@ sola dönün";
+"nowTurnSlightlyLeft" = "Şimdi hafifçe sola dönün";
+"nowTurnSlightlyLeftAt" = "Şimdi %@ hafifçe sola dönün";
+
+"nowTurnRight" = "Şimdi sağa dönün";
+"nowTurnRightAt" = "Şimdi %@ sağa dönün";
+"nowTurnSlightlyRight" = "Şimdi hafifçe sağa dönün";
+"nowTurnSlightlyRightAt" = "Şimdi %@ hafifçe sağa dönün";
+
+//MARK: Remaining Steps
+"goStraightForAndLeft" = "%d metre ilerleyin sonra sola dönün";
+"goStraightForAndLeftAt" = "%d metre ilerleyin sonra %@ sola dönün";
+"goStraightForAndSlightlyLeft" = "%d metre ilerleyin sonra hafifçe sola dönün";
+"goStraightForAndSlightlyLeftAt" = "%d metre ilerleyin sonra %@ hafifçe sola dönün";
+
+"goStraightForAndRight" = "%d metre ilerleyin sonra sağa dönün";
+"goStraightForAndRightAt" = "%d metre ilerleyin sonra %@ sağa dönün";
+"goStraightForAndSlightlyRight" = "%d metre ilerleyin sonra hafifçe sağa dönün";
+"goStraightForAndSlightlyRightAt" = "%d metre ilerleyin sonra %@ hafifçe sağa dönün";
+
+"goStraightForAndPass" = "%d metre ilerleyin sonra %@ geçin";
+
+"goStraightForAndGoUpTo" = "%d metre ilerleyin sonra %@ ile %@ çıkın";
+"goStraightForAndGoUpOne" = "%d metre ilerleyin sonra %@ ile 1 kat yukarı çıkın";
+"takeAndGoUpTo" = "%@ ile %@ çıkın";
+"takeAndGoUpOne" = "%@ ile 1 kat yukarı çıkın";
+
+"goStraightForAndGoDownTo" = "%d metre ilerleyin sonra %@ ile %@ inin";
+"goStraightForAndGoDownOne" = "%d metre ilerleyin sonra %@ ile 1 kat aşağı inin";
+"takeAndGoDownTo" = "%@ ile %@ inin";
+"takeAndGoDownOne" = "%@ ile 1 kat aşağı inin";
+
+"goStraightThenReach" = "%d metre ilerleyin. Ardından hedefinize ulaşacaksınız";
+
+"goStraightForAndPass" = "%d metre ilerleyin sonra %@ geçin";
+"passThrough" = "%@ geçin";
+
+"targetOnTheSameFloor" = "Hedefiniz bulunduğunuz katta ";
+"targetOnTheFloor" = "Hedefiniz %@";
+"targetDistanceAndTime" = "%d metre mesafededir. Yaklaşık rota süresi %d dakikadır.";
+"targetWillBeOn" = "Ulaştığınızda hedefiniz %@ kalacaktır.";
+
+"inFrontOfYou" = "önünüzde";
+"slightlyToYourLeft" = "hafifçe solunuzda";
+"slightlyToYourRight" = "hafifçe sağınızda";
+"onYourRight" = "sağınızda";
+"onYourLeft" = "solunuzda";
