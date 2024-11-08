@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "PoilabsVdNavigationUI",
+    "printedName": "PoilabsVdNavigationUI",
     "children": [
       {
         "kind": "Import",
@@ -364,6 +364,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -738,6 +754,22 @@
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -785,6 +817,22 @@
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -1060,6 +1108,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "PoiVDNavigationManagerDelegate",
             "printedName": "PoiVDNavigationManagerDelegate",
             "usr": "s:23PoilabsVdNavigationCore30PoiVDNavigationManagerDelegateP",
@@ -1182,6 +1244,22 @@
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -1646,6 +1724,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC_6values12initialValue9onSuccess0K6CancelACSS_SaySSGSiySi_SStcSgSgyycSgSgtcfc",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "Convenience",
               "AccessControl"
@@ -1672,6 +1751,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override",
               "AccessControl"
@@ -1694,6 +1774,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC4showyyF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -1715,6 +1796,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC13showAnimationyyF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "ObjC"
@@ -1762,6 +1844,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC16dismissAnimationyyyycSgF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "ObjC"
@@ -1818,6 +1901,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override"
             ],
@@ -1859,6 +1943,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Required"
             ],
@@ -1895,6 +1980,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC8setTitle4fontySo6UIFontCSg_tF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -1937,6 +2023,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC13setDoneButton_4fontySS_So6UIFontCSgtF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -1979,6 +2066,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC15setCancelButton_4fontySS_So6UIFontCSgtF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2029,6 +2117,7 @@
             "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC03setF0yySo6UIFontCSg_So7UIColorCSo15NSTextAlignmentVtF",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2040,6 +2129,7 @@
         "mangledName": "$s21PoilabsVdNavigationUI24BUStringPickerControllerC",
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl",
           "ObjC"
@@ -2052,6 +2142,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -2151,6 +2255,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "Override"
@@ -2248,6 +2353,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "Override"
@@ -2274,6 +2380,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "Override"
@@ -2300,6 +2407,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "Override"
@@ -2334,6 +2442,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override"
             ],
@@ -2375,6 +2484,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Required"
             ],
@@ -2386,6 +2496,7 @@
         "mangledName": "$s21PoilabsVdNavigationUI24AccesiblePickerContainerC",
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl",
           "ObjC"
@@ -2398,6 +2509,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -3874,6 +3999,22 @@
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -3944,6 +4085,22 @@
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -3998,6 +4155,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override",
               "AccessControl"
@@ -4030,6 +4188,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override",
               "AccessControl"
@@ -4086,6 +4245,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override"
             ],
@@ -4127,6 +4287,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Required"
             ],
@@ -4138,6 +4299,7 @@
         "mangledName": "$s21PoilabsVdNavigationUI22StartingViewControllerC",
         "moduleName": "PoilabsVdNavigationUI",
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl",
           "ObjC"
@@ -4150,6 +4312,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -4278,6 +4454,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4364,6 +4554,7 @@
             "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIView>",
             "sugared_genericSig": "<V where V : UIKit.UIView>",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "Convenience"
             ],
@@ -4401,6 +4592,7 @@
             "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIView>",
             "sugared_genericSig": "<V where V : UIKit.UIView>",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -4437,6 +4629,7 @@
             "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIView>",
             "sugared_genericSig": "<V where V : UIKit.UIView>",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "DiscardableResult"
             ],
@@ -4451,6 +4644,7 @@
         "intro_iOS": "2.0",
         "objc_name": "UIView",
         "declAttributes": [
+          "Preconcurrency",
           "Available",
           "ObjC",
           "NonSendable",
@@ -4465,6 +4659,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -4661,6 +4869,20 @@
           },
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4813,13 +5035,6 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/View\/RouteDetailView.swift",
-      "kind": "StringLiteral",
-      "offset": 152,
-      "length": 15,
-      "value": "\"PoilabsVdNavigationUI.RouteDetailView\""
-    },
-    {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/CustomTabbar\/Views\/CTabBar.swift",
       "kind": "IntegerLiteral",
       "offset": 383,
@@ -4860,13 +5075,6 @@
       "offset": 801,
       "length": 3,
       "value": "0.5"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingsRouteOptionView.swift",
-      "kind": "StringLiteral",
-      "offset": 4121,
-      "length": 33,
-      "value": "\"PoilabsVdNavigationUI.NavigationSettingsRouteOptionCell\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/RouteViewController.swift",
@@ -5115,13 +5323,6 @@
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/View\/VenuesSearchView.swift",
-      "kind": "StringLiteral",
-      "offset": 222,
-      "length": 16,
-      "value": "\"PoilabsVdNavigationUI.VenuesSearchView\""
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/View\/VenuesSearchView.swift",
       "kind": "IntegerLiteral",
       "offset": 5200,
       "length": 1,
@@ -5147,13 +5348,6 @@
       "offset": 5231,
       "length": 2,
       "value": "45"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/View\/VenuesSearchView.swift",
-      "kind": "StringLiteral",
-      "offset": 5003,
-      "length": 15,
-      "value": "\"PoilabsVdNavigationUI.SearchTextField\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/UserGuide\/View\/UserGuideCollectionViewCell.swift",
@@ -6248,13 +6442,6 @@
       "value": "1"
     },
     {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/View\/ParagraphContentStackView.swift",
-      "kind": "StringLiteral",
-      "offset": 132,
-      "length": 25,
-      "value": "\"PoilabsVdNavigationUI.ParagraphContentStackView\""
-    },
-    {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/View\/RouteCurrentLocationView.swift",
       "kind": "StringLiteral",
       "offset": 547,
@@ -6267,13 +6454,6 @@
       "offset": 2363,
       "length": 3,
       "value": "0.5"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingCell.swift",
-      "kind": "StringLiteral",
-      "offset": 128,
-      "length": 22,
-      "value": "\"PoilabsVdNavigationUI.NavigationSettingsCell\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/View\/PlaceListTableViewCell.swift",
@@ -6374,13 +6554,6 @@
       "value": "26"
     },
     {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/VisualSettings\/View\/ColorSettingsView.swift",
-      "kind": "StringLiteral",
-      "offset": 124,
-      "length": 17,
-      "value": "\"PoilabsVdNavigationUI.ColorSettingsView\""
-    },
-    {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI.swift",
       "kind": "Array",
       "offset": 1891,
@@ -6393,20 +6566,6 @@
       "offset": 203,
       "length": 27,
       "value": "\"profileCollectionViewCell\""
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/UserGuide\/View\/UserGuideCarouselContainerView.swift",
-      "kind": "StringLiteral",
-      "offset": 196,
-      "length": 28,
-      "value": "\"PoilabsVdNavigationUI.CarouselAccessibilityElement\""
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/UserGuide\/View\/UserGuideCarouselContainerView.swift",
-      "kind": "StringLiteral",
-      "offset": 196,
-      "length": 28,
-      "value": "\"PoilabsVdNavigationUI.CarouselAccessibilityElement\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/UserGuide\/View\/UserGuideCarouselContainerView.swift",
@@ -6491,13 +6650,6 @@
       "offset": 5454,
       "length": 7,
       "value": "\"close\""
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/UserGuide\/View\/UserGuideCarouselContainerView.swift",
-      "kind": "StringLiteral",
-      "offset": 3452,
-      "length": 30,
-      "value": "\"PoilabsVdNavigationUI.UserGuideCarouselContainerView\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Settings\/Language.swift",
@@ -6759,13 +6911,6 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Discovery\/View\/NearbyLocationsView.swift",
-      "kind": "StringLiteral",
-      "offset": 126,
-      "length": 19,
-      "value": "\"PoilabsVdNavigationUI.NearbyLocationsView\""
-    },
-    {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
       "kind": "IntegerLiteral",
       "offset": 200,
@@ -6792,90 +6937,6 @@
       "offset": 241,
       "length": 24,
       "value": "4"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 200,
-      "length": 13,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 215,
-      "length": 11,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 228,
-      "length": 11,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 241,
-      "length": 24,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 200,
-      "length": 13,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 215,
-      "length": 11,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 228,
-      "length": 11,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/NavigationSettings\/NavigationSettingType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 241,
-      "length": 24,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Settings\/FontSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 176,
-      "length": 3,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Settings\/FontSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 181,
-      "length": 4,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Settings\/FontSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 176,
-      "length": 3,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Settings\/FontSettings.swift",
-      "kind": "IntegerLiteral",
-      "offset": 181,
-      "length": 4,
-      "value": "2"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Settings\/FontSettings.swift",
@@ -7172,13 +7233,6 @@
       "value": "\"loremIpsum\""
     },
     {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Profile\/VisualSettings\/View\/FontSettingsView.swift",
-      "kind": "StringLiteral",
-      "offset": 123,
-      "length": 16,
-      "value": "\"PoilabsVdNavigationUI.FontSettingsView\""
-    },
-    {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Route\/View\/RouteProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 192,
@@ -7363,6 +7417,48 @@
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
       "kind": "IntegerLiteral",
+      "offset": 1249,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1306,
+      "length": 2,
+      "value": "50"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1343,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1529,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1608,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1697,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
+      "kind": "IntegerLiteral",
       "offset": 4745,
       "length": 1,
       "value": "1"
@@ -7445,13 +7541,6 @@
       "value": "\"cancel\""
     },
     {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/BUStringPicker.swift",
-      "kind": "StringLiteral",
-      "offset": 5069,
-      "length": 18,
-      "value": "\"PoilabsVdNavigationUI.BUStringPickerView\""
-    },
-    {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
       "kind": "FloatLiteral",
       "offset": 390,
@@ -7506,13 +7595,6 @@
       "offset": 4021,
       "length": 8,
       "value": "\"cancel\""
-    },
-    {
-      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/Alert\/PoiAlertView.swift",
-      "kind": "StringLiteral",
-      "offset": 321,
-      "length": 12,
-      "value": "\"PoilabsVdNavigationUI.PoiAlertView\""
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Style\/Colors.swift",
@@ -7800,6 +7882,27 @@
       "offset": 1257,
       "length": 2,
       "value": "45"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Style\/Colors.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1511,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Style\/Colors.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1525,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Style\/Colors.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1538,
+      "length": 3,
+      "value": "255"
     },
     {
       "filePath": "\/Users\/emrekuru\/Projects\/sdk\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/StartingViewController.swift",
