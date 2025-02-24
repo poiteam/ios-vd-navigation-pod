@@ -305,7 +305,7 @@
 "passThrough" = "Pass through %@";
 
 "targetOnTheSameFloor" = "Your destination is on your current floor. ";
-"targetOnTheFloor" = "Your destination is on the %@.";
+"targetOnTheFloor" = "Your destination is in %@, on the %@.";
 "targetDistanceAndTime" = "It is %d meters away. The approximate route time is %d minutes.";
 "targetWillBeOn" = "Upon arrival, your destination will be %@.";
 
