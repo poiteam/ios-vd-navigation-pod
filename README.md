@@ -4,6 +4,17 @@
 
 ## INSTALLATION
 
+### Swift Package Manager
+
+To integrate PoilabsVdNavigation into your Xcode project using Swift Package Manager:
+
+1. In Xcode, select "File" > "Swift Packages" > "Add Package Dependency..."
+2. Enter the repository URL: `https://bitbucket.org/poiteam/ios-vd-navigation-pod.git`
+3. Specify the version or branch you want to use
+4. Click "Next" and then "Finish"
+
+Tüm gerekli bağımlılıklar (PoilabsPositioning, PoilabsSdkAnalytics, PoilabsCore) paket içinde tanımlanmıştır ve otomatik olarak yüklenecektir.
+
 ### CocoaPods
 
 To integrate PoilabsNavigation into your Xcode project using CocoaPods, specify it in your `Podfile`:
@@ -14,7 +25,7 @@ pod 'PoilabsVdNavigation'
 	
 ### Manually
 
-* Add **PoilabsVdNavigationCore.xcframework** and **PoilabsVdNavigationUI.xcframework** files to your "Frameworks, Libaries, and Embedded Content" in your Project’s General Tab.
+* Add **PoilabsVdNavigationCore.xcframework** and **PoilabsVdNavigationUI.xcframework** files to your "Frameworks, Libaries, and Embedded Content" in your Project's General Tab.
 
 * Add **PoilabsVdNavigationBundle.bundle** file to your Copy bundle Resources in Build Phases tab.
 
