@@ -28,7 +28,7 @@ s.author = { "Emre Kuru" => "emre@poilabs.com" }
 s.homepage = "https://github.com/poiteam/ios-vd-navigation-pod"
 
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "https://github.com/poiteam/ios-vd-navigation-pod",
+s.source = { :git => "https://github.com/poiteam/ios-vd-navigation-pod.git",
              :tag => "#{s.version}" }
 
 
