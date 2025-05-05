@@ -22,12 +22,6 @@ To integrate PoilabsNavigation into your Xcode project using CocoaPods, specify 
 ``` curl
 pod 'PoilabsVdNavigation'
 ```
-	
-### Manually
-
-* Add **PoilabsVdNavigationCore.xcframework** and **PoilabsVdNavigationUI.xcframework** files to your "Frameworks, Libaries, and Embedded Content" in your Project's General Tab.
-
-* Add **PoilabsVdNavigationBundle.bundle** file to your Copy bundle Resources in Build Phases tab.
 
 
 ## PRE-REQUIREMENTS
@@ -37,14 +31,6 @@ To Integrate this framework you should add some features to your project info.pl
 +Privacy - Location Usage Description
 
 +Privacy - Location When In Use Usage Description
-
-+Privacy - Location Always Usage Description
-
-+Privacy - Location Always and When In Use Usage Description
-
-+Privacy - Bluetooth Peripheral Usage Description
-
-+Privacy - Bluetooth Always Usage Description
 
 ## USAGE
 
@@ -65,8 +51,7 @@ let uniqueIdentifier = UNIQUE_ID
 
 PoilabsVdNavigationUI(withApplicationID: appId, 
 					withApplicationSecret: secret, 
-					withUniqueIdentifier: uniqueIdentifier, 
-					lang: lang) { (controller) in
+					withUniqueIdentifier: uniqueIdentifier) { (controller) in
             //show controller
         }
 ```
@@ -80,26 +65,6 @@ PoilabsVdNavigationUI(withApplicationID: appId,
     func poilabsVdNavigation(didUpdate userLocation: CLLocationCoordinate2D) {
     
     }
-```
-
-If you want to do requests on another url, you can specify it on init.
-
-
-
-``` Swift
-let configUrl = "yoururl"
-let lang = Locale.current.languageCode ?? "tr"
-let appId = APPLICATION_ID
-let secret = APPLICATION_SECRET_KEY
-let uniqueIdentifier = UNIQUE_IDENTIFIER
-
-PoilabsVdNavigationUI(configUrl: configUrl, 
-					withApplicationID: appId, 
-					withApplicationSecret: secret, 
-					withUniqueIdentifier: uniqueIdentifier, 
-					lang: lang) { (controller) in
-            //show controller
-        }
 ```
 
 

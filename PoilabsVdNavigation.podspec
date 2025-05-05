@@ -14,10 +14,9 @@ s.platform = :ios
 s.ios.deployment_target = '12.0'
 s.name = "PoilabsVdNavigation"
 s.summary = "Poilabs Indoor Navigation Framework"
-#s.requires_arc = true
 
 #2
-s.version = "7.0.1"
+s.version = "7.1.0"
 
 # 3
 s.license = { :type => "Proprietary", :file => "LICENSE" }
@@ -26,21 +25,16 @@ s.license = { :type => "Proprietary", :file => "LICENSE" }
 s.author = { "Emre Kuru" => "emre@poilabs.com" }
 
 # 5 - Replace this URL with your own GitHub page's URL (from the address bar)
-s.homepage = "https://bitbucket.org/poiteam/ios-vd-navigation-pod"
+s.homepage = "https://github.com/poiteam/ios-vd-navigation-pod"
 
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "https://emre-kuru@bitbucket.org/poiteam/ios-vd-navigation-pod.git",
+s.source = { :git => "https://github.com/poiteam/ios-vd-navigation-pod",
              :tag => "#{s.version}" }
-
-s.pod_target_xcconfig = {
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-  }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 
 s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavigationCore.xcframework'
 s.resources = 'PoilabsVdNavigationBundle.bundle'
-s.dependency 'PoilabsPositioning', '1.1.1'
-s.dependency 'PoilabsSdkAnalytics', '1.0.12'
-s.dependency 'PoilabsCore', '1.0.11'
+s.dependency 'PoilabsPositioning', '1.2.0'
+s.dependency 'PoilabsSdkAnalytics', '1.0.15'
+s.dependency 'PoilabsCore', '1.0.15'
 end
