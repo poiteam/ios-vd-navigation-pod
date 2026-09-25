@@ -130,7 +130,6 @@
 "contentButton" = "Double tap to listen to the content";
 
 
-
 "seeRemainingSteps" = "See Remaining Steps";
 "clearRoute" = "Clear Route";
 "destination" = "Destination";
@@ -301,11 +300,13 @@
 "takeAndGoDownOne" = "Take %@ and go down one floor";
 
 "goStraightThenReach" = "Go straight for %d meters. Then you will reach your destination";
+"thenReach" = "Then you will reach the point %@";
 
 "passThrough" = "Pass through %@";
 
+
 "targetOnTheSameFloor" = "Your destination is on your current floor. ";
-"targetOnTheFloor" = "Your destination is in %@, on the %@.";
+"targetOnTheFloor" = "Your destination is on the %@.";
 "targetDistanceAndTime" = "It is %d meters away. The approximate route time is %d minutes.";
 "targetWillBeOn" = "Upon arrival, your destination will be %@.";
 
@@ -314,3 +315,16 @@
 "slightlyToYourRight" = "slightly to your right";
 "onYourRight" = "on your right";
 "onYourLeft" = "on your left";
+
+//MARK: Distance Units
+"unitKm" = "km";
+"unitM" = "m";
+"unitMi" = "mi";
+"unitFt" = "ft";
+
+//MARK: Contact Us Email
+"contactUsEmailSubject" = "About Visually Impaired Navigation";
+"contactUsAppVersionLabel" = "PoilabsVdNavigation version:";
+"contactUsPhoneModelLabel" = "Phone model:";
+"contactUsOSVersionLabel" = "iOS version:";
+"contactUsAppNameLabel" = "Application:";

@@ -13,24 +13,44 @@
 "onRight" = "على اليمين";
 "onBackward" = "خلف";
 
+"routeCalculating" = "جارٍ حساب المسار.";
+"startWalking" = "ابدأ السير";
+"turnAround" = "أنت لا تسير في الاتجاه الصحيح. يرجى الاستدارة ببطء، وستبدأ الملاحة عندما يكون اتجاهك صحيحًا.";
 "outOfRoute" = "تأكد من أنك على المسار الصحيح!";
-////
+"afterElevator" = "لقد وصلت إلى الطابق المطلوب. يمكنك متابعة التنقل عن طريق هز الهاتف";
+
+"destinationPoint" = "الوجهة";
+"nearly" = "تقريبًا";
+"metersAway" = "متر تقريبًا";
+
 //////kat yonlendirmeleri
 "sameFloor" = "في نفس الطابق";
 "downFloor" = "%d طابق أدناه";
 "upperFloor" = "%d طابق أعلى";
-//
-////
+"elevatorDown" = "انزل إلى";
+"elevatorUp" = "اصعد إلى";
+
 //////rota adimlari
-////
+"yourLocation" = "الموقع الحالي";
+"now" = "الآن";
+"turn" = "انعطف";
+"elevatorAterxMeters" = "اركب المصعد بعد ";
+"turnRightAfterxMeters" = "انعطف يمينًا بعد ";
+"turnLeftAfterxMeters" = "انعطف يسارًا بعد ";
+"goStraight" = "واصل مباشرة لمسافة ";
+"target" = "الهدف";
+
 //////MARK: Place Detail
 "elevator" = "أقرب مصعد";
 "toilet" = "أقرب مرحاض";
+"freeWalk" = "التجول الحر";
+"about" = "عن المكان";
 "selectCategory" = "اختار الفئة";
 "all" = "الجميع";
 "search" = "ابحث";
 "done" = "انتهى";
 "cancel" = "استغني";
+"pointList" = "قائمة الموقع";
 "locationWaiting" = "الموقع معلق";
 "locationNotFound" = "الموقع غير موجود";
 ////
@@ -61,7 +81,7 @@
 "navigationDesc" = "عند تحديد نقطة ، ستصل إلى صفحة تفاصيل الموقع. يمكنك بدء التنقل باستخدام الزر اذهب إلى هناك في هذه الصفحة. \n\n قبل بدء التنقل ، سيكون من المفيد عمل الإعدادات المناسبة من إعدادات التنقل.";
 
 "navigationSteps" = "خطوات التنقل";
-"navigationStepsDesc" = "بمجرد بدء التنقل ، ستتلقى تحديثات مستمرة.\n\n اعتمادًا على إعدادات التنقل ، قد يشير إلى أنك لست على الطريق في بعض الأحيان حتى إذا كنت على الطريق. يرجى الاستمرار في المشي بضع خطوات أخرى. إذا ظل يقول إنك لست على الطريق ، فيمكنك الحصول علىبناءً على الإعداد الذي تختاره من إعدادات التنقل ، قد تتلقى أحيانًا تحذيرًا بأنك لست على الطريق ، حتى لو كنت على الطريق. إذا ظل يقول إنك لست على الطريق ، فيمكنك الحصول على طريق جديد عن طريق هز الهاتف.";
+"navigationStepsDesc" = "بمجرد بدء التنقل ، ستتلقى تحديثات مستمرة.\n\n بناءً على الإعداد الذي تختاره من إعدادات التنقل ، قد تتلقى أحيانًا تحذيرًا بأنك لست على الطريق ، حتى لو كنت على الطريق. إذا ظل يقول إنك لست على الطريق ، فيمكنك الحصول على طريق جديد عن طريق هز الهاتف.";
 
 "youAreAllSet" = "أنت كل مجموعةهل أنت جاهز؟";
 "youAreAllSetDesc" = "قد تكون مرتبكًا بعض الشيء الآن. لكن أفضل طريقة لتعلم شيء جديد هي التدرب\n\nلنبدأ!";
@@ -70,8 +90,8 @@
 
 "venues" = "الاماكن";
 "searchPlaceHolder" = "إلى أين تريد الذهاب ؟";
-////"noVenueFound" = "Not found venues";
-////"showOnMap" = "Show on map";
+"noVenueFound" = "لم يتم العثور على أماكن";
+"showOnMap" = "إظهار على الخريطة";
 "addFav" = "انقر نقرًا مزدوجًا لإضافة إلى المفضلة.";
 "removeFav" = "انقر نقرًا مزدوجًا لإزالة من المفضلة.";
 "showFavorites" = "انقر نقرًا مزدوجًا لعرض الأماكن المفضلة فقط";
@@ -80,20 +100,20 @@
 "closeFilterView" = "اغلق صفحة الفلترة";
 "openCategoryView" = "افتح صفحة اختيار الفئة";
 "closeCategoryView" = "إغلاق صفحة اختيار الفئة";
-//
-////"select" = "Select";
-////"unselect" = "Unselect";
+
+"select" = "اختر";
+"unselect" = "إلغاء التحديد";
 "favorites" = "المفضلين";
 "distance" = "المسافة";
 "noLimit" = "قم بتحديد المسافة ، الاختيار المتاح غير محدود";
 "category" = "الفئة ";
 "apply" = "قم بالتطبيق";
-////
-"showInfo" = "اعرض معلومات المكانn";
-////"noContent" = "No information";
+
+"showInfo" = "اعرض معلومات المكان";
+"noContent" = "لا توجد معلومات";
 "ok" = "حسنا";
-////"info" = "Information";
-////
+"info" = "معلومات";
+
 "clockRotation" = " باتجاه الساعة %d";
 "floor" = "الطابق";
 "meters" = "متر";
@@ -110,21 +130,21 @@
 "arrivalTime" = "الوصول %d: دقيقة";
 "directionAndDistance" = "على بعد %d متر باتجاه الساعة %d";
 "directionAndDistanceInFt" = "على بعد %d متر باتجاه الساعة %d";
-"directionAndDistanceLR" = "Walk %d meters %@";
-"directionAndDistanceInFtLR" = "Walk %d ft %@";
-"goDistanceBackward" = "Walk %d meters backward";
-"goDistanceBackwardInFt" = "Walk %d ft backward";
+"directionAndDistanceLR" = "سر %d متر %@";
+"directionAndDistanceInFtLR" = "سر %d قدم %@";
+"goDistanceBackward" = "سر %d متر إلى الخلف";
+"goDistanceBackwardInFt" = "سر %d قدم إلى الخلف";
 "goWithElevator" = "اذهب إلى الطابق %@ بالمصعد";
 "goWithEscalator" = "اذهب إلى الطابق %@ بالمصعد";
 "goWithStairs" = "اذهب إلى الطابق %@ بالمصعد";
 "arrived" = "لقد وصلت إلى هذفك !";
-"arrivedWithTitle" = "@% لقد وصلت إلى هذفك !";
+"arrivedWithTitle" = "لقد وصلت إلى %@";
 "remainingSteps" = "الخطوات المتبقية ";
-"targetAfterElevatorUp" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
-"targetAgterElevatorDown" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
+"targetAfterElevatorUp" = "لقد وصلت إلى المصعد.\nاصعد إلى الطابق %@ للوصول إلى وجهتك.";
+"targetAgterElevatorDown" = "لقد وصلت إلى المصعد.\nانزل إلى الطابق %@ للوصول إلى وجهتك.";
 
 "toRight" = " إلى اليمين";
-"toLeft" = "غادر";
+"toLeft" = "إلى اليسار";
 "toForward" = "مستقيم";
 "toBackward" = "الى الخلف";
 
@@ -166,19 +186,28 @@
 "currentLocationDirection" = "الموقع الحالي";
 "activateCurrentLocation" = "الوضع الحالي في اتجاه عقارب الساعة ، محدد: إيقاف. انقر نقرًا مزدوجًا لفتح معلومات الاتجاه الخاصة بموقعك الحالي أثناء التوجيه";
 "disableCurrentLocation" = "الوضع الحالي في اتجاه عقارب الساعة ، محدد: تشغيل. انقر نقرًا مزدوجًا لإيقاف تشغيل معلومات الاتجاه الخاصة بموقعك الحالي أثناء التوجيه";
+"activateCurrentLocationHint" = "انقر نقرًا مزدوجًا لفتح معلومات اتجاه موقعك الحالي أثناء التوجيه";
+"disableCurrentLocationHint" = "انقر نقرًا مزدوجًا لإيقاف معلومات اتجاه موقعك الحالي أثناء التوجيه";
 
 "metricIsSelected" = "وحدة المسافة ، المحددة: متري. انقر نقرًا مزدوجًا للتغيير إلى أميال";
 "imperialIsSelected" = "وحدة المسافة ، المحددة: أميال. انقر نقرًا مزدوجًا لتغيير المقياس";
+"metricHint" = "انقر نقرًا مزدوجًا للتغيير إلى الأميال";
+"imperialHint" = "انقر نقرًا مزدوجًا للتغيير إلى النظام المتري";
 
 "clockwiseIsSelected" = "الاتجاهات المحددة: في اتجاه عقارب الساعة. انقر نقرًا مزدوجًا للتغيير إلى اليسار واليمين";
 "leftRightIsSelected" = "الاتجاهات المحددة: اليسار واليمين. انقر نقرًا مزدوجًا لتغيير اتجاه عقارب الساعة";
+"clockwiseIsSelectedHint" = "انقر نقرًا مزدوجًا للتغيير إلى اليسار واليمين";
+"leftRightIsSelectedHint" = "انقر نقرًا مزدوجًا للتغيير إلى اتجاه عقارب الساعة";
 
 "onlyElevatorIsSelected" = "خيار الطريق ، محدد: مصعد فقط. انقر نقرًا مزدوجًا للحصول على المسار من المصعد أو السلالم المتحركة أو السلالم";
 "allRoutesIsselected" = "خيار الطريق ، محدد: مصعد / سلم متحرك / سلم. انقر نقرًا مزدوجًا للحصول على مسار المصعد فقط";
+"onlyElevatorIsSelectedHint" = "انقر نقرًا مزدوجًا للحصول على مسار من المصعد أو السلم المتحرك أو السلالم";
+"allRoutesIsSelectedHint" = "انقر نقرًا مزدوجًا للحصول على مسار المصعد فقط";
 
 "autoReRouteIsActive" = "إعادة التوجيه التلقائي ، المحدد: تشغيل. انقر نقرًا مزدوجًا لإيقاف إنشاء مسار جديد دون سابق إنذار عند اكتشاف وجود خارج المسار";
 "autoReRouteIsPassive" = "إعادة التوجيه التلقائي ، المحدد: إيقاف. انقر نقرًا مزدوجًا ليتم تنبيهك عند اكتشاف انحراف عن المسار";
-
+"autoReRouteIsActiveHint" = "انقر نقرًا مزدوجًا لإيقاف إنشاء مسار جديد دون تنبيه عند اكتشاف الخروج عن المسار";
+"autoReRouteIsPassiveHint" = "انقر نقرًا مزدوجًا ليتم تنبيهك عند اكتشاف الخروج عن المسار";
 
 "btPopUp" = "تحقق من إعدادات البلوتوث الخاصة بك !";
 "locationPopUp" = "تحقق من إعدادات الموقع!";
@@ -267,6 +296,7 @@
 "takeAndGoDownOne" = "خذ %@ وانزل طابقًا واحدًا بـ %@";
 
 "goStraightThenReach" = "اذهب مباشرة لمسافة %d متر. بعد ذلك ستصل إلى وجهتك";
+"thenReach" = "بعد ذلك ستصل إلى النقطة %@";
 
 "passThrough" = "تجاوز %@";
 
@@ -280,3 +310,16 @@
 "slightlyToYourRight" = "على يمينك قليلاً";
 "onYourRight" = "على يمينك";
 "onYourLeft" = "على يسارك";
+
+//MARK: Distance Units
+"unitKm" = "كم";
+"unitM" = "م";
+"unitMi" = "ميل";
+"unitFt" = "قدم";
+
+//MARK: Contact Us Email
+"contactUsEmailSubject" = "حول الملاحة ضعاف البصر";
+"contactUsAppVersionLabel" = "إصدار PoilabsVdNavigation:";
+"contactUsPhoneModelLabel" = "طراز الهاتف:";
+"contactUsOSVersionLabel" = "إصدار iOS:";
+"contactUsAppNameLabel" = "التطبيق:";

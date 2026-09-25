@@ -8,29 +8,49 @@
 //
 ////MARK: Navigasyon
 
-"onForward" = "In the Front";
-"onLeft" = "On the Left";
-"onRight" = "On the Right";
-"onBackward" = "Behind";
+"onForward" = "Vorne";
+"onLeft" = "Links";
+"onRight" = "Rechts";
+"onBackward" = "Hinten";
 
+"routeCalculating" = "Route wird berechnet.";
+"startWalking" = "Fangen Sie an zu gehen";
+"turnAround" = "Sie gehen nicht in die richtige Richtung. Bitte drehen Sie sich langsam um, die Navigation startet, sobald die Richtung stimmt.";
 "outOfRoute" = "Stellen Sie sicher, dass Sie auf dem richtigen Weg sind! Um die Route umzuleiten, schütteln Sie das Telefon.";
-//
+"afterElevator" = "Sie haben die gewünschte Etage erreicht. Sie können die Navigation fortsetzen, indem Sie das Telefon schütteln";
+
+"destinationPoint" = "Ziel";
+"nearly" = "etwa";
+"metersAway" = "Meter entfernt";
+
 ////kat yonlendirmeleri
 "sameFloor" = "auf der gleichen Etage";
 "downFloor" = "%d Etage tiefer";
 "upperFloor" = "%d Etage höher";
+"elevatorDown" = "hinunter zu";
+"elevatorUp" = "hinauf zu";
 
-//
 ////rota adimlari
-//
+"yourLocation" = "Aktueller Standort";
+"now" = "Jetzt";
+"turn" = "abbiegen";
+"elevatorAterxMeters" = "Steigen Sie nach ";
+"turnRightAfterxMeters" = "Rechts abbiegen nach ";
+"turnLeftAfterxMeters" = "Links abbiegen nach ";
+"goStraight" = "Gehen Sie geradeaus für ";
+"target" = "Ziel";
+
 ////MARK: Place Detail
 "elevator" = "Nächster Aufzug";
 "toilet" = "Nächste Toilette";
+"freeWalk" = "Orientierung";
+"about" = "Über den Ort";
 "selectCategory" = "Kategorie auswählen";
 "all" = "Alle";
 "search" = "Suche";
 "done" = "Beendet";
 "cancel" = "Aufgeben";
+"pointList" = "Standort-Liste";
 "locationWaiting" = "Standort ausstehend.";
 "locationNotFound" = "Ort nicht gefunden.";
 //
@@ -70,8 +90,8 @@
 
 "venues" = "Orte";
 "searchPlaceHolder" = "Wohin wollen Sie gehen?";
-//"noVenueFound" = "Not found venues";
-//"showOnMap" = "Show on map";
+"noVenueFound" = "Keine Orte gefunden";
+"showOnMap" = "Auf der Karte anzeigen";
 "addFav" = "Doppelklicken, um zu den Favoriten hinzuzufügen.";
 "removeFav" = "Doppelklicken, um aus den Favoriten zu entfernen.";
 "showFavorites" = "Doppelklicken Sie, um nur Lieblingsorte anzuzeigen";
@@ -81,8 +101,8 @@
 "openCategoryView" = "Kategorieauswahlseite öffnen";
 "closeCategoryView" = "Kategorieauswahlseite schließen";
 
-//"select" = "Select";
-//"unselect" = "Unselect";
+"select" = "Auswählen";
+"unselect" = "Abwählen";
 "favorites" = "Favoriten";
 "distance" = "Distanz";
 "noLimit" = "unbegrenzt";
@@ -90,14 +110,13 @@
 "apply" = "Anwenden";
 //
 "showInfo" = "Standortinformationen anzeigen";
-//"noContent" = "No information";
+"noContent" = "Keine Informationen";
 "ok" = "Ok";
-//"info" = "Information";
-//
+"info" = "Informationen";
 "clockRotation" = "in Richtung %d Uhr";
 "floor" = "Etage";
 "meters" = "Meter";
-"discovery" = "Erkundungs";
+"discovery" = "Erkundung";
 "currentLocation" = "Aktueller Standort:";
 "nearByLocations" = "Geschäfte in der Nähe:";
 "contentAvailable" = "Inhalt verfügbar";
@@ -112,21 +131,21 @@
 "directionAndDistanceInFt" = "%d ft vorwärts in Richtung %d Uhr";
 "goWithElevator" = "Fahren Sie mit dem Aufzug in %@";
 "goWithEscalator" = "Fahren Sie mit dem Rolltreppe in %@";
-"directionAndDistanceLR" = "Walk %d meters %@";
-"directionAndDistanceInFtLR" = "Walk %d ft %@";
-"goDistanceBackward" = "Walk %d meters backward";
-"goDistanceBackwardInFt" = "Walk %d ft backward";
+"directionAndDistanceLR" = "Gehen Sie %d Meter %@";
+"directionAndDistanceInFtLR" = "Gehen Sie %d ft %@";
+"goDistanceBackward" = "Gehen Sie %d Meter rückwärts";
+"goDistanceBackwardInFt" = "Gehen Sie %d ft rückwärts";
 "goWithStairs" = "Fahren Sie mit dem Treppe in %@";
 "arrived" = "Sie haben Ihr Ziel erreicht!";
 "arrivedWithTitle" = "Sie haben %@ erreicht";
 "remainingSteps" = "Verbleibenden Schritte";
-"targetAfterElevatorUp" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
-"targetAgterElevatorDown" = "You have arrived the elevator.\nGo to %@ Floor to arrive your destination.";
+"targetAfterElevatorUp" = "Sie haben den Aufzug erreicht.\nFahren Sie hinauf zur Etage %@, um Ihr Ziel zu erreichen.";
+"targetAgterElevatorDown" = "Sie haben den Aufzug erreicht.\nFahren Sie hinunter zur Etage %@, um Ihr Ziel zu erreichen.";
 
-"toRight" = "to right";
-"toLeft" = "to left";
-"toForward" = "forward";
-"toBackward" = "backward";
+"toRight" = "nach rechts";
+"toLeft" = "nach links";
+"toForward" = "vorwärts";
+"toBackward" = "rückwärts";
 
 "close" = "schließen";
 
@@ -189,15 +208,15 @@
 "autoReRouteIsActiveHint" = "Doppelklicken, um die Erstellung einer neuen Route ohne Warnung zu deaktivieren, wenn eine Abweichung von der Route erkannt wird";
 "autoReRouteIsPassiveHint" = "Doppelklicken Sie, um benachrichtigt zu werden, wenn ein Abweichen von der Route erkannt wird";
 
-
 "btPopUp" = "Überprüfen Sie Ihre Bluetooth-Einstellungen!";
 "locationPopUp" = "Überprüfen Sie Ihre Standorteinstellungen!";
 
-"approve" = "Approve";
+"approve" = "Bestätigen";
 "loremIpsum" = "Dies ist ein Mustertext";
 
 "completedProgress" = "%d%% abgeschlossen";
 "noAccessibleRoute" = "Keine barrierefreie Route gefunden! Möchten Sie eine Route über Treppen oder Rolltreppen nehmen?";
+
 "noRoute" = "Die Route konnte nicht erstellt werden! Versuchen Sie es an einem anderen Ort erneut!";
 "noLocationError" = "Ihr Standort konnte nicht erkannt werden!\nStellen Sie sicher, dass Sie sich an dem Ort befinden, an dem sich der Navigationsdienst befindet, und im Erfassungsbereich der Sensoren!";
 
@@ -277,6 +296,7 @@
 "takeAndGoDownOne" = "Nehmen Sie %@ und gehen Sie einen Stock hinunter";
 
 "goStraightThenReach" = "Gehen Sie %d Meter geradeaus. Dann erreichen Sie Ihr Ziel";
+"thenReach" = "Dann erreichen Sie den Punkt %@";
 
 "passThrough" = "%@ durchgehen";
 
@@ -290,3 +310,16 @@
 "slightlyToYourRight" = "leicht zu Ihrer Rechten";
 "onYourRight" = "zu Ihrer Rechten";
 "onYourLeft" = "zu Ihrer Linken";
+
+//MARK: Distance Units
+"unitKm" = "km";
+"unitM" = "m";
+"unitMi" = "Meile";
+"unitFt" = "Fuß";
+
+//MARK: Contact Us Email
+"contactUsEmailSubject" = "Über sehbehinderte Navigation";
+"contactUsAppVersionLabel" = "PoilabsVdNavigation-Version:";
+"contactUsPhoneModelLabel" = "Telefonmodell:";
+"contactUsOSVersionLabel" = "iOS-Version:";
+"contactUsAppNameLabel" = "Anwendung:";

@@ -301,6 +301,7 @@
 "takeAndGoDownOne" = "Uzmite %@ i idite jedan kat dolje s %@";
 
 "goStraightThenReach" = "Idite ravno %d metara. Zatim ćete stići na odredište";
+"thenReach" = "Zatim ćete stići do točke %@";
 
 "passThrough" = "Prođite kroz %@";
 
@@ -314,3 +315,16 @@
 "slightlyToYourRight" = "lagano s vaše desne strane";
 "onYourRight" = "s vaše desne strane";
 "onYourLeft" = "s vaše lijeve strane";
+
+//MARK: Distance Units
+"unitKm" = "km";
+"unitM" = "m";
+"unitMi" = "milja";
+"unitFt" = "stopa";
+
+//MARK: Contact Us Email
+"contactUsEmailSubject" = "Navigacija za slabovidne";
+"contactUsAppVersionLabel" = "Verzija PoilabsVdNavigation:";
+"contactUsPhoneModelLabel" = "Model telefona:";
+"contactUsOSVersionLabel" = "Verzija iOS-a:";
+"contactUsAppNameLabel" = "Aplikacija:";

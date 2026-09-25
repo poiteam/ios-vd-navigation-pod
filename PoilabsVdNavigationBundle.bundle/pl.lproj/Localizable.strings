@@ -1,0 +1,330 @@
+/*
+  Localizable.strings
+  ios-blindoors
+
+  Created by Emre Kuru on 25.03.2020.
+  Copyright © 2020 Emre Kuru. All rights reserved.
+*/
+
+//MARK: Navigasyon
+//yonler
+"onForward" = "Z przodu";
+"onLeft" = "Po lewej";
+"onRight" = "Po prawej";
+"onBackward" = "Z tyłu";
+
+
+//durumlar
+"routeCalculating" = "Obliczanie trasy.";
+"noRoute" = "Nie znaleziono trasy. Spróbuj ponownie z innym celem.";
+"startWalking" = "Zacznij iść";
+"turnAround" = "Nie idziesz we właściwym kierunku. Powoli się odwróć, nawigacja rozpocznie się, gdy kierunek będzie prawidłowy.";
+"outOfRoute" = "Upewnij się, że jesteś na trasie. Aby wyznaczyć trasę ponownie, potrząśnij telefonem.";
+"afterElevator" = "Dotarłeś na wybrane piętro. Możesz uzyskać nawigację, potrząsając telefonem";
+
+//yonlendirme
+"destinationPoint" = "Cel podróży";
+"nearly" = "około";
+"metersAway" = "metrów stąd";
+
+//kat yonlendirmeleri
+"sameFloor" = "Na tym samym piętrze";
+"downFloor" = "%d piętro(a) niżej";
+"upperFloor" = "%d piętro(a) wyżej";
+"elevatorDown" = "zjedź na";
+"elevatorUp" = "wjedź na";
+
+//rota adimlari
+"yourLocation" = "Aktualna lokalizacja";
+"now" = "Teraz";
+"turn" = "skręć";
+"elevatorAterxMeters" = "Wsiądź do windy po ";
+"turnRightAfterxMeters" = "Skręć w prawo po ";
+"turnLeftAfterxMeters" = "Skręć w lewo po ";
+"goStraight" = "Idź prosto przez ";
+"arrived" = "Dotarłeś do celu";
+"arrivedWithTitle" = "Dotarłeś do %@";
+"target" = "Cel";
+
+//MARK: Place Detail
+"elevator" = "Najbliższa winda";
+"toilet" = "Najbliższa toaleta";
+"freeWalk" = "Orientacja";
+"about" = "O miejscu";
+"selectCategory" = "Wybierz kategorię";
+"all" = "Wszystko";
+"search" = "Szukaj";
+"done" = "Gotowe";
+"cancel" = "Anuluj";
+"pointList" = "Lista lokalizacji";
+"locationWaiting" = "Oczekiwanie na lokalizację.";
+"locationNotFound" = "Nie znaleziono lokalizacji.";
+
+//MARK: Point Detail
+"getRoute" = "Zaprowadź mnie tam";
+"readContent" = "Przeczytaj treść";
+
+//MARK: General
+"pleaseWait" = "Proszę czekać...";
+
+//MARK: User Guide
+"welcome" = "Witamy!";
+"welcomeDesc" = "Bardzo się cieszymy, że do nas dołączyłeś.\n\nMamy nadzieję, że nasza aplikacja pomoże Ci aktywnie uczestniczyć w codziennym życiu.\n\nMożesz przejść do następnego etapu i zacząć poznawać aplikację.\n\nAle nie zapominaj! Ta aplikacja nie zastępuje białej laski.";
+
+"howItWorks" = "Jak to działa?";
+"howItWorksDesc" = "Używamy czujników Bluetooth do ustalania lokalizacji. Aby móc z nich korzystać, musisz przyznać uprawnienia do lokalizacji i Bluetooth.\n\nUpewnij się, że Bluetooth i usługi lokalizacji są włączone oraz że masz aktywne połączenie z internetem!\n\nDla najlepszego doświadczenia trzymaj telefon przed sobą, równolegle do podłoża.";
+
+"venues" = "Miejsca";
+"venuesDesc" = "Dostępne miejsca będą wyświetlane począwszy od najbliższego. Możesz również filtrować dowolny typ miejsca lub wyszukać miejsce za pomocą paska wyszukiwania.";
+
+"poiList" = "Lista lokalizacji";
+"poiListDesc" = "Możesz zobaczyć wszystkie dostępne lokalizacje w danym miejscu.\n\nNa przykład: możesz dotrzeć do działów biblioteki, eksponatów w muzeum lub sklepów w centrum handlowym. Jeśli w Twojej lokalizacji dostępna jest treść, możesz jej wysłuchać i wyznaczyć do niej trasę.\n\nMożesz również filtrować listę według kategorii.";
+
+"discoverMode" = "Tryb eksploracji";
+"discoverModeDesc" = "Pomaga zrozumieć Twoją lokalizację i otoczenie.\n\nPodczas poruszania się możesz poznać swoją aktualną lokalizację, pobliskie miejsca i punkty.\n\nDodatkowo, jeśli w Twojej lokalizacji dostępna jest treść, pod informacją o kierunku zegarowym pojawi się przycisk. Możesz odsłuchać treść, dotykając dwukrotnie tego przycisku lub informacji o lokalizacji.";
+
+"navigation" = "Nawigacja";
+"navigationDesc" = "Po wybraniu punktu przejdziesz do strony szczegółów lokalizacji. Na tej stronie możesz rozpocząć nawigację przyciskiem „Idź tutaj”.\n\nPrzed rozpoczęciem nawigacji warto skonfigurować odpowiednie ustawienia w ustawieniach nawigacji.";
+
+"navigationSteps" = "Kroki nawigacji";
+"navigationStepsDesc" = "Po rozpoczęciu nawigacji będziesz otrzymywać ciągłe aktualizacje.\n\nW zależności od ustawienia wybranego w ustawieniach nawigacji, czasem możesz otrzymać ostrzeżenie, że nie jesteś na trasie, nawet jeśli na niej jesteś. Przejdź jeszcze kilka kroków. Jeśli komunikat nadal się pojawia, możesz uzyskać nową trasę, potrząsając telefonem.";
+
+"youAreAllSet" = "Czy jesteś gotowy?";
+"youAreAllSetDesc" = "Możesz być teraz nieco zdezorientowany. Ale najlepszym sposobem na naukę czegoś nowego jest praktyka.\n\nZaczynajmy!";
+"start" = "Rozpocznij";
+"next" = "Dalej";
+
+"venues" = "Miejsca";
+"searchPlaceHolder" = "Dokąd chcesz się udać?";
+"noVenueFound" = "Nie znaleziono miejsc";
+"showOnMap" = "Pokaż na mapie";
+"addFav" = "Dotknij dwukrotnie, aby dodać do ulubionych.";
+"removeFav" = "Dotknij dwukrotnie, aby usunąć z ulubionych.";
+"showFavorites" = "Dotknij dwukrotnie, aby wyświetlić tylko ulubione miejsca";
+"showFavoritesUnselect" = "Dotknij dwukrotnie, aby wyświetlić wszystkie miejsca";
+"openFilterView" = "Otwórz wybór filtrów";
+"closeFilterView" = "Zamknij widok filtrów";
+"openCategoryView" = "Otwórz wybór kategorii";
+"closeCategoryView" = "Zamknij widok kategorii";
+
+"select" = "Wybierz";
+"unselect" = "Odznacz";
+"favorites" = "Ulubione";
+"distance" = "Odległość";
+"noLimit" = "Bez limitu";
+"category" = "Kategoria";
+"apply" = "Zastosuj";
+
+"showInfo" = "Pokaż informacje";
+"noContent" = "Brak informacji";
+"ok" = "Ok";
+"info" = "Informacje";
+
+"clockRotation" = "Godzina %d";
+"floor" = "Piętro";
+"meters" = "metrów";
+"discovery" = "Eksploracja";
+"currentLocation" = "Aktualna lokalizacja:";
+"nearByLocations" = "Pobliskie lokalizacje:";
+"contentAvailable" = "Dostępna treść";
+"contentButton" = "Dotknij dwukrotnie, aby odsłuchać treść";
+
+
+"seeRemainingSteps" = "Zobacz pozostałe kroki";
+"clearRoute" = "Wyczyść trasę";
+"destination" = "Cel podróży";
+"arrivalTime" = "Przybycie: %d min.";
+"directionAndDistance" = "Idź %d metrów w kierunku godziny %d";
+"directionAndDistanceInFt" = "Idź %d stóp w kierunku godziny %d";
+"directionAndDistanceLR" = "Idź %d metrów %@";
+"directionAndDistanceInFtLR" = "Idź %d stóp %@";
+"goDistanceBackward" = "Cofnij się %d metrów";
+"goDistanceBackwardInFt" = "Cofnij się %d stóp";
+"goWithElevator" = "Jedź do %@ windą";
+"goWithEscalator" = "Jedź do %@ schodami ruchomymi";
+"goWithStairs" = "Idź do %@ schodami";
+"remainingSteps" = "Pozostałe kroki";
+"targetAfterElevatorUp" = "Dotarłeś do windy.\nJedź na %@ piętro, aby dotrzeć do celu.";
+"targetAgterElevatorDown" = "Dotarłeś do windy.\nZjedź na %@ piętro, aby dotrzeć do celu.";
+
+"toRight" = "w prawo";
+"toLeft" = "w lewo";
+"toForward" = "prosto";
+"toBackward" = "do tyłu";
+
+"close" = "Zamknij";
+
+"profile" = "Profil";
+"notifications" = "Powiadomienia";
+"account" = "Konto";
+"visual" = "Wygląd";
+"language" = "Język";
+"navigation" = "Nawigacja";
+"userGuide" = "Przewodnik użytkownika";
+"contactUs" = "Skontaktuj się z nami";
+
+"colors" = "Kolory";
+"blackAndWhite" = "Czarno-białe";
+"standart" = "Standardowy";
+"fontSize" = "Rozmiar czcionki";
+
+
+"unitOfDistance" = "Jednostka odległości";
+"metric" = "Metryczna";
+"imperial" = "Imperialna";
+
+"directions" = "Kierunki";
+"directionOfClock" = "Kierunek zegarowy";
+"leftRight" = "Lewo - Prawo";
+
+"routeOption" = "Opcja trasy";
+"onlyElevator" = "Tylko winda";
+"elevatorAndOthers" = "Winda / Schody ruchome / Schody";
+"elevator" = "Winda";
+"escalator" = "Schody ruchome";
+"stairs" = "Schody";
+
+"automReRoute" = "Automatyczne przekierowanie";
+"active" = "Włączone";
+"passive" = "Wyłączone";
+
+"currentLocationDirection" = "Aktualna lokalizacja";
+"activateCurrentLocation" = "Kierunek zegarowy aktualnej pozycji, wybrano: Wyłączone.";
+"disableCurrentLocation" = "Kierunek zegarowy aktualnej pozycji, wybrano: Włączone.";
+"activateCurrentLocationHint" = "Dotknij dwukrotnie, aby włączyć informację o kierunku Twojej aktualnej lokalizacji podczas wyznaczania trasy";
+"disableCurrentLocationHint" = "Dotknij dwukrotnie, aby wyłączyć informację o kierunku Twojej aktualnej lokalizacji podczas wyznaczania trasy";
+
+"metricIsSelected" = "Jednostka odległości, wybrano: metryczna.";
+"imperialIsSelected" = "Jednostka odległości, wybrano: mile.";
+"metricHint" = "Dotknij dwukrotnie, aby zmienić na mile";
+"imperialHint" = "Dotknij dwukrotnie, aby zmienić na system metryczny";
+
+"clockwiseIsSelected" = "Kierunki, wybrano: zegarowy.";
+"leftRightIsSelected" = "Kierunki, wybrano: Lewo-Prawo.";
+"clockwiseIsSelectedHint" = "Dotknij dwukrotnie, aby zmienić na lewo-prawo";
+"leftRightIsSelectedHint" = "Dotknij dwukrotnie, aby zmienić na kierunek zegarowy";
+
+"onlyElevatorIsSelected" = "Opcja trasy, wybrano: Tylko winda.";
+"allRoutesIsselected" = "Opcja trasy, wybrano: Winda/Schody ruchome/Schody.";
+"onlyElevatorIsSelectedHint" = "Dotknij dwukrotnie, aby uzyskać trasę windą, schodami ruchomymi lub schodami";
+"allRoutesIsSelectedHint" = "Dotknij dwukrotnie, aby uzyskać trasę tylko windą";
+
+"autoReRouteIsActive" = "Automatyczne przekierowanie, wybrano: Włączone.";
+"autoReRouteIsPassive" = "Automatyczne przekierowanie, wybrano: Wyłączone.";
+"autoReRouteIsActiveHint" = "Dotknij dwukrotnie, aby wyłączyć tworzenie nowej trasy bez ostrzeżenia po wykryciu zejścia z trasy";
+"autoReRouteIsPassiveHint" = "Dotknij dwukrotnie, aby otrzymywać ostrzeżenie po wykryciu zejścia z trasy";
+
+"btPopUp" = "Sprawdź ustawienia Bluetooth";
+"locationPopUp" = "Sprawdź ustawienia lokalizacji";
+
+"approve" = "Zatwierdź";
+"loremIpsum" = "To jest przykładowy tekst";
+
+"completedProgress" = "Ukończono %d%%";
+"noAccessibleRoute" = "Nie znaleziono dostępnej trasy! Czy chcesz skorzystać z trasy schodami lub schodami ruchomymi?";
+"noLocationError" = "Nie udało się wykryć Twojej lokalizacji!\nUpewnij się, że znajdujesz się w miejscu, w którym dostępna jest usługa nawigacji, oraz w zasięgu czujników!";
+
+"selected" = "Wybrano";
+"doubleTapToSelect" = "Dotknij dwukrotnie, aby wybrać";
+
+"afterThat" = "Następnie";
+
+"floorChangeWarning" = "Miejsce, do którego chcesz dotrzeć, znajduje się na tym samym poziomie co Twoje piętro. Będziesz jednak musiał zmienić piętro podczas trasy.";
+"caution" = "Uwaga!";
+
+"alternativeRoute" = "Trasa alternatywna";
+
+//MARK: Next step
+"thenTurnLeft" = "Następnie skręć w lewo";
+"thenTurnLeftAt" = "Następnie skręć w lewo przy %@";
+"thenTurnSlightlyLeft" = "Następnie skręć lekko w lewo";
+"thenTurnSlightlyLeftAt" = "Następnie skręć lekko w lewo przy %@";
+
+"thenTurnRight" = "Następnie skręć w prawo";
+"thenTurnRightAt" = "Następnie skręć w prawo przy %@";
+"thenTurnSlightlyRight" = "Następnie skręć lekko w prawo";
+"thenTurnSlightlyRightAt" = "Następnie skręć lekko w prawo przy %@";
+
+"thenStraight" = "Następnie idź prosto";
+
+"thenUp" = "Następnie skorzystaj z %@ i wjedź na %@";
+"thenUpOne" = "Następnie skorzystaj z %@ i wjedź o 1 piętro wyżej";
+
+"thenDown" = " Następnie skorzystaj z %@ i zjedź na %@";
+"thenDownOne" = "Następnie skorzystaj z %@ i zjedź o 1 piętro niżej";
+
+"thenArrived" = "Następnie dotrzesz do celu";
+
+"thenPass" = "Następnie miń %@";
+
+//MARK: Step change
+"pass" = "Teraz miń %@";
+
+"upZeroMeter" = "Teraz skorzystaj z %@ i wjedź na %@";
+"upZeroMeterOne" = "Teraz skorzystaj z %@ i wjedź o jedno piętro wyżej";
+
+"downZeroMeter" = "Teraz skorzystaj z %@ i zjedź na %@";
+"downZeroMeterOne" = "Teraz skorzystaj z %@ i zjedź o jedno piętro niżej";
+
+"nowTurnLeft" = "Teraz skręć w lewo";
+"nowTurnLeftAt" = "Teraz skręć w lewo przy %@";
+"nowTurnSlightlyLeft" = "Teraz skręć lekko w lewo";
+"nowTurnSlightlyLeftAt" = "Teraz skręć lekko w lewo przy %@";
+
+"nowTurnRight" = "Teraz skręć w prawo";
+"nowTurnRightAt" = "Teraz skręć w prawo przy %@";
+"nowTurnSlightlyRight" = "Teraz skręć lekko w prawo";
+"nowTurnSlightlyRightAt" = "Teraz skręć lekko w prawo przy %@";
+
+//MARK: Remaining Steps
+"goStraightForAndLeft" = "Idź prosto przez %d metrów, następnie skręć w lewo";
+"goStraightForAndLeftAt" = "Idź prosto przez %d metrów, następnie skręć w lewo przy %@";
+"goStraightForAndSlightlyLeft" = "Idź prosto przez %d metrów, następnie skręć lekko w lewo";
+"goStraightForAndSlightlyLeftAt" = "Idź prosto przez %d metrów, następnie skręć lekko w lewo przy %@";
+
+"goStraightForAndRight" = "Idź prosto przez %d metrów, następnie skręć w prawo";
+"goStraightForAndRightAt" = "Idź prosto przez %d metrów, następnie skręć w prawo przy %@";
+"goStraightForAndSlightlyRight" = "Idź prosto przez %d metrów, następnie skręć lekko w prawo";
+"goStraightForAndSlightlyRightAt" = "Idź prosto przez %d metrów, następnie skręć lekko w prawo przy %@";
+
+"goStraightForAndPass" = "Idź prosto przez %d metrów, następnie miń %@";
+
+"goStraightForAndGoUpTo" = "Idź prosto przez %d metrów, następnie skorzystaj z %@ i wjedź na %@";
+"goStraightForAndGoUpOne" = "Idź prosto przez %d metrów, następnie skorzystaj z %@ i wjedź o 1 piętro wyżej";
+"takeAndGoUpTo" = "Skorzystaj z %@ i wjedź na %@";
+"takeAndGoUpOne" = "Skorzystaj z %@ i wjedź o jedno piętro wyżej";
+
+"goStraightForAndGoDownTo" = "Idź prosto przez %d metrów, następnie skorzystaj z %@ i zjedź na %@";
+"goStraightForAndGoDownOne" = "Idź prosto przez %d metrów, następnie skorzystaj z %@ i zjedź o 1 piętro niżej";
+"takeAndGoDownTo" = "Skorzystaj z %@ i zjedź na %@";
+"takeAndGoDownOne" = "Skorzystaj z %@ i zjedź o jedno piętro niżej";
+
+"goStraightThenReach" = "Idź prosto przez %d metrów. Następnie dotrzesz do celu";
+"thenReach" = "Następnie dotrzesz do punktu %@";
+
+"passThrough" = "Przejdź przez %@";
+
+
+"targetOnTheSameFloor" = "Twój cel znajduje się na Twoim aktualnym piętrze. ";
+"targetOnTheFloor" = "Twój cel znajduje się na %@.";
+"targetDistanceAndTime" = "Znajduje się %d metrów stąd. Przybliżony czas trasy to %d minut.";
+"targetWillBeOn" = "Po przybyciu Twój cel będzie %@.";
+
+"inFrontOfYou" = "przed Tobą";
+"slightlyToYourLeft" = "lekko po Twojej lewej";
+"slightlyToYourRight" = "lekko po Twojej prawej";
+"onYourRight" = "po Twojej prawej";
+"onYourLeft" = "po Twojej lewej";
+
+//MARK: Distance Units
+"unitKm" = "km";
+"unitM" = "m";
+"unitMi" = "mila";
+"unitFt" = "stopa";
+
+//MARK: Contact Us Email
+"contactUsEmailSubject" = "W sprawie nawigacji dla niewidomych i słabowidzących";
+"contactUsAppVersionLabel" = "Wersja PoilabsVdNavigation:";
+"contactUsPhoneModelLabel" = "Model telefonu:";
+"contactUsOSVersionLabel" = "Wersja iOS:";
+"contactUsAppNameLabel" = "Aplikacja:";
