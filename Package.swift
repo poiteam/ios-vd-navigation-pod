@@ -13,9 +13,9 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(name: "PoilabsPositioning", url: "https://github.com/poiteam/ios-positioning-pod.git", .exact("1.0.20")),
-        .package(name: "PoilabsSdkAnalytics", url: "https://github.com/poiteam/ios-sdk-analytics-pod.git", .exact("1.0.14")),
-        .package(name: "PoilabsCore", url: "https://github.com/poiteam/PoilabsCorePod.git", .exact("1.0.12"))
+        .package(name: "PoilabsPositioning", url: "https://github.com/poiteam/ios-positioning-pod.git", .exact("1.2.0")),
+        .package(name: "PoilabsSdkAnalytics", url: "https://github.com/poiteam/ios-sdk-analytics-pod.git", .exact("1.0.15")),
+        .package(name: "PoilabsCore", url: "https://github.com/poiteam/PoilabsCorePod.git", .exact("1.0.15"))
     ],
     targets: [
         .binaryTarget(
@@ -33,8 +33,8 @@ let package = Package(
                 "PoilabsSdkAnalytics",
                 "PoilabsCore"
             ],
-            path: ".",
+            path: "Sources/PoilabsVdNavigationResources",
             resources: [.copy("PoilabsVdNavigationBundle.bundle")]
         )
     ]
-) 
+)

@@ -33,7 +33,7 @@ s.source = { :git => "https://github.com/poiteam/ios-vd-navigation-pod.git",
 
 
 s.ios.vendored_frameworks = 'PoilabsVdNavigationUI.xcframework', 'PoilabsVdNavigationCore.xcframework'
-s.resources = 'PoilabsVdNavigationBundle.bundle'
+s.resources = 'Sources/PoilabsVdNavigationResources/PoilabsVdNavigationBundle.bundle'
 s.dependency 'PoilabsPositioning', '1.2.0'
 s.dependency 'PoilabsSdkAnalytics', '1.0.15'
 s.dependency 'PoilabsCore', '1.0.15'
