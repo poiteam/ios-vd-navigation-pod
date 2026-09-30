@@ -1396,6 +1396,13 @@
       },
       {
         "kind": "Import",
+        "name": "PoilabsVdNavigationCore",
+        "printedName": "PoilabsVdNavigationCore",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -1454,6 +1461,13 @@
       },
       {
         "kind": "Import",
+        "name": "PoilabsVdNavigationCore",
+        "printedName": "PoilabsVdNavigationCore",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -1496,6 +1510,13 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationUI"
+      },
+      {
+        "kind": "Import",
+        "name": "PoilabsVdNavigationCore",
+        "printedName": "PoilabsVdNavigationCore",
         "declKind": "Import",
         "moduleName": "PoilabsVdNavigationUI"
       },
@@ -7228,28 +7249,28 @@
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Extensions\/ExtensionsOther.swift",
       "kind": "StringLiteral",
-      "offset": 3440,
+      "offset": 3349,
       "length": 17,
       "value": "\"languageChanged\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Extensions\/ExtensionsOther.swift",
       "kind": "StringLiteral",
-      "offset": 3507,
+      "offset": 3416,
       "length": 14,
       "value": "\"themeChanged\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Extensions\/ExtensionsOther.swift",
       "kind": "StringLiteral",
-      "offset": 3573,
+      "offset": 3482,
       "length": 16,
       "value": "\"readyForChilds\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Extensions\/ExtensionsOther.swift",
       "kind": "StringLiteral",
-      "offset": 3636,
+      "offset": 3545,
       "length": 11,
       "value": "\"mapClosed\""
     },
@@ -7354,77 +7375,63 @@
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "StringLiteral",
-      "offset": 337,
-      "length": 27,
-      "value": "\"PoilabsVdNavigationBundle\""
-    },
-    {
-      "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
-      "kind": "StringLiteral",
-      "offset": 381,
-      "length": 8,
-      "value": "\"bundle\""
-    },
-    {
-      "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
-      "kind": "StringLiteral",
-      "offset": 620,
+      "offset": 542,
       "length": 19,
       "value": "\"searchPlaceHolder\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 718,
+      "offset": 640,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "StringLiteral",
-      "offset": 816,
+      "offset": 738,
       "length": 23,
       "value": "\"kAvmListTableViewCell\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 877,
+      "offset": 799,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "Array",
-      "offset": 919,
+      "offset": 841,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1210,
+      "offset": 1132,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1253,
+      "offset": 1175,
       "length": 14,
       "value": "\"noVenueFound\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1329,
+      "offset": 1251,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/Controller\/VenueList\/PlaceListViewController.swift",
       "kind": "Array",
-      "offset": 961,
+      "offset": 883,
       "length": 2,
       "value": "[]"
     },

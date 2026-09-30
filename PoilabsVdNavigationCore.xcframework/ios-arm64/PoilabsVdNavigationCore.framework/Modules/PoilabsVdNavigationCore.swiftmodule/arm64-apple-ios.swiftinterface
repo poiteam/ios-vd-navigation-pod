@@ -1230,6 +1230,9 @@ public class PointDetailManager {
   public func getFloorLevel() -> Swift.String
   @objc deinit
 }
+public enum PoilabsVdResourceBundle {
+  public static let bundle: Foundation.Bundle?
+}
 extension PoilabsVdNavigationCore.NetworkReachabilityManager.ConnectionType : Swift.Equatable {}
 extension PoilabsVdNavigationCore.NetworkReachabilityManager.ConnectionType : Swift.Hashable {}
 extension PoilabsVdNavigationCore.PMError : Swift.Equatable {}

@@ -40535,6 +40535,111 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PoilabsVdNavigationCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PoilabsVdResourceBundle",
+        "printedName": "PoilabsVdResourceBundle",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bundle",
+            "printedName": "bundle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23PoilabsVdNavigationCore0aB14ResourceBundleO6bundleSo8NSBundleCSgvpZ",
+            "mangledName": "$s23PoilabsVdNavigationCore0aB14ResourceBundleO6bundleSo8NSBundleCSgvpZ",
+            "moduleName": "PoilabsVdNavigationCore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Bundle?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bundle",
+                        "printedName": "Foundation.Bundle",
+                        "usr": "c:objc(cs)NSBundle"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23PoilabsVdNavigationCore0aB14ResourceBundleO6bundleSo8NSBundleCSgvgZ",
+                "mangledName": "$s23PoilabsVdNavigationCore0aB14ResourceBundleO6bundleSo8NSBundleCSgvgZ",
+                "moduleName": "PoilabsVdNavigationCore",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:23PoilabsVdNavigationCore0aB14ResourceBundleO",
+        "mangledName": "$s23PoilabsVdNavigationCore0aB14ResourceBundleO",
+        "moduleName": "PoilabsVdNavigationCore",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "String",
         "printedName": "String",
@@ -42584,7 +42689,7 @@
       "kind": "StringLiteral",
       "offset": 344,
       "length": 7,
-      "value": "\"7.2.0\""
+      "value": "\"7.2.1\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/DataManager.swift",
@@ -43649,6 +43754,20 @@
       "offset": 372,
       "length": 2,
       "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Utils\/PoilabsVdResourceBundle.swift",
+      "kind": "StringLiteral",
+      "offset": 496,
+      "length": 27,
+      "value": "\"PoilabsVdNavigationBundle\""
+    },
+    {
+      "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Utils\/PoilabsVdResourceBundle.swift",
+      "kind": "StringLiteral",
+      "offset": 557,
+      "length": 38,
+      "value": "\"_PoilabsVdNavigationResources.bundle\""
     }
   ]
 }
