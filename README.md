@@ -18,10 +18,16 @@ All required dependencies (PoilabsPositioning, PoilabsSdkAnalytics, PoilabsCore)
 
 ### CocoaPods
 
-To integrate PoilabsNavigation into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate PoilabsVdNavigation into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ``` curl
 pod 'PoilabsVdNavigation'
+```
+
+Until 7.2.1 is published on CocoaPods trunk, use the git tag to get it:
+
+``` curl
+pod 'PoilabsVdNavigation', :git => 'https://github.com/poiteam/ios-vd-navigation-pod.git', :tag => '7.2.1'
 ```
 
 
@@ -45,7 +51,6 @@ PoilabsVdNanigationUI initializer has UIViewController handler. When process is 
 
 
 ``` Swift
-let lang = Locale.current.languageCode ?? "tr"
 let appId = APPLICATION_ID
 let secret = APPLICATION_SECRET_KEY
 let uniqueIdentifier = UNIQUE_ID
