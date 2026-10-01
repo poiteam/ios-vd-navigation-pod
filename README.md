@@ -1,5 +1,5 @@
 # PoilabsVdNavigation
-![Version](https://img.shields.io/cocoapods/v/PoilabsVdNavigation.svg?style=flat)
+![Version](https://img.shields.io/github/v/tag/poiteam/ios-vd-navigation-pod?label=version)
 ![Platform](https://img.shields.io/cocoapods/p/PoilabsVdNavigation.svg?style=flat)
 
 ## INSTALLATION
@@ -31,6 +31,10 @@ pod 'PoilabsVdNavigation', :git => 'https://github.com/poiteam/ios-vd-navigation
 ```
 
 
+## REQUIREMENTS
+
+iOS 12.0 or later.
+
 ## PRE-REQUIREMENTS
 
 To Integrate this framework you should add some features to your project info.plist file.
@@ -41,36 +45,54 @@ To Integrate this framework you should add some features to your project info.pl
 
 ## USAGE
 
-You should import **PoilabsVdNavigationUI**
+Import **PoilabsVdNavigationUI** (and **CoreLocation** if you use the delegate).
+
+The initializer returns the SDK's view controller in its completion handler; present it to start the SDK. Keep a reference to the `PoilabsVdNavigationUI` instance while the SDK screen is open.
 
 ``` Swift
+import UIKit
+import CoreLocation
 import PoilabsVdNavigationUI
+
+class ViewController: UIViewController {
+
+    private var poilabsVdNavigation: PoilabsVdNavigationUI?
+
+    func startVdNavigation() {
+        poilabsVdNavigation = PoilabsVdNavigationUI(withApplicationID: "APPLICATION_ID",
+                                                    withApplicationSecret: "APPLICATION_SECRET_KEY",
+                                                    withUniqueIdentifier: "UNIQUE_ID") { [weak self] controller in
+            DispatchQueue.main.async {
+                controller.modalPresentationStyle = .fullScreen
+                self?.present(controller, animated: true)
+            }
+        }
+        poilabsVdNavigation?.delegate = self
+    }
+}
 ```
 
-PoilabsVdNanigationUI initializer has UIViewController handler. When process is completed, it returns a viewcontroller. You should show it to start framework.
+Replace `APPLICATION_ID` and `APPLICATION_SECRET_KEY` with the values provided by Poilabs. `UNIQUE_ID` must be unique for every app user.
 
+If you want to send requests to another URL, pass it with `configUrl`:
 
 ``` Swift
-let appId = APPLICATION_ID
-let secret = APPLICATION_SECRET_KEY
-let uniqueIdentifier = UNIQUE_ID
-
-PoilabsVdNavigationUI(withApplicationID: appId, 
-					withApplicationSecret: secret, 
-					withUniqueIdentifier: uniqueIdentifier) { (controller) in
-            //show controller
-        }
+poilabsVdNavigation = PoilabsVdNavigationUI(configUrl: "yoururl",
+                                            withApplicationID: "APPLICATION_ID",
+                                            withApplicationSecret: "APPLICATION_SECRET_KEY",
+                                            withUniqueIdentifier: "UNIQUE_ID") { controller in
+    // present controller as above
+}
 ```
-
 
 ### PoilabsVdNavigationDelegate
 
-**didUserLocationChange** callback is triggered when location change.
+`poilabsVdNavigation(didUpdate:)` is called when the user location changes.
 
-```swift
+``` Swift
+extension ViewController: PoilabsVdNavigationDelegate {
     func poilabsVdNavigation(didUpdate userLocation: CLLocationCoordinate2D) {
-    
+
     }
+}
 ```
-
-
