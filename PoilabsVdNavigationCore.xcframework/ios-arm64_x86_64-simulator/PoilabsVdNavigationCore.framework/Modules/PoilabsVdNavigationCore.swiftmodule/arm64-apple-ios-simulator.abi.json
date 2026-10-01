@@ -42689,7 +42689,7 @@
       "kind": "StringLiteral",
       "offset": 344,
       "length": 7,
-      "value": "\"7.2.1\""
+      "value": "\"7.2.2\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/DataManager.swift",
@@ -43520,70 +43520,70 @@
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "Array",
-      "offset": 2756,
+      "offset": 2883,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2936,
+      "offset": 3063,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 23815,
+      "offset": 23942,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 23828,
+      "offset": 23955,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 25088,
+      "offset": 25215,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 25357,
+      "offset": 25484,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 25704,
+      "offset": 25831,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 25751,
+      "offset": 25878,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 26045,
+      "offset": 26172,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/RouteManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 26058,
+      "offset": 26185,
       "length": 5,
       "value": "false"
     },
