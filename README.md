@@ -1,36 +1,30 @@
 # PoilabsVdNavigation
 ![Version](https://img.shields.io/github/v/tag/poiteam/ios-vd-navigation-pod?label=version)
-![Platform](https://img.shields.io/cocoapods/p/PoilabsVdNavigation.svg?style=flat)
+![Platform](https://img.shields.io/badge/platform-iOS%2012%2B-lightgrey)
 
 ## INSTALLATION
 
-### Swift Package Manager
+PoilabsVdNavigation is distributed with Swift Package Manager. CocoaPods is no longer supported; new versions are not published there.
 
-To integrate PoilabsVdNavigation into your Xcode project using Swift Package Manager:
+### Swift Package Manager
 
 1. In Xcode, select **File > Add Package Dependencies...**
 2. Enter the repository URL: `https://github.com/poiteam/ios-vd-navigation-pod.git`
 3. Choose **Exact Version** `7.2.2` and add the **PoilabsVdNavigation** product to your app target.
 
-All required dependencies (PoilabsPositioning, PoilabsSdkAnalytics, PoilabsCore) are defined in the package and will be automatically installed. Use either SPM or CocoaPods for this SDK, not both in the same app.
+All required dependencies (PoilabsPositioning, PoilabsSdkAnalytics, PoilabsCore) are defined in the package and installed automatically. You do not need to add anything else.
+
+**Using with PoilabsNavigation:** PoilabsVdNavigation 7.2.2 and PoilabsNavigation 7.3.1 use the same dependency versions. Add both packages to the same app with SPM; nothing else is needed.
 
 > SPM installation is supported from 7.2.1. Earlier versions crash on launch when installed with SPM.
 
-### CocoaPods
+### Migrating from CocoaPods
 
-To integrate PoilabsVdNavigation into your Xcode project using CocoaPods, specify it in your `Podfile`:
+1. Remove `pod 'PoilabsVdNavigation'` from your `Podfile`, together with any `PoilabsCore`, `PoilabsPositioning` or `PoilabsSdkAnalytics` lines.
+2. Run `pod install` (or `pod deintegrate` if no other pods remain).
+3. Add the package with Swift Package Manager as described above.
 
-``` curl
-pod 'PoilabsVdNavigation'
-```
-
-PoilabsVdNavigation is no longer updated on CocoaPods trunk (the latest version there is 7.1.0). Swift Package Manager is the recommended installation method. To use a newer version with CocoaPods, install it and PoilabsCore from their git tags (PoilabsCore 1.0.17 is not on trunk):
-
-``` curl
-pod 'PoilabsVdNavigation', :git => 'https://github.com/poiteam/ios-vd-navigation-pod.git', :tag => '7.2.2'
-pod 'PoilabsCore', :git => 'https://github.com/poiteam/PoilabsCorePod.git', :tag => '1.0.17'
-```
-
+Do not keep the SDK in your `Podfile` while it is added with SPM; the same frameworks would be embedded twice.
 
 ## REQUIREMENTS
 
