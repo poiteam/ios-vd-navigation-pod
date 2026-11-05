@@ -14,7 +14,7 @@ PoilabsVdNavigation is distributed with Swift Package Manager. CocoaPods is no l
 
 All required dependencies (PoilabsPositioning, PoilabsSdkAnalytics, PoilabsCore) are defined in the package and installed automatically. You do not need to add anything else.
 
-**Using with PoilabsNavigation:** PoilabsVdNavigation 7.3.0 and PoilabsNavigation 7.3.2 use the same dependency versions. Add both packages to the same app with SPM; nothing else is needed.
+**Using with PoilabsNavigation:** PoilabsVdNavigation 7.3.0 and PoilabsNavigation 7.3.2 use the same dependency versions. Add both packages to the same app with SPM; nothing else is needed. Do not keep both SDKs open at the same time: they use the same positioning and Bluetooth scanning, so close one SDK screen before you open the other.
 
 > SPM installation is supported from 7.2.1. Earlier versions crash on launch when installed with SPM.
 
@@ -98,6 +98,33 @@ poilabsVdNavigation = PoilabsVdNavigationUI(withApplicationID: "APPLICATION_ID",
 ```
 
 To open another venue, dismiss the SDK screen, create a new `PoilabsVdNavigationUI` with the other `placeId` and present the controller it returns.
+
+### Closing the SDK screen
+
+The SDK screen has no close button of its own. Pass an `additionalButton`: the SDK shows it on its first screen (the venue list, or the store list when you pass a `placeId`) and calls `poilabsVdNavigationDidTapOnAdditionalButton()` when it is tapped. Dismiss the SDK screen there.
+
+``` Swift
+poilabsVdNavigation = PoilabsVdNavigationUI(withApplicationID: "APPLICATION_ID",
+                                            withApplicationSecret: "APPLICATION_SECRET_KEY",
+                                            withUniqueIdentifier: "UNIQUE_ID",
+                                            additionalButton: AdditionalButton(icon: UIImage(systemName: "xmark") ?? UIImage(),
+                                                                               title: "Close")) { [weak self] controller in
+    DispatchQueue.main.async {
+        controller.modalPresentationStyle = .fullScreen
+        self?.present(controller, animated: true)
+    }
+}
+poilabsVdNavigation?.delegate = self
+
+extension ViewController: PoilabsVdNavigationDelegate {
+    func poilabsVdNavigationDidTapOnAdditionalButton() {
+        presentedViewController?.dismiss(animated: true)
+        poilabsVdNavigation = nil
+    }
+}
+```
+
+`UIImage(systemName:)` needs iOS 13; on iOS 12 use your own image.
 
 ### PoilabsVdNavigationDelegate
 
