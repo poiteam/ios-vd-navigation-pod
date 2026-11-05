@@ -99,33 +99,6 @@ poilabsVdNavigation = PoilabsVdNavigationUI(withApplicationID: "APPLICATION_ID",
 
 To open another venue, dismiss the SDK screen, create a new `PoilabsVdNavigationUI` with the other `placeId` and present the controller it returns.
 
-### Closing the SDK screen
-
-The SDK screen has no close button of its own. Pass an `additionalButton`: the SDK shows it on its first screen (the venue list, or the store list when you pass a `placeId`) and calls `poilabsVdNavigationDidTapOnAdditionalButton()` when it is tapped. Dismiss the SDK screen there.
-
-``` Swift
-poilabsVdNavigation = PoilabsVdNavigationUI(withApplicationID: "APPLICATION_ID",
-                                            withApplicationSecret: "APPLICATION_SECRET_KEY",
-                                            withUniqueIdentifier: "UNIQUE_ID",
-                                            additionalButton: AdditionalButton(icon: UIImage(systemName: "xmark") ?? UIImage(),
-                                                                               title: "Close")) { [weak self] controller in
-    DispatchQueue.main.async {
-        controller.modalPresentationStyle = .fullScreen
-        self?.present(controller, animated: true)
-    }
-}
-poilabsVdNavigation?.delegate = self
-
-extension ViewController: PoilabsVdNavigationDelegate {
-    func poilabsVdNavigationDidTapOnAdditionalButton() {
-        presentedViewController?.dismiss(animated: true)
-        poilabsVdNavigation = nil
-    }
-}
-```
-
-`UIImage(systemName:)` needs iOS 13; on iOS 12 use your own image.
-
 ### PoilabsVdNavigationDelegate
 
 `poilabsVdNavigation(didUpdate:)` is called when the user location changes.
