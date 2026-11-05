@@ -953,7 +953,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(configUrl:withApplicationID:withApplicationSecret:withUniqueIdentifier:additionalViewControllers:additionalButton:completionHandler:)",
+            "printedName": "init(configUrl:withApplicationID:withApplicationSecret:withUniqueIdentifier:additionalViewControllers:additionalButton:placeId:completionHandler:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1025,6 +1025,21 @@
                 "usr": "s:Sq"
               },
               {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
                 "kind": "TypeFunc",
                 "name": "Function",
                 "printedName": "(UIKit.UIViewController) -> ()",
@@ -1044,8 +1059,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:21PoilabsVdNavigationUIAAC9configUrl17withApplicationID0gH6Secret0G16UniqueIdentifier25additionalViewControllers0M6Button17completionHandlerABSSSg_S3SSayAA18AdditionalSettingsVGAA0sP0VSgySo16UIViewControllerCctcfc",
-            "mangledName": "$s21PoilabsVdNavigationUIAAC9configUrl17withApplicationID0gH6Secret0G16UniqueIdentifier25additionalViewControllers0M6Button17completionHandlerABSSSg_S3SSayAA18AdditionalSettingsVGAA0sP0VSgySo16UIViewControllerCctcfc",
+            "usr": "s:21PoilabsVdNavigationUIAAC9configUrl17withApplicationID0gH6Secret0G16UniqueIdentifier25additionalViewControllers0M6Button7placeId17completionHandlerABSSSg_S3SSayAA18AdditionalSettingsVGAA0uP0VSgAKySo16UIViewControllerCctcfc",
+            "mangledName": "$s21PoilabsVdNavigationUIAAC9configUrl17withApplicationID0gH6Secret0G16UniqueIdentifier25additionalViewControllers0M6Button7placeId17completionHandlerABSSSg_S3SSayAA18AdditionalSettingsVGAA0uP0VSgAKySo16UIViewControllerCctcfc",
             "moduleName": "PoilabsVdNavigationUI",
             "declAttributes": [
               "AccessControl"
@@ -6612,7 +6627,7 @@
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI\/PoilabsVdNavigationUI.swift",
       "kind": "Array",
-      "offset": 1891,
+      "offset": 1924,
       "length": 2,
       "value": "[]"
     },

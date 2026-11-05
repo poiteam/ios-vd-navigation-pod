@@ -24055,6 +24055,41 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getMenuItem",
+            "printedName": "getMenuItem(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PoilabsVdNavigationCore.Element?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Element",
+                    "printedName": "PoilabsVdNavigationCore.Element",
+                    "usr": "s:23PoilabsVdNavigationCore7ElementV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23PoilabsVdNavigationCore22PoiVDNavigationManagerC11getMenuItem3forAA7ElementVSgSS_tF",
+            "mangledName": "$s23PoilabsVdNavigationCore22PoiVDNavigationManagerC11getMenuItem3forAA7ElementVSgSS_tF",
+            "moduleName": "PoilabsVdNavigationCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -42689,7 +42724,7 @@
       "kind": "StringLiteral",
       "offset": 344,
       "length": 7,
-      "value": "\"7.2.2\""
+      "value": "\"7.3.0\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Manager\/DataManager.swift",
@@ -42995,42 +43030,42 @@
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 3007,
+      "offset": 4059,
       "length": 21,
       "value": "\"iosWeinbergConstant\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 4079,
+      "offset": 5131,
       "length": 23,
       "value": "\"iosBeaconScanInterval\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 4138,
+      "offset": 5190,
       "length": 19,
       "value": "\"rerouteDurationVd\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 4193,
+      "offset": 5245,
       "length": 19,
       "value": "\"rerouteDistanceVd\""
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "IntegerLiteral",
-      "offset": 7411,
+      "offset": 8463,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Child\/ChildBase.swift",
       "kind": "StringLiteral",
-      "offset": 8569,
+      "offset": 9621,
       "length": 10,
       "value": "\"title_en\""
     },
@@ -43072,7 +43107,7 @@
     {
       "filePath": "\/Users\/muhammeteminbaytar\/Poi Ios Project\/ios-vd-navigation\/PoilabsVdNavigationCore\/PoilabsVdNavigationCore\/Model\/Config\/ConfigData.swift",
       "kind": "BooleanLiteral",
-      "offset": 5456,
+      "offset": 5470,
       "length": 5,
       "value": "false"
     },

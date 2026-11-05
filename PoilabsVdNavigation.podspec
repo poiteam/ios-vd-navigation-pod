@@ -16,7 +16,7 @@ s.name = "PoilabsVdNavigation"
 s.summary = "Poilabs Indoor Navigation Framework"
 
 #2
-s.version = "7.2.2"
+s.version = "7.3.0"
 
 # 3
 s.license = { :type => "Proprietary", :file => "LICENSE" }

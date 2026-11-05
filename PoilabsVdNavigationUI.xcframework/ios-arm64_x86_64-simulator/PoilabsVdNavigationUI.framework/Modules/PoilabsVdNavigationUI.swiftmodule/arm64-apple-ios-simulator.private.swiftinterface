@@ -40,7 +40,7 @@ public struct AdditionalButton {
 }
 public class PoilabsVdNavigationUI {
   public var delegate: (any PoilabsVdNavigationDelegate)?
-  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, additionalViewControllers: [AdditionalSettings] = [], additionalButton: AdditionalButton? = nil, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
+  public init(configUrl: Swift.String? = nil, withApplicationID appID: Swift.String, withApplicationSecret secret: Swift.String, withUniqueIdentifier Id: Swift.String, additionalViewControllers: [AdditionalSettings] = [], additionalButton: AdditionalButton? = nil, placeId: Swift.String? = nil, completionHandler: @escaping (UIKit.UIViewController) -> Swift.Void)
   @objc deinit
 }
 extension PoilabsVdNavigationUI : PoilabsVdNavigationCore.PoiVDNavigationManagerDelegate {

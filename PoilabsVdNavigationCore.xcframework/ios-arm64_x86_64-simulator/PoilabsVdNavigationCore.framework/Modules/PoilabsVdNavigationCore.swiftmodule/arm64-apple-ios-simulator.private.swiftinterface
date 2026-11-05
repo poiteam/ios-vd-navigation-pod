@@ -613,6 +613,7 @@ public class PoiVDNavigationManager {
   public func sdkRemoved()
   public func getMenuLevel() -> Swift.Int
   public func getMenuItems() -> [PoilabsVdNavigationCore.Element]
+  public func getMenuItem(for placeId: Swift.String) -> PoilabsVdNavigationCore.Element?
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ItemCategory : Swift.Hashable {

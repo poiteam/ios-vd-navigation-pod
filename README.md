@@ -10,11 +10,11 @@ PoilabsVdNavigation is distributed with Swift Package Manager. CocoaPods is no l
 
 1. In Xcode, select **File > Add Package Dependencies...**
 2. Enter the repository URL: `https://github.com/poiteam/ios-vd-navigation-pod.git`
-3. Choose **Exact Version** `7.2.2` and add the **PoilabsVdNavigation** product to your app target.
+3. Choose **Exact Version** `7.3.0` and add the **PoilabsVdNavigation** product to your app target.
 
 All required dependencies (PoilabsPositioning, PoilabsSdkAnalytics, PoilabsCore) are defined in the package and installed automatically. You do not need to add anything else.
 
-**Using with PoilabsNavigation:** PoilabsVdNavigation 7.2.2 and PoilabsNavigation 7.3.1 use the same dependency versions. Add both packages to the same app with SPM; nothing else is needed.
+**Using with PoilabsNavigation:** PoilabsVdNavigation 7.3.0 and PoilabsNavigation 7.3.2 use the same dependency versions. Add both packages to the same app with SPM; nothing else is needed.
 
 > SPM installation is supported from 7.2.1. Earlier versions crash on launch when installed with SPM.
 
@@ -79,6 +79,25 @@ poilabsVdNavigation = PoilabsVdNavigationUI(configUrl: "yoururl",
     // present controller as above
 }
 ```
+
+### Opening a specific venue (placeId)
+
+Normally the SDK opens with the venue list of your application. If you want to open one venue directly, pass its **placeId** to the initializer. The SDK then skips the venue list and opens that venue's store list as the first screen.
+
+- The `placeId` must be one of the venues of your application: a venue in its venue list, or a venue listed under one of them. Ask PoiLabs for the `placeId` values of your venues.
+- If you pass nothing, `nil`, an empty string or a `placeId` that is not one of your venues, the SDK opens as before (the venue list). For an unknown `placeId` it prints a warning to the console.
+- `placeId` is available from **7.3.0**. It is the last parameter before `completionHandler` and defaults to `nil`, so existing code compiles without changes.
+
+``` Swift
+poilabsVdNavigation = PoilabsVdNavigationUI(withApplicationID: "APPLICATION_ID",
+                                            withApplicationSecret: "APPLICATION_SECRET_KEY",
+                                            withUniqueIdentifier: "UNIQUE_ID",
+                                            placeId: "PLACE_ID") { controller in
+    // present controller as above
+}
+```
+
+To open another venue, dismiss the SDK screen, create a new `PoilabsVdNavigationUI` with the other `placeId` and present the controller it returns.
 
 ### PoilabsVdNavigationDelegate
 
