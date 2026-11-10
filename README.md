@@ -14,7 +14,7 @@ PoilabsVdNavigation is distributed with Swift Package Manager. CocoaPods is no l
 
 All required dependencies (PoilabsPositioning, PoilabsSdkAnalytics, PoilabsCore) are defined in the package and installed automatically. You do not need to add anything else.
 
-**Using with PoilabsNavigation:** PoilabsVdNavigation 7.3.0 and PoilabsNavigation 7.3.2 use the same dependency versions. Add both packages to the same app with SPM; nothing else is needed. Do not keep both SDKs open at the same time: they use the same positioning and Bluetooth scanning, so close one SDK screen before you open the other.
+**Using with PoilabsNavigation:** PoilabsVdNavigation 7.3.0 and PoilabsNavigation 7.3.3 use the same dependency versions. Add both packages to the same app with SPM; nothing else is needed. Do not keep both SDKs open at the same time: they use the same positioning and Bluetooth scanning, so close one SDK screen before you open the other.
 
 > SPM installation is supported from 7.2.1. Earlier versions crash on launch when installed with SPM.
 
